@@ -1,7 +1,3 @@
-export default () => (
-  <board>
-    <resistor resistance="1k" footprint="0402" name="R1" />
-    <capacitor capacitance="1000pF" footprint="0402" name="C1" />
-    <trace from=".R1 > .pin1" to=".C1 > .pin1" />
-  </board>
-)
+import { MC3_COL_MAIN_V1_0 } from "./boards/MC3_COL_MAIN_V1.0/MC3_COL_MAIN_V1.0"
+
+export default () => <MC3_COL_MAIN_V1_0 />
