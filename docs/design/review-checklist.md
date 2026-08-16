@@ -7,7 +7,7 @@ Gate 1 must fully pass (with `routingDisabled` still set) before routing is enab
 - [ ] `tsci build` passes with no errors; all warnings understood
 - [ ] Every part has a JLCPCB part number and matching footprint
 - [ ] All decisions in `decisions.md` — no unlogged component values
-- [ ] DRV8210 bypass cap adjacent to its supply pins, same side, no via between
+- [ ] DRV8212 bypass cap adjacent to its supply pins, same side, no via between
 - [ ] Shunt placed in the low-side motor current path; sense pads face the INA240
 - [ ] INA240 within short reach of the shunt; sense pair length-matched by placement
 - [ ] Motor current loop (VMOT → bridge → motor → shunt → GND) is physically compact
