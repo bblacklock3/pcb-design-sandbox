@@ -4282,7 +4282,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "01c7b338-2e03-444f-9d33-1573648b4ce9")
-		(property "Reference" "R2"
+		(property "Reference" "R6"
 			(at 88.392 149.86 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4360,7 +4360,7 @@
 			)
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "R2")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -4890,7 +4890,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4795f4c3-ba1c-4fa5-a6d4-ab0b52908c81")
-		(property "Reference" "R5"
+		(property "Reference" "R9"
 			(at 102.362 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4968,7 +4968,7 @@
 			)
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "R5")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -4985,7 +4985,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4eafbc0b-db2e-46db-8223-c24c9b22c8d0")
-		(property "Reference" "R3"
+		(property "Reference" "R7"
 			(at 98.552 149.86 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5063,7 +5063,7 @@
 			)
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "R3")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -5080,7 +5080,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4f22405b-c2c4-41d5-afa5-17b338c3b352")
-		(property "Reference" "R4"
+		(property "Reference" "R8"
 			(at 102.362 59.69 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5158,7 +5158,7 @@
 			)
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "R4")
+					(reference "R8")
 					(unit 1)
 				)
 			)

@@ -1869,7 +1869,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4c12240c-79f4-4bd3-81e3-ed745e349e8d")
-		(property "Reference" "R1"
+		(property "Reference" "R5"
 			(at 66.802 100.33 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1947,7 +1947,7 @@
 			)
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
-					(reference "R1")
+					(reference "R5")
 					(unit 1)
 				)
 			)
