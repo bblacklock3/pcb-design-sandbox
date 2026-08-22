@@ -114,5 +114,13 @@ Three consequences:
 - Konnect binary: `%USERPROFILE%\Documents\KiCad\10.0\3rdparty\plugins\com_github_mixelpixx_konnect\bin\konnect.exe`
   (installed via KiCad's Plugin and Content Manager). `konnect status` shows what's installed;
   `konnect transaction status <project-dir>` shows any interrupted multi-file write.
+- **Konnect only finds KiCad's IPC socket if told where it is.** When Claude Code launches
+  Konnect, `KICAD_API_SOCKET` isn't set (KiCad sets it only when *it* launches the server), so
+  `%APPDATA%\konnect\config.toml` must carry
+  `ipc_address = 'ipc://C:\Users\<you>\AppData\Local\Temp\kicad\api.sock'` — the address
+  shown under Preferences → Plugins. Per machine, one-time, like `konnect init`. Backslashes
+  are significant (the path becomes the Windows named-pipe name verbatim). Symptom when it's
+  missing: `open_project` reports `ipc_address: ""` / "IPC is not reachable" while KiCad is
+  plainly running. Restart Claude Code after editing it.
 - Konnect is AGPL-3.0. Internal design use; do not build/redistribute tooling on it without
   checking licensing.

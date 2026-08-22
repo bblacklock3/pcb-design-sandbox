@@ -6,7 +6,8 @@
     "Per-part layout constraints (bypass adjacency, Kelvin pairs, thermal vias, keep-outs) live in docs/design/parts/<part>.md in this repo; read them before placing or routing that part."
   ],
   "fab_constraints": {
-    "fab_house": "JLCPCB"
+    "fab_house": "JLCPCB",
+    "layer_count": "4"
   },
   "naming_conventions": {}
 }

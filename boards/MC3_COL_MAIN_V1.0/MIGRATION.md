@@ -14,8 +14,11 @@ before KiCad migration") — the `.tsx` files are readable as a netlist even wit
       registered in `sym-lib-table` / `fp-lib-table` as `MC3_COL_MAIN` (`${KIPRJMOD}` URIs)
 - [x] Vault rules + fab house registered in `.konnect/project.json`
 - [x] `.gitignore`, `.mcp.json`, `CLAUDE.md` updated
-- [ ] Open the project once in KiCad 10 GUI, confirm it loads without library warnings,
-      save (KiCad fills in the default `.kicad_pro` design settings on first save), commit
+- [x] Opened once in KiCad 10 GUI — loads clean, no library warnings. (Save wrote nothing:
+      KiCad only rewrites on a dirty save, so `.kicad_pro` keeps Konnect's minimal
+      `design_settings: {}` until board setup is first changed — harmless, KiCad uses defaults.)
+- [x] Konnect ↔ KiCad IPC verified (`open_project` → "IPC is available") after adding
+      `ipc_address` to `%APPDATA%\konnect\config.toml` — see `CLAUDE.md` → Environment
 
 ## 1. Library — one symbol + footprint per part (Konnect `library` / `integration` toolsets)
 
