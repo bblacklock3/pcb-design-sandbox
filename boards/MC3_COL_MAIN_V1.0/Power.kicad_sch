@@ -1322,6 +1322,16 @@
 		)
 		(uuid "6cfc852d-eac1-4363-93dd-51248be7323f")
 	)
+	(label "VIN_PROT"
+		(at 87.63 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "752820f9-1e01-4f0e-b7aa-a1e0f443c99a")
+	)
 	(label "Q1_G"
 		(at 64.77 96.52 0)
 		(effects
@@ -1466,12 +1476,6 @@
 			)
 		)
 	)
-  (label "VIN_PROT"
-    (at 87.63000000000001 72.39 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "752820f9-1e01-4f0e-b7aa-a1e0f443c99a")
-  )
 	(symbol
 		(lib_id "Regulator_Linear:AMS1117-3.3")
 		(at 139.7 80.01 0)

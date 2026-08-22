@@ -98,7 +98,7 @@ the drivers' VM and the sensor VIN).
 | `nSLEEP` | one shared net `DRV_nSLEEP` to PC5 | MCU Pinout (unassigned) |
 | `nFAULT` | four separate inputs PC0/PC1/PC2/PC10, 10 k pull-ups | MCU Pinout § Open |
 | `RC_OUT` | per channel to PB6/PB7 (TIM4 CH1/2), PA10/PA11 (TIM1 CH3/4), 10 k pull-ups | MCU Pinout § Open (timer vs I²C read) |
-| A1/A0 address straps | leaf1 GND/GND, leaf2 GND/+3V3, leaf3 +3V3/GND, leaf4 +3V3/+3V3 | Motor Channel / COTS-0028 § Open |
+| A1/A0 address straps (SLVSH04 Table 8-28) | leaf1 0/0 → 0x60, leaf2 0/1 → 0x64, leaf3 1/0 → 0x6C, leaf4 1/1 → 0x70, yaw Z/0 → 0x66 (write addr; read = +1). High straps through 2.2 k (R40–R43) per TI; low straps tied to GND; Hi-Z open | Motor Channel / COTS-0028 § Open — also the firmware address table |
 | VREF | tied to +3V3 (TI typical application) | Motor Channel |
 | R_IPROPI | 8.45 k (SLVSH04 Table 9-1 example) | needs a CALC: CS_GAIN_SEL=000b range vs ADC full scale |
 | Board thickness | 1.6 mm (JLC standard; 1.4 not offered) | Layout Constraints |

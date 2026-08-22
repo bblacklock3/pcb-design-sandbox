@@ -674,7 +674,7 @@
         "uuid": "7d5f4202-d55e-4c7b-a2df-dd599db38e48"
       }
     ],
-    "used_designators": "#PWR1-17,C1-21,R1-21,J1-10,Y1,Q1,SW1,U1-6",
+    "used_designators": "#PWR1-19,C1-23,R1-24,J1-11,Y1,Q1,SW1,U1-7",
     "variants": []
   },
   "sheets": [
@@ -709,6 +709,10 @@
     [
       "9d20a086-3ce1-4783-a1c3-78685ff35655",
       "leaf4"
+    ],
+    [
+      "8cfd3b4a-99dc-4b05-a7ad-f8199ec40931",
+      "yaw"
     ]
   ],
   "text_variables": {},
