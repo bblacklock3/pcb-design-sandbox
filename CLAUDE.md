@@ -29,11 +29,18 @@ Specifically, for this board:
 
 **Two standing rules:**
 
-1. **Before placing a part, read its COTS record.** Every part on this board has one, and it carries the JLCPCB number, the ordering link and the reason the part is in play. If a part has no record, stop — it needs one before it goes in the schematic.
-2. **Before choosing a controlled value, check for a PARAM record.** Rail voltages, current limits, board outline and connector geometry are controlled values in the vault. Cite them; never invent one here.
+1. **Before placing a part, read its COTS record.** Every *engineering* part on this board has one, and it carries the JLCPCB number, the ordering link and the reason the part is in play. If such a part has no record, stop — it needs one before it goes in the schematic. **Exception (decided 2026-08-22): commodity support parts** — LDO, reverse-polarity FET, crystal, reset switch, FFC connector, bare pads, passives — are listed in the build rung's BOM with LCSC numbers and deliberately carry no COTS record, so the COTS register isn't clogged with support parts. They go in on the strength of the BOM line; the LCSC number and "no record" are noted on the symbol instance.
+2. **Before choosing a controlled value, check for a PARAM record.** Rail voltages, current limits, board outline and connector geometry are controlled values in the vault. Cite them; never invent one here. Where the schematic needs a value the vault hasn't set (a pull-up, a strap, a pin not yet assigned), choose provisionally, mark it `PROVISIONAL` in the symbol's fields / sheet notes, and list it in `boards/<NAME>/MIGRATION.md` → "Decisions owed to the vault" so it gets promoted or overturned there.
 
-These two rules are also registered as Konnect project design rules in
+These rules are also registered as Konnect project design rules in
 `boards/MC3_COL_MAIN_V1.0/.konnect/project.json`, so `list_design_rules` surfaces them.
+
+**Standard symbols exception.** KiCad's own `Device:R`, `Device:C`, `Device:Crystal*`,
+`Device:LED`, `power:*` and `Connector*` symbols may be used from the global libraries —
+KiCad embeds a copy of every symbol into the `.kicad_sch`, so the schematic stays
+self-contained. Everything that is *ours* (ICs, custom connectors, pads) lives in the
+project library. Footprints are always copied into the project `.pretty` (stock ones
+verbatim via `cp`), so the board carries a pinned copy.
 
 **Do not recreate a requirements or decisions layer in this repo.** It existed once (`docs/design/requirements.md`, `docs/design/decisions.md`) and was removed: it was a second system of record with no IDs, no register and no link resolution, and it had already drifted from the vault within three commits. If a file here starts accumulating rationale, that content belongs in a vault record — move it and leave a pointer.
 
