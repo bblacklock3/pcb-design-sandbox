@@ -2563,6 +2563,52 @@
 		)
 	)
 	(sheet
+		(at 223.52 19.05)
+		(size 45.72 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d53768a6-e0ca-46e0-8386-8014881aa541")
+		(property "Sheetname" "CAN"
+			(at 223.52 18.415 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CAN.kicad_sch"
+			(at 223.52 45.085 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 20.32 19.05)
 		(size 50 25)
 		(exclude_from_sim no)
@@ -2724,27 +2770,6 @@
 			)
 		)
 	)
-	(sheet
-    (at 160.02 140.97)
-    (size 45.72 25.4)
-    (fields_autoplaced yes)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0))
-    (uuid "d53768a6-e0ca-46e0-8386-8014881aa541")
-    (property "Sheetname" "CAN"
-      (at 160.02 140.335 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "CAN.kicad_sch"
-      (at 160.02 167.005 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "MC3_COL_MAIN_V1.0"
-        (path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48" (page "10"))
-      )
-    )
-  )
 	(sheet_instances
 		(path "/"
 			(page "1")
