@@ -3,7 +3,7 @@ import type { ChipProps } from "@tscircuit/props"
 const pinLabels = {
   pin1: ["VBAT"],
   pin2: ["PC13"],
-  pin3: ["PC14-OSC32_IN"],
+  pin3: ["PC14_OSC32_IN"],
   pin4: ["PC15_OSC32_OUT"],
   pin5: ["PH0_OSC_IN"],
   pin6: ["PH1_OSC_OUT"],

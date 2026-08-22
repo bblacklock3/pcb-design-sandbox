@@ -43,6 +43,7 @@ When this Skill is active:
 - Use layout props intentionally:
   - PCB: `pcbX`, `pcbY`, `pcbRotation`, `layer`
   - Schematic: `schX`, `schY`, `schRotation`, `schOrientation`
+- **Read `LAYOUT.md` before hand-computing any PCB coordinate.** Placing a part relative to another part or a specific pin (a decoupling cap next to an IC pin, a connector near a board edge) should use `calc()` expressions or `pcbPositionAnchor` — never derive the position by reading a footprint's raw pad coordinates and adding offsets by hand, and never derive it via polar/trig math on a non-rectangular board. For a dense cluster (an IC plus its support passives), prefer `pcbPack` on a wrapping `<group>` over placing each part individually. Hand-computed coordinates have repeatedly produced overlapping/colliding placements that these tools avoid by construction.
 - On large projects (5+ components), use `<schematicsection />` to group components by function (e.g. "Power", "MCU", "IO"). This is one of the most important things for schematic readability. Assign each component a `schSectionName` and manually position all members of a section in close proximity using `schX`/`schY`.
 - When one large chip needs to appear on multiple schematic sheets, declare the `<chip />` once before the sheets, then use one `<schematicbox chipRef=".U1" />` per sheet. Either nest each box inside its `<schematicsheet />`, or keep the elements as siblings and assign the box with `schSheetName`. Pass only that sheet's labels to the box and keep connections addressed to the original chip, such as `U1.VCC`. See the [`<schematicbox />` reference](./elements/schematicbox.md#split-one-chip-across-multiple-schematic-sheets).
 - Use `<trace />` for connectivity; prefer net connections (`net.GND`, `net.VCC`, etc.) for power/ground.
@@ -84,6 +85,7 @@ When this Skill is active:
 - CLI primer: `CLI.md`
 - Syntax primer: `SYNTAX.md`
 - Workflow patterns: `WORKFLOW.md`
+- **Layout — automatic placement, `calc()`, `pcbPositionAnchor`, manual edits: `LAYOUT.md`** — read this before hand-computing any PCB coordinate
 - Pre-export checklist: `CHECKLIST.md`
 - Ready-to-copy templates: `templates/`
 - Helper scripts: `scripts/`

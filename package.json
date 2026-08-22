@@ -2,7 +2,7 @@
   "name": "pcb-design-sandbox",
   "version": "1.0.0",
   "description": "A tscircuit component package",
-  "main": "index.tsx",
+  "main": "index.circuit.tsx",
   "keywords": [
     "tscircuit",
     "circuit",
@@ -15,7 +15,9 @@
     "snapshot": "tsci snapshot",
     "snapshot:update": "tsci snapshot --update",
     "start": "tsci dev",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "export:3d": "tsci export index.circuit.tsx -f glb -o dist/3d/board.glb && node scripts/glb-to-stl.mjs dist/3d/board.glb dist/3d/board_full.stl && node scripts/glb-to-stl.mjs dist/3d/board.glb dist/3d/pcb_only.stl --only \"^Box0$\"",
+    "render:top": "node scripts/render-top-view.mjs"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",

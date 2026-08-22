@@ -27,3 +27,5 @@ yarn-error.log*
 
 # tscircuit cache
 .tscircuit/
+
+.mcp.json

@@ -17,19 +17,26 @@ import { KH_FG0_5_H2_0_16PIN } from "../../imports/KH_FG0_5_H2_0_16PIN"
 // reworkable, 0.3mm back-flip rejected). Only power/ground are wired below; the signal
 // pins are deliberately left unconnected — populating them means picking the sensing
 // branch, which has not happened. Do that in Sensing.md / a SEL record, not here.
-export const Mezzanine = () => (
-  <group name="mezzanine">
-    <KH_FG0_5_H2_0_16PIN
-      name="J_MEZZ"
-      schX={-40}
-      schY={-14}
-      pcbX={-46}
-      pcbY={-18}
-    />
-    <trace from="J_MEZZ.pin1" to="net.V3_3" />
-    <trace from="J_MEZZ.pin2" to="net.GND" />
-    <trace from="J_MEZZ.pin15" to="net.GND" />
-    <trace from="J_MEZZ.pin16" to="net.GND" />
+//
+// LAYOUT: a single connector, so there is nothing to arrange relative to
+// anything else. It carries no board position — placement is decided by
+// whoever instantiates it. The connector's own orientation matters mechanically
+// (the FPC tail has to exit the board sensibly) but that is a placement
+// decision, not an internal one. See .claude/skills/tscircuit/LAYOUT.md.
+export const Mezzanine = ({
+  pos = { x: 0, y: 0 },
+  rot = 0,
+}: {
+  /** Where this block sits on the board. The block itself has no opinion. */
+  pos?: { x: number; y: number };
+  rot?: number;
+} = {}) => (
+  <group name="mezzanine" schAutoLayoutEnabled pcbX={pos.x} pcbY={pos.y} pcbRotation={rot}>
+    <KH_FG0_5_H2_0_16PIN name="J_MEZZ" />
+    <trace name="T_MEZZ_V3_3" from="J_MEZZ.pin1" to="net.V3_3" />
+    <trace name="T_MEZZ_GND1" from="J_MEZZ.pin2" to="net.GND" />
+    <trace name="T_MEZZ_GND2" from="J_MEZZ.pin15" to="net.GND" />
+    <trace name="T_MEZZ_GND3" from="J_MEZZ.pin16" to="net.GND" />
     {/* pin3-pin14: reserved for whatever the sensing decision needs. #tbd */}
   </group>
 )

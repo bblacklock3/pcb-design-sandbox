@@ -64,3 +64,25 @@ Each group file opens with a comment naming the vault records it implements:
 
 - `tsci` runs on Bun. `bun.exe` is at `C:\Users\newte\AppData\Roaming\npm\node_modules\bun\bin` — on PATH, but shells opened before 2026-08-16 may need it added.
 - Parts come from JLCPCB: `tsci search --jlcpcb <query>`, `tsci import --jlcpcb <part#>`.
+- **`tsci export -f step` needs a patch to work.** Stock, it silently drops every
+  component that has an external STEP model — the export "succeeds" and contains only
+  the bare board. Run `node scripts/patch-tsci-step.mjs` after any tscircuit update;
+  the script explains the bug and is idempotent. Verify with
+  `grep -c MAPPED_ITEM out.step` — 0 means broken, one per placed part means good.
+  `-f glb` is unaffected and always worked.
+- **For 3D printing, `npm run export:3d`.** tsci has no STL/3MF board export — `-f
+  component-box-3mf` is a parts-organiser bin generator, not a model of the board — so
+  the pipeline goes GLB then `scripts/glb-to-stl.mjs`, which handles the Y-up to Z-up
+  rotation and writes binary STL in mm. Outputs land in `dist/3d/` (gitignored):
+  `board_full.stl` (board + parts, 64×64×3.35mm) and `pcb_only.stl` (bare board,
+  64×64×1.40mm, watertight apart from 6 boundary edges). Pass `--only` / `--exclude`
+  to filter by component name, `--list` to see them, `--separate <dir>` for one file
+  per part.
+- **Orthographic top view: `npm run render:top`** → `dist/3d/top-view.svg`. Copper,
+  pads, vias and silkscreen come from `circuit.json`; component bodies are the real
+  part geometry projected out of the GLB, drawn as a dark silhouette with a lighter
+  top face. `--theme grey|black`, `--no-silkscreen`, `--no-components`, `--px <n>`.
+  **The GLB axis mapping is `pcbX = -x`, `pcbY = z`, `height = y`** — not the obvious
+  `(x, -z)`, which rotates every body 180° about the board centre. That error is
+  nearly invisible on a roughly symmetric board (it just swaps parts across the
+  middle), so verify against `pcb_component.center` rather than by eye.

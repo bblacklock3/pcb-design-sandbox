@@ -29,9 +29,13 @@ Record: COL-COTS-NNNN · Datasheet: Refs/Datasheets/<name>.md
 
 ## Wanted
 
-Both current parts are backed only by vendor product pages and JLC parametrics — neither
-datasheet has been read, so neither note can be written yet. This blocks an entry gate on
-the `Main-Board-01` build rung.
+The two driver/sense parts are backed only by vendor product pages and JLC parametrics —
+neither datasheet has been read, so neither note can be written yet. This blocks an entry
+gate on the `Main-Board-01` build rung.
+
+`STM32F411.md` exists but is also datasheet-light: its decoupling scheme is distilled
+from ST published power-supply guidance recorded in COL-COTS-0024, not from a read of
+the datasheet itself.
 
 - [ ] `DRV8212.md` — COL-COTS-0021. Needs: bypass placement, thermal pad handling, PH/EN
       pin behavior at startup, current-loop layout
