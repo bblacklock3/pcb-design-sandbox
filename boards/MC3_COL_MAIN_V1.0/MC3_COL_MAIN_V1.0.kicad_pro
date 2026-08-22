@@ -771,12 +771,54 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Note",
+          "name": "Note",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DNP",
+          "name": "DNP",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "COTS",
+          "name": "COTS",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -821,7 +863,7 @@
         "uuid": "7d5f4202-d55e-4c7b-a2df-dd599db38e48"
       }
     ],
-    "used_designators": "#PWR1-22,C1-30,R1-32,J1-12,Y1,Q1,SW1,U1-8,D1-4,F1,FB1-3,TP1-7,JP1",
+    "used_designators": "#PWR1-22,C1-31,C33-36,R1-32,J1-12,Y1,Q1,SW1,U1-8,D1-4,F1,FB1-3,TP1-7,JP1",
     "variants": []
   },
   "sheets": [

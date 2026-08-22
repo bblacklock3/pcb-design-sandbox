@@ -2154,7 +2154,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b0c2d912-a4c6-476e-8dd3-ef9ff4feba8a")
-		(property "Reference" "C?"
+		(property "Reference" "C31"
 			(at 90.805 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2250,23 +2250,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "C?")
+					(reference "C33")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "C?")
+					(reference "C36")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "C?")
+					(reference "C35")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "C?")
+					(reference "C31")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "C?")
+					(reference "C34")
 					(unit 1)
 				)
 			)
