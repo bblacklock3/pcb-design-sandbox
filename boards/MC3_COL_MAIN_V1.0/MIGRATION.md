@@ -57,18 +57,56 @@ Konnect project rule say a part with no record doesn't go in; the vault's own en
 records get written (commodity-part records) or the rule is relaxed for support parts —
 user's call.
 
-## 2. Schematic (Konnect `sch_*` toolsets) — hierarchical, one sheet per legacy group file
+## 2. Schematic (Konnect `sch_*` toolsets) — built 2026-08-22 from the vault pages, not the tsx
 
-- [ ] Root sheet: title block, sheet symbols, power flags
-- [ ] `MCU` sheet ← `MCU.tsx` (STM32F411 + decoupling per `docs/design/parts/STM32F411.md`,
-      crystal, reset switch, BOOT0, SWD header; pin assignment by axis per `axes.ts`)
-- [ ] `Power` sheet ← `Power.tsx` (VM in → reverse-polarity FET → AMS1117 → 3V3; bulk caps)
-- [ ] `MotorChannel` sheet ← `MotorChannel.tsx`, instantiated ×4 (leaf1–leaf4):
-      DRV8212 + low-side shunt + INA240; nets per axis
-- [ ] `Connectors` sheet ← `Connectors.tsx` (motor pads ×4, power pads, encoder FFC ×4)
-- [ ] ERC clean (`run_erc`); net names match the legacy names (`VM`, `GND`, `3V3`, per-axis
-      `PH_n`/`EN_n`/`ISENSE_n`/encoder lines) so `docs/design/parts/` notes still read true
-- [ ] Snapshot PDF → vault build rung `Assets/`
+Hierarchy: root `MC3_COL_MAIN_V1.0.kicad_sch` → `Power`, `MCU`, `Connectors`, and
+`MotorChannel` instantiated ×4 as `leaf1`–`leaf4` (one file, KiCad multi-instance sheet;
+per-instance signals through sheet pins, shared rails/bus through global labels).
+
+- [x] `Power` — supply pads J3 → `VIN_PROT` → Q1 AO4407C (drain in, source out, gate pulled
+      down by R20 100k) → `VM` → U3 AMS1117-3.3 (C21 10 µF in, C22 22 µF out) → `+3V3`.
+      PWR_FLAGs on VIN_PROT, VM, GND.
+- [x] `MCU` — U2 STM32F411RET6, decoupling per vault (4×100n VDD, 100n+1µ VDDA, 100n VBAT,
+      4.7µ VCAP, 4.7µ bulk), Y1 8 MHz + 2×18 pF, R10 NRST pull-up + SW1, R11 BOOT0 pull-down,
+      J2 SWD (DNP). Pin map exactly per vault *MCU Pinout*; unused + yaw-reserved pins NC.
+- [x] `MotorChannel` — U1 DRV8214RTER, C1 1 µF VM, C2 100 nF VCC, R1 R_IPROPI, R2/R3 10 k
+      pull-ups (nFAULT, RC_OUT), J1 motor pads. VREF = +3V3. Hierarchical pins EN, PH, A1, A0
+      (in) and IPROPI, RC_OUT, nFAULT (out).
+- [x] `Connectors` — J4–J7 AYF530435 FFCs (VIN=VM, GND, SIG=`ENC_leafN`, spare NC), R30–R33
+      10 k SIG pull-ups to +3V3.
+- [x] Root — sheet pins → `EN_leafN`, `PH_leafN`, `IPROPI_leafN`, `RC_OUT_leafN`,
+      `nFAULT_leafN` global labels; A1/A0 straps as `GND`/`+3V3` global labels per instance.
+- [x] ERC (kicad-cli, all severities): **0 errors**; 8 `same_local_global_label` warnings
+      (a local label and a global label of the same name on one sheet — deliberate, the
+      netlist confirms they merge). Netlist checked: GND 37 nodes, +3V3 29, VM 11; the only
+      unconnected nets are the intended NCs.
+- [ ] **GUI: Annotate.** The four channel instances share reference designators (U1, C1 …
+      in every instance) — KiCad needs per-instance refs and there is no CLI for it. In
+      eeschema: Tools → Annotate Schematic → scope *Entire schematic*, *Reset existing
+      annotations*, OK; Ctrl+S; **close eeschema** before Konnect edits the schematic again.
+- [ ] Snapshot PDF → vault build rung `Assets/` (after annotation)
+
+**Net naming vs the vault:** vault `V3_3` = KiCad `+3V3` (standard power symbol); vault
+`VIN_RAW` = KiCad `VM` (same copper: the rail downstream of the reverse-polarity FET feeds
+the drivers' VM and the sensor VIN).
+
+### Decisions owed to the vault (all marked PROVISIONAL on the instances)
+
+| Decision | Chosen here | Vault home |
+|---|---|---|
+| I²C bus pins | I2C1 on PB8 (SCL) / PB9 (SDA); pull-ups 4.7 k (not yet placed — see below) | MCU Pinout § Open (bus pins, pull-up sizing, topology) |
+| `nSLEEP` | one shared net `DRV_nSLEEP` to PC5 | MCU Pinout (unassigned) |
+| `nFAULT` | four separate inputs PC0/PC1/PC2/PC10, 10 k pull-ups | MCU Pinout § Open |
+| `RC_OUT` | per channel to PB6/PB7 (TIM4 CH1/2), PA10/PA11 (TIM1 CH3/4), 10 k pull-ups | MCU Pinout § Open (timer vs I²C read) |
+| A1/A0 address straps | leaf1 GND/GND, leaf2 GND/+3V3, leaf3 +3V3/GND, leaf4 +3V3/+3V3 | Motor Channel / COTS-0028 § Open |
+| VREF | tied to +3V3 (TI typical application) | Motor Channel |
+| R_IPROPI | 8.45 k (SLVSH04 Table 9-1 example) | needs a CALC: CS_GAIN_SEL=000b range vs ADC full scale |
+| Board thickness | 1.6 mm (JLC standard; 1.4 not offered) | Layout Constraints |
+| Outline | CAD export ⌀66 / 25×25 R2 | Layout Constraints / Main-Board-01 § Board geometry |
+| Sensor VIN rail | = VM (5 V prototype assumption) | Encoder Interface § Supply / entry gate |
+
+**Known gap:** I²C pull-ups (one set, 4.7 k to +3V3) are decided but **not yet placed** in the
+schematic — add on the MCU sheet before the PCB update.
 
 ## 3. PCB (Konnect `pcb_*` toolsets; KiCad open, IPC on)
 

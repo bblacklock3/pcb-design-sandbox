@@ -2735,6 +2735,29 @@
 		)
 		(uuid "2631b52e-45d2-430e-a76a-cd6a3d8f898b")
 	)
+	(wire
+		(pts
+			(xy 60.96 166.37)
+			(xy 60.96 168.91)
+		)
+		(uuid "ec4c2a65-c40b-4112-804d-a27452dd221c")
+	)
+	(wire
+		(pts
+			(xy 71.12 166.37)
+			(xy 71.12 168.91)
+		)
+		(uuid "f0b75a1d-da03-456a-9683-fa87d0f366c9")
+	)
+	(text "MCU - STM32F411RET6 LQFP64. Implements: COL-COTS-0024. Pin map: vault Main-Board-01 MCU Pinout (EN on TIM3, IPROPI on ADC1 E/S edges, ENC on TIM2/TIM1 capture). Layout: docs/design/parts/STM32F411.md. Yaw reserved pins PA9/PB12/PC4 left unconnected per vault. PROVISIONAL (owed to vault): I2C1 on PB8/PB9, DRV_nSLEEP on PC5, nFAULT on PC0-2/PC10, RC_OUT on PB6/PB7/PA10/PA11."
+		(at 30 25 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "a8d7039f-35a9-4c44-8c5c-3afa369bd0ad")
+	)
 	(label "+3V3"
 		(at 144.78 52.07 0)
 		(effects
@@ -3245,6 +3268,26 @@
 		)
 		(uuid "dd5c9ee6-6e3f-45f3-97d1-1f4d4b73bf1f")
 	)
+	(label "+3V3"
+		(at 60.96 158.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c5251d14-eefc-416e-9f8f-220250a35779")
+	)
+	(label "+3V3"
+		(at 71.12 158.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "077cf211-464c-47e2-9bdf-5c5166fd61c2")
+	)
 	(global_label "EN_leaf1"
 		(shape input)
 		(at 129.54 105.41 180)
@@ -3542,11 +3585,28 @@
 		)
 		(uuid "fd0055aa-7bcf-4849-864e-f60b74dc1ef9")
 	)
-  (text "MCU - STM32F411RET6 LQFP64. Implements: COL-COTS-0024. Pin map: vault Main-Board-01 MCU Pinout (EN on TIM3, IPROPI on ADC1 E/S edges, ENC on TIM2/TIM1 capture). Layout: docs/design/parts/STM32F411.md. Yaw reserved pins PA9/PB12/PC4 left unconnected per vault. PROVISIONAL (owed to vault): I2C1 on PB8/PB9, DRV_nSLEEP on PC5, nFAULT on PC0-2/PC10, RC_OUT on PB6/PB7/PA10/PA11."
-    (at 30 25 0)
-    (effects (font (size 1.5 1.5)))
-    (uuid "a8d7039f-35a9-4c44-8c5c-3afa369bd0ad")
-  )
+	(global_label "I2C1_SCL"
+		(shape input)
+		(at 60.96 168.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d31cdae3-d604-4123-800c-51af2b1b60dd")
+	)
+	(global_label "I2C1_SDA"
+		(shape input)
+		(at 71.12 168.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5f03dbe7-4870-46a3-a902-6a5c6e770c1d")
+	)
 	(symbol
 		(lib_id "MC3_COL_MAIN:STM32F411RET6")
 		(at 149.86 100.33 0)
@@ -3589,21 +3649,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MCU"
-				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
-					(reference "U2")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "U2")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "COTS" "COL-COTS-0024"
 			(at 149.86 100.33 0)
 			(hide yes)
@@ -3630,7 +3675,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MCU"
+				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 49.53 39.37 0)
@@ -3675,6 +3735,15 @@
 				)
 			)
 		)
+		(property "Note" "VDD1 bypass, <=3 mm (vault Layout Constraints decoupling)"
+			(at 49.53 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -3689,16 +3758,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VDD1 bypass, <=3 mm (vault Layout Constraints decoupling)"
-			(at 49.53 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 59.69 39.37 0)
@@ -3743,6 +3803,15 @@
 				)
 			)
 		)
+		(property "Note" "VDD2 bypass, <=3 mm"
+			(at 59.69 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -3757,16 +3826,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VDD2 bypass, <=3 mm"
-			(at 59.69 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 69.85 39.37 0)
@@ -3811,6 +3871,15 @@
 				)
 			)
 		)
+		(property "Note" "VDD3 bypass, <=3 mm"
+			(at 69.85 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -3825,16 +3894,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VDD3 bypass, <=3 mm"
-			(at 69.85 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 80.01 39.37 0)
@@ -3879,6 +3939,15 @@
 				)
 			)
 		)
+		(property "Note" "VDD4 bypass, <=3 mm"
+			(at 80.01 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -3893,16 +3962,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VDD4 bypass, <=3 mm"
-			(at 80.01 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 90.17 39.37 0)
@@ -3947,6 +4007,15 @@
 				)
 			)
 		)
+		(property "Note" "VDDA HF bypass 100nF, <=3 mm"
+			(at 90.17 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -3961,16 +4030,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VDDA HF bypass 100nF, <=3 mm"
-			(at 90.17 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 100.33 39.37 0)
@@ -4015,6 +4075,15 @@
 				)
 			)
 		)
+		(property "Note" "VDDA 1uF, <=6 mm"
+			(at 100.33 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4029,16 +4098,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VDDA 1uF, <=6 mm"
-			(at 100.33 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 110.49 39.37 0)
@@ -4083,6 +4143,15 @@
 				)
 			)
 		)
+		(property "Note" "VBAT 100nF, <=4 mm"
+			(at 110.49 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4097,16 +4166,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VBAT 100nF, <=4 mm"
-			(at 110.49 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 119.38 39.37 0)
@@ -4151,6 +4211,15 @@
 				)
 			)
 		)
+		(property "Note" "3V3 bulk 4.7uF near MCU"
+			(at 119.38 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4165,16 +4234,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "3V3 bulk 4.7uF near MCU"
-			(at 119.38 39.37 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 110.49 129.54 0)
@@ -4219,6 +4279,15 @@
 				)
 			)
 		)
+		(property "Note" "VCAP_1 4.7uF ESR<1 ohm X5R/X7R, <=7 mm - core LDO compensation, NOT decoupling, not optional (COL-COTS-0024, DS10314 Table 16)"
+			(at 110.49 129.54 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4233,16 +4302,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "VCAP_1 4.7uF ESR<1 ohm X5R/X7R, <=7 mm - core LDO compensation, NOT decoupling, not optional (COL-COTS-0024, DS10314 Table 16)"
-			(at 110.49 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 100.33 59.69 0)
@@ -4285,6 +4345,15 @@
 				)
 			)
 		)
+		(property "Note" "NRST pull-up 10k (vault MCU Pinout)"
+			(at 100.33 59.69 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4299,16 +4368,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "NRST pull-up 10k (vault MCU Pinout)"
-			(at 100.33 59.69 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 85.09 68.58 0)
@@ -4352,21 +4412,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MCU"
-				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C115357"
 			(at 85.09 68.58 0)
 			(hide yes)
@@ -4393,7 +4438,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MCU"
+				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 100.33 80.01 0)
@@ -4436,6 +4496,15 @@
 				)
 			)
 		)
+		(property "Note" "BOOT0 pull-down 10k (vault MCU Pinout)"
+			(at 100.33 80.01 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4450,16 +4519,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "BOOT0 pull-down 10k (vault MCU Pinout)"
-			(at 100.33 80.01 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:Crystal_GND24")
 		(at 90.17 100.33 0)
@@ -4504,21 +4564,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MCU"
-				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
-					(reference "Y1")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "Y1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C2682774"
 			(at 90.17 100.33 0)
 			(hide yes)
@@ -4545,7 +4590,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MCU"
+				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "Y1")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
+					(reference "Y1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 74.93 110.49 0)
@@ -4590,6 +4650,15 @@
 				)
 			)
 		)
+		(property "Note" "HSE load cap 18pF - for X32258MSB4SI specifically"
+			(at 74.93 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4604,16 +4673,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "HSE load cap 18pF - for X32258MSB4SI specifically"
-			(at 74.93 110.49 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 105.41 110.49 0)
@@ -4658,6 +4718,15 @@
 				)
 			)
 		)
+		(property "Note" "HSE load cap 18pF"
+			(at 105.41 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "MCU"
 				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
@@ -4672,16 +4741,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "HSE load cap 18pF"
-			(at 105.41 110.49 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 49.53 139.7 0)
@@ -4724,21 +4784,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MCU"
-				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Note" "SWD: 1 +3V3, 2 SWDIO, 3 SWCLK, 4 GND. Bare plated through-holes, DO NOT PLACE (vault BOM) - solder a header or ST-Link lead. NRST reachable at SW1 pad"
 			(at 49.53 139.7 0)
 			(hide yes)
@@ -4756,7 +4801,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MCU"
+				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "power:+3V3")
 		(at 49.53 35.56 0)
@@ -4861,4 +4921,124 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 162.56 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "01c7b338-2e03-444f-9d33-1573648b4ce9")
+		(property "Reference" "R12"
+			(at 62.992 162.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 60.96 162.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 60.96 162.56 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 162.56 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MCU"
+				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "PROVISIONAL I2C1 SCL pull-up 4.7k - one set for the bus to five drivers; sizing vs bus capacitance is a vault open item"
+			(at 60.96 162.56 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Device:R")
+		(at 71.12 162.56 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4eafbc0b-db2e-46db-8223-c24c9b22c8d0")
+		(property "Reference" "R13"
+			(at 73.152 162.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 71.12 162.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 71.12 162.56 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 162.56 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MCU"
+				(path "47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "PROVISIONAL I2C1 SDA pull-up 4.7k"
+			(at 71.12 162.56 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 )

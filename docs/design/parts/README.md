@@ -27,17 +27,19 @@ Record: COL-COTS-NNNN · Datasheet: Refs/Datasheets/<name>.md
 ## Gotchas that affect layout
 ```
 
+## Status
+
+- `DRV8214.md` — COL-COTS-0028, written 2026-08-22 from SLVSH04 §11 and the vault's
+  Layout Constraints. (DRV8212 / INA240 / shunt notes are no longer wanted: COL-COTS-0021 is
+  superseded and 0022/0023 rejected — the DRV8214 replaces all three.)
+- `STM32F411.md` — COL-COTS-0024. Still carries tscircuit-era references (`MCU.tsx`,
+  autorouter behaviour); the pin-assignment and decoupling constraints remain valid and the
+  pin map now lives in the vault's *Main-Board-01 MCU Pinout*. Rewrite against the KiCad
+  schematic once placement starts.
+
 ## Wanted
 
-The two driver/sense parts are backed only by vendor product pages and JLC parametrics —
-neither datasheet has been read, so neither note can be written yet. This blocks an entry
-gate on the `Main-Board-01` build rung.
-
-`STM32F411.md` exists but is also datasheet-light: its decoupling scheme is distilled
-from ST published power-supply guidance recorded in COL-COTS-0024, not from a read of
-the datasheet itself.
-
-- [ ] `DRV8212.md` — COL-COTS-0021. Needs: bypass placement, thermal pad handling, PH/EN
-      pin behavior at startup, current-loop layout
-- [ ] `INA240.md` — COL-COTS-0022. Needs: Kelvin sense geometry, input filter placement,
-      common-mode limits at this rail, reference pin handling
+- [ ] `AYF530435.md` — encoder FFC: land pattern provenance (JLC footprint vs Panasonic
+      drawing, mechanical pads), orientation on the rim, flex exit direction
+- [ ] `AMS1117.md` — output-cap ESR/stability question (vault open item) if it changes
+      the cap choice
