@@ -217,14 +217,56 @@ PA11/PA12, RC_OUT_leaf4 on PB14, SWO PB3, PA5 LED, PC12/PB13 yaw).
       (one loom bundle on the east rim); power chain F1→D1→Q1→U1 inboard of the supply pads;
       CAN transceiver + termination + ESD inboard of the CAN pads; SWD header, LEDs, test points
       in the free NW; decoupling to the vault budgets. Courtyard-clean.
-- [ ] **GUI (or next KiCad quit):** Board Setup → Constraints → *Minimum through hole* 0.3 →
-      **0.2 mm** (the WQFN footprint's thermal vias are 0.2 mm; JLCPCB 4-layer allows 0.2).
-- [ ] **Fine rotations** (KiCad IPC refuses non-90° rotation of footprints with rounded-rect
-      graphics): motor pads J7–J11, FFCs J3–J6, supply pads J1, CAN pads J12, F1 — currently at
-      the nearest 90°; set tangential angles (θ+90 / θ−90) in the GUI or via Konnect's file
-      path with KiCad closed. Also confirm each FFC's flex-exit direction faces the rim.
-- [ ] **Silkscreen cleanup:** the Konnect-created footprints (SolderPads_2x/3x, AYF530435)
-      carry a literal `REF**` silk text and the footprint name on F.Fab — remove before fab.
+- [x] Board Setup → Constraints → *Minimum through hole* **0.2 mm** (user, 2026-08-22) — the
+      WQFN thermal vias are 0.2 mm; JLCPCB 4-layer allows it. The 20 hole-size errors are gone.
+- [x] **Placement pass 2 — uniform channel pattern (2026-08-22, user decision).** Rotating each
+      channel to face its motor was dropped: every block now sits at *one* orientation, the
+      leaf3 block the user arranged by hand being the pattern. Fine (non-90°) rotations are
+      therefore no longer wanted anywhere except possibly the rim connectors.
+      Pattern, relative to the driver anchor (U at rot −90):
+      | part | Δx | Δy | rot |
+      |---|---|---|---|
+      | DRV8214 U | 0 | 0 | −90 |
+      | 1 µF VM (C) | −3.00 | +1.00 | −90 |
+      | A1 strap 2.2 k (R) | −3.00 | −1.50 | 90 |
+      | A0 strap 2.2 k (R) | −4.34 | −1.50 | 90 |
+      | 10 k nFAULT (R) | −2.50 | −3.50 | 90 |
+      | 10 k RC_OUT (R) | −1.16 | −3.50 | 90 |
+      | 100 nF +3V3 (C) | +0.17 | −3.50 | 90 |
+      | 6.8 k IPROPI (R) | +1.50 | −3.50 | 90 |
+      | motor pads (J) | −0.20 | +3.50 | 0 |
+      Anchors: leaf1 U3 (93.9, 82), yaw U7 (101.9, 82), leaf2 U4 (109.9, 82) across the north
+      band; leaf3 U5 (93.9, 120.5) *(reference, untouched)* and leaf4 U6 (109.9, 120.5) south.
+      TP6/TP7 moved off the new motor pads. DRC: no clearance or courtyard violations.
+- [ ] **Consequence of the uniform orientation, to review:** on the three north channels the
+      motor solder pads now face the aperture, not the rim, and the encoder FFCs J3/J4 no longer
+      sit next to their own channel (J3 = ENC_leaf1 is on the east rim, J4 = ENC_leaf2 north).
+      Re-home J3–J6 next to their channels once the flex-exit direction is decided — that is the
+      open `docs/design/parts/AYF530435.md` note.
+- [ ] **Parked off-board (user, WIP):** the whole power block (J1, F1, D1, Q1, U1, C1–C4, R5,
+      TP1, TP2) plus J5 (ENC_leaf3) and J6 (ENC_leaf4) sit east/south of the outline and must
+      come back inside before Gate 1.
+- [ ] **Silkscreen cleanup (GUI — Konnect has no tool for footprint text).** Three parts, in
+      this order, because step 2 *resets* hand-placed designator positions:
+      1. **Library fix.** The four Konnect-authored footprints (`SolderPads_2x_2.2x1.4mm_P2.6mm`,
+         `SolderPads_2x_3.5x2.0mm_P4.2mm`, `SolderPads_3x_2.2x1.4mm_P2.6mm`,
+         `Panasonic_AYF530435_FFC-4P_P0.5mm`) were written in the legacy `fp_text reference` /
+         `fp_text value` form, which KiCad 10 did not recognise as the Reference/Value fields:
+         each instance carries a literal **`REF**` on F.SilkS** (11 of them — these *would print*)
+         and the full **footprint name at 1 mm on F.Fab**. Delete both in the Footprint Editor,
+         optionally adding `${REFERENCE}` at 0.5 mm on F.Fab as the stock footprints do.
+      2. **PCB → Tools → Update Footprints from Library…** for library `MC3_COL_MAIN`. This also
+         clears the 101 `lib_footprint_mismatch` DRC warnings (every board copy differs from its
+         library copy since KiCad 10 normalised them on load).
+      3. **Then** re-do the channel silk. leaf3's hand-arranged designator offsets (footprint-local
+         mm) are the pattern: top row R/C at `(2.4, 0)` instead of the default `(0, −1.17)`;
+         U at `(0, −2.83)`; 1 µF VM cap at `(0.225, 1.5)`; strap R at `(0, −1.5)`; motor pads J at
+         `(0, 2)`. Fastest route now that all five blocks are geometrically identical:
+         **Tools → Multichannel → Repeat Layout** with leaf3 as the reference — it copies
+         silkscreen text positions (and later the routing) into the other four.
+      Also set **Keep upright** on the reference text (Tools → Set Text and Graphics Properties…)
+      so no designator can end up mirrored or upside-down. 6 `silk_edge_clearance` warnings
+      (silk clipped by the aperture/board edge) to clear in the same pass.
 - [ ] Mounting holes — still awaiting positions from the assembly CAD.
 - [ ] Gate 1 of `docs/design/review-checklist.md` passes before any routing
 - [ ] Zones: GND on In1, VM on In2, GND on bottom — **solid planes**, router kept off
