@@ -387,3 +387,50 @@ above is the block to keep consistent; check each channel against it before Gate
 The two things that were going to drive an automated re-placement still stand as review items:
 motor pads want to land near **r = 25**, and each channel's pads want to face the rim rather than
 the aperture.
+
+
+## 8. Motor-noise isolation on the 3.3 V rail — 2026-08-22 (user decision)
+
+Two parts added to the schematic. ERC after: **0 errors**, the same 8 intentional
+`same_local_global` warnings as before.
+
+### 8.1 Local VM bulk, one per channel — `MotorChannel.kicad_sch`
+
+`C31` (pre-annotation ref), **10 µF 0805 25 V X5R, LCSC C15850**, VM → GND, placed beside the
+existing 1 µF. One symbol in the shared sheet, so it lands **five times** on the board.
+
+Why: SLVSH04 asks for 0.1 µF **plus bulk** at VM. The board's bulk (C3/C4, 2 × 22 µF) lives in the
+power block, so every switching edge from five H-bridges was being supplied through the length of
+the VM trunk. 25 V part on a 5 V rail keeps most of its capacitance under DC bias.
+
+### 8.2 LDO input filter — `Power.kicad_sch`
+
+New net **`VM_LDO`**: `VM → FB4 → VM_LDO → U1 pin 3 (VI)`, with `C32` 10 µF from VM_LDO to GND and
+a `PWR_FLAG` on the new net (ERC needs one — U1 pin 3 is a power *input* and VM_LDO has no source).
+C1/C3/C4 stay on VM ahead of the bead; C2 stays on the output.
+
+- **FB4 = `C14709`, Murata BLM18PG121SN1D, 120 Ω @ 100 MHz, 2 A, 50 mΩ, 0603, JLC Basic.**
+- **Do not use C1002 here.** The 600 Ω GZ1608D601TF used on VDDA and VCAN5 is rated **200 mA /
+  450 mΩ**, and the LDO input carries the entire +3V3 load (~150–250 mA). It would have been
+  marginal on current and eaten ~110 mV of the AMS1117's 1.7 V dropout headroom. FB4 costs ~12 mV.
+
+Why: the AMS1117's PSRR is ~60 dB at low frequency but collapses to roughly 30 dB by 100 kHz, so
+motor PWM ripple on VM was walking through the regulator onto the +3V3 plane that feeds the MCU,
+all five drivers' logic, the pull-ups and the CAN transceiver.
+
+**Open — the filter has a resonance.** FB4 is ≈0.19 µH below its ferrite region; with C32 at 10 µF
+that is **f₀ ≈ 115 kHz, Q ≈ 2.8 (~9 dB of peaking)**. If the motor PWM or its low harmonics land
+there the filter *amplifies* rather than attenuates. To close it: get the PWM frequency from the
+firmware page, then either confirm it is far from 115 kHz, or damp the LC — swap C32 for a
+tantalum (ESR does the damping), or add a series-R damping leg in parallel with C32. **Do not
+just shrink C32** — lowering C raises Q. #tbd
+
+### What this leaves owed
+
+- [ ] **GUI: re-annotate** — eeschema Tools → Annotate, **"Keep existing annotations"** so only the
+      six new symbols get refs and nothing already placed renumbers.
+- [ ] **`update_pcb_from_schematic`** (needs KiCad open, IPC), then place the 6 new footprints:
+      five 0805 caps (one per channel, beside each 1 µF) and FB4 + C32 at the LDO input.
+- [ ] Vault: both parts are **PROVISIONAL** and owed as decisions — the per-channel bulk value has
+      no CALC behind it, and the LDO input filter is a new element of the power chain that
+      *Main-Board-01* does not describe. The resonance question above goes with them.
