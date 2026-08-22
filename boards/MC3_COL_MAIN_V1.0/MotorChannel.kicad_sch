@@ -1106,6 +1106,16 @@
 		)
 		(uuid "6f413762-0bee-417e-b2b9-c769b865d49a")
 	)
+	(text "Review 2026-08-22: R_IPROPI 6.8k -> hardware current trip 1.99 A (was 8.45k -> 1.60 A)."
+		(exclude_from_sim no)
+		(at 40 120 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "82520f38-0d18-48f2-8c81-6e94b6eaf2df")
+	)
 	(text "A1/A0 tri-level address straps are set per instance on the root sheet (GND / +3V3)."
 		(exclude_from_sim no)
 		(at 40 115 0)
@@ -1481,11 +1491,6 @@
 		)
 		(uuid "ee5d61ff-4a1d-4bcb-9964-7b48a5e6ede8")
 	)
-  (text "Review 2026-08-22: R_IPROPI 6.8k -> hardware current trip 1.99 A (was 8.45k -> 1.60 A)."
-    (at 40 120 0)
-    (effects (font (size 1.5 1.5)))
-    (uuid "82520f38-0d18-48f2-8c81-6e94b6eaf2df")
-  )
 	(symbol
 		(lib_id "Device:R")
 		(at 134.62 64.77 0)
@@ -1497,7 +1502,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "00456b5f-8958-46e0-a0d2-e12a12f23b15")
-		(property "Reference" "R15"
+		(property "Reference" "R17"
 			(at 136.652 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1560,6 +1565,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C25744"
+			(at 134.62 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 134.62 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d45f82e4-bb7c-4c85-862c-1a800106b3ee")
 		)
@@ -1569,23 +1596,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "R18")
+					(reference "R20")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "R27")
+					(reference "R29")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "R24")
+					(reference "R26")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "R15")
+					(reference "R17")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "R21")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -1596,25 +1623,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25744"
-			(at 134.62 64.77 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF1002TCE"
-			(at 134.62 64.77 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 144.78 64.77 0)
@@ -1626,7 +1635,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3f0f84aa-38e2-48f0-9e00-48546d986c12")
-		(property "Reference" "R16"
+		(property "Reference" "R18"
 			(at 146.812 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1689,6 +1698,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C25744"
+			(at 144.78 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 144.78 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "fbf1d914-d7ef-4bb6-8ab8-558528c5694d")
 		)
@@ -1698,23 +1729,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "R19")
+					(reference "R21")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "R28")
+					(reference "R30")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "R25")
+					(reference "R27")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "R16")
+					(reference "R18")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "R22")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -1725,25 +1756,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25744"
-			(at 144.78 64.77 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF1002TCE"
-			(at 144.78 64.77 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 124.46 91.44 0)
@@ -1755,7 +1768,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "531d3666-9321-4b56-a547-0368ec5b7cf6")
-		(property "Reference" "R14"
+		(property "Reference" "R16"
 			(at 126.492 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1818,6 +1831,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C93940"
+			(at 124.46 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-076K8L"
+			(at 124.46 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "a88b13da-bdfd-4a90-ae26-b39a232329d6")
 		)
@@ -1827,23 +1862,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "R17")
+					(reference "R19")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "R26")
+					(reference "R28")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "R23")
+					(reference "R25")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "R14")
+					(reference "R16")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "R20")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -1854,25 +1889,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C93940"
-			(at 124.46 91.44 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "RC0402FR-076K8L"
-			(at 124.46 91.44 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 97.79 95.25 0)
@@ -1884,7 +1901,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "803a50a6-2ca8-4a56-a6b0-1302a4f738d9")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR011"
 			(at 97.79 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -1943,23 +1960,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR012")
+					(reference "#PWR013")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR018")
+					(reference "#PWR019")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR016")
+					(reference "#PWR017")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR010")
+					(reference "#PWR011")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR014")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -1982,7 +1999,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "89038d0e-d59d-4d8f-ad21-0c82fd8a9975")
-		(property "Reference" "C14"
+		(property "Reference" "C18"
 			(at 80.645 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2047,6 +2064,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C15849"
+			(at 80.01 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 80.01 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "63b70ff1-7c3b-41ff-af2b-4093a4b3c826")
 		)
@@ -2056,23 +2095,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "C16")
-					(unit 1)
-				)
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "C22")
-					(unit 1)
-				)
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
 					(reference "C20")
 					(unit 1)
 				)
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
+					(reference "C26")
+					(unit 1)
+				)
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
+					(reference "C24")
+					(unit 1)
+				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "C14")
+					(reference "C18")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "C18")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -2083,25 +2122,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C15849"
-			(at 80.01 58.42 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL10A105KB8NNNC"
-			(at 80.01 58.42 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "MC3_COL_MAIN:DRV8214RTER")
 		(at 100.33 80.01 0)
@@ -2402,7 +2423,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eadf3335-4724-41c7-8539-038e8f504909")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR012"
 			(at 102.87 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2461,23 +2482,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR013")
+					(reference "#PWR014")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR019")
+					(reference "#PWR020")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR017")
+					(reference "#PWR018")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR011")
+					(reference "#PWR012")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR015")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -2500,7 +2521,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ecb44ff5-8fca-4651-a2e9-615feab0b7db")
-		(property "Reference" "C15"
+		(property "Reference" "C19"
 			(at 120.015 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2565,6 +2586,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C1525"
+			(at 119.38 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 119.38 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4a89ee22-09e8-48f0-8ab3-4e0c5bc9e17b")
 		)
@@ -2574,23 +2617,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "C17")
-					(unit 1)
-				)
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "C23")
-					(unit 1)
-				)
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
 					(reference "C21")
 					(unit 1)
 				)
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
+					(reference "C27")
+					(unit 1)
+				)
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
+					(reference "C25")
+					(unit 1)
+				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "C15")
+					(reference "C19")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "C19")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -2601,23 +2644,5 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C1525"
-			(at 119.38 58.42 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL05B104KO5NNNC"
-			(at 119.38 58.42 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 )

@@ -1636,6 +1636,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C25879"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "77fd8a84-133f-4a53-977e-c72e9a53cd8a")
 		)
@@ -1650,25 +1672,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25879"
-			(at 182.88 77.47 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 182.88 77.47 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 132.08 76.2 90)
@@ -1743,6 +1747,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C25879"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "566372b7-5e93-4f7f-a87a-5f69fb1f88b5")
 		)
@@ -1757,25 +1783,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25879"
-			(at 132.08 76.2 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 132.08 76.2 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 182.88 74.93 90)
@@ -1850,6 +1858,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C25879"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "7bed4d59-c940-404d-aa28-cfa0abc008dc")
 		)
@@ -1864,25 +1894,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25879"
-			(at 182.88 74.93 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 182.88 74.93 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 81.28 80.01 90)
@@ -1957,6 +1969,28 @@
 				)
 			)
 		)
+		(property "LCSC" "C25879"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "fc3c5a95-edbb-458b-9499-a44e67e5d65c")
 		)
@@ -1971,25 +2005,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25879"
-			(at 81.28 80.01 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 81.28 80.01 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(sheet
 		(at 90.17 69.85)
 		(size 12.7 19.05)
@@ -2708,6 +2724,27 @@
 			)
 		)
 	)
+	(sheet
+    (at 160.02 140.97)
+    (size 45.72 25.4)
+    (fields_autoplaced yes)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0))
+    (uuid "d53768a6-e0ca-46e0-8386-8014881aa541")
+    (property "Sheetname" "CAN"
+      (at 160.02 140.335 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "CAN.kicad_sch"
+      (at 160.02 167.005 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "MC3_COL_MAIN_V1.0"
+        (path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48" (page "10"))
+      )
+    )
+  )
 	(sheet_instances
 		(path "/"
 			(page "1")
