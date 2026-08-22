@@ -139,6 +139,29 @@ TAJA226K010RNJ C11366 (Extended); TVS SMAJ5.0A/TR13 C78401 (Extended); polyfuse 
 C19078716 (2 A hold / 3.5 A trip, Extended, PROVISIONAL sizing). No COTS records for any of
 these (support parts, by decision).
 
+### MCU change + CAN link — 2026-08-22 (user decision)
+
+- **MCU: STM32F411RET6 → STM32F412RET6** (LCSC C89374). Reason: the F411 has no CAN controller;
+  the F412 is its pin-identical Access-line sibling (verified pin-for-pin against KiCad's ST
+  symbols — same VDD/VSS/VCAP_1/NRST/BOOT0/HSE pins), adds bxCAN ×2 and 256 KB RAM (the vault's
+  "RAM is the binding constraint for logging" note). Same AF/timer/ADC map → the vault MCU Pinout
+  page holds; only additions: **CAN1_RX PA11, CAN1_TX PA12** (AF9), `RC_OUT_leaf4` moved
+  PA11 → PB14 (EXTI). Alternatives weighed (JLC stock): F446RE (0 live), F405RG (pin 47 becomes
+  VCAP_2), F413RG, F302/303/L431/G431 (pin map redo), F103 (downgrade).
+- **Control link = CAN** (classic, 500 kbit/s): new `CAN` sheet — TJA1051T/3 transceiver
+  (5 V from VM via ferrite, 3.3 V I/O), split termination 62 Ω + 62 Ω + 4.7 nF behind a bridged
+  solder jumper (board = bus end on the bench), PESD1CAN ESD, three bare pads CANH/CANL/GND next
+  to the supply pads = the provisional 4-pin machine interface (COTS-0026) with its two spares
+  now defined. Bench adapter: PEAK PCAN-USB (IPEH-002021/-002022 isolated) or CANable 2.0;
+  DE-9 7/2/3 = CANH/CANL/GND; adapter termination on. Layout note: `docs/design/parts/CAN.md`.
+- **USB-C**: no (see above).
+
+**Vault records owed for this:** new COTS for the STM32F412RET6 superseding COL-COTS-0024
+(and COL-SEARCH-0008 addendum: CAN requirement → F412); COTS for the TJA1051T/3; the
+control-link decision in Control Electronics (§ machine interface) and an update to
+COL-COTS-0026 / Connectors page (CANH/CANL on the machine interface); MCU Pinout page (CAN1 on
+PA11/PA12, RC_OUT_leaf4 on PB14, SWO PB3, PA5 LED, PC12/PB13 yaw).
+
 ### GUI items outstanding (user)
 - Re-annotate (new parts carry R60…/C60…/TP60… placeholders): Tools → Annotate, entire schematic,
   reset; save; close eeschema.

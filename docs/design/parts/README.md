@@ -32,8 +32,10 @@ Record: COL-COTS-NNNN · Datasheet: Refs/Datasheets/<name>.md
 - `DRV8214.md` — COL-COTS-0028, written 2026-08-22 from SLVSH04 §11 and the vault's
   Layout Constraints. (DRV8212 / INA240 / shunt notes are no longer wanted: COL-COTS-0021 is
   superseded and 0022/0023 rejected — the DRV8214 replaces all three.)
-- `STM32F411.md` — COL-COTS-0024. Rewritten 2026-08-22 for the KiCad schematic; the pin map
-  of record is the vault's *Main-Board-01 MCU Pinout*.
+- `STM32F412.md` — MCU (was `STM32F411.md`; the F412RET6 replaced the F411RET6 on 2026-08-22
+  for CAN — pin-identical, COTS record owed). The pin map of record is the vault's
+  *Main-Board-01 MCU Pinout*.
+- `CAN.md` — the CAN link (TJA1051T/3, termination, ESD, pads), written 2026-08-22.
 
 ## Wanted
 
