@@ -438,7 +438,7 @@
 	(footprint "MC3_COL_MAIN:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "0ca307f4-c1e9-48c1-98df-8adc0c47ad9d")
-		(at 118.9 82.4 90)
+		(at 118.9 82.1 90)
 		(property "Reference" "C20"
 			(at 0 -1.43 90)
 			(unlocked yes)
@@ -9399,7 +9399,7 @@
 	(footprint "MC3_COL_MAIN:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "671cc1bd-1130-4335-8e7b-15df520a119a")
-		(at 118.9 84.6 90)
+		(at 118.9 84.8 90)
 		(property "Reference" "C21"
 			(at 0 -1.16 90)
 			(unlocked yes)
