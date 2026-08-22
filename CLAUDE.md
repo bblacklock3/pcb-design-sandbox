@@ -94,10 +94,14 @@ Four consequences:
    saving from eeschema afterwards overwrites it. Close the sheet or reload it (File → Revert)
    after Konnect writes.
 2. **Board-setup tools bypass the open editor.** After `add_layer` / `set_design_rules` /
-   `create_netclass`, KiCad's in-memory board and project settings are stale; a Ctrl+S in
-   pcbnew would overwrite them. Close the project in KiCad and reopen it (File → Revert is
-   not enough for `.kicad_pro` changes) before doing anything else in the GUI. Verified
-   2026-08-22: `add_layer` changed the file's mtime with the board open and IPC reachable.
+   `create_netclass`, KiCad's in-memory board and project settings are stale.
+   - `.kicad_pcb` changes (`add_layer`): KiCad writes the board only on an explicit save, so
+     **reopen the board before the next Ctrl+S** and the change survives.
+   - `.kicad_pro` changes (`set_design_rules`, `create_netclass`): KiCad **rewrites
+     `.kicad_pro` on project close**, so a Konnect write made while the project is open is
+     lost the moment you close it. Verified 2026-08-22: rules 0.15/0.15/0.6/0.5 reverted to
+     0.0/0.2/0.5/0.25 on close/reopen. **Close the project in KiCad first, then let Konnect
+     write `.kicad_pro`, then reopen** — or enter those values in Board Setup yourself.
 3. **Save in KiCad (Ctrl+S) before `git commit`** after IPC-path PCB work, or the commit
    misses it.
 4. **Git is the undo for schematic and board-setup work** — Konnect has no undo stack. Commit

@@ -61,10 +61,12 @@ record does not go in.
 
 - [x] Layers: F.Cu, In1.Cu (power — the continuous GND plane), In2.Cu (mixed — VM fill),
       B.Cu via Konnect `add_layer` (vault: Layout Constraints → Layers 4)
-- [x] Fab-floor rules via `set_design_rules`: clearance 0.15, track 0.15, via 0.3 drill /
-      0.6 dia, hole-to-hole 0.5 mm — JLCPCB 4-layer capability floors (Konnect's JLCPCB
-      preset), not design values; per-net widths come later as netclasses sized to the
-      vault's current table
+- [ ] Fab-floor rules: clearance 0.15, track 0.15, via 0.3 drill / 0.6 dia, hole-to-hole
+      0.5 mm — JLCPCB 4-layer capability floors (Konnect's JLCPCB preset), not design
+      values; per-net widths come later as netclasses sized to the vault's current table.
+      (Set once via Konnect `set_design_rules`, then lost when KiCad rewrote `.kicad_pro` on
+      project close — see `CLAUDE.md` consequence 2. Re-enter in **Board Setup →
+      Constraints** while there for the edge clearance, or close the project and re-run.)
 - [ ] **GUI (no Konnect tool):** Board Setup → Physical Stackup → thickness **1.4 mm**
       (vault: Layout Constraints → Thickness; Konnect scaffold wrote 1.6)
 - [ ] **GUI:** Board Setup → Constraints → copper-to-edge clearance **0.2 mm** (vault:
