@@ -102,7 +102,10 @@ the drivers' VM and the sensor VIN).
 | VREF | tied to +3V3 (TI typical application) | Motor Channel |
 | R_IPROPI | 8.45 k (SLVSH04 Table 9-1 example) | needs a CALC: CS_GAIN_SEL=000b range vs ADC full scale |
 | Board thickness | 1.6 mm (JLC standard; 1.4 not offered) | Layout Constraints |
-| Outline | CAD export ⌀66 / 25×25 R2 | Layout Constraints / Main-Board-01 § Board geometry |
+| Outline | **⌀66 mm OD, 25 × 25 mm R2 cutout** (current CAD export; user 2026-08-22: expected to iterate, not worth reconciling yet) | **Three-way mismatch, owed.** Layout Constraints § Board says ⌀64 disc / 22 × 22 cutout; the vault reviewed `Collimator_Main_PCB_V1.0.DXF` at ⌀60 / 25 × 25 and rejected it ("does not describe this board and needs regenerating from the assembly"); the collimator envelope itself is unreconciled (60 mm in Leaf-Absolute-Inductive vs 65 mm in COL-CALC-0009) |
+| Board orientation in the assembly | **Component face toward the mechanism** (user 2026-08-22) | **Not stated anywhere in the vault** — no "mechanism side", no orientation record. Implied by three existing rules (all parts top face; motor + supply pads "Layer: Top, bare copper"; the FFC is right-angle with "the flex lying flat above it"), never written down |
+| User-facing items on the back face | J2 SWD, TP1–TP7, J12 CAN pads, J1 supply pads — and SW1 + D2/D3 only if a second SMT pass is accepted | **Conflicts with a hard vault requirement**: Layout Constraints § Board, "Single-sided — every part on the top face. Nothing on the underside", not listed under § Open. No rationale is recorded for it, so it can be overturned — but that is a vault change with an owner |
+| SWD connector | 1×6 **right-angle** 2.54 mm header — `C56816` (1×6, $0.04, 4.6 k stock) or `C2334` (1×40 gold strip, 3 A, −55…+105 °C, cut to 6). Right-angle body stands ≈2.5 mm, so it **passes** the 4 mm cap that the vertical header fails | COL-PARAM-0020 lists a 2.54 mm vertical header at ~8.5 mm mated = fails. A **Tag-Connect TC2030 footprint** (bare pads + locating holes, zero parts, zero height) would remove the part and the height question entirely — worth a look before committing |
 | Sensor VIN rail | = VM (5 V prototype assumption) | Encoder Interface § Supply / entry gate |
 
 I²C pull-ups (one set, 4.7 k to +3V3) placed on the MCU sheet.
@@ -267,7 +270,16 @@ PA11/PA12, RC_OUT_leaf4 on PB14, SWO PB3, PA5 LED, PC12/PB13 yaw).
       Also set **Keep upright** on the reference text (Tools → Set Text and Graphics Properties…)
       so no designator can end up mirrored or upside-down. 6 `silk_edge_clearance` warnings
       (silk clipped by the aperture/board edge) to clear in the same pass.
-- [ ] Mounting holes — still awaiting positions from the assembly CAD.
+- [ ] **Motor terminations are at the wrong radius on three channels.** COL-CALC-0009 puts the
+      motors at **25 mm radius** (lead screws at 19 mm). Measured from the beam axis today:
+      J9 leaf3 24.8 mm and J10 leaf4 25.9 mm are right; **J7 leaf1 15.8, J11 yaw 14.6, J8 leaf2
+      17.4** — the north row's pads face inboard, ~10 mm short of their motors. Fix inside the
+      uniform pattern: mirror the north row to the other 90° step so its pads face outward and
+      drop the anchors so the pads land near r = 25.
+- [ ] Mounting holes — still awaiting positions from the assembly CAD. The vault flags these
+      three separate times as **undrawn**, and notes they compete with the connector clusters on
+      the diagonals where radial room is tightest. Fastener type, count, diameter, what the board
+      screws to, and whether it fastens from the top or bottom face are all unrecorded.
 - [ ] Gate 1 of `docs/design/review-checklist.md` passes before any routing
 - [ ] Zones: GND on In1, VM on In2, GND on bottom — **solid planes**, router kept off
       inner layers (the tscircuit-era problem of perforated planes goes away here; the
@@ -293,3 +305,53 @@ PA11/PA12, RC_OUT_leaf4 on PB14, SWO PB3, PA5 LED, PC12/PB13 yaw).
       the channel assumes the yaw motor lands inside the DRV8214's 4 A peak / 2 A RMS
 - [ ] **GUI: re-annotate** (the new instance duplicates references) — eeschema Tools →
       Annotate, entire schematic, reset; save; close
+
+
+## 6. Board orientation and side allocation — 2026-08-22
+
+**Decision (user):** the board is **not** made double-sided for the motor domain. Instead the
+component face is mounted **toward the collimator mechanism**, and only *user-facing* items move
+to the back so they stay reachable once the board is in the assembly.
+
+Why this way round: the encoder FFC (AYF530435) is **right-angle SMD**, so the flex lies flat
+across whichever face carries the connector. Point the component face away from the mechanism and
+all four leaf flexes have to wrap the board edge — the exact thing the change was meant to avoid.
+Keeping the motor domain on F.Cu also keeps it 0.21 mm above the solid In1 GND plane (the good
+side of the stackup: F.Cu / 0.21 / In1 GND / 1.065 / In2 VM / 0.21 / B.Cu) and leaves the compact
+motor loop and the ≤4 mm VM-cap rule untouched.
+
+### What moving to the back actually costs
+
+| Item | Type | Cost of moving to B.Cu |
+|---|---|---|
+| J1 supply pads, J12 CAN pads, TP1–TP7 | bare copper, no part | **none** — nothing to place |
+| J2 SWD header | through-hole, DNP | **none** — the holes go through; it is hand-fitted either way |
+| SW1 reset, D2/D3 LEDs | SMT | **second stencil + reflow pass** at JLC |
+
+So the pads and the SWD header can move without touching the assembly process at all; only the
+switch and the LEDs turn the board into a genuine double-sided build. Note the vault's rule reads
+"every part on the top face" — an SMT statement — while bare pads and a hand-fitted THT header
+arguably do not violate its intent, only its letter. Either way it needs saying in the vault.
+
+### Mechanics of doing it
+
+`flip_component` **requires KiCad closed** — it refuses while IPC is reachable. So the sequence is
+quit KiCad → Konnect flips → reopen, and it must happen **before** the silkscreen pass (§ 3), since
+flipping moves the text to B.SilkS.
+
+### Gaps the 2026-08-22 vault sweep found (all owed)
+
+- Axial clearance on the **second** face: no figure exists anywhere. COL-PARAM-0020's 4 mm is
+  quoted "from the board face" (singular) and is itself unsourced (`maturity: est`, "#tbd — has no
+  drawing behind it").
+- The axial stack board → motors → leaf plane. Only radii are recorded (motors 25 mm, screws 19 mm);
+  nothing says whether the motors sit above, below or coplanar with the board.
+- FFC length, exit direction and bend radius; motor lead length and routing. Loom retention is
+  explicitly unowned ("nothing currently owns it").
+- Whether the main board rides the **rotating** frame at all — treated as rotating in
+  Main-Board-01 Connectors, but COL-CALC-0009 argues the opposite ("Anything that can live on the
+  stationary frame instead of the rotating one should… Boards are not negligible at 14%").
+- **The encoder FFC has no COTS record.** It is a BOM line and a spec table only, and sits on the
+  "no datasheet held" list — which trips the standing rule in `CLAUDE.md`. A record is owed before
+  the next revision, and the vault already flags the retention risk (no solder tabs, no hold-downs,
+  four 0.5 mm joints take the whole insertion/extraction force on a rotating board).
