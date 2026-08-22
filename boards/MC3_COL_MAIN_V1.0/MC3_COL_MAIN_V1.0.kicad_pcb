@@ -438,7 +438,7 @@
 	(footprint "MC3_COL_MAIN:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "0ca307f4-c1e9-48c1-98df-8adc0c47ad9d")
-		(at 118.6 83.2 90)
+		(at 118.6 82.9 90)
 		(property "Reference" "C20"
 			(at 0 -1.43 90)
 			(unlocked yes)
@@ -9399,7 +9399,7 @@
 	(footprint "MC3_COL_MAIN:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "671cc1bd-1130-4335-8e7b-15df520a119a")
-		(at 118.6 85.3 90)
+		(at 118.6 85.7 90)
 		(property "Reference" "C21"
 			(at 0 -1.16 90)
 			(unlocked yes)
@@ -10938,7 +10938,7 @@
 	(footprint "MC3_COL_MAIN:PinHeader_1x06_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "94f1d8b6-c374-4d68-81b1-714092432c23")
-		(at 80 84.5 90)
+		(at 72.3 84.5 90)
 		(property "Reference" "J2"
 			(at 0 -2.38 90)
 			(unlocked yes)
@@ -11430,7 +11430,7 @@
 	(footprint "MC3_COL_MAIN:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "9e5d72e8-c875-4d6f-b9a6-310b2f542843")
-		(at 73.2 109.6 90)
+		(at 72.2 109 90)
 		(property "Reference" "C8"
 			(at 0 -1.16 90)
 			(unlocked yes)
@@ -13953,7 +13953,7 @@
 	(footprint "MC3_COL_MAIN:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "c021fefe-ad50-42b4-a58b-560e53600f83")
-		(at 123.5 110.5)
+		(at 123.6 110.5)
 		(property "Reference" "C30"
 			(at 0 -1.16 0)
 			(unlocked yes)
@@ -17288,7 +17288,7 @@
 	(footprint "MC3_COL_MAIN:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "fbf7deea-cfad-4b46-b7df-5b931203e125")
-		(at 121.2 110.5)
+		(at 121 110.5)
 		(property "Reference" "C29"
 			(at 0 -1.43 0)
 			(unlocked yes)

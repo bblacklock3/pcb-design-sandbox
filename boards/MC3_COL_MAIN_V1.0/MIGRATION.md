@@ -208,9 +208,24 @@ PA11/PA12, RC_OUT_leaf4 on PB14, SWO PB3, PA5 LED, PC12/PB13 yaw).
       MOTOR 1.2, PWR_3V3 0.4, CAN 0.25/0.2, I2C 0.25; 22 net assignments
 - [x] `update_pcb_from_schematic` over IPC: 101 footprints on the board (the bridged solder
       jumper was swapped for a fitted 0 Ω because custom-shape pads can't be placed over IPC)
-- [ ] Placement from legacy `MC3_COL_MAIN_V1.0.tsx` `BLOCK_POS` / `CONN_RING_MM` /
-      `CLUSTERS` (MCU at (-21, 2), power at (19.5, -2), leaves at ±12/0, ±20, connector
-      clusters on 55° / 235° diagonals, rings 25.6 / 28.6 / 28 mm)
+- [x] **Placement pass 1 (2026-08-22, via Konnect IPC `move_component`/`rotate_component`):**
+      MCU cluster centred KiCad (77.3, 98) = beam (−22.7, +2), rotated 90° so pins 1–16 face
+      south / 17–32 east / 49–64 west (vault edge map); drivers beside their own clusters —
+      leaf1 U3 (106,79), leaf2 U4 (115,85), leaf3 U5 (94,121), leaf4 U6 (85.5,114.5), yaw U7
+      (116.3,116.3) at 45°; motor pads r 25–26 on the 50°/60° and 230°/240° lines + yaw r 28.5
+      @315°; FFCs r 28.5 @ 35°/69°/221°/249°; supply pads r 28 @ 12°, CAN pads r 28 @ −10°
+      (one loom bundle on the east rim); power chain F1→D1→Q1→U1 inboard of the supply pads;
+      CAN transceiver + termination + ESD inboard of the CAN pads; SWD header, LEDs, test points
+      in the free NW; decoupling to the vault budgets. Courtyard-clean.
+- [ ] **GUI (or next KiCad quit):** Board Setup → Constraints → *Minimum through hole* 0.3 →
+      **0.2 mm** (the WQFN footprint's thermal vias are 0.2 mm; JLCPCB 4-layer allows 0.2).
+- [ ] **Fine rotations** (KiCad IPC refuses non-90° rotation of footprints with rounded-rect
+      graphics): motor pads J7–J11, FFCs J3–J6, supply pads J1, CAN pads J12, F1 — currently at
+      the nearest 90°; set tangential angles (θ+90 / θ−90) in the GUI or via Konnect's file
+      path with KiCad closed. Also confirm each FFC's flex-exit direction faces the rim.
+- [ ] **Silkscreen cleanup:** the Konnect-created footprints (SolderPads_2x/3x, AYF530435)
+      carry a literal `REF**` silk text and the footprint name on F.Fab — remove before fab.
+- [ ] Mounting holes — still awaiting positions from the assembly CAD.
 - [ ] Gate 1 of `docs/design/review-checklist.md` passes before any routing
 - [ ] Zones: GND on In1, VM on In2, GND on bottom — **solid planes**, router kept off
       inner layers (the tscircuit-era problem of perforated planes goes away here; the
