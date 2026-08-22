@@ -87,7 +87,8 @@
 			(symbol "+3V3_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -99,7 +100,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -111,7 +113,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -226,7 +229,12 @@
 			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -260,19 +268,14 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "MC3_COL_MAIN_V1.0 - MC3 collimator main control board. Vault build rung: Projects/MC3 Collimator/05 Builds/Main-Board-01. Four leaf channels fitted (DRV8214, COL-COTS-0028); yaw reserved at the MCU only. A1/A0 I2C address straps per leaf: leaf1 GND/GND, leaf2 GND/+3V3, leaf3 +3V3/GND, leaf4 +3V3/+3V3 (PROVISIONAL). Net naming: vault V3_3 == +3V3, vault VIN_RAW == VM."
-		(exclude_from_sim no)
-		(at 20 130 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "78519356-49ba-42d3-9bcc-1b26276e932a")
+	(no_connect
+		(at 90.17 148.59)
+		(uuid "ee63a7ae-1d7b-4c18-8f93-19cff2cb4aef")
 	)
 	(wire
 		(pts
-			(xy 140.97 86.36) (xy 135.89 86.36)
+			(xy 140.97 86.36)
+			(xy 135.89 86.36)
 		)
 		(stroke
 			(width 0)
@@ -282,7 +285,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 71.12) (xy 135.89 71.12)
+			(xy 140.97 71.12)
+			(xy 135.89 71.12)
 		)
 		(stroke
 			(width 0)
@@ -292,7 +296,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 85.09) (xy 186.69 85.09)
+			(xy 191.77 85.09)
+			(xy 186.69 85.09)
 		)
 		(stroke
 			(width 0)
@@ -302,7 +307,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 81.28) (xy 135.89 81.28)
+			(xy 140.97 81.28)
+			(xy 135.89 81.28)
 		)
 		(stroke
 			(width 0)
@@ -312,7 +318,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 82.55) (xy 34.29 82.55)
+			(xy 39.37 82.55)
+			(xy 34.29 82.55)
 		)
 		(stroke
 			(width 0)
@@ -322,7 +329,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 69.85) (xy 186.69 69.85)
+			(xy 191.77 69.85)
+			(xy 186.69 69.85)
 		)
 		(stroke
 			(width 0)
@@ -332,7 +340,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 74.93) (xy 85.09 74.93)
+			(xy 90.17 74.93)
+			(xy 85.09 74.93)
 		)
 		(stroke
 			(width 0)
@@ -342,7 +351,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 82.55) (xy 186.69 82.55)
+			(xy 191.77 82.55)
+			(xy 186.69 82.55)
 		)
 		(stroke
 			(width 0)
@@ -352,7 +362,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 82.55) (xy 85.09 82.55)
+			(xy 90.17 82.55)
+			(xy 85.09 82.55)
 		)
 		(stroke
 			(width 0)
@@ -362,7 +373,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 74.93) (xy 186.69 74.93)
+			(xy 191.77 74.93)
+			(xy 186.69 74.93)
 		)
 		(stroke
 			(width 0)
@@ -372,7 +384,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 74.93) (xy 34.29 74.93)
+			(xy 39.37 74.93)
+			(xy 34.29 74.93)
 		)
 		(stroke
 			(width 0)
@@ -382,7 +395,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 77.47) (xy 186.69 77.47)
+			(xy 191.77 77.47)
+			(xy 186.69 77.47)
 		)
 		(stroke
 			(width 0)
@@ -392,7 +406,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 72.39) (xy 34.29 72.39)
+			(xy 39.37 72.39)
+			(xy 34.29 72.39)
 		)
 		(stroke
 			(width 0)
@@ -402,7 +417,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 72.39) (xy 85.09 72.39)
+			(xy 90.17 72.39)
+			(xy 85.09 72.39)
 		)
 		(stroke
 			(width 0)
@@ -412,7 +428,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 80.01) (xy 34.29 80.01)
+			(xy 39.37 80.01)
+			(xy 34.29 80.01)
 		)
 		(stroke
 			(width 0)
@@ -422,7 +439,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 87.63) (xy 85.09 87.63)
+			(xy 90.17 87.63)
+			(xy 85.09 87.63)
 		)
 		(stroke
 			(width 0)
@@ -432,7 +450,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 85.09) (xy 85.09 85.09)
+			(xy 90.17 85.09)
+			(xy 85.09 85.09)
 		)
 		(stroke
 			(width 0)
@@ -442,7 +461,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 83.82) (xy 135.89 83.82)
+			(xy 140.97 83.82)
+			(xy 135.89 83.82)
 		)
 		(stroke
 			(width 0)
@@ -452,7 +472,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 85.09) (xy 34.29 85.09)
+			(xy 39.37 85.09)
+			(xy 34.29 85.09)
 		)
 		(stroke
 			(width 0)
@@ -462,7 +483,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 77.47) (xy 34.29 77.47)
+			(xy 39.37 77.47)
+			(xy 34.29 77.47)
 		)
 		(stroke
 			(width 0)
@@ -472,7 +494,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 76.2) (xy 135.89 76.2)
+			(xy 140.97 76.2)
+			(xy 135.89 76.2)
 		)
 		(stroke
 			(width 0)
@@ -482,7 +505,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 72.39) (xy 186.69 72.39)
+			(xy 191.77 72.39)
+			(xy 186.69 72.39)
 		)
 		(stroke
 			(width 0)
@@ -492,7 +516,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 73.66) (xy 135.89 73.66)
+			(xy 140.97 73.66)
+			(xy 135.89 73.66)
 		)
 		(stroke
 			(width 0)
@@ -502,7 +527,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 87.63) (xy 34.29 87.63)
+			(xy 39.37 87.63)
+			(xy 34.29 87.63)
 		)
 		(stroke
 			(width 0)
@@ -512,7 +538,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 78.74) (xy 135.89 78.74)
+			(xy 140.97 78.74)
+			(xy 135.89 78.74)
 		)
 		(stroke
 			(width 0)
@@ -522,7 +549,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 80.01) (xy 186.69 80.01)
+			(xy 191.77 80.01)
+			(xy 186.69 80.01)
 		)
 		(stroke
 			(width 0)
@@ -532,7 +560,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 80.01) (xy 85.09 80.01)
+			(xy 90.17 80.01)
+			(xy 85.09 80.01)
 		)
 		(stroke
 			(width 0)
@@ -542,13 +571,65 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 77.47) (xy 85.09 77.47)
+			(xy 90.17 77.47)
+			(xy 85.09 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ef8a1ffc-c40a-4958-8d65-748210da9f43")
+	)
+	(wire
+		(pts
+			(xy 90.17 143.51)
+			(xy 85.09 143.51)
+		)
+		(uuid "22d07f99-7607-4240-a862-25e1e1932f04")
+	)
+	(wire
+		(pts
+			(xy 90.17 146.05)
+			(xy 85.09 146.05)
+		)
+		(uuid "9fb257f5-4ef5-4825-ad96-24525bedaddc")
+	)
+	(wire
+		(pts
+			(xy 90.17 151.13)
+			(xy 85.09 151.13)
+		)
+		(uuid "871e13ae-3d09-40c2-bcfa-47476e0ed085")
+	)
+	(wire
+		(pts
+			(xy 90.17 153.67)
+			(xy 85.09 153.67)
+		)
+		(uuid "172ef82b-ad9a-4c26-944b-d655e3b527ba")
+	)
+	(wire
+		(pts
+			(xy 90.17 156.21)
+			(xy 85.09 156.21)
+		)
+		(uuid "99c02755-23d9-4375-a517-484e13b65041")
+	)
+	(wire
+		(pts
+			(xy 90.17 158.75)
+			(xy 85.09 158.75)
+		)
+		(uuid "e3540a04-14e5-4fb7-8bc4-98da4498b0ec")
+	)
+	(text "MC3_COL_MAIN_V1.0 - MC3 collimator main control board. Vault build rung: Projects/MC3 Collimator/05 Builds/Main-Board-01. Four leaf channels fitted (DRV8214, COL-COTS-0028); yaw reserved at the MCU only. A1/A0 I2C address straps per leaf: leaf1 GND/GND, leaf2 GND/+3V3, leaf3 +3V3/GND, leaf4 +3V3/+3V3 (PROVISIONAL). Net naming: vault V3_3 == +3V3, vault VIN_RAW == VM."
+		(at 20 130 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "78519356-49ba-42d3-9bcc-1b26276e932a")
 	)
 	(global_label "EN_leaf4"
 		(shape input)
@@ -1166,14 +1247,80 @@
 			)
 		)
 	)
+	(global_label "EN_yaw"
+		(shape input)
+		(at 85.09 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f2fbb18a-f5b4-40c1-a943-8d0dd55f62e9")
+	)
+	(global_label "PH_yaw"
+		(shape input)
+		(at 85.09 146.05 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c5a9cfdc-8973-497c-85c3-7f68d1466834")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 85.09 151.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7f5246cd-7e6d-4b93-97ed-cc13d3c8cc5c")
+	)
+	(global_label "IPROPI_yaw"
+		(shape input)
+		(at 85.09 153.67 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "082a0095-24f4-4712-ab15-81ad16ddb931")
+	)
+	(global_label "RC_OUT_yaw"
+		(shape input)
+		(at 85.09 156.21 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2db115ef-3f1b-47e9-802a-242e215d3448")
+	)
+	(global_label "nFAULT_yaw"
+		(shape input)
+		(at 85.09 158.75 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e5bbd7ed-25e2-491b-8f59-c98a8605f9ce")
+	)
 	(sheet
 		(at 90.17 69.85)
 		(size 12.7 19.05)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1206,73 +1353,73 @@
 		)
 		(pin "EN" input
 			(at 90.17 72.39 180)
-			(uuid "cd081926-8099-4b10-8616-a82eb201798b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "cd081926-8099-4b10-8616-a82eb201798b")
 		)
 		(pin "PH" input
 			(at 90.17 74.93 180)
-			(uuid "9eb5b633-51a6-4cb1-bb41-0ac4195a4dee")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "9eb5b633-51a6-4cb1-bb41-0ac4195a4dee")
 		)
 		(pin "A1" input
 			(at 90.17 77.47 180)
-			(uuid "79cf83fc-ab11-4d5f-9e99-3469c348e48d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "79cf83fc-ab11-4d5f-9e99-3469c348e48d")
 		)
 		(pin "A0" input
 			(at 90.17 80.01 180)
-			(uuid "3dbe1956-8aec-497a-af0f-32aba6093fc7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "3dbe1956-8aec-497a-af0f-32aba6093fc7")
 		)
 		(pin "IPROPI" output
 			(at 90.17 82.55 180)
-			(uuid "ae2d7e92-9343-4dc2-91d6-c1887ba04062")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "ae2d7e92-9343-4dc2-91d6-c1887ba04062")
 		)
 		(pin "RC_OUT" output
 			(at 90.17 85.09 180)
-			(uuid "ccdb0423-649e-483a-8462-a4985c1f7241")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "ccdb0423-649e-483a-8462-a4985c1f7241")
 		)
 		(pin "nFAULT" output
 			(at 90.17 87.63 180)
-			(uuid "4a544493-23fc-4710-b6d9-673a6d19fc6d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "4a544493-23fc-4710-b6d9-673a6d19fc6d")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
@@ -1285,11 +1432,11 @@
 	(sheet
 		(at 90.17 19.05)
 		(size 50 25)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1331,11 +1478,11 @@
 	(sheet
 		(at 191.77 67.31)
 		(size 12.7 19.05)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1368,73 +1515,73 @@
 		)
 		(pin "EN" input
 			(at 191.77 69.85 180)
-			(uuid "a5095b35-eb04-481a-84e9-b339047fe2e3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "a5095b35-eb04-481a-84e9-b339047fe2e3")
 		)
 		(pin "PH" input
 			(at 191.77 72.39 180)
-			(uuid "0cd3bd4b-ddd9-4a31-a233-1fff8d82f561")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "0cd3bd4b-ddd9-4a31-a233-1fff8d82f561")
 		)
 		(pin "A1" input
 			(at 191.77 74.93 180)
-			(uuid "7a544d35-7a14-47a8-b28b-cf62975c03a8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7a544d35-7a14-47a8-b28b-cf62975c03a8")
 		)
 		(pin "A0" input
 			(at 191.77 77.47 180)
-			(uuid "53f9408f-d264-4ae5-bab7-8bd82667ad58")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "53f9408f-d264-4ae5-bab7-8bd82667ad58")
 		)
 		(pin "IPROPI" output
 			(at 191.77 80.01 180)
-			(uuid "6fab0d0e-6005-4d03-9b1e-9b2e41139c8b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "6fab0d0e-6005-4d03-9b1e-9b2e41139c8b")
 		)
 		(pin "RC_OUT" output
 			(at 191.77 82.55 180)
-			(uuid "7e83c6e0-8213-42b1-b032-e0fa07bacfa7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7e83c6e0-8213-42b1-b032-e0fa07bacfa7")
 		)
 		(pin "nFAULT" output
 			(at 191.77 85.09 180)
-			(uuid "7cf4c1e6-2adf-4389-9539-1afbcef291d2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7cf4c1e6-2adf-4389-9539-1afbcef291d2")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
@@ -1447,11 +1594,11 @@
 	(sheet
 		(at 39.37 69.85)
 		(size 12.7 19.05)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1484,73 +1631,73 @@
 		)
 		(pin "EN" input
 			(at 39.37 72.39 180)
-			(uuid "6dc10778-af08-49d1-8dd6-fe06a65f16d2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "6dc10778-af08-49d1-8dd6-fe06a65f16d2")
 		)
 		(pin "PH" input
 			(at 39.37 74.93 180)
-			(uuid "f53b26d7-7c13-40cb-bbdd-ba4af4319ea0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "f53b26d7-7c13-40cb-bbdd-ba4af4319ea0")
 		)
 		(pin "A1" input
 			(at 39.37 77.47 180)
-			(uuid "8f5deb76-1e1f-4632-b9c0-aa16bf8430fe")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "8f5deb76-1e1f-4632-b9c0-aa16bf8430fe")
 		)
 		(pin "A0" input
 			(at 39.37 80.01 180)
-			(uuid "2c163ba3-0524-4bf7-b0fd-86357b895d32")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "2c163ba3-0524-4bf7-b0fd-86357b895d32")
 		)
 		(pin "IPROPI" output
 			(at 39.37 82.55 180)
-			(uuid "24c85480-f88d-42f5-b267-fce2364e1206")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "24c85480-f88d-42f5-b267-fce2364e1206")
 		)
 		(pin "RC_OUT" output
 			(at 39.37 85.09 180)
-			(uuid "e1bb3ebb-58f0-457e-8c44-6b6dab4016f2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "e1bb3ebb-58f0-457e-8c44-6b6dab4016f2")
 		)
 		(pin "nFAULT" output
 			(at 39.37 87.63 180)
-			(uuid "3846b45a-2414-4104-9587-72edfe280a16")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "3846b45a-2414-4104-9587-72edfe280a16")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
@@ -1563,11 +1710,11 @@
 	(sheet
 		(at 160.02 19.05)
 		(size 50 25)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1609,11 +1756,11 @@
 	(sheet
 		(at 20.32 19.05)
 		(size 50 25)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1655,11 +1802,11 @@
 	(sheet
 		(at 140.97 68.58)
 		(size 12.7 19.05)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -1692,73 +1839,73 @@
 		)
 		(pin "EN" input
 			(at 140.97 71.12 180)
-			(uuid "f2a07c28-2ea4-48e3-a445-19a0e1db8e13")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "f2a07c28-2ea4-48e3-a445-19a0e1db8e13")
 		)
 		(pin "PH" input
 			(at 140.97 73.66 180)
-			(uuid "5ac8cfbf-63ad-4e7f-a300-76c037f3483f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "5ac8cfbf-63ad-4e7f-a300-76c037f3483f")
 		)
 		(pin "A1" input
 			(at 140.97 76.2 180)
-			(uuid "08119630-4016-4fed-b63c-b5fb2dc9c940")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "08119630-4016-4fed-b63c-b5fb2dc9c940")
 		)
 		(pin "A0" input
 			(at 140.97 78.74 180)
-			(uuid "938547ee-e987-49ed-9f14-a27e062a5284")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "938547ee-e987-49ed-9f14-a27e062a5284")
 		)
 		(pin "IPROPI" output
 			(at 140.97 81.28 180)
-			(uuid "7a5219aa-0b13-497a-9fc7-2a4d6cc3c4c3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7a5219aa-0b13-497a-9fc7-2a4d6cc3c4c3")
 		)
 		(pin "RC_OUT" output
 			(at 140.97 83.82 180)
-			(uuid "0bec23fd-3d8d-4670-8676-a9a35080967c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "0bec23fd-3d8d-4670-8676-a9a35080967c")
 		)
 		(pin "nFAULT" output
 			(at 140.97 86.36 180)
-			(uuid "a7397fa2-28bc-4643-a9c1-0840ba61e35a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "a7397fa2-28bc-4643-a9c1-0840ba61e35a")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.0"
@@ -1768,10 +1915,81 @@
 			)
 		)
 	)
+	(sheet
+		(at 90.17 140.97)
+		(size 45.72 45.72)
+		(fields_autoplaced)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0)
+		)
+		(uuid "8cfd3b4a-99dc-4b05-a7ad-f8199ec40931")
+		(property "Sheetname" "yaw"
+			(at 90.17 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MotorChannel.kicad_sch"
+			(at 90.17 187.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "RC_OUT" output
+			(at 90.17 156.21 180)
+			(uuid "c624d529-81d5-451e-82ee-8eb6e8aab9c9")
+		)
+		(pin "A1" input
+			(at 90.17 148.59 180)
+			(uuid "78e2cb97-3b80-47e4-b2b9-06b0211eeef3")
+		)
+		(pin "A0" input
+			(at 90.17 151.13 180)
+			(uuid "091230e9-d4ce-49a4-b6b0-05c775b18345")
+		)
+		(pin "nFAULT" output
+			(at 90.17 158.75 180)
+			(uuid "016e22e9-83db-480e-8e1b-e416ca78e2e7")
+		)
+		(pin "PH" input
+			(at 90.17 146.05 180)
+			(uuid "16281dc9-a953-4311-8839-988a499b909d")
+		)
+		(pin "IPROPI" output
+			(at 90.17 153.67 180)
+			(uuid "2eb6d51c-9ea5-4fae-a567-28acd1c91f6b")
+		)
+		(pin "EN" input
+			(at 90.17 143.51 180)
+			(uuid "812b91e6-075b-4804-938b-876853a68dd1")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(page "9")
+				)
+			)
+		)
+	)
+	(embedded_fonts no)
 	(sheet_instances
 		(path "/"
 			(page "1")
 		)
 	)
-	(embedded_fonts no)
+  (text "yaw channel fitted 2026-08-22 (user decision; vault still says reserved-only - update owed). Same DRV8214 block; assumed inside the part's limits until the yaw motor is selected. Address A1 = Hi-Z (open), A0 = GND."
+    (at 20 195 0)
+    (effects (font (size 1.5 1.5)))
+    (uuid "224dd707-217f-4019-909e-873a3ca11f51")
+  )
 )

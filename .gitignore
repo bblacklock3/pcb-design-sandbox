@@ -1,32 +1,10 @@
-# Dependencies
-node_modules/
-
-# Build output
-dist/
-build/
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# IDE files
+# IDE / OS
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS files
 .DS_Store
 Thumbs.db
-
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# tscircuit cache (legacy — removed at end of KiCad migration)
-.tscircuit/
 
 # ---- KiCad ----
 # Per-user view state (layer visibility, zoom, selection) — not design data
@@ -42,6 +20,8 @@ _autosave-*
 *.bck
 # Footprint cache KiCad rebuilds on open
 fp-info-cache
+# KiCad 10 Local History (nested git repo under the project dir)
+.history/
 # Fabrication outputs are generated at a tagged commit, never committed
 boards/**/fab/
 boards/**/gerbers/
@@ -50,5 +30,3 @@ boards/**/*.zip
 .konnect/transactions/
 .konnect/*.log
 .konnect/*.jsonl
-# KiCad 10 Local History (nested git repo under the project dir)
-.history/

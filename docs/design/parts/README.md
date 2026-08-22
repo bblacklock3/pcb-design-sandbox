@@ -32,10 +32,8 @@ Record: COL-COTS-NNNN · Datasheet: Refs/Datasheets/<name>.md
 - `DRV8214.md` — COL-COTS-0028, written 2026-08-22 from SLVSH04 §11 and the vault's
   Layout Constraints. (DRV8212 / INA240 / shunt notes are no longer wanted: COL-COTS-0021 is
   superseded and 0022/0023 rejected — the DRV8214 replaces all three.)
-- `STM32F411.md` — COL-COTS-0024. Still carries tscircuit-era references (`MCU.tsx`,
-  autorouter behaviour); the pin-assignment and decoupling constraints remain valid and the
-  pin map now lives in the vault's *Main-Board-01 MCU Pinout*. Rewrite against the KiCad
-  schematic once placement starts.
+- `STM32F411.md` — COL-COTS-0024. Rewritten 2026-08-22 for the KiCad schematic; the pin map
+  of record is the vault's *Main-Board-01 MCU Pinout*.
 
 ## Wanted
 

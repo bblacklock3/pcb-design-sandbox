@@ -3,11 +3,11 @@
 KiCad 10 project repo for OXOS boards, edited through the **Konnect** MCP server. Current board:
 **MC3_COL_MAIN_V1.0** — the MC3 collimator main control board (`boards/MC3_COL_MAIN_V1.0/`).
 
-> **Migration in progress (branch `kicad-migration`).** This board started life in tscircuit.
-> The `.tsx` files under `boards/`, `imports/`, `scripts/`, `manual-edits.json`,
-> `*.circuit.tsx` and `.claude/skills/tscircuit/` are the **legacy source** kept for
-> reference while the netlist is rebuilt in KiCad. They are not the design of record and
-> are deleted when `boards/MC3_COL_MAIN_V1.0/MIGRATION.md` is fully ticked. Don't extend them.
+History: this board was first drafted in tscircuit (commits up to `9e1e1ef`); it was rebuilt in
+KiCad from the vault pages on 2026-08-22 and the tscircuit sources removed. Nothing here depends
+on Node/tsci any more. `boards/MC3_COL_MAIN_V1.0/MIGRATION.md` is the board's working status
+checklist (PCB steps still open) and the register of provisional decisions owed to the vault;
+it goes away once those are promoted and the board has gone to fab.
 
 ## The vault is the authority
 
