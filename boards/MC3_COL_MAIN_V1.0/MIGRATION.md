@@ -203,10 +203,11 @@ PA11/PA12, RC_OUT_leaf4 on PB14, SWO PB3, PA5 LED, PC12/PB13 yaw).
       the page corner). **Beam-axis coordinate = KiCad coordinate − (100, 100).** Every
       Konnect `place_component` / `add_zone` call must add that offset to the vault / legacy
       numbers.
-- [ ] **GUI:** Place → Drill/Place File Origin at (100, 100) and Place → Grid Origin at
-      (100, 100), then View → Display Origin → grid origin, Ctrl+S. (Not in the saved file
-      yet — no `aux_axis_origin` / `grid_origin` in `.kicad_pcb`.) Makes fab outputs and the
-      status-bar coordinates beam-axis-relative.
+- [x] Drill/place origin and grid origin at (100, 100) saved in the board (user, 2026-08-22)
+- [x] Netclasses in `.kicad_pro` (written with KiCad fully quit): Default 0.2/0.15, VM 2.0,
+      MOTOR 1.2, PWR_3V3 0.4, CAN 0.25/0.2, I2C 0.25; 22 net assignments
+- [x] `update_pcb_from_schematic` over IPC: 101 footprints on the board (the bridged solder
+      jumper was swapped for a fitted 0 Ω because custom-shape pads can't be placed over IPC)
 - [ ] Placement from legacy `MC3_COL_MAIN_V1.0.tsx` `BLOCK_POS` / `CONN_RING_MM` /
       `CLUSTERS` (MCU at (-21, 2), power at (19.5, -2), leaves at ±12/0, ±20, connector
       clusters on 55° / 235° diagonals, rings 25.6 / 28.6 / 28 mm)
