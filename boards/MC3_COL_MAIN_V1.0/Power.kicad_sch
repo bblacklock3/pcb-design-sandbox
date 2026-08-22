@@ -1226,13 +1226,6 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 72.39)
-			(xy 87.63 67.31)
-		)
-		(uuid "b5553c36-edda-4770-9f08-f7d76f84d1e3")
-	)
-	(wire
-		(pts
 			(xy 85.09 87.63)
 			(xy 85.09 90.17)
 		)
@@ -1245,12 +1238,14 @@
 		)
 		(uuid "84b466f0-e262-4dc8-999a-2e08628c2929")
 	)
-	(wire
-		(pts
-			(xy 64.77 106.68)
-			(xy 64.77 111.76)
+	(text "Power - PROTOTYPE architecture (vault Main-Board-01: 5 V in -> P-FET reverse-polarity -> VM direct; 3.3 V via LDO). Incoming supply rail is an open entry gate in the vault. Net naming: vault VIN_RAW == KiCad VM (same copper). Sensor VIN (encoder FFCs) also runs from VM (LX34311 needs 4-6 V)."
+		(at 30 40 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
 		)
-		(uuid "b5dd1a13-86e8-4ef8-9bb8-44825bc64b86")
+		(uuid "586a4f04-9682-4565-a212-9e5417ca25ad")
 	)
 	(label "VIN_PROT"
 		(at 80.01 72.39 0)
@@ -1414,11 +1409,6 @@
 		)
 		(uuid "dc5c170a-ae03-4594-8771-cbfaf895e792")
 	)
-  (text "Power - PROTOTYPE architecture (vault Main-Board-01: 5 V in -> P-FET reverse-polarity -> VM direct; 3.3 V via LDO). Incoming supply rail is an open entry gate in the vault. Net naming: vault VIN_RAW == KiCad VM (same copper). Sensor VIN (encoder FFCs) also runs from VM (LX34311 needs 4-6 V)."
-    (at 30 40 0)
-    (effects (font (size 1.5 1.5)))
-    (uuid "586a4f04-9682-4565-a212-9e5417ca25ad")
-  )
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 39.37 80.01 0)
@@ -1461,6 +1451,15 @@
 				)
 			)
 		)
+		(property "Note" "Machine supply: bare pads 3.5x2.0 @4.2 mm, 20-22 AWG, whole-board current - vault Connectors, Machine Interface. Pin1 = VIN_PROT (+), Pin2 = GND. Supply rail unspecified (vault entry gate); 5 V assumed for this prototype."
+			(at 39.37 80.01 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "Power"
 				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
@@ -1475,16 +1474,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "Machine supply: bare pads 3.5x2.0 @4.2 mm, 20-22 AWG, whole-board current - vault Connectors, Machine Interface. Pin1 = VIN_PROT (+), Pin2 = GND. Supply rail unspecified (vault entry gate); 5 V assumed for this prototype."
-			(at 39.37 80.01 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "MC3_COL_MAIN:AO4407C")
 		(at 80.01 80.01 0)
@@ -1527,21 +1517,6 @@
 				)
 			)
 		)
-		(instances
-			(project "Power"
-				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C469397"
 			(at 80.01 80.01 0)
 			(hide yes)
@@ -1568,7 +1543,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 64.77 100.33 0)
@@ -1611,6 +1601,15 @@
 				)
 			)
 		)
+		(property "Note" "Gate pull-down for Q1"
+			(at 64.77 100.33 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "Power"
 				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
@@ -1625,16 +1624,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "Gate pull-down for Q1"
-			(at 64.77 100.33 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Regulator_Linear:AMS1117-3.3")
 		(at 139.7 80.01 0)
@@ -1678,21 +1668,6 @@
 				)
 			)
 		)
-		(instances
-			(project "Power"
-				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C6186"
 			(at 139.7 80.01 0)
 			(hide yes)
@@ -1719,7 +1694,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 119.38 91.44 0)
@@ -1764,6 +1754,15 @@
 				)
 			)
 		)
+		(property "Note" "LDO input 10uF - vault BOM regulator capacitors"
+			(at 119.38 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "Power"
 				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
@@ -1778,16 +1777,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "LDO input 10uF - vault BOM regulator capacitors"
-			(at 119.38 91.44 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 160.02 91.44 0)
@@ -1832,6 +1822,15 @@
 				)
 			)
 		)
+		(property "Note" "LDO output 22uF - AMS1117 compensation cap. OPEN (vault): datasheet specifies tantalum, no ESR window; ceramic fitted - confirm stability on hardware or fit tantalum"
+			(at 160.02 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "Power"
 				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
@@ -1842,67 +1841,6 @@
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
 					(reference "C22")
-					(unit 1)
-				)
-			)
-		)
-	
-		(property "Note" "LDO output 22uF - AMS1117 compensation cap. OPEN (vault): datasheet specifies tantalum, no ESR window; ceramic fitted - confirm stability on hardware or fit tantalum"
-			(at 160.02 91.44 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 87.63 67.31 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6c02590e-7ef1-411c-b4ef-8861d76e3d81")
-		(property "Reference" "#PWR001"
-			(at 87.63 65.405 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 87.63 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 87.63 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 87.63 67.31 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Power"
-				(path "/62fa4f2c-604d-44f9-988f-2ce377285c9c"
-					(reference "#PWR001")
 					(unit 1)
 				)
 			)
@@ -2013,58 +1951,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 64.77 111.76 180)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "120db35d-f5ca-44a6-b113-8896510129be")
-		(property "Reference" "#PWR004"
-			(at 64.77 113.665 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 64.77 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 64.77 111.76 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 64.77 111.76 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Power"
-				(path "/62fa4f2c-604d-44f9-988f-2ce377285c9c"
-					(reference "#PWR004")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 160.02 87.63 0)
 		(unit 1)
@@ -2111,6 +1997,110 @@
 			(project "Power"
 				(path "/62fa4f2c-604d-44f9-988f-2ce377285c9c"
 					(reference "#PWR005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 87.63 72.39 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "aa912fac-98a8-4cf4-8a78-7262fdfb08d6")
+		(property "Reference" "#PWR001"
+			(at 87.63 70.485 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 87.63 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 87.63 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 87.63 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "/62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "#PWR001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 64.77 104.14 180)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c0b1be32-a786-4226-821a-65a0bb8249c3")
+		(property "Reference" "#PWR004"
+			(at 64.77 106.045 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 64.77 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 104.14 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 104.14 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "/62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "#PWR004")
 					(unit 1)
 				)
 			)

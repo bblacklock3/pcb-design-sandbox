@@ -624,11 +624,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(junction
-		(at 52.07 172.72)
-		(diameter 0)
-		(uuid "9a008cb0-0540-4db5-9b8d-b4b80fca003f")
-	)
 	(no_connect
 		(at 54.61 54.61)
 		(uuid "dacc96c2-45d1-45d5-861c-5efdeb16b70d")
@@ -675,50 +670,47 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 170.18)
-			(xy 52.07 180.34)
+			(xy 54.61 46.99)
+			(xy 52.07 46.99)
 		)
-		(uuid "5dd3f1c9-7e39-4100-b996-946c8883c106")
+		(uuid "f3d63965-23a6-4adc-ab49-a72c8885aae4")
 	)
-	(label "VM"
-		(at 54.61 46.99 180)
+	(wire
+		(pts
+			(xy 54.61 87.63)
+			(xy 52.07 87.63)
+		)
+		(uuid "97f3a962-9a2b-4986-859f-e7e9efb6e047")
+	)
+	(wire
+		(pts
+			(xy 54.61 127)
+			(xy 52.07 127)
+		)
+		(uuid "3461edda-0049-438e-8825-82043f3b59fa")
+	)
+	(wire
+		(pts
+			(xy 54.61 167.64)
+			(xy 52.07 167.64)
+		)
+		(uuid "b45a766a-069a-4a9c-9c41-1325366869ab")
+	)
+	(wire
+		(pts
+			(xy 54.61 49.53)
+			(xy 44.45 49.53)
+		)
+		(uuid "32bedb17-8bd3-4c57-9427-ae266c9f4dc5")
+	)
+	(text "Encoder interface - four 0.5 mm FFCs, one per leaf, to the LX34311 sensor boards (COL-COTS-0016). Contract: VIN 4-6 V from VM, GND, SIG open-drain pulled to +3V3 here (10k), spare unassigned. Vault: Main-Board-01 Encoder Interface / Connectors. Motor pads are on the MotorChannel sheet; supply pads on Power."
+		(at 30 25 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 1.5 1.5)
 			)
-			(justify right bottom)
 		)
-		(uuid "225f96b0-cb78-4293-b309-d7a9e2616ce1")
-	)
-	(label "VM"
-		(at 54.61 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "53ab90e3-e1b9-4b59-9fdf-0a98edfdda47")
-	)
-	(label "VM"
-		(at 54.61 127 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "514a446b-4b3b-4c6a-852a-37459da5f4b3")
-	)
-	(label "VM"
-		(at 54.61 167.64 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "e5afe2be-27a0-4427-81fd-fb583464536b")
+		(uuid "dd600d86-55f7-42ff-82c8-15782117f862")
 	)
 	(label "GND"
 		(at 54.61 49.53 180)
@@ -874,11 +866,50 @@
 		)
 		(uuid "d8af71c1-0e6e-480c-80ef-d743f80033a8")
 	)
-  (text "Encoder interface - four 0.5 mm FFCs, one per leaf, to the LX34311 sensor boards (COL-COTS-0016). Contract: VIN 4-6 V from VM, GND, SIG open-drain pulled to +3V3 here (10k), spare unassigned. Vault: Main-Board-01 Encoder Interface / Connectors. Motor pads are on the MotorChannel sheet; supply pads on Power."
-    (at 30 25 0)
-    (effects (font (size 1.5 1.5)))
-    (uuid "dd600d86-55f7-42ff-82c8-15782117f862")
-  )
+	(global_label "VM"
+		(shape input)
+		(at 52.07 46.99 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2aa1a219-870b-46d1-b2dc-6133aed84bf6")
+	)
+	(global_label "VM"
+		(shape input)
+		(at 52.07 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "144031da-f5a6-4bcb-bc7f-4bf8ae9c6a47")
+	)
+	(global_label "VM"
+		(shape input)
+		(at 52.07 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c3e30657-fef4-4d3d-aa01-44468cd0bc23")
+	)
+	(global_label "VM"
+		(shape input)
+		(at 52.07 167.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c93ea0c6-afc9-42b2-ac41-5f26d0e319f3")
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 49.53 0)
@@ -921,21 +952,6 @@
 				)
 			)
 		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C425129"
 			(at 59.69 49.53 0)
 			(hide yes)
@@ -962,7 +978,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "Connectors"
+				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 90.17 0)
@@ -1005,21 +1036,6 @@
 				)
 			)
 		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C425129"
 			(at 59.69 90.17 0)
 			(hide yes)
@@ -1046,7 +1062,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "Connectors"
+				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 129.54 0)
@@ -1089,21 +1120,6 @@
 				)
 			)
 		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C425129"
 			(at 59.69 129.54 0)
 			(hide yes)
@@ -1130,7 +1146,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "Connectors"
+				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 170.18 0)
@@ -1173,21 +1204,6 @@
 				)
 			)
 		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J7")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J7")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C425129"
 			(at 59.69 170.18 0)
 			(hide yes)
@@ -1214,7 +1230,22 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "Connectors"
+				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 100.33 44.45 0)
@@ -1257,6 +1288,15 @@
 				)
 			)
 		)
+		(property "Note" "Encoder SIG pull-up 10k to +3V3 - sensor output is open-drain; not optional (vault Encoder Interface)"
+			(at 100.33 44.45 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "Connectors"
 				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
@@ -1271,16 +1311,7 @@
 				)
 			)
 		)
-	
-		(property "Note" "Encoder SIG pull-up 10k to +3V3 - sensor output is open-drain; not optional (vault Encoder Interface)"
-			(at 100.33 44.45 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 100.33 85.09 0)
@@ -1512,14 +1543,14 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 52.07 180.34 0)
+		(at 44.45 49.53 90)
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "933f7d18-2095-4235-9551-9d34e50cfa8c")
+		(uuid "2cd4cdb0-08c0-43c8-b4bf-4fd4a68dd3c3")
 		(property "Reference" "#PWR002"
-			(at 52.07 186.69 0)
+			(at 50.8 49.53 0)
 			(hide yes)
 			(effects
 				(font
@@ -1528,7 +1559,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 52.07 184.15 0)
+			(at 48.26 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1536,7 +1567,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.07 180.34 0)
+			(at 44.45 49.53 0)
 			(hide yes)
 			(effects
 				(font
@@ -1545,7 +1576,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 180.34 0)
+			(at 44.45 49.53 0)
 			(hide yes)
 			(effects
 				(font
@@ -1556,12 +1587,6 @@
 		(instances
 			(project "Connectors"
 				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "#PWR002")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
 					(reference "#PWR002")
 					(unit 1)
 				)
