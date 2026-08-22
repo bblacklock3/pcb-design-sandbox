@@ -33,3 +33,7 @@ boards/**/*.zip
 
 # Konnect transaction restore backups
 _restore_backup_*/
+
+# Fab outputs are attached to the vault build rung, not committed (CLAUDE.md)
+*.csv
+*.pos
