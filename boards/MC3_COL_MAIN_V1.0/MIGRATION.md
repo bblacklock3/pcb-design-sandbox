@@ -59,10 +59,26 @@ record does not go in.
 
 ## 3. PCB (Konnect `pcb_*` toolsets; KiCad open, IPC on)
 
-- [ ] Board setup: 4 layers, 1.6 mm, JLCPCB 4-layer design rules (clearance, min track,
-      via 0.3/0.6)
-- [ ] Outline from `mechanical/Collimator_Main_PCB_V1.0.DXF` on Edge.Cuts — 64 mm disc,
-      22×22 mm square beam-path cutout at centre (cite the PARAM)
+- [x] Layers: F.Cu, In1.Cu (power — the continuous GND plane), In2.Cu (mixed — VM fill),
+      B.Cu via Konnect `add_layer` (vault: Layout Constraints → Layers 4)
+- [x] Fab-floor rules via `set_design_rules`: clearance 0.15, track 0.15, via 0.3 drill /
+      0.6 dia, hole-to-hole 0.5 mm — JLCPCB 4-layer capability floors (Konnect's JLCPCB
+      preset), not design values; per-net widths come later as netclasses sized to the
+      vault's current table
+- [ ] **GUI (no Konnect tool):** Board Setup → Physical Stackup → thickness **1.4 mm**
+      (vault: Layout Constraints → Thickness; Konnect scaffold wrote 1.6)
+- [ ] **GUI:** Board Setup → Constraints → copper-to-edge clearance **0.2 mm** (vault:
+      Layout Constraints → Clearances)
+- [ ] **GUI:** outline — File → Import → Graphics → `mechanical/Collimator_Main_PCB_V1.0.DXF`
+      onto Edge.Cuts at (0,0), mm. The DXF was regenerated 2026-08-22 from the vault numbers
+      (⌀64 mm disc, 22×22 mm square cutout, both centred at the beam axis) because the
+      vault (`Main-Board-01.md` § Board geometry) says the old ⌀60 / 25×25 R2 file "does not
+      describe this board". Still owed: a real export from the assembly CAD, and a vault
+      decision on the cutout's inside-corner radius (drawn sharp; the fab will impose one).
+      The 60 vs 65 mm envelope #tbd in the vault is unresolved — the outline lands inside
+      whichever wins.
+- [ ] Origin: keep the board origin at the beam axis (all legacy placement numbers and the
+      vault annulus are measured from it); set the grid/drill origin there in KiCad
 - [ ] Placement from legacy `MC3_COL_MAIN_V1.0.tsx` `BLOCK_POS` / `CONN_RING_MM` /
       `CLUSTERS` (MCU at (-21, 2), power at (19.5, -2), leaves at ±12/0, ±20, connector
       clusters on 55° / 235° diagonals, rings 25.6 / 28.6 / 28 mm)

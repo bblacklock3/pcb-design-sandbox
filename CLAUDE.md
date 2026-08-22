@@ -84,17 +84,24 @@ Konnect reaches KiCad three different ways, and that decides when the file on di
 | Edit | Path | KiCad needed? | When it hits disk |
 |---|---|---|---|
 | Schematic, libraries, lib tables | Konnect's own S-expression engine | No | Immediately (atomic write) |
-| PCB (place/move/route/zones) | KiCad 10 IPC into the running PCB editor | Yes, board open, API enabled | When **you save in KiCad** |
+| PCB **board setup** — `add_layer`, `set_design_rules` (→ `.kicad_pro`), `create_netclass` (→ `.kicad_pro`) | Konnect's file engine, **even when IPC is up** | No — and the board/project must be **closed or reverted** in KiCad afterwards | Immediately |
+| PCB items (place/move/route/zones/text) | KiCad 10 IPC into the running PCB editor | Yes, board open, API enabled | When **you save in KiCad** |
 | Exports, ERC, DRC | `kicad-cli` | No | n/a (read-only) |
 
-Three consequences:
+Four consequences:
 
 1. **Don't have eeschema open on a sheet Konnect is editing.** It won't see the write, and
    saving from eeschema afterwards overwrites it. Close the sheet or reload it (File → Revert)
    after Konnect writes.
-2. **Save in KiCad (Ctrl+S) before `git commit`** after PCB work, or the commit misses it.
-3. **Git is the undo for schematic work** — Konnect has no undo stack. Commit small and often
-   while Konnect is editing.
+2. **Board-setup tools bypass the open editor.** After `add_layer` / `set_design_rules` /
+   `create_netclass`, KiCad's in-memory board and project settings are stale; a Ctrl+S in
+   pcbnew would overwrite them. Close the project in KiCad and reopen it (File → Revert is
+   not enough for `.kicad_pro` changes) before doing anything else in the GUI. Verified
+   2026-08-22: `add_layer` changed the file's mtime with the board open and IPC reachable.
+3. **Save in KiCad (Ctrl+S) before `git commit`** after IPC-path PCB work, or the commit
+   misses it.
+4. **Git is the undo for schematic and board-setup work** — Konnect has no undo stack. Commit
+   small and often while Konnect is editing.
 
 `.mcp.json` (committed) points Claude Code at the Konnect binary via `${USERPROFILE}`;
 `konnect init` (one-time, per machine) installs the skills/agents/hooks into `~/.claude`.
