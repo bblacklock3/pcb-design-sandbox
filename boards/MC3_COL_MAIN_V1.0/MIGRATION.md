@@ -156,12 +156,22 @@ schematic — add on the MCU sheet before the PCB update.
       decoupling budgets in `docs/design/parts/` assume an intact plane)
 - [ ] Route; Gate 2; DRC clean
 
-## 4. Retire tscircuit (final commit on the branch)
+## 4. Retire tscircuit — done 2026-08-22
 
-- [ ] Delete `boards/MC3_COL_MAIN_V1.0/*.tsx`, `*.ts`, `tests/`, `imports/`, `scripts/`,
-      `manual-edits.json`, `postest.circuit.tsx`, `index.circuit.tsx`, `tscircuit.config.json`,
-      `.claude/skills/tscircuit/`
-- [ ] Replace `package.json` (drop tscircuit deps/scripts) or remove it if nothing else needs Node
-- [ ] Drop the "Migration in progress" banner and the `.tscircuit/` ignore from `CLAUDE.md` / `.gitignore`
-- [ ] Delete this file
-- [ ] Update the vault build rung `Main-Board-01` with the new tooling and the PDF snapshot
+- [x] All tscircuit sources, imports, scripts, configs, Node tooling, snapshots and the
+      tscircuit skills deleted; `.gitignore` and `CLAUDE.md` updated; `STM32F411.md` rewritten
+- [x] This file is kept (renamed in purpose, not in name) as the board's working status
+      checklist and the register of decisions owed to the vault — delete it when those are
+      promoted and the board has gone to fab
+- [ ] Update the vault build rung `Main-Board-01` with the new tooling, the schematic PDF and
+      the decisions table above
+
+## 5. Yaw channel — fitted 2026-08-22 (user decision)
+
+- [x] Fifth `MotorChannel` instance `yaw` on the root; EN PA9 / PH PB12 / IPROPI PC4 per the
+      vault's reserved pins; PROVISIONAL nFAULT_yaw PC12, RC_OUT_yaw PB13 (no free timer
+      capture channel — count by EXTI or read `RC_CNT` over I²C); address A1 = Hi-Z, A0 = GND
+- [ ] Vault: Main-Board-01 ("four fitted, yaw reserved") and the yaw-motor sizing caveat —
+      the channel assumes the yaw motor lands inside the DRV8214's 4 A peak / 2 A RMS
+- [ ] **GUI: re-annotate** (the new instance duplicates references) — eeschema Tools →
+      Annotate, entire schematic, reset; save; close
