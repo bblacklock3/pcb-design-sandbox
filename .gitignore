@@ -50,3 +50,5 @@ boards/**/*.zip
 .konnect/transactions/
 .konnect/*.log
 .konnect/*.jsonl
+# KiCad 10 Local History (nested git repo under the project dir)
+.history/
