@@ -22,27 +22,40 @@ before KiCad migration") — the `.tsx` files are readable as a netlist even wit
 
 ## 1. Library — one symbol + footprint per part (Konnect `library` / `integration` toolsets)
 
-Each needs a COTS record first; fields on the symbol: `COTS` (record ID), `LCSC` (C-number).
-The legacy `imports/*.tsx` give the pin map and land pattern that was used; the JLC/LCSC
-number is in the COTS record.
+**The vault BOM has moved past the tscircuit design.** `Main-Board-01.md` § BOM is the list
+to build from: DRV8212 (COL-COTS-0021) is *Superseded* by **DRV8214** (COL-COTS-0028, one
+part per axis with integrated current sense, ripple counting and current regulation over
+I²C); INA240 (0022) and the 100 mΩ shunt (0023) are *Rejected* — **no external sense amp and
+no shunt anywhere on the board**. The legacy `imports/*.tsx` are reference only for the
+parts that survive (MCU, LDO, P-FET, crystal, switch, FFC, pads).
 
-| Part | Legacy import | COTS | Symbol | Footprint |
-|---|---|---|---|---|
-| STM32F411RET6 (MCU) | `imports/STM32F411RET6.tsx` | COL-COTS-0024 | [ ] | [ ] LQFP-64 |
-| DRV8212DSGR (H-bridge ×4) | `imports/DRV8212DSGR.tsx` | COL-COTS-0021 | [ ] | [ ] WSON-8 |
-| INA240A1DR (sense amp ×4) | `imports/INA240A1DR.tsx` | COL-COTS-0022 | [ ] | [ ] SOIC-8 |
-| 100 mΩ 1 W 1206 shunt (×4) | `imports/HoJLR1206_1W_100mR_1_.tsx` | — | [ ] | [ ] 1206 |
-| AMS1117-3.3 (LDO) | `imports/AMS1117_3_3.tsx` | — | [ ] | [ ] SOT-223 |
-| AO4407C (P-FET, reverse-polarity) | inline in `Power.tsx` | — | [ ] | [ ] SOIC-8 |
-| X32258MSB4SI (crystal) | `imports/X32258MSB4SI.tsx` | — | [ ] | [ ] |
-| SKRKAEE020 (tact switch) | `imports/SKRKAEE020.tsx` | — | [ ] | [ ] |
-| AYF530435 (0.5 mm FFC 4P, encoder ×4) | `imports/AYF530435.tsx` | — | [ ] | [ ] |
-| Motor solder pads (×4) / power pads | `Connectors.tsx` | — | [ ] | [ ] custom pad footprint |
-| Passives (R/C) | inline | — | use `Device:R` / `Device:C` symbols, project-local 0402/0603 footprints |
-| *Not on this board:* KH-FG0.5-H2.0-16PIN, B2B/B4B-PH/XH | `Mezzanine.tsx`, `imports/` | COL-COTS-0003 | skip — mezzanine branch not taken | |
+How parts get into the library (CLAUDE.md: project-local, never global):
+- **Standard packages**: KiCad's own footprint copied verbatim into `lib/MC3_COL_MAIN.pretty/`
+  (`cp` — a file copy, not a text edit; the 3D-model reference stays `${KICAD10_3DMODEL_DIR}`).
+- **Symbols**: Konnect `create_symbol` from the datasheet pin table. Konnect can't set custom
+  symbol fields, so **`COTS` / `LCSC` / `Footprint` are set on the schematic instances**
+  (`edit_schematic_component`) — that is what the BOM export reads anyway.
+- **Custom land patterns** (bare pads, FFC): Konnect `create_footprint` from the drawing.
 
-Fill in the `—` COTS IDs from the vault register before creating the symbol; a part with no
-record does not go in.
+| Part | Qty | COTS | LCSC | Symbol | Footprint |
+|---|---|---|---|---|---|
+| DRV8214RTER H-bridge | 4 | COL-COTS-0028 | C22427938 | [x] `MC3_COL_MAIN:DRV8214RTER` (SLVSH04 Table 6-1) | [x] `WQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias` (TI RTE0016C; EP 1.68 and via field per SLVSH04 §11 / vault) |
+| STM32F411RET6 | 1 | COL-COTS-0024 | C94355 | [x] `MC3_COL_MAIN:STM32F411RET6` (pin types per KiCad `MCU_ST_STM32F4`, names per vault MCU Pinout) | [x] `LQFP-64_10x10mm_P0.5mm` |
+| AMS1117-3.3 LDO | 1 | **none** | C6186 | [ ] | [ ] `SOT-223-3_TabPin2` |
+| AO4407C P-FET | 1 | **none** | C469397 | [ ] | [ ] `SOIC-8_3.9x4.9mm_P1.27mm` |
+| X32258MSB4SI crystal 8 MHz | 1 | **none** | C2682774 | [ ] | [ ] 3.2×2.5 4-pad (datasheet) |
+| SKRKAEE020 reset switch | 1 | **none** — vault: *may be deleted* | C115357 | [ ] | [ ] |
+| AYF530435 FFC 0.5 mm 4P | 4 | **none** | C425129 | [ ] | [ ] custom (Panasonic drawing) |
+| Motor lead pads 2.2×1.4 @ 2.6 | 4 | **none** (#tbd in vault) | — | [ ] | [ ] custom |
+| Machine supply pads 3.5×2.0 @ 4.2 | 1 | — | — | [ ] | [ ] custom |
+| SWD header, bare PTH ×4, DNP | 1 | — | — | [ ] | [ ] custom |
+| R/C passives | — | — | — | `Device:R` / `Device:C` | [ ] `R_0402`, `C_0402`, `C_0603`, `C_0805` copied in |
+
+**Blocked on a vault decision:** the bold "none" rows have no COTS record. CLAUDE.md and the
+Konnect project rule say a part with no record doesn't go in; the vault's own entry gate
+("Every part in the BOM carries a record …") lists these same parts as the gap. Either
+records get written (commodity-part records) or the rule is relaxed for support parts —
+user's call.
 
 ## 2. Schematic (Konnect `sch_*` toolsets) — hierarchical, one sheet per legacy group file
 
