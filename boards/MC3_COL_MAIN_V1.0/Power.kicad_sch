@@ -255,7 +255,8 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -267,7 +268,8 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -914,7 +916,8 @@
 			(symbol "+3V3_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -926,7 +929,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -938,7 +942,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1053,7 +1058,12 @@
 			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -1188,7 +1198,12 @@
 			(symbol "PWR_FLAG_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+						(xy 0 0)
+						(xy 0 1.27)
+						(xy -1.016 1.905)
+						(xy 0 2.54)
+						(xy 1.016 1.905)
+						(xy 0 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1201,20 +1216,643 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(text "Power - PROTOTYPE architecture (vault Main-Board-01: 5 V in -> P-FET reverse-polarity -> VM direct; 3.3 V via LDO). Incoming supply rail is an open entry gate in the vault. Net naming: vault VIN_RAW == KiCad VM (same copper). Sensor VIN (encoder FFCs) also runs from VM (LX34311 needs 4-6 V)."
-		(exclude_from_sim no)
-		(at 30 40 0)
-		(effects
-			(font
-				(size 1.5 1.5)
+		(symbol "Device:Polyfuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at -2.54 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Polyfuse"
+				(at 2.54 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.27 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "resettable fuse PTC PPTC polyfuse polyswitch"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*polyfuse* *PTC*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Polyfuse_0_1"
+				(polyline
+					(pts
+						(xy -1.524 2.54)
+						(xy -1.524 1.524)
+						(xy 1.524 -1.524)
+						(xy 1.524 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.762 2.54)
+					(end 0.762 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Polyfuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:SMAJ5.0A"
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMAJ5.0A"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_SMA"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
+				(at -1.27 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "unidirectional diode TVS voltage suppressor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*SMA*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(embedded_fonts no)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(symbol "SMAJ5.0A_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy -1.27 1.27)
+						(xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27)
+						(xy 1.27 -1.27)
+						(xy -1.27 0)
+						(xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SMAJ5.0A_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 		)
-		(uuid "586a4f04-9682-4565-a212-9e5417ca25ad")
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	
+		(symbol
+		  "Device:C_Polarized"
+		  (pin_numbers
+		    (hide yes)
+		  )
+		  (pin_names
+		    (offset 0.254)
+		  )
+		  (exclude_from_sim no)
+		  (in_bom yes)
+		  (on_board yes)
+		  (in_pos_files yes)
+		  (duplicate_pin_numbers_are_jumpers no)
+		  (property "Reference" "C"
+		    (at 0.635 2.54 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		      (justify left)
+		    )
+		  )
+		  (property "Value" "C_Polarized"
+		    (at 0.635 -2.54 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		      (justify left)
+		    )
+		  )
+		  (property "Footprint" ""
+		    (at 0.9652 -3.81 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Datasheet" ""
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "Description" "Polarized capacitor"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "ki_keywords" "cap capacitor"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (property "ki_fp_filters" "CP_*"
+		    (at 0 0 0)
+		    (show_name no)
+		    (do_not_autoplace no)
+		    (hide yes)
+		    (effects
+		      (font
+		        (size 1.27 1.27)
+		      )
+		    )
+		  )
+		  (symbol "C_Polarized_0_1"
+		    (rectangle
+		      (start -2.286 0.508)
+		      (end 2.286 1.016)
+		      (stroke
+		        (width 0)
+		        (type default)
+		      )
+		      (fill
+		        (type none)
+		      )
+		    )
+		    (polyline
+		      (pts
+		        (xy -1.778 2.286)
+		        (xy -0.762 2.286)
+		      )
+		      (stroke
+		        (width 0)
+		        (type default)
+		      )
+		      (fill
+		        (type none)
+		      )
+		    )
+		    (polyline
+		      (pts
+		        (xy -1.27 2.794)
+		        (xy -1.27 1.778)
+		      )
+		      (stroke
+		        (width 0)
+		        (type default)
+		      )
+		      (fill
+		        (type none)
+		      )
+		    )
+		    (rectangle
+		      (start 2.286 -0.508)
+		      (end -2.286 -1.016)
+		      (stroke
+		        (width 0)
+		        (type default)
+		      )
+		      (fill
+		        (type outline)
+		      )
+		    )
+		  )
+		  (symbol "C_Polarized_1_1"
+		    (pin passive line
+		      (at 0 3.81 270)
+		      (length 2.794)
+		      (name ""
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "1"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		    (pin passive line
+		      (at 0 -3.81 90)
+		      (length 2.794)
+		      (name ""
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		      (number "2"
+		        (effects
+		          (font
+		            (size 1.27 1.27)
+		          )
+		        )
+		      )
+		    )
+		  )
+		  (embedded_fonts no)
+		)
 	)
 	(wire
 		(pts
-			(xy 80.01 63.5) (xy 80.01 72.39)
+			(xy 80.01 63.5)
+			(xy 80.01 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1224,7 +1862,8 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 68.58) (xy 85.09 72.39)
+			(xy 85.09 68.58)
+			(xy 85.09 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1234,7 +1873,8 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 80.01) (xy 31.75 80.01)
+			(xy 34.29 80.01)
+			(xy 31.75 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1244,7 +1884,8 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 97.79) (xy 119.38 95.25)
+			(xy 119.38 97.79)
+			(xy 119.38 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1254,7 +1895,8 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 66.04) (xy 82.55 72.39)
+			(xy 82.55 66.04)
+			(xy 82.55 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1264,7 +1906,8 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 97.79) (xy 160.02 95.25)
+			(xy 160.02 97.79)
+			(xy 160.02 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1274,13 +1917,30 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 87.63) (xy 85.09 96.52)
+			(xy 85.09 87.63)
+			(xy 85.09 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f9fce845-4e8f-441b-84b7-ab73462a198b")
+	)
+	(wire
+		(pts
+			(xy 45.72 99.06)
+			(xy 45.72 101.6)
+		)
+		(uuid "ac81c2a5-c217-46f6-b700-2e63b4e27d72")
+	)
+	(text "Power - PROTOTYPE architecture (vault Main-Board-01: 5 V in -> P-FET reverse-polarity -> VM direct; 3.3 V via LDO). Incoming supply rail is an open entry gate in the vault. Net naming: vault VIN_RAW == KiCad VM (same copper). Sensor VIN (encoder FFCs) also runs from VM (LX34311 needs 4-6 V)."
+		(at 30 40 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "586a4f04-9682-4565-a212-9e5417ca25ad")
 	)
 	(label "VIN_PROT"
 		(at 80.01 63.5 0)
@@ -1432,27 +2092,25 @@
 		)
 		(uuid "f4ae38cd-f669-43af-b058-467d81cfd584")
 	)
-	(global_label "VIN_PROT"
-		(shape input)
+	(label "VIN_PAD"
 		(at 31.75 80.01 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify right bottom)
 		)
-		(uuid "625f83bf-5dd9-49c9-a193-9d02b294f666")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 31.75 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+		(uuid "616b53b2-4057-4283-a1a9-4760af4dde39")
+	)
+	(label "VIN_PAD"
+		(at 45.72 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
+		(uuid "b21f6601-b437-4459-9755-3b45a242dafe")
 	)
 	(global_label "VM"
 		(shape input)
@@ -1476,15 +2134,77 @@
 			)
 		)
 	)
+	(global_label "VIN_PROT"
+		(shape input)
+		(at 45.72 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "71ef6096-d38a-4243-8f04-4431d0a0817e")
+	)
+  (label "VIN_PROT"
+    (at 58.42 114.3 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "de885a5b-6259-4b4a-9200-22ae1612dc9c")
+  )
+  (label "GND"
+    (at 58.42 106.67999999999999 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "a6bf86a3-4fcc-4f28-98bd-6cb445b4c4f3")
+  )
+  (label "VM"
+    (at 185.42 87.63 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "244f413a-831e-43c7-a5af-07d0b0e5b0bf")
+  )
+  (label "VM"
+    (at 195.58 87.63 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "a01c7d94-6d68-45cb-afa5-67a5cda0a2d1")
+  )
+  (label "VM"
+    (at 185.42 110.49 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "5b5d080b-95b6-493f-bc8d-2faa288e50f5")
+  )
+  (label "GND"
+    (at 185.42 95.25 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "fd09d3c7-6f41-4a96-9eea-9cd9099209f7")
+  )
+  (label "GND"
+    (at 195.58 95.25 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "c6483aea-4c9c-4304-a458-0f4f45af5d6e")
+  )
+  (label "VIN_PROT"
+    (at 195.58 110.49 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "d1cede1f-d97b-4809-a7dc-3c23a03f4879")
+  )
+  (text "Review 2026-08-22: input path = pads (VIN_PAD) -> polyfuse F60 -> VIN_PROT (TVS D62 to GND) -> Q1 reverse-polarity FET -> VM. VM bulk C61/C62 2x22uF added (TI: sufficient bulk on VM). LDO output cap now tantalum."
+    (at 30 130 0)
+    (effects (font (size 1.5 1.5)))
+    (uuid "7a1ebc2e-eba5-4882-bb9c-b71244724ebc")
+  )
 	(symbol
 		(lib_id "Regulator_Linear:AMS1117-3.3")
 		(at 139.7 80.01 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "0b1d70dc-20a9-4832-a447-6203c7d3b01e")
 		(property "Reference" "U1"
@@ -1573,6 +2293,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "5faff8e3-3eec-41fb-9fcf-2e962cd40224")
 		)
@@ -1601,11 +2323,9 @@
 		(lib_id "Device:C")
 		(at 119.38 91.44 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "15f32a2c-0443-48f7-a97b-e48a1fb09d6b")
 		(property "Reference" "C1"
@@ -1673,6 +2393,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "ec7b9da8-4e1f-466b-a19e-c7b2b6e40c9f")
 		)
@@ -1698,11 +2420,9 @@
 		(lib_id "power:+3V3")
 		(at 160.02 87.63 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "2d5e8671-08a3-4116-b3d5-0a3c757d3762")
 		(property "Reference" "#PWR05"
@@ -1758,6 +2478,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "0a434015-4037-454d-91cc-43a4f50dd96e")
 		)
@@ -1780,11 +2502,9 @@
 		(lib_id "power:GND")
 		(at 139.7 87.63 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "44d39082-4683-4a08-b5ee-f646bbba3cd1")
 		(property "Reference" "#PWR04"
@@ -1840,6 +2560,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "c4bf37e5-aea1-462f-947d-ad0c24c3d232")
 		)
@@ -1862,11 +2584,9 @@
 		(lib_id "Device:R")
 		(at 64.77 100.33 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "4c12240c-79f4-4bd3-81e3-ed745e349e8d")
 		(property "Reference" "R5"
@@ -1932,6 +2652,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "2"
 			(uuid "9e3a7643-ee93-4554-b62d-53ededb30efa")
 		)
@@ -1957,11 +2679,9 @@
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 39.37 80.01 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "5c97a957-e083-4691-87e5-0aa36b92c343")
 		(property "Reference" "J1"
@@ -2027,6 +2747,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "a08e19d0-1320-44df-8b39-8f50138f2691")
 		)
@@ -2049,14 +2771,12 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
+		(lib_id "Device:C_Polarized")
 		(at 160.02 91.44 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "a7134c63-6559-4b3d-b3a8-6f1cb5de3d93")
 		(property "Reference" "C2"
@@ -2070,7 +2790,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF"
+		(property "Value" "22uF 10V Ta"
 			(at 160.655 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2081,7 +2801,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MC3_COL_MAIN:C_0805_2012Metric"
+		(property "Footprint" "MC3_COL_MAIN:CP_EIA-3216-18_Kemet-A"
 			(at 160.02 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -2113,7 +2833,7 @@
 				)
 			)
 		)
-		(property "Note" "LDO output 22uF - AMS1117 compensation cap. OPEN (vault): datasheet specifies tantalum, no ESR window; ceramic fitted - confirm stability on hardware or fit tantalum"
+		(property "Note" "LDO output cap changed to TANTALUM 22uF 10V case A (3216) per AMS1117 datasheet stability note (review item 8). Pin1 = + (to +3V3). LCSC TBD"
 			(at 160.02 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -2124,6 +2844,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "b427e774-f60b-4cee-b6c7-5812069934f1")
 		)
@@ -2149,11 +2871,9 @@
 		(lib_id "power:PWR_FLAG")
 		(at 87.63 72.39 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "aa912fac-98a8-4cf4-8a78-7262fdfb08d6")
 		(property "Reference" "#PWR03"
@@ -2209,6 +2929,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "16b15ed0-858b-4927-8a0f-3fc1f27855b4")
 		)
@@ -2231,11 +2953,9 @@
 		(lib_id "power:PWR_FLAG")
 		(at 64.77 104.14 180)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "c0b1be32-a786-4226-821a-65a0bb8249c3")
 		(property "Reference" "#PWR01"
@@ -2291,6 +3011,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "4f81c3e3-69b4-49a3-9c5e-d9086aafc66b")
 		)
@@ -2313,11 +3035,9 @@
 		(lib_id "power:PWR_FLAG")
 		(at 85.09 96.52 180)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "c3082c54-9124-460e-90d7-a549b8b7a12d")
 		(property "Reference" "#PWR02"
@@ -2373,6 +3093,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "e0a69229-5314-487b-ba7b-46ad4ee07fa4")
 		)
@@ -2395,11 +3117,9 @@
 		(lib_id "MC3_COL_MAIN:AO4407C")
 		(at 80.01 80.01 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "f57f92a5-258a-45e1-925d-16a60302c207")
 		(property "Reference" "Q1"
@@ -2487,6 +3207,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "9fd28d06-917a-4e70-875c-fdf8fd36697d")
 		)
@@ -2526,4 +3248,368 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Device:Polyfuse")
+		(at 45.72 95.25 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "02bce6a5-78b3-4592-af23-cd6e0071f6f6")
+		(property "Reference" "F60"
+			(at 43.18 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A hold"
+			(at 48.26 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:Fuse_1206_3216Metric"
+			(at 45.72 95.25 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 95.25 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "F60")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "PROVISIONAL polyfuse 1206, ~2.5 A hold: board worst case 4.15 A all-stall is bounded by the configured regulation limit; size once the supply rail and limit are set (vault). LCSC TBD"
+			(at 45.72 95.25 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Diode:SMAJ5.0A")
+		(at 58.42 110.49 90)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "36d069fd-9ff1-46b5-90b8-9a162bbad5cb")
+		(property "Reference" "D62"
+			(at 55.88 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMAJ5.0A"
+			(at 60.96 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:D_SMA"
+			(at 58.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "D62")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "TVS SMAJ5.0A (unidirectional, 5 V standoff) VIN_PROT to GND, after the fuse. Cathode to VIN_PROT. LCSC TBD. Review item 5 / vault no-input-protection open item"
+			(at 58.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Device:C")
+		(at 185.42 91.44 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1db325b6-4a17-40bd-8dd1-64ca46eafc31")
+		(property "Reference" "C61"
+			(at 186.055 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF 10V"
+			(at 186.055 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:C_0805_2012Metric"
+			(at 185.42 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "C61")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "VM bulk 22uF 10V X5R 0805 (x2 = 44uF) - SLVSH04 sec 10.1 bulk capacitance; review item 3"
+			(at 185.42 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Device:C")
+		(at 195.58 91.44 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "99e17c79-1679-4524-8fad-ac5c652a9fe9")
+		(property "Reference" "C62"
+			(at 196.215 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF 10V"
+			(at 196.215 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:C_0805_2012Metric"
+			(at 195.58 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 195.58 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "C62")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "VM bulk 22uF 10V X5R 0805 (second of two)"
+			(at 195.58 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 185.42 110.49 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0cd432ba-7b58-4d1b-aadf-ec1409471668")
+		(property "Reference" "TP65"
+			(at 185.42 103.632 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VM"
+			(at 185.42 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:TestPoint_Pad_1.0x1.0mm"
+			(at 185.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "TP65")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "test point VM"
+			(at 185.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 195.58 110.49 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e86472a-d499-4958-97ac-6e11121c1afe")
+		(property "Reference" "TP66"
+			(at 195.58 103.632 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VIN_PROT"
+			(at 195.58 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:TestPoint_Pad_1.0x1.0mm"
+			(at 195.58 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 195.58 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Power"
+				(path "62fa4f2c-604d-44f9-988f-2ce377285c9c"
+					(reference "TP66")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Note" "test point VIN_PROT"
+			(at 195.58 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 )

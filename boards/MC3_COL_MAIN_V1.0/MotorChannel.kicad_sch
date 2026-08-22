@@ -1481,6 +1481,11 @@
 		)
 		(uuid "ee5d61ff-4a1d-4bcb-9964-7b48a5e6ede8")
 	)
+  (text "Review 2026-08-22: R_IPROPI 6.8k -> hardware current trip 1.99 A (was 8.45k -> 1.60 A)."
+    (at 40 120 0)
+    (effects (font (size 1.5 1.5)))
+    (uuid "82520f38-0d18-48f2-8c81-6e94b6eaf2df")
+  )
 	(symbol
 		(lib_id "Device:R")
 		(at 134.62 64.77 0)
@@ -1724,7 +1729,7 @@
 				)
 			)
 		)
-		(property "Value" "8.45k"
+		(property "Value" "6.8k"
 			(at 124.46 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1766,7 +1771,7 @@
 				)
 			)
 		)
-		(property "Note" "PROVISIONAL R_IPROPI = 8.45k (SLVSH04 Table 9-1 example). Derive from CS_GAIN_SEL=000b range and ADC full scale - CALC owed to vault"
+		(property "Note" "R_IPROPI 6.8k: I_TRIP = VREF/(R*A_IPROPI) = 3.3/(6.8k*244uA/A) = 1.99 A (DRV8214 2 A RMS rating; SLVSH04 eq. 3, A_IPROPI_H = 244 uA/A at CS_GAIN_SEL=000b). V_IPROPI at 1.65 A stall = 2.74 V (ADC headroom). PROVISIONAL -> vault CALC"
 			(at 124.46 91.44 0)
 			(hide yes)
 			(show_name no)
