@@ -30,3 +30,6 @@ boards/**/*.zip
 .konnect/transactions/
 .konnect/*.log
 .konnect/*.jsonl
+
+# Konnect transaction restore backups
+_restore_backup_*/
