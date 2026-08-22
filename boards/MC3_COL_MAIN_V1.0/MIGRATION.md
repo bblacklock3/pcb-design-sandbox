@@ -105,8 +105,38 @@ the drivers' VM and the sensor VIN).
 | Outline | CAD export ⌀66 / 25×25 R2 | Layout Constraints / Main-Board-01 § Board geometry |
 | Sensor VIN rail | = VM (5 V prototype assumption) | Encoder Interface § Supply / entry gate |
 
-**Known gap:** I²C pull-ups (one set, 4.7 k to +3V3) are decided but **not yet placed** in the
-schematic — add on the MCU sheet before the PCB update.
+I²C pull-ups (one set, 4.7 k to +3V3) placed on the MCU sheet.
+
+### Design review 2026-08-22 — changes applied (all committed, ERC 0 errors)
+
+| # | Finding | Change | Vault item |
+|---|---|---|---|
+| 1 | HSE caps wrong for crystal | C19/C20 18 pF → **33 pF** (X32258MSB4SI is CL = 20 pF, LCSC C2682774) | BOM line "18 pF load caps" is wrong → correct |
+| 2 | R_IPROPI not deliberate | 8.45 k → **6.8 k**: I_TRIP = V_VREF/(R·A_IPROPI) = 3.3/(6.8 k × 244 µA/A) = **1.99 A** (≈ DRV8214 2 A RMS); V_IPROPI at 1.65 A stall = 2.74 V | CALC record: R_IPROPI / I_TRIP / ADC scaling |
+| 3 | No VM bulk | C61/C62 2× 22 µF 10 V 0805 at the VM trunk | supply/bulk sizing once the rail is specified |
+| 4 | Sensor rail shares motor ripple | FFC VIN now `VSENS` = VM via FB61 (600 Ω@100 MHz) + C63 4.7 µF | Encoder Interface § Supply |
+| 5 | No input protection | F60 polyfuse (PROVISIONAL 2.5 A hold, 1206) in series; D62 SMAJ5.0A TVS VIN_PROT→GND after the fuse | "no input protection" open item |
+| 6 | NRST bare | C60 100 nF NRST→GND | — |
+| 7 | J2 not really DNP | `DNP` field set; **GUI: set the DNP / exclude-from-BOM / exclude-from-pos attributes on J2** | — |
+| 8 | LDO output cap ESR | C2 → tantalum 22 µF 10 V case A (3216), `Device:C_Polarized`; LCSC TBD | AMS1117 ESR open item → closed if tantalum fitted |
+| 9 | Debug/logging channel | SWD header 6-pin: +3V3, SWDIO, SWCLK, GND, **NRST, SWO (PB3)** — SWV trace is the logging channel instead of USB | MCU Pinout: SWO on PB3; USB stays out (height cap) |
+| 10 | Test points | TP60–64 (+3V3, SCL, SDA, IPROPI_leaf1, GND), TP65 VM, TP66 VIN_PROT — 1.0 mm pads | — |
+| 11 | Indicators | D60/R60 heartbeat LED on PA5, D61/R61 power LED on +3V3 (0603, 1 k) | MCU Pinout: PA5 = LED |
+| 12 | VDDA filtering | VDDA split from +3V3 through FB60 (+ PWR_FLAG); C8/C9 (100 n + 1 µ) on the VDDA side | — |
+
+**USB-C decision:** not this revision — power is redundant, the vault already excludes USB, and a
+USB-C receptacle + plug exceeds the 4 mm mated-height cap (COL-PARAM-0020). Data link = SWO via
+the header; a UART on PA11/PA12 (USART6) to pads is the later option (costs RC_OUT_leaf4's pin).
+
+**LCSC numbers still TBD** (support parts, no COTS record): FB60/FB61 ferrite 0603, F60 polyfuse,
+D62 SMAJ5.0A, D60/D61 LEDs, C2 tantalum, C61/C62 22 µF 10 V 0805. Fill from JLC basic parts
+before the BOM export.
+
+### GUI items outstanding (user)
+- Re-annotate (new parts carry R60…/C60…/TP60… placeholders): Tools → Annotate, entire schematic,
+  reset; save; close eeschema.
+- J2: set DNP / exclude from BOM / exclude from position files attributes.
+- Optional tidy: drag-move the new LED/FB/TP symbols where their label text overlaps neighbours.
 
 ## 3. PCB (Konnect `pcb_*` toolsets; KiCad open, IPC on)
 
