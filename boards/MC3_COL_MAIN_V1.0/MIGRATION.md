@@ -80,16 +80,22 @@ record does not go in.
       In2 carrying 4.15 A; size against it or pay for 1 oz inner.
 - [ ] **GUI:** Board Setup → Constraints → copper-to-edge clearance **0.2 mm** (vault:
       Layout Constraints → Clearances)
-- [ ] **GUI:** outline — File → Import → Graphics → `mechanical/Collimator_Main_PCB_V1.0.DXF`
-      onto Edge.Cuts at (0,0), mm. The DXF was regenerated 2026-08-22 from the vault numbers
-      (⌀64 mm disc, 22×22 mm square cutout, both centred at the beam axis) because the
-      vault (`Main-Board-01.md` § Board geometry) says the old ⌀60 / 25×25 R2 file "does not
-      describe this board". Still owed: a real export from the assembly CAD, and a vault
-      decision on the cutout's inside-corner radius (drawn sharp; the fab will impose one).
-      The 60 vs 65 mm envelope #tbd in the vault is unresolved — the outline lands inside
-      whichever wins.
-- [ ] Origin: keep the board origin at the beam axis (all legacy placement numbers and the
-      vault annulus are measured from it); set the grid/drill origin there in KiCad
+- [x] **Outline imported from the assembly CAD** (2026-08-22, user): **⌀66 mm disc, 25×25 mm
+      cutout with R2 internal fillets**, on Edge.Cuts. This supersedes both the old
+      `mechanical/` DXF (⌀60) and the ⌀64 / 22×22 stand-in I generated from the vault numbers
+      — and it means the vault's Layout Constraints table (⌀64, 22×22 square) and
+      `Main-Board-01.md` § Board geometry are **stale against CAD**; a vault update is owed
+      (user). The user expects the outline may be revised again — treat it as provisional.
+- [x] CAD export committed as `mechanical/Collimator_Main_PCB.DXF` (replaces the old
+      `_V1.0.DXF` and my stand-in); verified ⌀66 circle + 25×25 R2 cutout at DXF (0,0), mm
+- [x] **Origin convention:** outline moved so **board centre = KiCad (100, 100)** (it was at
+      the page corner). **Beam-axis coordinate = KiCad coordinate − (100, 100).** Every
+      Konnect `place_component` / `add_zone` call must add that offset to the vault / legacy
+      numbers.
+- [ ] **GUI:** Place → Drill/Place File Origin at (100, 100) and Place → Grid Origin at
+      (100, 100), then View → Display Origin → grid origin, Ctrl+S. (Not in the saved file
+      yet — no `aux_axis_origin` / `grid_origin` in `.kicad_pcb`.) Makes fab outputs and the
+      status-bar coordinates beam-axis-relative.
 - [ ] Placement from legacy `MC3_COL_MAIN_V1.0.tsx` `BLOCK_POS` / `CONN_RING_MM` /
       `CLUSTERS` (MCU at (-21, 2), power at (19.5, -2), leaves at ±12/0, ±20, connector
       clusters on 55° / 235° diagonals, rings 25.6 / 28.6 / 28 mm)
