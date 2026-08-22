@@ -226,21 +226,9 @@ PA11/PA12, RC_OUT_leaf4 on PB14, SWO PB3, PA5 LED, PC12/PB13 yaw).
       channel to face its motor was dropped: every block now sits at *one* orientation, the
       leaf3 block the user arranged by hand being the pattern. Fine (non-90°) rotations are
       therefore no longer wanted anywhere except possibly the rim connectors.
-      Pattern, relative to the driver anchor (U at rot −90):
-      | part | Δx | Δy | rot |
-      |---|---|---|---|
-      | DRV8214 U | 0 | 0 | −90 |
-      | 1 µF VM (C) | −3.00 | +1.00 | −90 |
-      | A1 strap 2.2 k (R) | −3.00 | −1.50 | 90 |
-      | A0 strap 2.2 k (R) | −4.34 | −1.50 | 90 |
-      | 10 k nFAULT (R) | −2.50 | −3.50 | 90 |
-      | 10 k RC_OUT (R) | −1.16 | −3.50 | 90 |
-      | 100 nF +3V3 (C) | +0.17 | −3.50 | 90 |
-      | 6.8 k IPROPI (R) | +1.50 | −3.50 | 90 |
-      | motor pads (J) | −0.20 | +3.50 | 0 |
-      Anchors: leaf1 U3 (93.9, 82), yaw U7 (101.9, 82), leaf2 U4 (109.9, 82) across the north
-      band; leaf3 U5 (93.9, 120.5) *(reference, untouched)* and leaf4 U6 (109.9, 120.5) south.
-      TP6/TP7 moved off the new motor pads. DRC: no clearance or courtyard violations.
+      Anchors were leaf1 U3 (93.9, 82), yaw U7 (101.9, 82), leaf2 U4 (109.9, 82) across the north
+      band; leaf3 U5 (93.9, 120.5) and leaf4 U6 (109.9, 120.5) south. TP6/TP7 moved off the new
+      motor pads. DRC: no clearance or courtyard violations. **Superseded — see § 7.**
 - [ ] **Consequence of the uniform orientation, to review:** on the three north channels the
       motor solder pads now face the aperture, not the rim, and the encoder FFCs J3/J4 no longer
       sit next to their own channel (J3 = ENC_leaf1 is on the east rim, J4 = ENC_leaf2 north).
@@ -355,3 +343,47 @@ flipping moves the text to B.SilkS.
   "no datasheet held" list — which trips the standing rule in `CLAUDE.md`. A record is owed before
   the next revision, and the vault already flags the retention risk (no solder tabs, no hold-downs,
   four 0.5 mm joints take the whole insertion/extraction force on a rotating board).
+
+
+## 7. Side allocation applied, and the channel pattern of record — 2026-08-22
+
+### Flipped to B.Cu (Konnect `flip_component`, KiCad closed)
+
+**J2** SWD · **SW1** reset · **D2/D3** LEDs · **J1** supply pads · **J12** CAN pads ·
+**TP1–TP7**. 13 footprints; 88 remain on F.Cu. DRC after: 275 unconnected (nothing routed) and
+**no new errors**; warnings 296 → 229 as the hand-deleted `REF**` texts came out.
+
+Assembly consequence: J1, J12 and TP1–TP7 are bare copper and J2 is through-hole, so **none of
+those affect the SMT process**. **SW1, D2 and D3 are what make this a genuine two-sided build** —
+if the second reflow pass is unwanted, those three come back to F.Cu and everything else stays.
+
+`flip_component` has no IPC path — it writes the board file directly and refuses while KiCad is
+reachable. So any further flip is a quit-KiCad operation, and KiCad must be reopened afterwards to
+pick the change up.
+
+### The channel pattern of record (user's leaf3, 2026-08-22)
+
+The user rotated the whole leaf3 block one 90° step and moved it outboard: driver now at
+**r = 25.2 mm** and the motor pads at **r = 26.6 mm**, pointing away from the aperture and close to
+the 25 mm motor radius of COL-CALC-0009. The internal geometry is unchanged — every offset is the
+§ 3 pattern turned 90°. Relative to the driver anchor (U at rot **180**):
+
+| part | Δx | Δy | rot |
+|---|---|---|---|
+| DRV8214 U | 0 | 0 | 180 |
+| 1 µF VM (C) | −1.00 | −3.00 | 180 |
+| A1 strap 2.2 k (R) | +1.50 | −3.00 | 0 |
+| A0 strap 2.2 k (R) | +1.50 | −4.34 | 0 |
+| 10 k nFAULT (R) | +3.50 | −2.50 | 0 |
+| 10 k RC_OUT (R) | +3.50 | −1.16 | 0 |
+| 100 nF +3V3 (C) | +3.50 | +0.17 | 0 |
+| 6.8 k IPROPI (R) | +3.50 | +1.50 | 0 |
+| motor pads (J) | −3.50 | −0.20 | −90 |
+
+**leaf1, leaf2, leaf4 and yaw are the user's to place** (decision 2026-08-22) — the angular
+positions are a mechanical call, not a layout one, and the vault does not fix them. The table
+above is the block to keep consistent; check each channel against it before Gate 1.
+
+The two things that were going to drive an automated re-placement still stand as review items:
+motor pads want to land near **r = 25**, and each channel's pads want to face the rim rather than
+the aperture.
