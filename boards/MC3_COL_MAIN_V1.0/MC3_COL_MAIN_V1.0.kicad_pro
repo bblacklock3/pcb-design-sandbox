@@ -527,43 +527,58 @@
       },
       {
         "clearance": 0.2,
-        "name": "VM",
-        "priority": 0,
-        "track_width": 2.0,
-        "via_diameter": 1.0,
-        "via_drill": 0.6
-      },
-      {
-        "clearance": 0.2,
-        "name": "MOTOR",
-        "priority": 0,
-        "track_width": 1.2,
-        "via_diameter": 0.9,
-        "via_drill": 0.5
-      },
-      {
-        "clearance": 0.15,
-        "name": "PWR_3V3",
-        "priority": 0,
-        "track_width": 0.4,
-        "via_diameter": 0.6,
-        "via_drill": 0.3
-      },
-      {
-        "clearance": 0.2,
         "name": "CAN",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
+        "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3
       },
       {
         "clearance": 0.15,
         "name": "I2C",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
+        "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3
+      },
+      {
+        "clearance": 0.2,
+        "name": "MOTOR",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.2,
+        "tuning_profile": "",
+        "via_diameter": 0.9,
+        "via_drill": 0.5
+      },
+      {
+        "clearance": 0.15,
+        "name": "PWR_3V3",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.4,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3
+      },
+      {
+        "clearance": 0.2,
+        "name": "VM",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 1.0,
+        "via_drill": 0.6
       }
     ],
     "meta": {

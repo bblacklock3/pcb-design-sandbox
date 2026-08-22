@@ -284,7 +284,8 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -296,7 +297,8 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -424,7 +426,8 @@
 			(symbol "D_TVS_Dual_AAC_0_0"
 				(polyline
 					(pts
-						(xy 0 -1.27) (xy 0 0)
+						(xy 0 -1.27)
+						(xy 0 0)
 					)
 					(stroke
 						(width 0)
@@ -438,7 +441,11 @@
 			(symbol "D_TVS_Dual_AAC_0_1"
 				(polyline
 					(pts
-						(xy -6.35 1.27) (xy -1.27 -1.27) (xy -1.27 1.27) (xy -6.35 -1.27) (xy -6.35 1.27)
+						(xy -6.35 1.27)
+						(xy -1.27 -1.27)
+						(xy -1.27 1.27)
+						(xy -6.35 -1.27)
+						(xy -6.35 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -450,7 +457,8 @@
 				)
 				(polyline
 					(pts
-						(xy -6.35 0) (xy 6.35 0)
+						(xy -6.35 0)
+						(xy 6.35 0)
 					)
 					(stroke
 						(width 0)
@@ -462,7 +470,10 @@
 				)
 				(polyline
 					(pts
-						(xy -3.302 1.27) (xy -3.81 1.27) (xy -3.81 -1.27) (xy -4.318 -1.27)
+						(xy -3.302 1.27)
+						(xy -3.81 1.27)
+						(xy -3.81 -1.27)
+						(xy -4.318 -1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -485,7 +496,10 @@
 				)
 				(polyline
 					(pts
-						(xy 4.318 1.27) (xy 3.81 1.27) (xy 3.81 -1.27) (xy 3.302 -1.27)
+						(xy 4.318 1.27)
+						(xy 3.81 1.27)
+						(xy 3.81 -1.27)
+						(xy 3.302 -1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -497,7 +511,11 @@
 				)
 				(polyline
 					(pts
-						(xy 6.35 1.27) (xy 1.27 -1.27) (xy 1.27 1.27) (xy 6.35 -1.27) (xy 6.35 1.27)
+						(xy 6.35 1.27)
+						(xy 1.27 -1.27)
+						(xy 1.27 1.27)
+						(xy 6.35 -1.27)
+						(xy 6.35 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -656,7 +674,11 @@
 			(symbol "FerriteBead_0_1"
 				(polyline
 					(pts
-						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
+						(xy -2.7686 0.4064)
+						(xy -1.7018 2.2606)
+						(xy 2.7686 -0.3048)
+						(xy 1.6764 -2.159)
+						(xy -2.7686 0.4064)
 					)
 					(stroke
 						(width 0)
@@ -668,7 +690,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 1.27) (xy 0 1.2954)
+						(xy 0 1.27)
+						(xy 0 1.2954)
 					)
 					(stroke
 						(width 0)
@@ -680,7 +703,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -1.27) (xy 0 -1.2192)
+						(xy 0 -1.27)
+						(xy 0 -1.2192)
 					)
 					(stroke
 						(width 0)
@@ -1221,7 +1245,8 @@
 				)
 				(polyline
 					(pts
-						(xy -0.254 1.016) (xy -0.254 -1.016)
+						(xy -0.254 1.016)
+						(xy -0.254 -1.016)
 					)
 					(stroke
 						(width 0.1524)
@@ -1257,7 +1282,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0.254 1.016) (xy 0.254 -1.016)
+						(xy 0.254 1.016)
+						(xy 0.254 -1.016)
 					)
 					(stroke
 						(width 0.1524)
@@ -1390,7 +1416,12 @@
 			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -1525,7 +1556,12 @@
 			(symbol "PWR_FLAG_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+						(xy 0 0)
+						(xy 0 1.27)
+						(xy -1.016 1.905)
+						(xy 0 2.54)
+						(xy 1.016 1.905)
+						(xy 0 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1539,19 +1575,10 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "CAN - machine control link (decision 2026-08-22; vault Control Electronics open item). STM32F412 CAN1 (PA11 RX / PA12 TX) -> TJA1051T/3 -> split termination (2x62R + 4.7nF, solder-jumper JP70 bridged) + PESD1CAN -> pads CANH/CANL/GND. Classic CAN 500 kbit/s. Layout: CANH/CANL as a tight pair, transceiver and termination next to the pads, D70 nearest the pads."
-		(exclude_from_sim no)
-		(at 30 40 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "1d06bcab-86e7-4df9-8e00-47bc991c23f8")
-	)
 	(wire
 		(pts
-			(xy 87.63 82.55) (xy 85.09 82.55)
+			(xy 87.63 82.55)
+			(xy 85.09 82.55)
 		)
 		(stroke
 			(width 0)
@@ -1561,7 +1588,8 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 77.47) (xy 85.09 77.47)
+			(xy 87.63 77.47)
+			(xy 85.09 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1571,7 +1599,8 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 74.93) (xy 85.09 74.93)
+			(xy 87.63 74.93)
+			(xy 85.09 74.93)
 		)
 		(stroke
 			(width 0)
@@ -1581,13 +1610,23 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 57.15) (xy 60.96 54.61)
+			(xy 60.96 57.15)
+			(xy 60.96 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d986a488-0833-41e9-837a-b715c45ae84c")
+	)
+	(text "CAN - machine control link (decision 2026-08-22; vault Control Electronics open item). STM32F412 CAN1 (PA11 RX / PA12 TX) -> TJA1051T/3 -> split termination (2x62R + 4.7nF, solder-jumper JP70 bridged) + PESD1CAN -> pads CANH/CANL/GND. Classic CAN 500 kbit/s. Layout: CANH/CANL as a tight pair, transceiver and termination next to the pads, D70 nearest the pads."
+		(at 30 40 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "1d06bcab-86e7-4df9-8e00-47bc991c23f8")
 	)
 	(label "TERM_MID"
 		(at 139.7 71.12 0)
@@ -1638,16 +1677,6 @@
 			(justify left bottom)
 		)
 		(uuid "356dddad-d8cc-4589-afe5-3ec3ada3b9f9")
-	)
-	(label "TERM_H"
-		(at 130.81 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5042461b-f38f-4ba7-9c44-211dd8ad4ee4")
 	)
 	(label "TERM_H"
 		(at 132.08 71.12 180)
@@ -1740,16 +1769,6 @@
 		(uuid "8e0ff5e9-a68f-402a-b9f9-787bb18b55ed")
 	)
 	(label "CANH"
-		(at 120.65 71.12 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9c1c61b4-6765-45e8-a360-af0e94fba514")
-	)
-	(label "CANH"
 		(at 116.84 100.33 180)
 		(effects
 			(font
@@ -1818,6 +1837,26 @@
 			(justify left bottom)
 		)
 		(uuid "ed6aeb1a-ecb2-4201-9d84-649138682362")
+	)
+	(label "CANH"
+		(at 121.92 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "577e4587-a29d-4bc8-a715-52382e4a3471")
+	)
+	(label "TERM_H"
+		(at 129.54 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a1c5a213-c8f2-44de-9fd5-37cae1be2ec7")
 	)
 	(global_label "+3V3"
 		(shape input)
@@ -1911,11 +1950,9 @@
 		(lib_id "Device:R")
 		(at 135.89 88.9 90)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "19c684d3-d51e-471a-a573-3b8cdee527de")
 		(property "Reference" "R32"
@@ -1992,6 +2029,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "06c9c89b-a156-4f37-88a0-7abb91bfccf0")
 		)
@@ -2017,11 +2056,9 @@
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 165.1 80.01 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "6315d656-aaa7-4a67-bfcc-1c2406c2793a")
 		(property "Reference" "J12"
@@ -2087,6 +2124,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "a7f2cf83-ba23-4d51-8ba1-8625203b2aad")
 		)
@@ -2115,11 +2154,9 @@
 		(lib_id "Device:C")
 		(at 71.12 66.04 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "830a6781-1f83-4ba5-a83e-2bf75521a7f5")
 		(property "Reference" "C28"
@@ -2198,6 +2235,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "49c9a418-4401-41e2-9fbd-3faa849ebb1e")
 		)
@@ -2223,11 +2262,9 @@
 		(lib_id "Device:D_TVS_Dual_AAC")
 		(at 125.73 100.33 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "b68395ef-1b7d-4a93-9613-f366accd7152")
 		(property "Reference" "D4"
@@ -2315,6 +2352,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "3"
 			(uuid "a21569f1-53d4-471b-96f8-4ecd1f204bd5")
 		)
@@ -2343,11 +2382,9 @@
 		(lib_id "Device:C")
 		(at 78.74 66.04 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "bc90007d-1ba2-444d-a911-2cdfd118c3cd")
 		(property "Reference" "C29"
@@ -2426,6 +2463,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "adaa7b81-3648-42bc-afb6-728e0fff9252")
 		)
@@ -2448,109 +2487,12 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Bridged")
-		(at 125.73 71.12 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d2248d62-9301-4aab-bf87-89e4f9e78bb3")
-		(property "Reference" "JP1"
-			(at 125.73 69.088 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TERM"
-			(at 125.73 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
-			(at 125.73 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 125.73 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 125.73 71.12 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "Solder jumper, BRIDGED by default = 120R termination fitted. No part"
-			(at 125.73 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6d025b7a-0c51-46bc-add1-e031aecf93b2")
-		)
-		(pin "2"
-			(uuid "53c4a735-a721-480f-8c04-f1bb59250d5e")
-		)
-		(instances
-			(project "CAN"
-				(path "/3d434ce1-889d-46d1-8950-1c686d039f9f"
-					(reference "JP70")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d53768a6-e0ca-46e0-8386-8014881aa541"
-					(reference "JP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 60.96 60.96 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "d5ecf32d-f875-4c24-86c3-2bee9284300f")
 		(property "Reference" "FB3"
@@ -2638,6 +2580,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "7b51eaae-5570-4f48-8e0f-b0741900afde")
 		)
@@ -2663,11 +2607,9 @@
 		(lib_id "Device:R")
 		(at 135.89 71.12 90)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "d7408f0e-3572-4e8a-ac7f-1fcb5365e06d")
 		(property "Reference" "R31"
@@ -2755,6 +2697,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "9756948b-7906-4435-b975-1b1e3d928b03")
 		)
@@ -2780,11 +2724,9 @@
 		(lib_id "Device:C")
 		(at 146.05 80.01 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "dc8bdda5-4eb3-4852-a82e-0434bca2e3ea")
 		(property "Reference" "C30"
@@ -2874,6 +2816,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "752f1c7e-c07a-40b5-bac5-2b9ea5f73a20")
 		)
@@ -2899,11 +2843,9 @@
 		(lib_id "power:GND")
 		(at 100.33 90.17 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "df1cc39d-7ce1-4381-a7b0-7ee578560c48")
 		(property "Reference" "#PWR022"
@@ -2959,6 +2901,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "fe84038e-81f7-4878-9a78-a5546dc443db")
 		)
@@ -2981,11 +2925,9 @@
 		(lib_id "Interface_CAN_LIN:TJA1051T-3")
 		(at 100.33 80.01 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "ee8fcc86-476a-492e-9f77-b19a12dbc88f")
 		(property "Reference" "U8"
@@ -3086,6 +3028,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "a576bf04-e50c-48d0-b177-4feb43fc749a")
 		)
@@ -3129,11 +3073,9 @@
 		(lib_id "power:PWR_FLAG")
 		(at 60.96 64.77 180)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "fe45ac54-a012-490c-bbfc-a1580aa54a4c")
 		(property "Reference" "#PWR021"
@@ -3189,6 +3131,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "d38a8011-46a8-4772-abaa-dc9fd33cd543")
 		)
@@ -3202,6 +3146,84 @@
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d53768a6-e0ca-46e0-8386-8014881aa541"
 					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 125.73 71.12 90)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b1fcecf9-3229-45af-b3b2-87cfd9bf8ace")
+		(property "Reference" "R72"
+			(at 125.73 69.088 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0R"
+			(at 125.73 71.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 125.73 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17168"
+			(at 125.73 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF0000TCE"
+			(at 125.73 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Termination enable: 0R fitted = 120R split termination in (board is a bus end on the bench). Remove to un-terminate if the board sits mid-bus. Replaces the bridged solder jumper (custom-pad footprint not placeable over IPC)"
+			(at 125.73 71.12 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "CAN"
+				(path "3d434ce1-889d-46d1-8950-1c686d039f9f"
+					(reference "R72")
 					(unit 1)
 				)
 			)
