@@ -25,7 +25,28 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# tscircuit cache
+# tscircuit cache (legacy — removed at end of KiCad migration)
 .tscircuit/
 
-.mcp.json
+# ---- KiCad ----
+# Per-user view state (layer visibility, zoom, selection) — not design data
+*.kicad_prl
+# Editor lock and autosave/backup artefacts
+*.lck
+_autosave-*
+*-save.kicad_*
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.bak
+*.bck
+# Footprint cache KiCad rebuilds on open
+fp-info-cache
+# Fabrication outputs are generated at a tagged commit, never committed
+boards/**/fab/
+boards/**/gerbers/
+boards/**/*.zip
+# Konnect call log / transaction journal (config in .konnect/project.json IS committed)
+.konnect/transactions/
+.konnect/*.log
+.konnect/*.jsonl

@@ -1,0 +1,12 @@
+{
+  "design_rules": [
+    "The Obsidian design vault (C:/Users/newte/Documents/Design Wiki) is the authority for design reasoning. Before placing any part, read its COTS record under 'Projects/MC3 Collimator/04 Records/COTS/'. A part with no COTS record does not go in the schematic.",
+    "Controlled values (rail voltages, current limits, board outline, connector geometry) come from PARAM records in the vault. Cite the PARAM; never invent a value in the KiCad project.",
+    "Assembly house is JLCPCB. Every placed part carries its JLCPCB part number (LCSC C-number) from its COTS record as a field, and uses a footprint from the project-local MC3_COL_MAIN library.",
+    "Per-part layout constraints (bypass adjacency, Kelvin pairs, thermal vias, keep-outs) live in docs/design/parts/<part>.md in this repo; read them before placing or routing that part."
+  ],
+  "fab_constraints": {
+    "fab_house": "JLCPCB"
+  },
+  "naming_conventions": {}
+}
