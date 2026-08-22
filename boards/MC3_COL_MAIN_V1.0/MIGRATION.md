@@ -67,8 +67,17 @@ record does not go in.
       (Set once via Konnect `set_design_rules`, then lost when KiCad rewrote `.kicad_pro` on
       project close — see `CLAUDE.md` consequence 2. Re-enter in **Board Setup →
       Constraints** while there for the edge clearance, or close the project and re-run.)
-- [ ] **GUI (no Konnect tool):** Board Setup → Physical Stackup → thickness **1.4 mm**
-      (vault: Layout Constraints → Thickness; Konnect scaffold wrote 1.6)
+- [ ] **GUI (no Konnect tool):** Board Setup → Physical Stackup. **Conflict found
+      2026-08-22:** the vault says 1.4 mm (Layout Constraints → Thickness; BOM "Bare board"
+      line in Main-Board-01.md) but JLCPCB's 4-layer thickness menu is 0.4/0.6/0.8/1.0/1.2/
+      1.6/2.0 mm — 1.4 is not offered, and the vault carries no rationale for it (h_board_max
+      is measured from the board face, so thickness doesn't eat it). Recommendation: 1.6 mm,
+      JLCPCB's standard 4-layer stackup **JLC04161H-7628** (F.Cu 0.035 / 7628 prepreg 0.2104 /
+      In1 0.0152 / core 1.065 / In2 0.0152 / 7628 prepreg 0.2104 / B.Cu 0.035), entered so the
+      KiCad stackup is honest rather than the 0.48/0.48/0.48 default. **Vault correction owed**
+      (user decision): Layout Constraints thickness 1.4 → 1.6 (or 1.2 if the assembly needs
+      thinner). Note the inner copper is 0.5 oz on that stackup — relevant to the VM fill on
+      In2 carrying 4.15 A; size against it or pay for 1 oz inner.
 - [ ] **GUI:** Board Setup → Constraints → copper-to-edge clearance **0.2 mm** (vault:
       Layout Constraints → Clearances)
 - [ ] **GUI:** outline — File → Import → Graphics → `mechanical/Collimator_Main_PCB_V1.0.DXF`

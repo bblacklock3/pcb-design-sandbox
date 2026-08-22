@@ -132,6 +132,9 @@ Four consequences:
   shown under Preferences → Plugins. Per machine, one-time, like `konnect init`. Backslashes
   are significant (the path becomes the Windows named-pipe name verbatim). Symptom when it's
   missing: `open_project` reports `ipc_address: ""` / "IPC is not reachable" while KiCad is
-  plainly running. Restart Claude Code after editing it.
+  plainly running. Restart Claude Code after editing it. The same file must also carry
+  `kicad_cli = 'C:\Program Files\KiCad\10.0\bin\kicad-cli.exe'` (and `kicad_binary`): once a
+  `config.toml` exists Konnect stops auto-detecting, and `run_drc`/`run_erc`/exports fail
+  with "Failed to spawn kicad-cli".
 - Konnect is AGPL-3.0. Internal design use; do not build/redistribute tooling on it without
   checking licensing.
