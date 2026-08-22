@@ -1,6 +1,6 @@
 (kicad_sch
-	(version 20250610)
-	(generator "konnect")
+	(version 20260306)
+	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "63a5bb10-bd29-49c4-9ad5-0d26692d2afc")
 	(paper "A4")
@@ -443,8 +443,7 @@
 			(symbol "+3V3_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27)
-						(xy 0 2.54)
+						(xy -0.762 1.27) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -456,8 +455,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54)
-						(xy 0.762 1.27)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -469,8 +467,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0)
-						(xy 0 2.54)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -585,12 +582,7 @@
 			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0)
-						(xy 0 -1.27)
-						(xy 1.27 -1.27)
-						(xy 0 -2.54)
-						(xy -1.27 -1.27)
-						(xy 0 -1.27)
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -624,13 +616,15 @@
 			(embedded_fonts no)
 		)
 	)
-	(no_connect
-		(at 54.61 54.61)
-		(uuid "dacc96c2-45d1-45d5-861c-5efdeb16b70d")
-	)
-	(no_connect
-		(at 54.61 95.25)
-		(uuid "d670f8a7-b1ca-4b78-b0e4-50b1b2749d47")
+	(text "Encoder interface - four 0.5 mm FFCs, one per leaf, to the LX34311 sensor boards (COL-COTS-0016). Contract: VIN 4-6 V from VM, GND, SIG open-drain pulled to +3V3 here (10k), spare unassigned. Vault: Main-Board-01 Encoder Interface / Connectors. Motor pads are on the MotorChannel sheet; supply pads on Power."
+		(exclude_from_sim no)
+		(at 30 25 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "dd600d86-55f7-42ff-82c8-15782117f862")
 	)
 	(no_connect
 		(at 54.61 134.62)
@@ -640,87 +634,103 @@
 		(at 54.61 175.26)
 		(uuid "a608eb98-a194-4583-b84e-6bdd003c7ac9")
 	)
-	(wire
-		(pts
-			(xy 54.61 52.07)
-			(xy 52.07 52.07)
-		)
-		(uuid "560312fe-c066-4def-9b80-547758e380fb")
+	(no_connect
+		(at 54.61 95.25)
+		(uuid "d670f8a7-b1ca-4b78-b0e4-50b1b2749d47")
+	)
+	(no_connect
+		(at 54.61 54.61)
+		(uuid "dacc96c2-45d1-45d5-861c-5efdeb16b70d")
 	)
 	(wire
 		(pts
-			(xy 54.61 92.71)
-			(xy 52.07 92.71)
+			(xy 54.61 49.53) (xy 44.45 49.53)
 		)
-		(uuid "c5fd2f24-d40d-4707-8c1f-496c2c85aed0")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32bedb17-8bd3-4c57-9427-ae266c9f4dc5")
 	)
 	(wire
 		(pts
-			(xy 54.61 132.08)
-			(xy 52.07 132.08)
+			(xy 54.61 127) (xy 52.07 127)
 		)
-		(uuid "be48f7dd-7771-4455-b4f5-6e5d2720396f")
-	)
-	(wire
-		(pts
-			(xy 54.61 172.72)
-			(xy 52.07 172.72)
-		)
-		(uuid "e9e39537-b87c-4e65-a5e9-c9b351ff0df4")
-	)
-	(wire
-		(pts
-			(xy 54.61 46.99)
-			(xy 52.07 46.99)
-		)
-		(uuid "f3d63965-23a6-4adc-ab49-a72c8885aae4")
-	)
-	(wire
-		(pts
-			(xy 54.61 87.63)
-			(xy 52.07 87.63)
-		)
-		(uuid "97f3a962-9a2b-4986-859f-e7e9efb6e047")
-	)
-	(wire
-		(pts
-			(xy 54.61 127)
-			(xy 52.07 127)
+		(stroke
+			(width 0)
+			(type default)
 		)
 		(uuid "3461edda-0049-438e-8825-82043f3b59fa")
 	)
 	(wire
 		(pts
-			(xy 54.61 167.64)
-			(xy 52.07 167.64)
+			(xy 54.61 52.07) (xy 52.07 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "560312fe-c066-4def-9b80-547758e380fb")
+	)
+	(wire
+		(pts
+			(xy 54.61 87.63) (xy 52.07 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97f3a962-9a2b-4986-859f-e7e9efb6e047")
+	)
+	(wire
+		(pts
+			(xy 54.61 167.64) (xy 52.07 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
 		)
 		(uuid "b45a766a-069a-4a9c-9c41-1325366869ab")
 	)
 	(wire
 		(pts
-			(xy 54.61 49.53)
-			(xy 44.45 49.53)
+			(xy 54.61 132.08) (xy 52.07 132.08)
 		)
-		(uuid "32bedb17-8bd3-4c57-9427-ae266c9f4dc5")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be48f7dd-7771-4455-b4f5-6e5d2720396f")
 	)
-	(text "Encoder interface - four 0.5 mm FFCs, one per leaf, to the LX34311 sensor boards (COL-COTS-0016). Contract: VIN 4-6 V from VM, GND, SIG open-drain pulled to +3V3 here (10k), spare unassigned. Vault: Main-Board-01 Encoder Interface / Connectors. Motor pads are on the MotorChannel sheet; supply pads on Power."
-		(at 30 25 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
+	(wire
+		(pts
+			(xy 54.61 92.71) (xy 52.07 92.71)
 		)
-		(uuid "dd600d86-55f7-42ff-82c8-15782117f862")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5fd2f24-d40d-4707-8c1f-496c2c85aed0")
 	)
-	(label "GND"
-		(at 54.61 49.53 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
+	(wire
+		(pts
+			(xy 54.61 172.72) (xy 52.07 172.72)
 		)
-		(uuid "37562c1b-4260-4368-b65e-eaaff10eefef")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9e39537-b87c-4e65-a5e9-c9b351ff0df4")
+	)
+	(wire
+		(pts
+			(xy 54.61 46.99) (xy 52.07 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3d63965-23a6-4adc-ab49-a72c8885aae4")
 	)
 	(label "GND"
 		(at 54.61 90.17 180)
@@ -731,6 +741,16 @@
 			(justify right bottom)
 		)
 		(uuid "0fb012bd-95ca-4c18-82ec-ea85bfcae5b8")
+	)
+	(label "ENC_leaf2"
+		(at 100.33 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "225a3e0e-4e33-4457-a574-cdc12c2afc36")
 	)
 	(label "GND"
 		(at 54.61 129.54 180)
@@ -743,44 +763,24 @@
 		(uuid "2af89ef2-ab20-4d62-a8bf-2a9fd53b502f")
 	)
 	(label "GND"
-		(at 54.61 170.18 180)
+		(at 54.61 49.53 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "e1156368-b779-4daf-ad73-33a8421c2bf4")
+		(uuid "37562c1b-4260-4368-b65e-eaaff10eefef")
 	)
-	(label "ENC_leaf1"
-		(at 100.33 48.26 0)
+	(label "+3V3"
+		(at 100.33 161.29 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "a31d8494-9c9c-402f-9ed6-1899af7a0564")
-	)
-	(label "ENC_leaf2"
-		(at 100.33 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "225a3e0e-4e33-4457-a574-cdc12c2afc36")
-	)
-	(label "ENC_leaf3"
-		(at 100.33 128.27 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c75c7a13-55cd-4734-85d6-d84abdfbf8db")
+		(uuid "555e8ae1-eda1-4fdc-b8d1-10be3a500f48")
 	)
 	(label "ENC_leaf4"
 		(at 100.33 168.91 0)
@@ -802,6 +802,36 @@
 		)
 		(uuid "97cbf283-fc0b-47b5-a7e8-ccf7de2186e8")
 	)
+	(label "ENC_leaf1"
+		(at 100.33 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a31d8494-9c9c-402f-9ed6-1899af7a0564")
+	)
+	(label "ENC_leaf3"
+		(at 100.33 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c75c7a13-55cd-4734-85d6-d84abdfbf8db")
+	)
+	(label "GND"
+		(at 54.61 170.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e1156368-b779-4daf-ad73-33a8421c2bf4")
+	)
 	(label "+3V3"
 		(at 100.33 120.65 0)
 		(effects
@@ -811,71 +841,6 @@
 			(justify left bottom)
 		)
 		(uuid "eec55132-b63e-4b1f-876b-4afda4c4cfa9")
-	)
-	(label "+3V3"
-		(at 100.33 161.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "555e8ae1-eda1-4fdc-b8d1-10be3a500f48")
-	)
-	(global_label "ENC_leaf1"
-		(shape input)
-		(at 52.07 52.07 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6e50b8de-fa65-43c3-a2bc-ff4f5a3884ed")
-	)
-	(global_label "ENC_leaf2"
-		(shape input)
-		(at 52.07 92.71 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6cf701de-a5ec-4da2-b314-c45a8681143a")
-	)
-	(global_label "ENC_leaf3"
-		(shape input)
-		(at 52.07 132.08 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c750eecb-ea71-467b-adba-71eeda9e346f")
-	)
-	(global_label "ENC_leaf4"
-		(shape input)
-		(at 52.07 172.72 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d8af71c1-0e6e-480c-80ef-d743f80033a8")
-	)
-	(global_label "VM"
-		(shape input)
-		(at 52.07 46.99 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2aa1a219-870b-46d1-b2dc-6133aed84bf6")
 	)
 	(global_label "VM"
 		(shape input)
@@ -887,6 +852,83 @@
 			(justify right)
 		)
 		(uuid "144031da-f5a6-4bcb-bc7f-4bf8ae9c6a47")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "VM"
+		(shape input)
+		(at 52.07 46.99 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2aa1a219-870b-46d1-b2dc-6133aed84bf6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "ENC_leaf2"
+		(shape input)
+		(at 52.07 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6cf701de-a5ec-4da2-b314-c45a8681143a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "ENC_leaf1"
+		(shape input)
+		(at 52.07 52.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6e50b8de-fa65-43c3-a2bc-ff4f5a3884ed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 	)
 	(global_label "VM"
 		(shape input)
@@ -898,6 +940,39 @@
 			(justify right)
 		)
 		(uuid "c3e30657-fef4-4d3d-aa01-44468cd0bc23")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "ENC_leaf3"
+		(shape input)
+		(at 52.07 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c750eecb-ea71-467b-adba-71eeda9e346f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 	)
 	(global_label "VM"
 		(shape input)
@@ -909,17 +984,55 @@
 			(justify right)
 		)
 		(uuid "c93ea0c6-afc9-42b2-ac41-5f26d0e319f3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "ENC_leaf4"
+		(shape input)
+		(at 52.07 172.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d8af71c1-0e6e-480c-80ef-d743f80033a8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 49.53 0)
 		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(uuid "10b88d57-2be9-4439-abf3-6d68e7f65f3c")
-		(property "Reference" "J4"
+		(property "Reference" "J3"
 			(at 59.69 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -928,6 +1041,8 @@
 		)
 		(property "Value" "ENC_leaf1"
 			(at 59.69 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -937,6 +1052,8 @@
 		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
 			(at 59.69 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -946,6 +1063,18 @@
 		(property "Datasheet" ""
 			(at 59.69 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 49.53 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -955,6 +1084,8 @@
 		(property "LCSC" "C425129"
 			(at 59.69 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -964,6 +1095,8 @@
 		(property "MPN" "AYF530435"
 			(at 59.69 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -973,569 +1106,36 @@
 		(property "Note" "Encoder FFC leaf1: 1 VIN(VM) 2 GND 3 SIG 4 spare. No COTS record (support part) - vault Connectors / Encoder Interface"
 			(at 59.69 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J4")
-					(unit 1)
-				)
-			)
+		(pin "2"
+			(uuid "f97bc5ea-7ee8-47d3-99f3-a8dccb0f8f9d")
 		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x04")
-		(at 59.69 90.17 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8522ebfa-69f2-4641-bb5b-b13de3b40ddd")
-		(property "Reference" "J5"
-			(at 59.69 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+		(pin "1"
+			(uuid "f6435d3f-d164-4878-bf80-bce0667d5c2d")
 		)
-		(property "Value" "ENC_leaf2"
-			(at 59.69 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+		(pin "4"
+			(uuid "23993d7f-0de9-4a7f-8d84-d626816fe6ae")
 		)
-		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
-			(at 59.69 90.17 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 59.69 90.17 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C425129"
-			(at 59.69 90.17 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "AYF530435"
-			(at 59.69 90.17 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "Encoder FFC leaf2"
-			(at 59.69 90.17 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x04")
-		(at 59.69 129.54 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "89dca582-6908-4e36-a3d9-baa6e8b41a88")
-		(property "Reference" "J6"
-			(at 59.69 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ENC_leaf3"
-			(at 59.69 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
-			(at 59.69 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 59.69 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C425129"
-			(at 59.69 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "AYF530435"
-			(at 59.69 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "Encoder FFC leaf3"
-			(at 59.69 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x04")
-		(at 59.69 170.18 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4bd0ec2c-95bb-4b1f-b457-af7f20c36e60")
-		(property "Reference" "J7"
-			(at 59.69 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ENC_leaf4"
-			(at 59.69 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
-			(at 59.69 170.18 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 59.69 170.18 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C425129"
-			(at 59.69 170.18 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "AYF530435"
-			(at 59.69 170.18 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "Encoder FFC leaf4"
-			(at 59.69 170.18 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "J7")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "J7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 100.33 44.45 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c6ca4c1e-6137-4fd5-98bd-029bd34d6dad")
-		(property "Reference" "R30"
-			(at 102.362 44.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 100.33 44.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 44.45 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 44.45 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "Encoder SIG pull-up 10k to +3V3 - sensor output is open-drain; not optional (vault Encoder Interface)"
-			(at 100.33 44.45 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "R30")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "R30")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 100.33 85.09 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5e6f7da9-dfc6-4cf9-936a-b2d822a731ad")
-		(property "Reference" "R31"
-			(at 102.362 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 100.33 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 85.09 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 85.09 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "R31")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "R31")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 100.33 124.46 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fb613026-2380-4617-b14d-9087026b587b")
-		(property "Reference" "R32"
-			(at 102.362 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 100.33 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 124.46 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 124.46 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "R32")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "R32")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 100.33 165.1 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6e821cf1-d380-4290-950d-6601a14c6220")
-		(property "Reference" "R33"
-			(at 102.362 165.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 100.33 165.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 165.1 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 165.1 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "Connectors"
-				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "R33")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "R33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 100.33 40.64 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4e41aae4-1346-4859-85fd-cc4e6525497d")
-		(property "Reference" "#PWR001"
-			(at 100.33 44.45 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 100.33 37.084 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
+		(pin "3"
+			(uuid "eb4735d3-09a1-4676-91c4-309bef504eb7")
 		)
 		(instances
 			(project "Connectors"
 				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
-					(reference "#PWR001")
+					(reference "J4")
 					(unit 1)
 				)
 			)
 			(project "MC3_COL_MAIN_V1.0"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
-					(reference "#PWR001")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -1545,13 +1145,18 @@
 		(lib_id "power:GND")
 		(at 44.45 49.53 90)
 		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(uuid "2cd4cdb0-08c0-43c8-b4bf-4fd4a68dd3c3")
-		(property "Reference" "#PWR002"
+		(property "Reference" "#PWR08"
 			(at 50.8 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1560,6 +1165,8 @@
 		)
 		(property "Value" "GND"
 			(at 48.26 49.53 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1569,6 +1176,8 @@
 		(property "Footprint" ""
 			(at 44.45 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1578,16 +1187,835 @@
 		(property "Datasheet" ""
 			(at 44.45 49.53 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
+		(property "Description" ""
+			(at 44.45 49.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c60caccb-0a5c-4ed7-a8fa-2fbd4cd8d0a8")
+		)
 		(instances
 			(project "Connectors"
 				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
 					(reference "#PWR002")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 59.69 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4bd0ec2c-95bb-4b1f-b457-af7f20c36e60")
+		(property "Reference" "J6"
+			(at 59.69 165.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ENC_leaf4"
+			(at 59.69 177.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
+			(at 59.69 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C425129"
+			(at 59.69 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "AYF530435"
+			(at 59.69 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Encoder FFC leaf4"
+			(at 59.69 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f3d12323-fdd5-498b-a3ea-4e2760145592")
+		)
+		(pin "4"
+			(uuid "78d5513f-85be-4e2a-8c02-5384f3a43e5c")
+		)
+		(pin "3"
+			(uuid "b09ec22c-1b61-4f77-be72-9baeb75655ab")
+		)
+		(pin "1"
+			(uuid "bfcda641-4960-45c7-93fd-cc4eb531dc3e")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 100.33 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4e41aae4-1346-4859-85fd-cc4e6525497d")
+		(property "Reference" "#PWR09"
+			(at 100.33 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 100.33 37.084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 40.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2d6fa740-fe55-4d27-a983-43995c71dff2")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "#PWR001")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 100.33 85.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5e6f7da9-dfc6-4cf9-936a-b2d822a731ad")
+		(property "Reference" "R7"
+			(at 102.362 85.09 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 100.33 85.09 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 100.33 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "57d79f9f-565a-4490-997e-9f7b38c991bf")
+		)
+		(pin "2"
+			(uuid "b8ca5d4c-d7bb-46f5-8801-ff05b4c7897d")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 100.33 165.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6e821cf1-d380-4290-950d-6601a14c6220")
+		(property "Reference" "R9"
+			(at 102.362 165.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 100.33 165.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 100.33 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 165.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91c43f68-5985-44d3-808c-0da9017b3acf")
+		)
+		(pin "2"
+			(uuid "04c2781f-bd59-4eea-b810-9ff1a94cef9f")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "R33")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 59.69 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8522ebfa-69f2-4641-bb5b-b13de3b40ddd")
+		(property "Reference" "J4"
+			(at 59.69 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ENC_leaf2"
+			(at 59.69 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
+			(at 59.69 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C425129"
+			(at 59.69 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "AYF530435"
+			(at 59.69 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Encoder FFC leaf2"
+			(at 59.69 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "6aecc893-e73e-4794-8ff2-f28139cde40a")
+		)
+		(pin "2"
+			(uuid "e23f0862-3082-47aa-bf02-6d3e82da30d2")
+		)
+		(pin "4"
+			(uuid "23a0bdbb-2f37-4f8a-9817-ef95f6e994be")
+		)
+		(pin "1"
+			(uuid "65204569-22fc-4cde-b808-5bd6e3ed221a")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 59.69 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "89dca582-6908-4e36-a3d9-baa6e8b41a88")
+		(property "Reference" "J5"
+			(at 59.69 124.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ENC_leaf3"
+			(at 59.69 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 129.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C425129"
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "AYF530435"
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Encoder FFC leaf3"
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "d74a92e3-06ee-42f4-8cb2-bcae37233bf6")
+		)
+		(pin "2"
+			(uuid "6ac02516-6f55-4759-8c16-9d35a57bea28")
+		)
+		(pin "3"
+			(uuid "c60a3703-7f19-4611-b705-d5e445142a3a")
+		)
+		(pin "1"
+			(uuid "bb976c28-065a-4738-b2ed-953abc5adfff")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 100.33 44.45 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c6ca4c1e-6137-4fd5-98bd-029bd34d6dad")
+		(property "Reference" "R6"
+			(at 102.362 44.45 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 100.33 44.45 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 100.33 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Encoder SIG pull-up 10k to +3V3 - sensor output is open-drain; not optional (vault Encoder Interface)"
+			(at 100.33 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef5e6904-f2c5-4d46-b2dd-f39267ca406d")
+		)
+		(pin "2"
+			(uuid "60320d31-9e8e-41a0-86e7-4b2ab270679c")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "R30")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 100.33 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fb613026-2380-4617-b14d-9087026b587b")
+		(property "Reference" "R8"
+			(at 102.362 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 100.33 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 100.33 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 124.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3d261d34-c679-4dbe-92a4-a5c7f638e3aa")
+		)
+		(pin "2"
+			(uuid "eabc1f3b-ebbb-48ce-a0f8-274f97309658")
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "R32")
+					(unit 1)
+				)
+			)
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
+					(reference "R8")
 					(unit 1)
 				)
 			)
