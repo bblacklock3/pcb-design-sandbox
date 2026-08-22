@@ -2415,7 +2415,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C15850"
+			(at 119.38 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 119.38 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+3V3")
 		(at 160.02 87.63 0)
@@ -2674,7 +2692,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25741"
+			(at 64.77 100.33 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1003TCE"
+			(at 64.77 100.33 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 39.37 80.01 0)
@@ -2866,7 +2902,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C11366"
+			(at 160.02 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "TAJA226K010RNJ"
+			(at 160.02 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 87.63 72.39 0)
@@ -3264,7 +3318,7 @@
 				)
 			)
 		)
-		(property "Value" "2.5A hold"
+		(property "Value" "2A hold/3.5A trip"
 			(at 48.26 95.25 90)
 			(effects
 				(font
@@ -3300,6 +3354,24 @@
 		)
 	
 		(property "Note" "PROVISIONAL polyfuse 1206, ~2.5 A hold: board worst case 4.15 A all-stall is bounded by the configured regulation limit; size once the supply rail and limit are set (vault). LCSC TBD"
+			(at 45.72 95.25 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C19078716"
+			(at 45.72 95.25 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "1206L200/12NR"
 			(at 45.72 95.25 0)
 			(hide yes)
 			(effects
@@ -3367,6 +3439,24 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(property "LCSC" "C78401"
+			(at 58.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SMAJ5.0A/TR13"
+			(at 58.42 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		))
 	(symbol
 		(lib_id "Device:C")
@@ -3385,7 +3475,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF 10V"
+		(property "Value" "22uF 25V"
 			(at 186.055 93.98 0)
 			(effects
 				(font
@@ -3429,6 +3519,24 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(property "LCSC" "C45783"
+			(at 185.42 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 185.42 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		))
 	(symbol
 		(lib_id "Device:C")
@@ -3447,7 +3555,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF 10V"
+		(property "Value" "22uF 25V"
 			(at 196.215 93.98 0)
 			(effects
 				(font
@@ -3484,6 +3592,24 @@
 		)
 	
 		(property "Note" "VM bulk 22uF 10V X5R 0805 (second of two)"
+			(at 195.58 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 195.58 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
 			(at 195.58 91.44 0)
 			(hide yes)
 			(effects

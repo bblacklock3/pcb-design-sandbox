@@ -5570,7 +5570,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25900"
+			(at 86.36 149.86 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF4701TCE"
+			(at 86.36 149.86 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 90.17 39.37 0)
@@ -5667,7 +5685,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 90.17 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 90.17 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 110.49 129.54 0)
@@ -5764,7 +5800,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C19666"
+			(at 110.49 129.54 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL10A475KO8NNNC"
+			(at 110.49 129.54 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 59.69 39.37 0)
@@ -5861,7 +5915,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 59.69 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 59.69 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 100.33 39.37 0)
@@ -5958,7 +6030,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C52923"
+			(at 100.33 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 100.33 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:Crystal_GND24")
 		(at 90.17 100.33 0)
@@ -6178,7 +6268,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 100.33 80.01 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 100.33 80.01 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 96.52 149.86 0)
@@ -6273,7 +6381,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25900"
+			(at 96.52 149.86 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF4701TCE"
+			(at 96.52 149.86 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 100.33 59.69 0)
@@ -6368,7 +6494,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 100.33 59.69 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 100.33 59.69 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 105.41 110.49 0)
@@ -6465,7 +6609,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1562"
+			(at 105.41 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402CG330J500NT"
+			(at 105.41 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 110.49 39.37 0)
@@ -6562,7 +6724,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 110.49 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 110.49 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 80.01 39.37 0)
@@ -6659,7 +6839,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 80.01 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 80.01 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "MC3_COL_MAIN:STM32F411RET6")
 		(at 149.86 100.33 0)
@@ -7059,7 +7257,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 69.85 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 69.85 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 49.53 43.18 0)
@@ -7238,7 +7454,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1562"
+			(at 74.93 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402CG330J500NT"
+			(at 74.93 110.49 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 49.53 39.37 0)
@@ -7335,7 +7569,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 49.53 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 49.53 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 119.38 39.37 0)
@@ -7432,7 +7684,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1779"
+			(at 119.38 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 119.38 39.37 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+3V3")
 		(at 49.53 35.56 0)
@@ -7694,7 +7964,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 115.57 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 115.57 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 88.9 129.54 0)
@@ -7823,7 +8111,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1002"
+			(at 130.81 40.64 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GZ1608D601TF"
+			(at 130.81 40.64 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 193.04 66.04 90)
@@ -7883,7 +8189,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C11702"
+			(at 193.04 66.04 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 193.04 66.04 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:LED")
 		(at 210.82 66.04 0)
@@ -7943,7 +8267,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C12624"
+			(at 210.82 66.04 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "KT-0603G"
+			(at 210.82 66.04 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 193.04 76.2 90)
@@ -8003,7 +8345,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C11702"
+			(at 193.04 76.2 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 193.04 76.2 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:LED")
 		(at 210.82 76.2 0)
@@ -8063,7 +8423,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C2286"
+			(at 210.82 76.2 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "KT-0603R"
+			(at 210.82 76.2 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 40.64 185.42 0)

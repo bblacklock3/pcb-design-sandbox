@@ -1650,7 +1650,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25879"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 132.08 76.2 90)
@@ -1739,7 +1757,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25879"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 182.88 74.93 90)
@@ -1828,7 +1864,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25879"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 81.28 80.01 90)
@@ -1917,7 +1971,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25879"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(sheet
 		(at 90.17 69.85)
 		(size 12.7 19.05)

@@ -128,9 +128,16 @@ I²C pull-ups (one set, 4.7 k to +3V3) placed on the MCU sheet.
 USB-C receptacle + plug exceeds the 4 mm mated-height cap (COL-PARAM-0020). Data link = SWO via
 the header; a UART on PA11/PA12 (USART6) to pads is the later option (costs RC_OUT_leaf4's pin).
 
-**LCSC numbers still TBD** (support parts, no COTS record): FB60/FB61 ferrite 0603, F60 polyfuse,
-D62 SMAJ5.0A, D60/D61 LEDs, C2 tantalum, C61/C62 22 µF 10 V 0805. Fill from JLC basic parts
-before the BOM export.
+**LCSC numbers assigned** (from Konnect's JLCPCB database snapshot, all verified in stock
+2026-08-22; `LCSC` + `MPN` fields on every instance): resistors 0402 Basic — 10 k C25744,
+4.7 k C25900, 2.2 k C25879, 1 k C11702, 100 k C25741; 6.8 k R_IPROPI C93940 (Yageo, Extended —
+the Basic 6.8 k is out of stock); caps Basic — 100 nF 0402 C1525, 33 pF 0402 C1562, 1 µF 0402
+C52923, 1 µF 0603 C15849, 4.7 µF 0603 C19666, 4.7 µF 0805 C1779, 10 µF 0805 C15850,
+22 µF 0805 25 V C45783; ferrite 0603 600 Ω GZ1608D601TF C1002 (Basic, 200 mA);
+LEDs red KT-0603R C2286 (Basic), green KT-0603G C12624 (Extended); tantalum 22 µF 10 V A-case
+TAJA226K010RNJ C11366 (Extended); TVS SMAJ5.0A/TR13 C78401 (Extended); polyfuse 1206L200/12NR
+C19078716 (2 A hold / 3.5 A trip, Extended, PROVISIONAL sizing). No COTS records for any of
+these (support parts, by decision).
 
 ### GUI items outstanding (user)
 - Re-annotate (new parts carry R60…/C60…/TP60… placeholders): Tools → Annotate, entire schematic,

@@ -1848,7 +1848,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 100.33 85.09 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 100.33 85.09 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 100.33 165.1 0)
@@ -1932,7 +1950,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 100.33 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 100.33 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 90.17 0)
@@ -2273,7 +2309,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 100.33 44.45 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 100.33 44.45 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 100.33 124.46 0)
@@ -2357,7 +2411,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 100.33 124.46 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 100.33 124.46 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 120.65 55.88 0)
@@ -2410,6 +2482,24 @@
 		)
 	
 		(property "Note" "Sensor supply filter: VM -> ferrite 600R@100MHz -> VSENS (+4.7uF) feeding all four FFC VIN pins; keeps bridge PWM ripple off the LX34311 rail (review item 4). LCSC TBD"
+			(at 120.65 55.88 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1002"
+			(at 120.65 55.88 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GZ1608D601TF"
 			(at 120.65 55.88 0)
 			(hide yes)
 			(effects
@@ -2472,6 +2562,24 @@
 		)
 	
 		(property "Note" "VSENS bulk 4.7uF 0603"
+			(at 130.81 55.88 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C19666"
+			(at 130.81 55.88 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL10A475KO8NNNC"
 			(at 130.81 55.88 0)
 			(hide yes)
 			(effects

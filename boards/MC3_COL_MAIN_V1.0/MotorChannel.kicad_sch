@@ -1596,7 +1596,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 134.62 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 134.62 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 144.78 64.77 0)
@@ -1707,7 +1725,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 144.78 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 144.78 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 124.46 91.44 0)
@@ -1818,7 +1854,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C93940"
+			(at 124.46 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-076K8L"
+			(at 124.46 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 97.79 95.25 0)
@@ -2029,7 +2083,25 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C15849"
+			(at 80.01 58.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 80.01 58.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "MC3_COL_MAIN:DRV8214RTER")
 		(at 100.33 80.01 0)
@@ -2529,5 +2601,23 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1525"
+			(at 119.38 58.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 119.38 58.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 )
