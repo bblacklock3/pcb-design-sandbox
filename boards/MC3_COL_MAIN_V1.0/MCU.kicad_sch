@@ -9145,7 +9145,7 @@
 				)
 			)
 		)
-		(property "COTS" "COL-COTS-TBD (new record: supersedes COL-COTS-0024 STM32F411RET6 - pin-identical sibling with bxCAN x2 and 256 KB RAM)"
+		(property "COTS" "COL-COTS-0029 (STM32F412RET6; supersedes COL-COTS-0024 STM32F411RET6 - pin-identical sibling with bxCAN)"
 			(at 149.86 100.33 0)
 			(hide yes)
 			(show_name no)

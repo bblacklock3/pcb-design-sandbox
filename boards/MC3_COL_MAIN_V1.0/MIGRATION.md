@@ -159,7 +159,8 @@ these (support parts, by decision).
   DE-9 7/2/3 = CANH/CANL/GND; adapter termination on. Layout note: `docs/design/parts/CAN.md`.
 - **USB-C**: no (see above).
 
-**Vault records owed for this:** new COTS for the STM32F412RET6 superseding COL-COTS-0024
+**Vault records owed for this:** ~~new COTS for the STM32F412RET6 superseding COL-COTS-0024~~
+**DONE 2026-08-22 — [[COL-COTS-0029]], with DS11139 Rev 9 filed at `Main-Board-01/Datasheets/PDFs/STM32F412xE-xG.pdf`; COL-COTS-0024 marked superseded.** Still owed:
 (and COL-SEARCH-0008 addendum: CAN requirement → F412); COTS for the TJA1051T/3; the
 control-link decision in Control Electronics (§ machine interface) and an update to
 COL-COTS-0026 / Connectors page (CANH/CANL on the machine interface); MCU Pinout page (CAN1 on
@@ -471,7 +472,7 @@ allow Fast-mode Plus at 1 MHz. Cheap insurance; worth doing if the scan rate eve
 takes out all five channels. On this rung that is a power-cycle recovery. If a later revision wants
 fault isolation, splitting 3+2 across two buses is the lever — not capacitance or speed. #tbd
 
-**Unverified:** how many I²C peripherals the F412 actually exposes. The vault holds only the
-**F411** datasheet (`STM32F411xC-xE.pdf`); the F412's DS11139 is still owed along with its COTS
-record. The F411 family has I2C1/2/3, and the F412 was chosen as the pin-identical superset, so at
-least those exist — but confirm before any firmware relies on a second bus.
+**Now verified (2026-08-22):** DS11139 Rev 9 cover page states **"Up to 4x I²C interfaces
+(SMBus/PMBus)"** and **"2x CAN (2.0B Active)"**. So four I²C are available and one is used; the CAN
+count also confirms the reason for the part swap. Datasheet filed in the vault at
+`Main-Board-01/Datasheets/PDFs/STM32F412xE-xG.pdf`, noted as [[ST STM32F412xE-xG datasheet]].
