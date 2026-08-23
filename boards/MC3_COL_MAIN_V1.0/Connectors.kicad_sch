@@ -1447,7 +1447,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf1: 1 VIN(VM) 2 GND 3 SIG 4 spare. No COTS record (support part) - vault Connectors / Encoder Interface"
+		(property "Note" "Encoder FFC leaf1: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface. Right-angle SMD, no solder tabs - the four 0.5mm joints are the only mechanical attachment; footprint mech pads are netless and should be tied to GND"
 			(at 59.69 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -1484,7 +1484,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 49.53 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 44.45 49.53 90)
@@ -1652,7 +1661,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf4"
+		(property "Note" "Encoder FFC leaf4: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface"
 			(at 59.69 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -1689,7 +1698,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 170.18 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+3V3")
 		(at 100.33 40.64 0)
@@ -2188,7 +2206,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf2"
+		(property "Note" "Encoder FFC leaf2: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface"
 			(at 59.69 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2225,7 +2243,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 90.17 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 129.54 0)
@@ -2311,7 +2338,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf3"
+		(property "Note" "Encoder FFC leaf3: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface"
 			(at 59.69 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -2348,7 +2375,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 129.54 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 120.65 55.88 0)

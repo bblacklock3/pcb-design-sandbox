@@ -3064,7 +3064,7 @@
 				)
 			)
 		)
-		(property "COTS" "COL-COTS-TBD (engineering part - CAN transceiver, record owed)"
+		(property "COTS" "COL-COTS-0030 (TJA1051T/3 CAN transceiver)"
 			(at 100.33 80.01 0)
 			(hide yes)
 			(show_name no)

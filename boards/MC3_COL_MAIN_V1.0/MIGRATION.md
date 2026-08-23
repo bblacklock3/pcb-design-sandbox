@@ -160,7 +160,21 @@ these (support parts, by decision).
 - **USB-C**: no (see above).
 
 **Vault records owed for this:** ~~new COTS for the STM32F412RET6 superseding COL-COTS-0024~~
-**DONE 2026-08-22 — [[COL-COTS-0029]], with DS11139 Rev 9 filed at `Main-Board-01/Datasheets/PDFs/STM32F412xE-xG.pdf`; COL-COTS-0024 marked superseded.** Still owed:
+**DONE 2026-08-22.** The vault now carries:
+- **[[COL-COTS-0029]]** STM32F412RET6, with DS11139 Rev 9 filed at
+  `Main-Board-01/Datasheets/PDFs/STM32F412xE-xG.pdf`; COL-COTS-0024 marked superseded.
+- **[[COL-COTS-0030]]** TJA1051T/3 CAN transceiver.
+- **[[COL-COTS-0031]]** Panasonic AYF530435 encoder FFC — it had been carried as a BOM line with
+  "no COTS record (support part)", which was wrong: it is a mechanical interface with a live
+  retention risk, not a commodity.
+- **Control Electronics § Open Items** — the control-link half is resolved: the machine link is
+  **CAN**, and that decision is recorded as what forced the MCU change. The supply-rail half stays
+  open, and CAN itself is now flagged as decided-but-uncharacterized.
+- **MCU Pinout** — retitled to the F412, with a "What the F412 changed" table (CAN1 on PA11/PA12,
+  RC_OUT_leaf4 displaced to PB14), I²C1 assigned to PB8/PB9, the ~70 pF bus-capacitance estimate,
+  and USB noted as now foreclosed because CAN took its pins.
+
+Still owed:
 (and COL-SEARCH-0008 addendum: CAN requirement → F412); COTS for the TJA1051T/3; the
 control-link decision in Control Electronics (§ machine interface) and an update to
 COL-COTS-0026 / Connectors page (CANH/CANL on the machine interface); MCU Pinout page (CAN1 on
