@@ -1458,6 +1458,17 @@
 				)
 			)
 		)
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "f97bc5ea-7ee8-47d3-99f3-a8dccb0f8f9d")
 		)
@@ -1484,16 +1495,7 @@
 				)
 			)
 		)
-	
-		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
-			(at 59.69 49.53 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 44.45 49.53 90)
@@ -1672,6 +1674,17 @@
 				)
 			)
 		)
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "f3d12323-fdd5-498b-a3ea-4e2760145592")
 		)
@@ -1698,16 +1711,7 @@
 				)
 			)
 		)
-	
-		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
-			(at 59.69 170.18 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:+3V3")
 		(at 100.33 40.64 0)
@@ -2217,6 +2221,17 @@
 				)
 			)
 		)
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "6aecc893-e73e-4794-8ff2-f28139cde40a")
 		)
@@ -2243,16 +2258,7 @@
 				)
 			)
 		)
-	
-		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
-			(at 59.69 90.17 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 129.54 0)
@@ -2349,6 +2355,17 @@
 				)
 			)
 		)
+		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "d74a92e3-06ee-42f4-8cb2-bcae37233bf6")
 		)
@@ -2375,16 +2392,7 @@
 				)
 			)
 		)
-	
-		(property "COTS" "COL-COTS-0031 (Panasonic AYF530435)"
-			(at 59.69 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 120.65 55.88 0)

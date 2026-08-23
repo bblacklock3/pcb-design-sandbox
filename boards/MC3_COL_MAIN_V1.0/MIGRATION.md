@@ -490,3 +490,55 @@ fault isolation, splitting 3+2 across two buses is the lever — not capacitance
 (SMBus/PMBus)"** and **"2x CAN (2.0B Active)"**. So four I²C are available and one is used; the CAN
 count also confirms the reason for the part swap. Datasheet filed in the vault at
 `Main-Board-01/Datasheets/PDFs/STM32F412xE-xG.pdf`, noted as [[ST STM32F412xE-xG datasheet]].
+
+## 10. Promoted to the vault — 2026-08-23
+
+The board pages in the vault had drifted badly against the design (F411 MCU, four channels, ⌀64
+outline, single-sided assembly, "no input protection"). Swept and resynced, and the following
+came off the "decisions owed" register above.
+
+### New vault page
+
+**`05 Builds/Main-Board-01/Main-Board-01 Power.md`** — there was no power page. It now carries the
+supply interface, the input chain, every derived rail, the per-channel motor-voltage story and the
+current budget.
+
+### Resolved
+
+| Owed item | Where it landed |
+|---|---|
+| Sensor VIN rail = VM | Power § Derived Rails. Net is `VSENS`, not `VIN_RAW` — Connectors § Pinout corrected |
+| Board thickness 1.6 mm | Layout Constraints § Board — 1.606 mm, JLC04161H-7628, full stackup table added |
+| Outline ⌀66 / 25 × 25 R2 | Layout Constraints § Board, and Main-Board-01 § Findings. The three-way mismatch is now *stated in the vault* as the open item rather than living only here |
+| Board orientation (component face toward the mechanism) | Layout Constraints § Side Allocation — was previously written nowhere |
+| User-facing items on the back face | Layout Constraints § Board now reads "Double-sided", replacing the "single-sided, nothing on the underside" hard requirement. The conflict is closed by changing the vault, which was the right owner |
+
+### The supply rail — resolved on the board side
+
+**The board requires 4.75–5.5 V at `J1`.** Three fitted parts set it and none is a motor: TJA1051T/3
+`VCC` (4.5–5.5 V), AMS1117 dropout (~4.4 V floor), sensor rail (4.0–6.0 V). The 4.75 V floor is
+where the transceiver and the LDO collide.
+
+This corrects a framing this file and the vault both carried — that VM was "nominally 5 V by
+assumption" because the machine rail was unknown. The motors were never the unknown: leaf is
+3 V / 1.65 A stall / 1.82 Ω ([[COL-COTS-0002]]), yaw is 4.5 V / 0.83 A stall / 5.4 Ω
+([[COL-COTS-0001]]), both recorded since August. VM is set by the board's own 5 V consumers, and
+the DRV8214's per-channel voltage regulation is what lets two different motors share one rail.
+`Control Electronics` § Open updated; the machine half stays open.
+
+### Newly opened, from the sync
+
+- **`F1` (2 A hold / 3.5 A trip) contradicts Layout Constraints' old "4.15 A continuous" figure.**
+  Four leaves plus yaw stalled is ~4.7 A of VM current, above the trip. Recorded in Power § Current
+  Budget and as an entry gate. The 4.15 A figure had no derivation behind it and was deleted.
+- **`J2` (SWD header) overhangs the rim** — courtyard to 33.29 mm against a 33.00 mm edge. `J1`
+  clears by 0.11 mm against a 0.2 mm rule.
+- **No gate clamp on `Q1`** — bare 100 k, and V_GS max is ±20 V.
+- **No local decoupling at the encoder connectors** — one 4.7 µF serves all four across the board.
+- **`INV_R` / `KMC` for yaw are underived** — COTS-0028 tabulates leaf values only.
+
+### Retracted
+
+The 10 k pull-ups to +3V3 on `ENC_leaf1..4` were queried here as only valid if the sensor outputs
+are open-drain. `Control Electronics` already answers it: they are, and that is the stated reason
+the interface needs no level shifter. Not an open item.
