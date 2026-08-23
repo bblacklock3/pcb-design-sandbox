@@ -6313,28 +6313,6 @@
 		)
 		(uuid "ddc06545-f978-4cf5-9e44-d107c43dffb7")
 	)
-	(global_label "EN_leaf4"
-		(shape input)
-		(at 170.18 74.93 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "33befd74-b5ac-4e6b-b4ef-620b6bf3befc")
-	)
-	(global_label "EN_leaf3"
-		(shape input)
-		(at 170.18 77.47 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cf778f85-3240-40cf-9199-10f80c049266")
-	)
 	(global_label "PH_leaf1"
 		(shape input)
 		(at 129.54 95.25 180)
@@ -6521,6 +6499,28 @@
 			(justify left)
 		)
 		(uuid "a750c1c9-f05d-4e53-82b6-37c6d6ccef1f")
+	)
+	(global_label "EN_leaf3"
+		(shape input)
+		(at 170.18 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f6bbb242-7fc9-40af-b832-c08fe5315179")
+	)
+	(global_label "EN_leaf4"
+		(shape input)
+		(at 170.18 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a86501fa-731c-4163-8586-c86126411a23")
 	)
 	(symbol
 		(lib_id "Device:R")
