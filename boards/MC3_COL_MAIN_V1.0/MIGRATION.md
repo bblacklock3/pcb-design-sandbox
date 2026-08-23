@@ -434,3 +434,44 @@ just shrink C32** — lowering C raises Q. #tbd
 - [ ] Vault: both parts are **PROVISIONAL** and owed as decisions — the per-channel bulk value has
       no CALC behind it, and the LDO input filter is a new element of the power chain that
       *Main-Board-01* does not describe. The resonance question above goes with them.
+
+
+## 9. I²C: one bus or several — decided 2026-08-22
+
+**Stay on one bus (I2C1).** The vault already assumes this — *Main-Board-01 MCU Pinout*: "Five
+COL-COTS-0028 devices need one bus. I2C1 on PB6/PB7 or PB8/PB9 is the clean option." Nothing found
+while laying out argues against it.
+
+### Closing the vault's open item on bus capacitance
+
+*MCU Pinout* lists bus capacitance as open. Estimated here:
+
+| contributor | value |
+|---|---|
+| 5 × DRV8214 SDA/SCL pin | ~50 pF |
+| MCU pin | ~5 pF |
+| tangential loop round the annulus, ~13 cm over a plane | ~13 pF |
+| **total** | **≈ 70 pF** against the I²C spec limit of 400 pF |
+
+With the fitted **4.7 k** pull-ups (R6/R7), rise time ≈ 0.847·R·C ≈ **280 ns** against Fast-mode's
+300 ns budget — inside, but only ~7 % margin. **Dropping to 2.2 k gives ~130 ns** and would also
+allow Fast-mode Plus at 1 MHz. Cheap insurance; worth doing if the scan rate ever matters.
+
+### Why not multiple buses
+
+- **Bandwidth is not the constraint.** At 400 kHz a 2-byte register read is ~50 µs, so a full
+  five-device scan is ~250 µs — about a 4 kHz whole-board update rate. Far beyond what a leaf needs.
+- **Addresses are already solved** — 0x60 / 0x64 / 0x6C / 0x70 / 0x66 via the DRV8214's tri-level
+  A1/A0, documented on the root sheet.
+- **Firmware is strictly simpler**: one peripheral, one bus mutex, one recovery path, one DMA
+  stream. Splitting means N of each plus a channel→bus map.
+- **Layout is simpler**: one tangential loop touching each driver instead of two or three runs.
+
+**The one genuine cost, recorded rather than designed around:** a single driver latching SDA low
+takes out all five channels. On this rung that is a power-cycle recovery. If a later revision wants
+fault isolation, splitting 3+2 across two buses is the lever — not capacitance or speed. #tbd
+
+**Unverified:** how many I²C peripherals the F412 actually exposes. The vault holds only the
+**F411** datasheet (`STM32F411xC-xE.pdf`); the F412's DS11139 is still owed along with its COTS
+record. The F411 family has I2C1/2/3, and the F412 was chosen as the pin-identical superset, so at
+least those exist — but confirm before any firmware relies on a second bus.
