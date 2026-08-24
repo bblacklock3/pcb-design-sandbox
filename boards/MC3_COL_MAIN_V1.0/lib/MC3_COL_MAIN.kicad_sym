@@ -909,7 +909,8 @@
     (embedded_fonts no)
   )
 
-  (symbol "GP1S092HCPIF"
+
+  (symbol "GP1S094HCZ0F"
     (pin_names
       (offset 1.016))
     (exclude_from_sim no)
@@ -918,11 +919,11 @@
     (in_pos_files yes)
     (duplicate_pin_numbers_are_jumpers no)
     (property "Reference" "U" (at 0 7.6200 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
-    (property "Value" "GP1S092HCPIF" (at 0 -7.6200 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+    (property "Value" "GP1S094HCZ0F" (at 0 -7.6200 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
     (property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
     (property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
     (property "Description" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
-    (symbol "GP1S092HCPIF_0_1"
+    (symbol "GP1S094HCZ0F_0_1"
       (rectangle (start -5.0800 -5.0800) (end 5.0800 5.0800)
         (stroke (width 0.254) (type default))
         (fill (type background))

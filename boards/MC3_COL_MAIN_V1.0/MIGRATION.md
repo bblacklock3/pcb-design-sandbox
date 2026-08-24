@@ -560,7 +560,7 @@ in the exported netlist.
 | R33 | 220R 0402 | C25091 | R_LED, ~15 mA from VSENS |
 | R34/R35 | 2.2k 0402 | C25879 | A/B pull-ups to +3V3 (TTL V_OH margin; reuses a stocked value instead of the datasheet's 2.7k) |
 | C33 | 100nF 0402 | C1525 | U9 decoupling |
-| U10 | GP1S092HCPIF | C69422 | homing interrupter, `YAW_HOME` → PB7 (TIM4_CH2 capture) |
+| U10 | GP1S094HCZ0F | C920601 | homing interrupter (3 mm slot, through-hole), `YAW_HOME` → PB7 (TIM4_CH2 capture) |
 | R36 | 220R 0402 | C25091 | interrupter LED, ~10 mA from +3V3 |
 | R37 | 10k 0402 | C25744 | phototransistor pull-up |
 | TP8 | test point | — | `DBG_RX` |
@@ -578,7 +578,7 @@ decided earlier but had been wiped by KiCad's close-rewrite of `.kicad_pro`; ver
 | Decision | Chosen here | Vault home |
 |---|---|---|
 | Yaw encoder = AEDR-8300-1Q0 | fitted as U9; ring at r ≈ 30 mm → ~5343 counts/rev | COL-COTS-0032 (written) — the **180 LPI code ring itself is unprocured** |
-| Homing interrupter = GP1S092HCPIF | 2 mm slot, 0.3 mm aperture, SMD | COL-COTS-0033 (written) — **datasheet not held**; symbol pin numbers 1–4 (A/K/C/E) and the footprint are owed from it |
+| Homing interrupter = GP1S094HCZ0F | 3 mm slot, 0.3 mm aperture, through-hole (user chose slot clearance over SMD, 2026-08-24) | COL-COTS-0034 (written; 0033 = the rejected 2 mm option) — **datasheet not held**; symbol pin numbers 1–4 (A/K/C/E) and the footprint are owed from it |
 | TIM2 shared: yaw quadrature vs ENC_leaf2 capture | both wired; firmware picks | MCU Pinout § Yaw Sensing #tbd |
 | 2.2k output pull-ups (not 2.7k) | stocked-value reuse, same margin math | on the symbol Notes |
 
