@@ -37,3 +37,7 @@ _restore_backup_*/
 # Fab outputs are attached to the vault build rung, not committed (CLAUDE.md)
 *.csv
 *.pos
+
+# generated exports - fab/mech outputs live in the vault, not the repo
+*.step
+*.wrl
