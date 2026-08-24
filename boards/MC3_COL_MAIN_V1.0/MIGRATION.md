@@ -542,3 +542,51 @@ the DRV8214's per-channel voltage regulation is what lets two different motors s
 The 10 k pull-ups to +3V3 on `ENC_leaf1..4` were queried here as only valid if the sensor outputs
 are open-drain. `Control Electronics` already answers it: they are, and that is the stated reason
 the interface needs no level shifter. Not an open item.
+
+
+## 11. Yaw sensing added — 2026-08-24 (user decision)
+
+The yaw axis gets an incremental encoder now and an absolute encoder later (user: "temporary
+measure"), plus a homing interrupter because the AEDR-8300 has no index. Schematic-only per the
+user's instruction — **no PCB placement or routing was done**; parts sit in free area on the MCU
+sheet. ERC is at the 9 expected `same_local_global_label` warnings, 0 errors; new nets verified
+in the exported netlist.
+
+### What went in (MCU.kicad_sch)
+
+| Ref | Part | LCSC | Role |
+|---|---|---|---|
+| U9 | AEDR-8300-1Q0 | C22453800 | yaw quadrature, `YAW_ENC_A/B` → PA15/PB3 (TIM2 CH1/CH2) |
+| R33 | 220R 0402 | C25091 | R_LED, ~15 mA from VSENS |
+| R34/R35 | 2.2k 0402 | C25879 | A/B pull-ups to +3V3 (TTL V_OH margin; reuses a stocked value instead of the datasheet's 2.7k) |
+| C33 | 100nF 0402 | C1525 | U9 decoupling |
+| U10 | GP1S092HCPIF | C69422 | homing interrupter, `YAW_HOME` → PB7 (TIM4_CH2 capture) |
+| R36 | 220R 0402 | C25091 | interrupter LED, ~10 mA from +3V3 |
+| R37 | 10k 0402 | C25744 | phototransistor pull-up |
+| TP8 | test point | — | `DBG_RX` |
+
+SWO is gone: PB3 → `YAW_ENC_B`; logging is RTT over SWD + USART3 on PC10/PC11 (`DBG_TX`/`DBG_RX`).
+`J2` pin 6 (the old SWO position — where debug probes put their VCOM UART) carries `DBG_TX`.
+`VSENS` was promoted from a Connectors-sheet local label to a global net so it reaches U9; the
+netclass pattern `VSENS` was added to PWR_3V3 in `.kicad_pro` (the stale `/Connectors/VSENS`
+pattern is still listed there and matches nothing — harmless, remove on the next `.kicad_pro` pass).
+Also applied while KiCad was closed: **MOTOR 1.2 → 0.8 mm and Default 0.2 → 0.25 mm** — these were
+decided earlier but had been wiped by KiCad's close-rewrite of `.kicad_pro`; verified in the file now.
+
+### Decisions owed to the vault (marked PROVISIONAL on the instances)
+
+| Decision | Chosen here | Vault home |
+|---|---|---|
+| Yaw encoder = AEDR-8300-1Q0 | fitted as U9; ring at r ≈ 30 mm → ~5343 counts/rev | COL-COTS-0032 (written) — the **180 LPI code ring itself is unprocured** |
+| Homing interrupter = GP1S092HCPIF | 2 mm slot, 0.3 mm aperture, SMD | COL-COTS-0033 (written) — **datasheet not held**; symbol pin numbers 1–4 (A/K/C/E) and the footprint are owed from it |
+| TIM2 shared: yaw quadrature vs ENC_leaf2 capture | both wired; firmware picks | MCU Pinout § Yaw Sensing #tbd |
+| 2.2k output pull-ups (not 2.7k) | stocked-value reuse, same margin math | on the symbol Notes |
+
+### PCB steps owed (user, then Konnect)
+
+- eeschema: **Annotate is not needed** (all refs concrete); F8 *Update PCB from Schematic* pulls
+  U9/U10/R33–R37/C33/TP8 in — U10 will fail footprint sync until its footprint exists.
+- Place U9 on **B.Cu** at the code-ring radius (gap 2.0 mm typ, ±0.38 mm placement, emitter side
+  toward the rotation centre); U10 on B.Cu where the flag sweep crosses; route.
+- No 3D model for the AEDR-8300 ships with the board (SnapEDA/UltraLibrarian hold one behind
+  accounts).
