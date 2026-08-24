@@ -674,6 +674,10 @@
       {
         "netclass": "I2C",
         "pattern": "I2C1_SDA"
+      },
+      {
+        "netclass": "PWR_3V3",
+        "pattern": "VSENS"
       }
     ]
   },
@@ -681,7 +685,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "fab/",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
