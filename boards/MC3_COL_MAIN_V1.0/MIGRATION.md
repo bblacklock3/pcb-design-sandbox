@@ -579,7 +579,7 @@ decided earlier but had been wiped by KiCad's close-rewrite of `.kicad_pro`; ver
 |---|---|---|
 | Yaw encoder = AEDR-8300-1Q0 | fitted as U9; ring at r ≈ 30 mm → ~5343 counts/rev | COL-COTS-0032 (written) — the **180 LPI code ring itself is unprocured** |
 | Homing interrupter = GP1S094HCZ0F | 3 mm slot, 0.3 mm aperture, through-hole (user chose slot clearance over SMD, 2026-08-24) | COL-COTS-0034 (written; 0033 = the rejected 2 mm option) — **datasheet not held**; symbol pin numbers 1–4 (A/K/C/E) and the footprint are owed from it |
-| TIM2 shared: yaw quadrature vs ENC_leaf2 capture | both wired; firmware picks | MCU Pinout § Yaw Sensing #tbd |
+| TIM2 shared: yaw quadrature vs ENC_leaf2 capture | **resolved 2026-08-24: ENC_leaf2 keeps the hardware capture; yaw quadrature decoded in software** (leaves symmetric; path deleted with the temporary encoder) | Firmware-01 § Decisions Of Record + MCU Pinout § Yaw Sensing |
 | 2.2k output pull-ups (not 2.7k) | stocked-value reuse, same margin math | on the symbol Notes |
 
 ### PCB steps owed (user, then Konnect)
