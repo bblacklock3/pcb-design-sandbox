@@ -559,10 +559,10 @@ in the exported netlist.
 | U9 | AEDR-8300-1Q0 | C22453800 | yaw quadrature, `YAW_ENC_A/B` → PA15/PB3 (TIM2 CH1/CH2) |
 | R33 | 220R 0402 | C25091 | R_LED, ~15 mA from VSENS |
 | R34/R35 | 2.2k 0402 | C25879 | A/B pull-ups to +3V3 (TTL V_OH margin; reuses a stocked value instead of the datasheet's 2.7k) |
-| C33 | 100nF 0402 | C1525 | U9 decoupling |
+| C37 | 100nF 0402 | C1525 | U9 decoupling (renamed from C33 — collided with a MotorChannel instance ref; #PWR010-013 similarly renamed to #PWR0107-0110) |
 | U10 | GP1S094HCZ0F | C920601 | homing interrupter (3 mm slot, through-hole), `YAW_HOME` → PB7 (TIM4_CH2 capture) |
-| R36 | 220R 0402 | C25091 | interrupter LED, ~10 mA from +3V3 |
-| R37 | 10k 0402 | C25744 | phototransistor pull-up |
+| R36 | 100R 0402 | C25076 | interrupter LED, ~20 mA from +3V3 (worst-case CTR 0.8 %) |
+| R37 | 47k 0402 | C25792 | phototransistor pull-up (sized for I_C min 160 uA at I_F 20 mA) |
 | TP8 | test point | — | `DBG_RX` |
 
 SWO is gone: PB3 → `YAW_ENC_B`; logging is RTT over SWD + USART3 on PC10/PC11 (`DBG_TX`/`DBG_RX`).
@@ -577,15 +577,14 @@ decided earlier but had been wiped by KiCad's close-rewrite of `.kicad_pro`; ver
 
 | Decision | Chosen here | Vault home |
 |---|---|---|
-| Yaw encoder = AEDR-8300-1Q0 | fitted as U9; ring at r ≈ 30 mm → ~5343 counts/rev | COL-COTS-0032 (written) — the **180 LPI code ring itself is unprocured** |
-| Homing interrupter = GP1S094HCZ0F | 3 mm slot, 0.3 mm aperture, through-hole (user chose slot clearance over SMD, 2026-08-24) | COL-COTS-0034 (written; 0033 = the rejected 2 mm option) — **datasheet not held**; symbol pin numbers 1–4 (A/K/C/E) and the footprint are owed from it |
+| Yaw encoder = AEDR-8300-1Q0 | fitted as U9; ring at r ≈ 30 mm → ~5343 counts/rev | COL-COTS-0032 (written); 180 LPI disks on hand from MC2 stock — mechanical mounting is what remains |
+| Homing interrupter = GP1S094HCZ0F | 3 mm slot, 0.3 mm aperture, through-hole (user chose slot clearance over SMD, 2026-08-24) | COL-COTS-0034 + [[Sharp GP1S094HCZ0F datasheet]] held 2026-08-24: pins 1=A/2=C/3=E/4=K, footprint `GP1S094HCZ0F` built (4.55×2.0 grid, 1.2 mm boss NPTH — verify grid against a physical part before fab); flag present = YAW_HOME HIGH; **no reflow** — hand-solder |
 | TIM2 shared: yaw quadrature vs ENC_leaf2 capture | **resolved 2026-08-24: ENC_leaf2 keeps the hardware capture; yaw quadrature decoded in software** (leaves symmetric; path deleted with the temporary encoder) | Firmware-01 § Decisions Of Record + MCU Pinout § Yaw Sensing |
 | 2.2k output pull-ups (not 2.7k) | stocked-value reuse, same margin math | on the symbol Notes |
 
 ### PCB steps owed (user, then Konnect)
 
-- eeschema: **Annotate is not needed** (all refs concrete); F8 *Update PCB from Schematic* pulls
-  U9/U10/R33–R37/C33/TP8 in — U10 will fail footprint sync until its footprint exists.
+- eeschema: F8 *Update PCB from Schematic* pulls U9/U10/R33–R37/C37/TP8 in; all footprints exist.
 - Place U9 on **B.Cu** at the code-ring radius (gap 2.0 mm typ, ±0.38 mm placement, emitter side
   toward the rotation centre); U10 on B.Cu where the flag sweep crosses; route.
 - No 3D model for the AEDR-8300 ships with the board (SnapEDA/UltraLibrarian hold one behind
