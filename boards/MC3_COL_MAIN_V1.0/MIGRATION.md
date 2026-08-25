@@ -578,7 +578,7 @@ decided earlier but had been wiped by KiCad's close-rewrite of `.kicad_pro`; ver
 
 | Decision | Chosen here | Vault home |
 |---|---|---|
-| Yaw encoder = AEDR-8300-1Q0 | fitted as U9; ring at r ≈ 30 mm → ~5343 counts/rev | COL-COTS-0032 (written); 180 LPI disks on hand from MC2 stock — mechanical mounting is what remains |
+| Yaw encoder = AEDR-8300-1Q0 | fitted as U9; M10899 disk track at r ≈ 25.87 mm → 4608 counts/rev, 0.078°/count | COL-COTS-0032 (updated to the on-hand disk); mechanical mounting is what remains |
 | Homing interrupter = GP1S094HCZ0F | 3 mm slot, 0.3 mm aperture, through-hole (user chose slot clearance over SMD, 2026-08-24) | COL-COTS-0034 + [[Sharp GP1S094HCZ0F datasheet]] held 2026-08-24: pins 1=A/2=C/3=E/4=K, footprint `GP1S094HCZ0F` built (4.55×2.0 grid, 1.2 mm boss NPTH — verify grid against a physical part before fab); flag present = YAW_HOME HIGH; **no reflow** — hand-solder |
 | TIM2 shared: yaw quadrature vs ENC_leaf2 capture | **resolved 2026-08-24: ENC_leaf2 keeps the hardware capture; yaw quadrature decoded in software** (leaves symmetric; path deleted with the temporary encoder) | Firmware-01 § Decisions Of Record + MCU Pinout § Yaw Sensing |
 | 2.2k output pull-ups (not 2.7k) | stocked-value reuse, same margin math | on the symbol Notes |
