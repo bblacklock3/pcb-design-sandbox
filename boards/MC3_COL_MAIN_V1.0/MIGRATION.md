@@ -603,3 +603,13 @@ Symbol cloned from the F412's exact pin geometry (2 pin renames); footprint unch
 - **Order the bare `STM32U595RJT6` (DigiKey)** — the `Q`/SMPS variant sacrifices PC4/PC5/PB9 and is unusable.
 - Firmware: AF renumbering; TIM12→TIM15 for RC_OUT_leaf1/2; 5 V tolerance of PA15/PB3 verified (FT_c/FT_fa).
 - User: F8 should report **no copper changes** — field updates on U2 only.
+
+### CubeMX validation — passed 2026-08-25
+
+`firmware/MC3_COL_MAIN_U595.ioc` + generated skeleton (committed): all 41 pin assignments accepted
+by ST's device database (10/51 GPIOs unused — exact count match), clock tree solved 8 MHz HSE
+→ ×40 ÷2 → 160 MHz, all six timers + FDCAN1/I2C1/USART3 configured and generated. The negative
+test also fired: CubeMX blocked TIM1_CH4 over PA11/FDCAN — the tool demonstrably catches
+conflicts. TIM2 encoder mode + CH3 capture verified coexisting (mechanically; CH3 then latches
+position, not time — the firmware decision stands). Remaining proof tiers: compile in CubeIDE,
+then silicon.
