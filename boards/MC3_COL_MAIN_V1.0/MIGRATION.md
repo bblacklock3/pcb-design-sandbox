@@ -590,3 +590,16 @@ decided earlier but had been wiped by KiCad's close-rewrite of `.kicad_pro`; ver
   toward the rotation centre); U10 on B.Cu where the flag sweep crosses; route.
 - No 3D model for the AEDR-8300 ships with the board (SnapEDA/UltraLibrarian hold one behind
   accounts).
+
+
+## 12. MCU swap: F412RET6 → STM32U595RJT6 — 2026-08-25 (user decision)
+
+Driven by CAN-FD and telemetry RAM (COL-SEARCH-0010; COL-COTS-0035). **Copper-free**: the non-Q
+U595 LQFP64 reproduces the F412 pin skeleton exactly (sole delta pin 48 VDD→VDDUSB, already on
++3V3 with C7 at the pad). Verified by netlist diff — all 64 U2 pins on identical nets pre/post.
+Symbol cloned from the F412's exact pin geometry (2 pin renames); footprint unchanged
+(`LQFP-64_10x10mm_P0.5mm`); ERC at the 9-warning baseline. COL-COTS-0029 marked Superseded.
+
+- **Order the bare `STM32U595RJT6` (DigiKey)** — the `Q`/SMPS variant sacrifices PC4/PC5/PB9 and is unusable.
+- Firmware: AF renumbering; TIM12→TIM15 for RC_OUT_leaf1/2; 5 V tolerance of PA15/PB3 verified (FT_c/FT_fa).
+- User: F8 should report **no copper changes** — field updates on U2 only.
