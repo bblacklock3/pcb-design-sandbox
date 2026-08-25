@@ -687,7 +687,7 @@
       "netlist": "",
       "plot": "fab/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "MC3_COL_MAIN_V1.1.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
