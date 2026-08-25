@@ -560,7 +560,8 @@ in the exported netlist.
 | R33 | 220R 0402 | C25091 | R_LED, ~15 mA from VSENS |
 | R34/R35 | 2.2k 0402 | C25879 | A/B pull-ups to +3V3 (TTL V_OH margin; reuses a stocked value instead of the datasheet's 2.7k) |
 | C37 | 100nF 0402 | C1525 | U9 decoupling (renamed from C33 — collided with a MotorChannel instance ref; #PWR010-013 similarly renamed to #PWR0107-0110) |
-| U10 | GP1S094HCZ0F | C920601 | homing interrupter (3 mm slot, through-hole), `YAW_HOME` → PB7 (TIM4_CH2 capture) |
+| U10 | GP1S094HCZ0F | C920601 | homing interrupter + one stop (3 mm slot, through-hole), `YAW_HOME` → PB7 (TIM4_CH2 capture) |
+| U11 + R38/R39 | GP1S094HCZ0F + 100R/47k | C920601, C25076, C25792 | second interrupter 180° opposite — far-stop soft limit, `YAW_LIM` → PC12 (EXTI); added 2026-08-24 |
 | R36 | 100R 0402 | C25076 | interrupter LED, ~20 mA from +3V3 (worst-case CTR 0.8 %) |
 | R37 | 47k 0402 | C25792 | phototransistor pull-up (sized for I_C min 160 uA at I_F 20 mA) |
 | TP8 | test point | — | `DBG_RX` |
