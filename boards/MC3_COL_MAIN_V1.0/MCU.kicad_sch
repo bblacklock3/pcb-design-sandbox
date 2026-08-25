@@ -7530,6 +7530,61 @@
 			)
 		)
 	)
+	(global_label "IPROPI_leaf1"
+		(shape passive)
+		(at 55.88 166.37 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "57ec1f76-a860-4793-8a8c-3b5eb0fe8aa9")
+	)
+	(global_label "IPROPI_leaf2"
+		(shape passive)
+		(at 66.04 166.37 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3d38ac20-1de7-4bf5-a108-f42739d5c3da")
+	)
+	(global_label "IPROPI_leaf3"
+		(shape passive)
+		(at 76.2 166.37 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "592250d1-e652-4b7a-ac09-cf39dac63262")
+	)
+	(global_label "IPROPI_leaf4"
+		(shape passive)
+		(at 86.36 166.37 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "780793ed-47b9-45a0-84fa-5c8ffaff85ae")
+	)
+	(global_label "IPROPI_yaw"
+		(shape passive)
+		(at 96.52 166.37 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4a937538-2d15-487e-8fee-67182f162e46")
+	)
 	(symbol
 		(lib_id "power:+3V3")
 		(at 172.72 153.67 0)
@@ -14091,15 +14146,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_MAIN_V1.0"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
-					(reference "C42")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C1523"
 			(at 96.52 170.18 0)
 			(hide yes)
@@ -14117,5 +14163,274 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.0"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/82019890-1ee3-4edd-b219-f0a654758d61"
+					(reference "C42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 173.99 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7eef91b5-56da-4dc8-924d-cf8d7d2dc64e")
+		(property "Reference" "#PWR0115"
+			(at 55.88 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 55.88 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MCU"
+				(path "/47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "#PWR0115")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 66.04 173.99 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1018c556-124f-42dd-a0c5-d152c022b3a9")
+		(property "Reference" "#PWR0116"
+			(at 66.04 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 66.04 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MCU"
+				(path "/47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "#PWR0116")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 76.2 173.99 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d75cbd32-4c1b-4b0d-a9a5-b26c8e9190c0")
+		(property "Reference" "#PWR0117"
+			(at 76.2 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 76.2 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MCU"
+				(path "/47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "#PWR0117")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 173.99 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2923a6af-ca64-4f61-bac9-b5bfadf9e052")
+		(property "Reference" "#PWR0118"
+			(at 86.36 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.36 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.36 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MCU"
+				(path "/47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "#PWR0118")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 96.52 173.99 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "332dc2bd-80a6-49bb-a81a-56decf482c22")
+		(property "Reference" "#PWR0119"
+			(at 96.52 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 96.52 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MCU"
+				(path "/47a16ae1-5610-4c65-ad31-95efea4f2fd0"
+					(reference "#PWR0119")
+					(unit 1)
+				)
+			)
+		)
+	)
 )
