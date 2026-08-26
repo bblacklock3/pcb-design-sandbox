@@ -32,7 +32,7 @@ Record: COL-COTS-NNNN · Datasheet: Refs/Datasheets/<name>.md
 - `DRV8214.md` — COL-COTS-0028, written 2026-08-22 from SLVSH04 §11 and the vault's
   Layout Constraints. (DRV8212 / INA240 / shunt notes are no longer wanted: COL-COTS-0021 is
   superseded and 0022/0023 rejected — the DRV8214 replaces all three.)
-- `STM32F412.md` — MCU (was `STM32F411.md`; the F412RET6 replaced the F411RET6 on 2026-08-22
+- `STM32U595.md` — MCU (lineage F411 → F412 → U595RJT6, swap 2026-08-25; constraints unchanged
   for CAN — pin-identical, **COL-COTS-0029**). The pin map of record is the vault's
   *Main-Board-01 MCU Pinout*.
 - `CAN.md` — the CAN link (TJA1051T/3, termination, ESD, pads), written 2026-08-22.
