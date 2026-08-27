@@ -16,4 +16,8 @@
   (fp_circle (center -0.7500 2.2000) (end -0.6000 2.2000) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.SilkS"))
   (fp_text reference "REF**" (at 0.0000 -2.9000 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
   (fp_text value "Panasonic_AYF530435_FFC-4P_P0.5mm" (at 0.0000 2.9000 0) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))))
+  (model "${KIPRJMOD}/lib/MC3_COL_MAIN.3dshapes/AYF530435.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 0)))
 )
