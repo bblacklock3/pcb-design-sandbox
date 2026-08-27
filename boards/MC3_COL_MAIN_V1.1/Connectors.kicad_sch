@@ -3219,7 +3219,7 @@
 				)
 			)
 		)
-		(property "Note" "PROVISIONAL - machine harness FFC: TE 84952-6, 1.0 mm pitch 6-way, ZIF slide-lock, right angle, bottom contact, 2.56 mm tall x 7.3 mm deep (catalog 1-1773440-6 p.12; KiCad's '1.0 mm height' description is wrong), underside. Takes 0.30 mm FPC/FFC with >=3.8 mm backing. Pin order 1 YAW_OUT1, 2 YAW_OUT2, 3 VIN_PAD (24 V), 4 GND, 5 CANH, 6 CANL: the supply pair sits between the PWM motor pair and the CAN pair as the guard (COL-COTS-0038). J1/J12 pads stay as the fallback. Current rating is in product spec 108-1393, not the catalog - verify (yaw pair sees 0.93 A at stall)."
+		(property "Note" "PROVISIONAL - machine harness FFC: TE 84952-6, 1.0 mm pitch 6-way, ZIF slide-lock, right angle, bottom contact, 2.56 mm tall x 7.3 mm deep, underside. Rated 1 A/contact, 200 V, -40..85 C (DigiKey attrs from TE spec 108-1393); takes 0.30 mm FPC/FFC with >=3.8 mm backing. Pin order 1 YAW_OUT1, 2 YAW_OUT2, 3 VIN_PAD (24 V), 4 GND, 5 CANH, 6 CANL - supply pair between the PWM motor pair and CAN as the guard (COL-COTS-0038). J1/J12 pads stay as the fallback. Sourcing: 18-week factory lead - buy distributor stock, or swap to JLC-stocked JUSHUO AFA07-S06FCA-00 (different footprint) before layout."
 			(at 152.4 63.5 0)
 			(hide yes)
 			(effects
