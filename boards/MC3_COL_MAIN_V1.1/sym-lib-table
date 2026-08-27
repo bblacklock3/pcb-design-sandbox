@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+
+  (lib (name "MC3_COL_MAIN") (type "KiCad") (uri "${KIPRJMOD}/lib/MC3_COL_MAIN.kicad_sym") (options "") (descr "")))
