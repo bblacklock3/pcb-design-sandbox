@@ -714,7 +714,7 @@ escalation ladder if the bench disagrees: second RC at the ADC pins → LC post-
 
 ### 14a. Machine-harness connector `J13` — 2026-08-27
 
-`J13` TE 84952-6 (1.0 mm 6-way FPC, right angle, bottom contact, 1.0 mm tall; COL-COTS-0041) on the
+`J13` TE 84952-6 (1.0 mm 6-way FPC, ZIF, right angle, bottom contact, **2.56 mm tall** × 7.3 deep; COL-COTS-0041) on the
 Connectors sheet, underside. Pins: 1 `YAW_OUT1`, 2 `YAW_OUT2`, 3 `VIN_PAD`, 4 `GND`, 5 `CANH`, 6 `CANL`
 — supply pair between the PWM motor pair and CAN as the guard (COL-COTS-0038 conductor order).
 `J1`/`J12` pads stay. Mechanics of the yaw pair: `OUT1`/`OUT2` hierarchical labels on
@@ -725,5 +725,5 @@ boxes grown to 25.4 mm so the new pins sit on the border. `VIN_PAD`, `CANH`, `CA
 labels (Power / CAN sheets). Netclasses: `YAW_OUT1/2` → MOTOR. Footprint + STEP copied from KiCad's
 `Connector_FFC-FPC` library. ERC 0 errors / 13 label-name warnings.
 
-Owed: TE 84952 current rating + FFC thickness from spec 108-1393; place `J13` underside near the
+Owed: TE 84952 current rating from spec 108-1393 (catalog has dims only; FFC 0.30 mm confirmed); place `J13` underside near the
 `J1`/`J12` pads with the flex exiting toward the harness anchor.
