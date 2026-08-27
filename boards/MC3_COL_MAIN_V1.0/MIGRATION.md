@@ -616,12 +616,12 @@ then silicon.
 
 ## 13. Addressable status pixels — 2026-08-26 (user decision)
 
-Four XINGLIGHT XL-1010RGBC-WS2812B pixels (COL-COTS-0036, LCSC C5349953) as a chain on the
-MCU sheet: `D5`→`D6`→`D7`→`D8`, `R40` 470R series at the MCU end, `C44`–`C47` 100 nF one per
-pixel (datasheet-mandatory). **Supply is `VM`, not +3V3** — the part is 3.5–5.5 V; its input
+Two XINGLIGHT XL-1010RGBC-WS2812B pixels (COL-COTS-0036, LCSC C5349953) as a chain on the
+MCU sheet: `D5`→`D6`, `R40` 470R series at the MCU end, `C44`/`C45` 100 nF one per pixel
+(datasheet-mandatory). Placed as four, cut to two the same day — only two fit the underside. **Supply is `VM`, not +3V3** — the part is 3.5–5.5 V; its input
 threshold is an absolute 2.8 V so PB5 drives it at 3.3 V directly. `LED_DATA` on **PB5 =
 SPI1_MOSI (AF5)** — transmit-only SPI + DMA, no timer consumed, nothing bit-banged. PB5's
-no-connect flag removed; `D8` DO carries one. Symbol + `LED_XL-1010RGBC` footprint (datasheet
+no-connect flag removed; `D6` DO carries one. Symbol + `LED_XL-1010RGBC` footprint (datasheet
 p.11 pattern, 0.40×0.45 pads) added to the project library. ERC unchanged at 9 warnings.
 
 ### Decisions owed to the vault (marked PROVISIONAL on the instances)
@@ -629,12 +629,12 @@ p.11 pattern, 0.40×0.45 pads) added to the project library. ERC unchanged at 9 
 | Decision | Basis | Where |
 |---|---|---|
 | PB5 / SPI1_MOSI as `LED_DATA` | only free pin with a DMA-capable serializer; PB4/LPTIM1_CH2 fallback | COTS-0036 § As Intended; MCU Pinout page updated |
-| Four pixels | state + activity; chain grows free | COTS-0036 |
+| Two pixels | board space; chain grows free if it ever matters | COTS-0036 |
 | 470R series (C25117, verify) | datasheet 20R–2k, ~500R | R40 Note |
 | Footprint pin-1 orientation | datasheet p.11 recommended pattern, pin 1 = DO at chamfered corner | verify against JLC's footprint before fab |
 
 ### PCB steps owed (user)
 
-- F8 to import D5–D8, R40, C44–C47; all **underside**, pixels in the rim region visible through
+- F8 to import D5–D6, R40, C44–C45; all **underside**, pixels in the rim region visible through
   the enclosure, chain order = physical order; each C at its pixel's VDD pad; R40 at U2.
-- `VM` to the pixels can be a 0.25 mm trace (60 mA max) — no MOTOR-class width needed.
+- `VM` to the pixels can be a 0.25 mm trace (30 mA max) — no MOTOR-class width needed.
