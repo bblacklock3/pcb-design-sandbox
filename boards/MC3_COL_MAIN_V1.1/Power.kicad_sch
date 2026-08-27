@@ -3954,6 +3954,16 @@
 		)
 		(uuid "4fee4ef0-a2bf-4a88-b0b4-ed0f554a87c5")
 	)
+	(label "VIN_SW"
+		(at 85.09 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "91620f0d-b525-4105-99ef-92adaa2ffc4a")
+	)
 	(global_label "VIN_PROT"
 		(shape input)
 		(at 45.72 101.6 0)
@@ -3966,28 +3976,6 @@
 		(uuid "71ef6096-d38a-4243-8f04-4431d0a0817e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 45.72 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "VM"
-		(shape input)
-		(at 85.09 90.17 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "dc5c170a-ae03-4594-8771-cbfaf895e792")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 85.09 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4019,6 +4007,17 @@
 			(justify left)
 		)
 		(uuid "cfec9557-36eb-48c2-9911-34fd0760f6e5")
+	)
+	(global_label "VM"
+		(shape input)
+		(at 138.43 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ae79ce82-aa39-4d18-b657-864b8318e560")
 	)
 	(symbol
 		(lib_id "Device:Polyfuse")
