@@ -725,5 +725,5 @@ boxes grown to 25.4 mm so the new pins sit on the border. `VIN_PAD`, `CANH`, `CA
 labels (Power / CAN sheets). Netclasses: `YAW_OUT1/2` → MOTOR. Footprint + STEP copied from KiCad's
 `Connector_FFC-FPC` library. ERC 0 errors / 13 label-name warnings.
 
-Rated 1 A/contact, 200 V, -40..85 C (DigiKey attributes 2026-08-27). Owed: sourcing decision - TE has an 18-week factory lead (buy distributor stock) vs JLC-stocked JUSHUO AFA07-S06FCA-00 (different footprint); place `J13` underside near the
+Rated 1 A/contact, 200 V, -40..85 C (DigiKey attributes 2026-08-27). Sourcing settled 2026-08-27: DigiKey stock (~10 k), TE part stands; place `J13` underside near the
 `J1`/`J12` pads with the flex exiting toward the harness anchor.
