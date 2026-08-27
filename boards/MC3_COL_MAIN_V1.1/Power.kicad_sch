@@ -4009,6 +4009,17 @@
 		)
 		(uuid "e335c2c5-dc95-4c9d-b04b-b14c52617cf5")
 	)
+	(global_label "VIN_PAD"
+		(shape input)
+		(at 45.72 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cfec9557-36eb-48c2-9911-34fd0760f6e5")
+	)
 	(symbol
 		(lib_id "Device:Polyfuse")
 		(at 45.72 95.25 0)
