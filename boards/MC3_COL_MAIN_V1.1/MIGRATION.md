@@ -711,3 +711,19 @@ escalation ladder if the bench disagrees: second RC at the ADC pins → LC post-
 - `D7` beside `Q1`; `F1` footprint is now **1812**, `D1` unchanged (SMA).
 - CubeMX: PB4 → LPTIM1_CH2 PWM, 160 MHz / 160 → 1.00 MHz; regenerate.
 - Library: done — `VQFN-HR14_RJR_TEX` + STEP from TI. Check the 3D orientation after F8; `docs/design/parts/LM61460.md` layout note.
+
+### 14a. Machine-harness connector `J13` — 2026-08-27
+
+`J13` TE 84952-6 (1.0 mm 6-way FPC, right angle, bottom contact, 1.0 mm tall; COL-COTS-0041) on the
+Connectors sheet, underside. Pins: 1 `YAW_OUT1`, 2 `YAW_OUT2`, 3 `VIN_PAD`, 4 `GND`, 5 `CANH`, 6 `CANL`
+— supply pair between the PWM motor pair and CAN as the guard (COL-COTS-0038 conductor order).
+`J1`/`J12` pads stay. Mechanics of the yaw pair: `OUT1`/`OUT2` hierarchical labels on
+`MotorChannel.kicad_sch` (shape output — ERC is clean because the sheet pins are typed *passive*;
+change the two labels to Passive in eeschema when convenient), sheet pins on all five instances, wired
+to `YAW_OUT1`/`YAW_OUT2` globals on the yaw instance and no-connect flagged on the four leaves. Sheet
+boxes grown to 25.4 mm so the new pins sit on the border. `VIN_PAD`, `CANH`, `CANL` gained global
+labels (Power / CAN sheets). Netclasses: `YAW_OUT1/2` → MOTOR. Footprint + STEP copied from KiCad's
+`Connector_FFC-FPC` library. ERC 0 errors / 13 label-name warnings.
+
+Owed: TE 84952 current rating + FFC thickness from spec 108-1393; place `J13` underside near the
+`J1`/`J12` pads with the flex exiting toward the harness anchor.

@@ -706,6 +706,14 @@
       {
         "netclass": "VIN24",
         "pattern": "VIN_SW"
+      },
+      {
+        "netclass": "MOTOR",
+        "pattern": "YAW_OUT1"
+      },
+      {
+        "netclass": "MOTOR",
+        "pattern": "YAW_OUT2"
       }
     ]
   },
