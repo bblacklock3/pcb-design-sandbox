@@ -488,7 +488,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Oxos_Collimator_LX34312.kicad_pro",
+    "filename": "MC3_ENC_V1.0.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -675,8 +675,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "Oxos_Collimator_LX34312.kicad_sch",
-        "name": "Oxos_Collimator_LX34312",
+        "filename": "MC3_ENC_V1.0.kicad_sch",
+        "name": "MC3_ENC_V1.0",
         "uuid": "f3a591ea-8636-4cd8-8152-108d83bce90a"
       }
     ],
@@ -686,7 +686,7 @@
   "sheets": [
     [
       "f3a591ea-8636-4cd8-8152-108d83bce90a",
-      "Oxos_Collimator_LX34312"
+      "MC3_ENC_V1.0"
     ]
   ],
   "text_variables": {

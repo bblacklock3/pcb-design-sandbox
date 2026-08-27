@@ -6469,7 +6469,7 @@
 			(uuid "4023ace0-97af-446b-8265-06649cb66377")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "L4")
 					(unit 1)
@@ -6552,7 +6552,7 @@
 			(uuid "f3319913-2961-46ca-9ad4-05389c18c5d8")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR07")
 					(unit 1)
@@ -6669,7 +6669,7 @@
 			(uuid "bc0bf76e-a6d9-4954-bacc-25e5128240a1")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "U1")
 					(unit 1)
@@ -6743,7 +6743,7 @@
 			(uuid "5a750d0c-4ecc-4dcb-a4bf-49a2944845dd")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR06")
 					(unit 1)
@@ -6884,7 +6884,7 @@
 			(uuid "5508d119-ab42-4e7d-885a-341b92005188")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "R7")
 					(unit 1)
@@ -6963,7 +6963,7 @@
 			(uuid "6da7c8af-7214-404a-9a3e-574fe4b1869a")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "TP3")
 					(unit 1)
@@ -7092,7 +7092,7 @@
 			(uuid "120e562b-e608-466a-abd2-f4d4fe7875fe")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C2")
 					(unit 1)
@@ -7233,7 +7233,7 @@
 			(uuid "11c96535-9af1-473d-b8ba-a63fadd13c65")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "R6")
 					(unit 1)
@@ -7398,7 +7398,7 @@
 			(uuid "989540df-7722-4986-9e4e-61dfea592204")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C5")
 					(unit 1)
@@ -7527,7 +7527,7 @@
 			(uuid "5169466f-ce26-4bc9-8ae8-8656a3c83378")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C1")
 					(unit 1)
@@ -7668,7 +7668,7 @@
 			(uuid "590ddef8-d3d4-4e0c-9e8d-9d302bfc954b")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "R1")
 					(unit 1)
@@ -7831,7 +7831,7 @@
 			(uuid "10d44329-7cd1-453b-8d2c-c7feb360da36")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C6")
 					(unit 1)
@@ -7969,7 +7969,7 @@
 			(uuid "93334009-f608-4724-a961-da02592b6bd8")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C3")
 					(unit 1)
@@ -8057,7 +8057,7 @@
 			(uuid "c7e18e91-ffa4-4d8d-bd9a-550355bf2318")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "TP1")
 					(unit 1)
@@ -8131,7 +8131,7 @@
 			(uuid "bd7f0672-9f04-4798-a5d9-6e5cdc1fb390")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR08")
 					(unit 1)
@@ -8205,7 +8205,7 @@
 			(uuid "70b11f7d-1e37-4f4f-ba54-08a6603aec54")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR05")
 					(unit 1)
@@ -8334,7 +8334,7 @@
 			(uuid "1640b50f-2cc0-40dd-9d41-f19abb798f56")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C13")
 					(unit 1)
@@ -8497,7 +8497,7 @@
 			(uuid "a8e77338-0082-4902-8bd7-9aab8df105f1")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C7")
 					(unit 1)
@@ -8647,7 +8647,7 @@
 			(uuid "da392724-5323-4b70-ae64-dfe073f4b8ec")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "R2")
 					(unit 1)
@@ -8812,7 +8812,7 @@
 			(uuid "c03c57d0-0518-43f9-88ee-612ca3ed0189")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "L2")
 					(unit 1)
@@ -8900,7 +8900,7 @@
 			(uuid "9e4c80a9-25ce-4fa8-a622-3303c9fc1bd8")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "TP2")
 					(unit 1)
@@ -8974,7 +8974,7 @@
 			(uuid "5188f9fc-9385-4cf5-91f1-f27d9817cabd")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR01")
 					(unit 1)
@@ -9139,7 +9139,7 @@
 			(uuid "2d9e92b6-d796-4f9b-b646-3334cb9fde91")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "L3")
 					(unit 1)
@@ -9223,7 +9223,7 @@
 			(uuid "8ff1773e-9370-4357-a4a3-07dacaaa9551")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR04")
 					(unit 1)
@@ -9352,7 +9352,7 @@
 			(uuid "6b6fd250-1476-41cf-b462-3d375f75c556")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "C12")
 					(unit 1)
@@ -9426,7 +9426,7 @@
 			(uuid "acdfd3da-f856-4bfe-8acc-26500d2baee9")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR02")
 					(unit 1)
@@ -9591,7 +9591,7 @@
 			(uuid "a21441d2-2340-468d-9367-3efa7d19184f")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "L1")
 					(unit 1)
@@ -9674,7 +9674,7 @@
 			(uuid "c6e61a89-590d-4755-ae6f-f6f68c07d30c")
 		)
 		(instances
-			(project "Oxos_Collimator_LX34312"
+			(project "MC3_ENC_V1.0"
 				(path "/f3a591ea-8636-4cd8-8152-108d83bce90a"
 					(reference "#PWR03")
 					(unit 1)
