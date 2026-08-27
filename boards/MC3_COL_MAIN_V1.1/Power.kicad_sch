@@ -6111,7 +6111,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MC3_COL_MAIN:VQFN-HR-14_RJR0014A"
+		(property "Footprint" "MC3_COL_MAIN:VQFN-HR14_RJR_TEX"
 			(at 101.6 140.97 0)
 			(hide yes)
 			(effects

@@ -673,8 +673,10 @@ downstream of `VM = 5 V` is untouched — drivers, LDO, `VSENS`, `VCAN5`, sensin
 | `U2` PB4 | no-connect | **`BUCK_SYNC`** (LPTIM1_CH2, 1.00 MHz = 50 × PWM) |
 | netclasses | — | `VIN24` 0.5 mm / 0.3 mm clearance for `VIN_PAD`/`VIN_PROT`/`VIN_SW`; `BUCK_SW` in `VM` (2.0 mm) |
 
-ERC: **0 errors**; the same label-name warnings as V1.0, plus `U12`'s footprint warning until the
-`VQFN-HR-14_RJR0014A` footprint lands in the library (owed: TI's KiCad export via Ultra Librarian).
+ERC: **0 errors**; the same label-name warnings as V1.0. `U12` footprint = TI's own Ultra Librarian
+export `MC3_COL_MAIN:VQFN-HR14_RJR_TEX` (pads checked against the datasheet land pattern: left column
+at x = −1.85, 0.525 pitch, SW pad 0.41 × 2.39, VIN 0.41 × 0.99, PGND 0.41 × 0.81) with TI's `RJR0014A.step`
+attached — rotation unverified until the board is viewed in 3D.
 
 ### Why the input range is 18–28 V, not 18–30 V
 
@@ -708,4 +710,4 @@ escalation ladder if the bench disagrees: second RC at the ADC pins → LC post-
   away from `L1`. Keep the whole cluster away from the `IPROPI` resistors and the encoder connectors.
 - `D7` beside `Q1`; `F1` footprint is now **1812**, `D1` unchanged (SMA).
 - CubeMX: PB4 → LPTIM1_CH2 PWM, 160 MHz / 160 → 1.00 MHz; regenerate.
-- Library: `VQFN-HR-14_RJR0014A` from TI's KiCad export; `docs/design/parts/LM61460.md` layout note.
+- Library: done — `VQFN-HR14_RJR_TEX` + STEP from TI. Check the 3D orientation after F8; `docs/design/parts/LM61460.md` layout note.
