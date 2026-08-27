@@ -587,7 +587,8 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -599,7 +600,8 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -740,7 +742,11 @@
 			(symbol "FerriteBead_0_1"
 				(polyline
 					(pts
-						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
+						(xy -2.7686 0.4064)
+						(xy -1.7018 2.2606)
+						(xy 2.7686 -0.3048)
+						(xy 1.6764 -2.159)
+						(xy -2.7686 0.4064)
 					)
 					(stroke
 						(width 0)
@@ -752,7 +758,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 1.27) (xy 0 1.2954)
+						(xy 0 1.27)
+						(xy 0 1.2954)
 					)
 					(stroke
 						(width 0)
@@ -764,7 +771,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -1.27) (xy 0 -1.2192)
+						(xy 0 -1.27)
+						(xy 0 -1.2192)
 					)
 					(stroke
 						(width 0)
@@ -1037,7 +1045,8 @@
 			(symbol "+3V3_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1049,7 +1058,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1061,7 +1071,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1176,7 +1187,12 @@
 			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -1210,26 +1226,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Review 2026-08-22: FFC VIN now from VSENS = VM filtered by FB61 + C63."
-		(exclude_from_sim no)
-		(at 30 195 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "398746b3-20cb-4bfd-9b3f-574eb125e8bc")
-	)
-	(text "Encoder interface - four 0.5 mm FFCs, one per leaf, to the LX34311 sensor boards (COL-COTS-0016). Contract: VIN 4-6 V from VM, GND, SIG open-drain pulled to +3V3 here (10k), spare unassigned. Vault: Main-Board-01 Encoder Interface / Connectors. Motor pads are on the MotorChannel sheet; supply pads on Power."
-		(exclude_from_sim no)
-		(at 30 25 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "dd600d86-55f7-42ff-82c8-15782117f862")
-	)
 	(no_connect
 		(at 54.61 134.62)
 		(uuid "630c3e7e-9abc-480d-9ca7-697267838887")
@@ -1248,7 +1244,8 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 66.04) (xy 144.78 66.04)
+			(xy 147.32 66.04)
+			(xy 144.78 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1258,7 +1255,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 49.53) (xy 44.45 49.53)
+			(xy 54.61 49.53)
+			(xy 44.45 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1268,7 +1266,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 127) (xy 52.07 127)
+			(xy 54.61 127)
+			(xy 52.07 127)
 		)
 		(stroke
 			(width 0)
@@ -1278,7 +1277,8 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 60.96) (xy 144.78 60.96)
+			(xy 147.32 60.96)
+			(xy 144.78 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1288,7 +1288,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 52.07) (xy 52.07 52.07)
+			(xy 54.61 52.07)
+			(xy 52.07 52.07)
 		)
 		(stroke
 			(width 0)
@@ -1298,7 +1299,8 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 58.42) (xy 144.78 58.42)
+			(xy 147.32 58.42)
+			(xy 144.78 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1308,7 +1310,8 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 68.58) (xy 144.78 68.58)
+			(xy 147.32 68.58)
+			(xy 144.78 68.58)
 		)
 		(stroke
 			(width 0)
@@ -1318,7 +1321,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 87.63) (xy 52.07 87.63)
+			(xy 54.61 87.63)
+			(xy 52.07 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1328,7 +1332,8 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 55.88) (xy 95.25 53.34)
+			(xy 95.25 55.88)
+			(xy 95.25 53.34)
 		)
 		(stroke
 			(width 0)
@@ -1338,7 +1343,8 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 63.5) (xy 144.78 63.5)
+			(xy 147.32 63.5)
+			(xy 144.78 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1348,7 +1354,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 167.64) (xy 52.07 167.64)
+			(xy 54.61 167.64)
+			(xy 52.07 167.64)
 		)
 		(stroke
 			(width 0)
@@ -1358,7 +1365,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 132.08) (xy 52.07 132.08)
+			(xy 54.61 132.08)
+			(xy 52.07 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1368,7 +1376,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 92.71) (xy 52.07 92.71)
+			(xy 54.61 92.71)
+			(xy 52.07 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1378,7 +1387,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 172.72) (xy 52.07 172.72)
+			(xy 54.61 172.72)
+			(xy 52.07 172.72)
 		)
 		(stroke
 			(width 0)
@@ -1388,7 +1398,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 46.99) (xy 52.07 46.99)
+			(xy 54.61 46.99)
+			(xy 52.07 46.99)
 		)
 		(stroke
 			(width 0)
@@ -1398,13 +1409,32 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 71.12) (xy 144.78 71.12)
+			(xy 147.32 71.12)
+			(xy 144.78 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f792b8db-11db-4c73-9db8-38849a31b8ad")
+	)
+	(text "Review 2026-08-22: FFC VIN now from VSENS = VM filtered by FB61 + C63."
+		(at 30 195 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "398746b3-20cb-4bfd-9b3f-574eb125e8bc")
+	)
+	(text "Encoder interface - four 0.5 mm FFCs, one per leaf, to the LX34311 sensor boards (COL-COTS-0016). Contract: VIN 4-6 V from VM, GND, SIG open-drain pulled to +3V3 here (10k), spare unassigned. Vault: Main-Board-01 Encoder Interface / Connectors. Motor pads are on the MotorChannel sheet; supply pads on Power."
+		(at 30 25 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+		)
+		(uuid "dd600d86-55f7-42ff-82c8-15782117f862")
 	)
 	(label "GND"
 		(at 54.61 90.17 180)
@@ -1516,16 +1546,6 @@
 		)
 		(uuid "97cbf283-fc0b-47b5-a7e8-ccf7de2186e8")
 	)
-	(label "GND"
-		(at 144.78 66.04 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9f90d417-148e-4934-8657-73fc88fb010e")
-	)
 	(label "ENC_leaf1"
 		(at 74.93 52.07 0)
 		(effects
@@ -1586,6 +1606,16 @@
 		)
 		(uuid "ff590d82-37b5-4270-8e5d-12811cb8518d")
 	)
+	(label "GND"
+		(at 144.78 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cc808335-3c35-47b7-b445-ab9fdee50413")
+	)
 	(global_label "VSENS"
 		(shape output)
 		(at 95.25 63.5 0)
@@ -1598,50 +1628,6 @@
 		(uuid "078af47b-c3fb-4694-a4ea-737aa7f54175")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 95.25 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "YAW_OUT1"
-		(shape input)
-		(at 144.78 58.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0fe412d2-5a08-40d0-9c7a-e3a7ea1dcc61")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.78 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "VIN_PAD"
-		(shape input)
-		(at 144.78 63.5 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1803480b-af02-4ff0-8a3f-41fc1cfb7835")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.78 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1718,28 +1704,6 @@
 			)
 		)
 	)
-	(global_label "CANH"
-		(shape input)
-		(at 144.78 68.58 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b394cedf-764d-4377-a7d0-3e998219bbb7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.78 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "ENC_leaf3"
 		(shape input)
 		(at 52.07 132.08 180)
@@ -1752,28 +1716,6 @@
 		(uuid "c750eecb-ea71-467b-adba-71eeda9e346f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 52.07 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "YAW_OUT2"
-		(shape input)
-		(at 144.78 60.96 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "cd616593-43c8-451b-950a-55b519bb034c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.78 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1808,6 +1750,50 @@
 	)
 	(global_label "CANL"
 		(shape input)
+		(at 144.78 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ba98ae26-7101-42f6-8166-c0513a235522")
+	)
+	(global_label "CANH"
+		(shape input)
+		(at 144.78 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a011b5b4-967c-43ae-9354-90fb929a2886")
+	)
+	(global_label "VIN_PAD"
+		(shape input)
+		(at 144.78 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3a6fca05-bf75-45aa-bf47-b6c92be6155a")
+	)
+	(global_label "YAW_OUT1"
+		(shape input)
+		(at 144.78 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "747db57b-9ece-45f8-b273-d1553fea4c33")
+	)
+	(global_label "YAW_OUT2"
+		(shape input)
 		(at 144.78 71.12 180)
 		(effects
 			(font
@@ -1815,28 +1801,15 @@
 			)
 			(justify right)
 		)
-		(uuid "de7e3cdf-96b6-4b0f-aa46-cbf4b101d771")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 144.78 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
+		(uuid "5f5c42e1-c998-44fa-98da-9973f5c4cb9f")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 49.53 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "10b88d57-2be9-4439-abf3-6d68e7f65f3c")
 		(property "Reference" "J3"
@@ -1935,6 +1908,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "2"
 			(uuid "f97bc5ea-7ee8-47d3-99f3-a8dccb0f8f9d")
 		)
@@ -1966,11 +1941,9 @@
 		(lib_id "power:GND")
 		(at 44.45 49.53 90)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "2cd4cdb0-08c0-43c8-b4bf-4fd4a68dd3c3")
 		(property "Reference" "#PWR09"
@@ -2026,6 +1999,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "c60caccb-0a5c-4ed7-a8fa-2fbd4cd8d0a8")
 		)
@@ -2048,11 +2023,9 @@
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 170.18 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "4bd0ec2c-95bb-4b1f-b457-af7f20c36e60")
 		(property "Reference" "J6"
@@ -2151,6 +2124,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "2"
 			(uuid "f3d12323-fdd5-498b-a3ea-4e2760145592")
 		)
@@ -2182,11 +2157,9 @@
 		(lib_id "power:+3V3")
 		(at 74.93 44.45 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "4e41aae4-1346-4859-85fd-cc4e6525497d")
 		(property "Reference" "#PWR010"
@@ -2242,6 +2215,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "2d6fa740-fe55-4d27-a983-43995c71dff2")
 		)
@@ -2264,11 +2239,9 @@
 		(lib_id "Device:R")
 		(at 74.93 88.9 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "5e6f7da9-dfc6-4cf9-936a-b2d822a731ad")
 		(property "Reference" "R13"
@@ -2345,6 +2318,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "57d79f9f-565a-4490-997e-9f7b38c991bf")
 		)
@@ -2370,11 +2345,9 @@
 		(lib_id "Device:R")
 		(at 74.93 168.91 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "6e821cf1-d380-4290-950d-6601a14c6220")
 		(property "Reference" "R15"
@@ -2451,6 +2424,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "91c43f68-5985-44d3-808c-0da9017b3acf")
 		)
@@ -2476,11 +2451,9 @@
 		(lib_id "Device:C")
 		(at 105.41 59.69 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "845c82c1-ea45-4db7-b872-b2d2af7e2322")
 		(property "Reference" "C17"
@@ -2570,6 +2543,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "0f04b804-1900-4568-a28b-98deff55bd0b")
 		)
@@ -2595,11 +2570,9 @@
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 90.17 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "8522ebfa-69f2-4641-bb5b-b13de3b40ddd")
 		(property "Reference" "J4"
@@ -2698,6 +2671,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "3"
 			(uuid "6aecc893-e73e-4794-8ff2-f28139cde40a")
 		)
@@ -2729,11 +2704,9 @@
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 59.69 129.54 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "89dca582-6908-4e36-a3d9-baa6e8b41a88")
 		(property "Reference" "J5"
@@ -2832,6 +2805,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "4"
 			(uuid "d74a92e3-06ee-42f4-8cb2-bcae37233bf6")
 		)
@@ -2863,11 +2838,9 @@
 		(lib_id "Device:FerriteBead")
 		(at 95.25 59.69 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "8f2264eb-26b4-4aa9-aa51-ef8a683eb98c")
 		(property "Reference" "FB2"
@@ -2955,6 +2928,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "2"
 			(uuid "bbe7a2cb-929f-4e4c-acdb-001dde6f7cbc")
 		)
@@ -2980,11 +2955,9 @@
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 152.4 63.5 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "95a4d0cf-4648-4881-a240-c329bb164c56")
 		(property "Reference" "J13"
@@ -3061,7 +3034,7 @@
 				)
 			)
 		)
-		(property "Note" "PROVISIONAL - machine harness FFC: TE 84952-6, 1.0 mm pitch 6-way, ZIF slide-lock, right angle, bottom contact, 2.56 mm tall x 7.3 mm deep, underside. Rated 1 A/contact, 200 V, -40..85 C (TE spec 108-1393 via DigiKey); takes 0.30 mm FPC/FFC with >=3.8 mm backing. Pin order 1 YAW_OUT1, 2 YAW_OUT2, 3 VIN_PAD (24 V), 4 GND, 5 CANH, 6 CANL - supply pair between the PWM motor pair and CAN as the guard (COL-COTS-0038). J1/J12 pads stay as the fallback. DigiKey A101387CT-ND, distributor stock."
+		(property "Note" "PROVISIONAL - machine harness FFC: TE 84952-6, 1.0 mm pitch 6-way, ZIF slide-lock, right angle, bottom contact, 2.56 mm tall x 7.3 mm deep, underside. Rated 1 A/contact, 200 V, -40..85 C (TE spec 108-1393 via DigiKey); takes 0.30 mm FPC/FFC with >=3.8 mm backing. Pin order 1 CANL, 2 CANH, 3 GND, 4 VIN_PAD (24 V), 5 YAW_OUT1, 6 YAW_OUT2 - the GND/VIN pair sits between CAN and the PWM motor pair as the guard (COL-COTS-0038; mirrored 2026-08-27 for routing). J1/J12 pads stay as the fallback. DigiKey A101387CT-ND, distributor stock."
 			(at 152.4 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -3072,6 +3045,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "4"
 			(uuid "40b709ac-b879-43e3-8939-24bfcc24c834")
 		)
@@ -3103,11 +3078,9 @@
 		(lib_id "Device:R")
 		(at 74.93 48.26 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "c6ca4c1e-6137-4fd5-98bd-029bd34d6dad")
 		(property "Reference" "R12"
@@ -3195,6 +3168,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "ef5e6904-f2c5-4d46-b2dd-f39267ca406d")
 		)
@@ -3220,11 +3195,9 @@
 		(lib_id "Device:R")
 		(at 74.93 128.27 0)
 		(unit 1)
-		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
 		(dnp no)
 		(uuid "fb613026-2380-4617-b14d-9087026b587b")
 		(property "Reference" "R14"
@@ -3301,6 +3274,8 @@
 				)
 			)
 		)
+		(body_style 1)
+		(in_pos_files yes)
 		(pin "1"
 			(uuid "3d261d34-c679-4dbe-92a4-a5c7f638e3aa")
 		)

@@ -715,8 +715,8 @@ escalation ladder if the bench disagrees: second RC at the ADC pins → LC post-
 ### 14a. Machine-harness connector `J13` — 2026-08-27
 
 `J13` TE 84952-6 (1.0 mm 6-way FPC, ZIF, right angle, bottom contact, **2.56 mm tall** × 7.3 deep; COL-COTS-0041) on the
-Connectors sheet, underside. Pins: 1 `YAW_OUT1`, 2 `YAW_OUT2`, 3 `VIN_PAD`, 4 `GND`, 5 `CANH`, 6 `CANL`
-— supply pair between the PWM motor pair and CAN as the guard (COL-COTS-0038 conductor order).
+Connectors sheet, underside. Pins (mirrored 2026-08-27 for routing): 1 `CANL`, 2 `CANH`, 3 `GND`, 4 `VIN_PAD`, 5 `YAW_OUT1`,
+6 `YAW_OUT2` — GND/VIN pair between CAN and the PWM motor pair as the guard (COL-COTS-0038 conductor order).
 `J1`/`J12` pads stay. Mechanics of the yaw pair: `OUT1`/`OUT2` hierarchical labels on
 `MotorChannel.kicad_sch` (shape output — ERC is clean because the sheet pins are typed *passive*;
 change the two labels to Passive in eeschema when convenient), sheet pins on all five instances, wired
