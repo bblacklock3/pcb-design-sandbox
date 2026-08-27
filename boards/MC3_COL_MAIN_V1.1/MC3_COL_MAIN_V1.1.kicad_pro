@@ -584,6 +584,14 @@
         "tuning_profile": "",
         "via_diameter": 1.0,
         "via_drill": 0.6
+      },
+      {
+        "clearance": 0.3,
+        "name": "VIN24",
+        "priority": 0,
+        "track_width": 0.5,
+        "via_diameter": 0.8,
+        "via_drill": 0.4
       }
     ],
     "meta": {
@@ -597,7 +605,7 @@
         "pattern": "VM"
       },
       {
-        "netclass": "VM",
+        "netclass": "VIN24",
         "pattern": "VIN_PROT"
       },
       {
@@ -683,6 +691,18 @@
       {
         "netclass": "PWR_3V3",
         "pattern": "VSENS"
+      },
+      {
+        "netclass": "VM",
+        "pattern": "BUCK_SW"
+      },
+      {
+        "netclass": "VIN24",
+        "pattern": "VIN_PAD"
+      },
+      {
+        "netclass": "VIN24",
+        "pattern": "VIN_SW"
       }
     ]
   },
