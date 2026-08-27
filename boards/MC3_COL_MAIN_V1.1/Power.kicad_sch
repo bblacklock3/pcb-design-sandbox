@@ -6662,7 +6662,7 @@
 				)
 			)
 		)
-		(property "Note" "Buck inductor per SNVSBD5D Table 9-2 (1 MHz / 5 V: 2.2 uH). Shielded, 5x5x3.1 mm - under the 4 mm cap; Isat ~9 A, 9.6 mOhm. Alternatives with the same land: XAL5030-332 (3.3 uH). Keep the SW-side pad short; nothing sensitive under it."
+		(property "Note" "Buck inductor per SNVSBD5D Table 9-2 (1 MHz / 5 V: 2.2 uH). Coilcraft XAL5030-222MEB: shielded molded, 5.48 x 5.28 x 3.1 mm (under the 4 mm cap), Isat 9.2 A, DCR 14.5 mOhm, 50 V rated. Same land: XAL5030-332 (3.3 uH). Keep the SW pad short; nothing sensitive under it."
 			(at 132.08 130.81 0)
 			(hide yes)
 			(effects

@@ -1,3 +1,12 @@
+# MC3_COL_MAIN_V1.1 — working checklist (24 V-input revision)
+
+**V1.1 is a fork of V1.0 made 2026-08-26** (`git`: Konnect `rename_project`, every sheet's
+`(project …)` instance rewritten). V1.0 stays untouched as the 5 V-input fallback. Sections
+0–13 below are inherited from V1.0's checklist verbatim and describe the state V1.1 started
+from; **§14 is the delta.** The vault build rung for this revision is `Main-Board-02`.
+
+---
+
 # MC3_COL_MAIN_V1.0 — tscircuit → KiCad migration checklist
 
 Working checklist for the `kicad-migration` branch. **Transient**: delete this file in the
@@ -638,3 +647,65 @@ p.11 pattern, 0.40×0.45 pads) added to the project library. ERC unchanged at 9 
 - F8 to import D5–D6, R40, C44–C45; all **underside**, pixels in the rim region visible through
   the enclosure, chain order = physical order; each C at its pixel's VDD pad; R40 at U2.
 - `VM` to the pixels can be a 0.25 mm trace (30 mA max) — no MOTOR-class width needed.
+
+
+## 14. 24 V input via LM61460 synchronous buck — 2026-08-26 (user decision, V1.1 only)
+
+Harness current ÷5 and the fragile "4.75–5.5 V delivered at the pads across a rotating joint"
+contract replaced by "18–28 V into a buck" (`Main-Board-02 Power`; COL-PARAM-0021). Everything
+downstream of `VM = 5 V` is untouched — drivers, LDO, `VSENS`, `VCAN5`, sensing, CAN.
+
+### What changed (Power.kicad_sch)
+
+| Item | V1.0 | V1.1 |
+|---|---|---|
+| `Q1` source net | `VM` | **`VIN_SW`** (24 V, switched through the reverse-polarity FET) |
+| `U12` LM61460AANRJRR + `L1` XAL5030-222 | — | **new**: `VIN_SW` → 5 V `VM`, 6 A, ~1 MHz (`R41` RT 13.3k), **synchronized** to `BUCK_SYNC` via `C51` 1 nF AC-coupling into EN/SYNC |
+| `C48`/`C49`/`C50` | — | input caps 2× 10 µF 50 V 1210 + 100 nF 50 V 0603 (hot loop) |
+| `C52`/`R44`/`C53`/`C54` | — | CBOOT 100 nF, RBOOT 0R, VCC 1 µF, BIAS 100 nF (BIAS on `VM`) |
+| `R42`/`R43` | — | EN UVLO divider 100k/8.66k → rising ~15.8 V |
+| `R45`/`R46` + `C55`/`R47` | — | FB 100k/24.9k → 5.02 V; feedforward 4.7 pF + 1k (datasheet Table 9-2, 1 MHz/5 V row) |
+| `C56`/`C57` | — | 2× 22 µF 25 V output caps at `L1` (plus the inherited `C1`/`C3`/`C4` bulk) |
+| `F1` | 1206L200 (2 A, 6–8 V) | **0.75 A hold / 33 V** polyfuse (1812L075/33 class) — PROVISIONAL |
+| `D1` | SMAJ5.0A | **SMAJ28A** (standoff 28 V, clamp 45 V) — sets the 28 V ceiling |
+| `Q1` | AO4407C (−30 V) | **AO4421** (−60 V, 6.2 A, 40 mΩ), same SO-8 |
+| `D7` | — | 12 V zener BZT52C12 gate–source clamp on `Q1` (|V_GS| would be 24 V against ±20 V) |
+| `U2` PB4 | no-connect | **`BUCK_SYNC`** (LPTIM1_CH2, 1.00 MHz = 50 × PWM) |
+| netclasses | — | `VIN24` 0.5 mm / 0.3 mm clearance for `VIN_PAD`/`VIN_PROT`/`VIN_SW`; `BUCK_SW` in `VM` (2.0 mm) |
+
+ERC: **0 errors**; the same label-name warnings as V1.0, plus `U12`'s footprint warning until the
+`VQFN-HR-14_RJR0014A` footprint lands in the library (owed: TI's KiCad export via Ultra Librarian).
+
+### Why the input range is 18–28 V, not 18–30 V
+
+LM61460: 36 V operating, 42 V absolute maximum. A TVS that stands off 30 V (SMAJ30A) clamps at
+48 V — above the abs max — so 28 V (SMAJ28A, clamp 45 V, breakdown ≥31 V) is the highest input the
+part can be protected at. A 30 V ceiling means a 60 V buck (TPS54560B, non-synchronous, catch
+diode) instead. PROVISIONAL — COL-PARAM-0021 carries the range.
+
+### Current sensing and the switcher
+
+`IPROPI` path: 244 µA/A × 6.8 k = 1.66 V/A with 1 nF → 23 kHz pole → −33 dB at 1 MHz; with SYNC
+the residual ripple is phase-locked to the ADC sample and becomes a calibrated offset. Decided
+2026-08-26 **not** to add a second RC pole per channel on this spin (5 R + 5 C + relabels);
+escalation ladder if the bench disagrees: second RC at the ADC pins → LC post-filter on `VM` →
+`R44` RBOOT > 0 to slow SW edges.
+
+### Decisions owed to the vault (marked PROVISIONAL on the instances)
+
+| Decision | Basis | Where |
+|---|---|---|
+| Input range 18–28 V | TVS-vs-abs-max arithmetic above | COL-PARAM-0021 |
+| `R41` 13.3k for ~1 MHz | 400 kHz ↔ 33.2k, 2.2 MHz ↔ 5.76k interpolation | confirm against the RT equation |
+| UVLO 15.8 V rising | keeps the buck off on a sagging harness rather than browning out `VM` | R42/R43 Notes |
+| `F1` 0.75 A / 33 V | 1/5 of the 5 V design's current, ≥30 V rating | pick exact part + LCSC |
+| BUCK_SYNC AC-coupled, EN from divider | datasheet pin 7: SYNC on EN/SYNC, cap-coupled | C51 Note |
+
+### PCB steps owed (user)
+
+- F8; place `U12` + hot loop (`C50` nearest VIN1/PGND1, `C48`/`C49` flanking, `L1`, `C56`/`C57`)
+  in the input corner by `J1`/`Q1`; thermal vias under `U12`; `R45`/`R46`/`C55`/`R47` FB node short and
+  away from `L1`. Keep the whole cluster away from the `IPROPI` resistors and the encoder connectors.
+- `D7` beside `Q1`; `F1` footprint is now **1812**, `D1` unchanged (SMA).
+- CubeMX: PB4 → LPTIM1_CH2 PWM, 160 MHz / 160 → 1.00 MHz; regenerate.
+- Library: `VQFN-HR-14_RJR0014A` from TI's KiCad export; `docs/design/parts/LM61460.md` layout note.
