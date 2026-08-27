@@ -1014,7 +1014,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 52.07) (xy 120.65 49.53)
+			(xy 95.25 55.88) (xy 95.25 53.34)
 		)
 		(stroke
 			(width 0)
@@ -1093,7 +1093,7 @@
 		(uuid "1c8bf12d-7ffc-42b3-a443-f406d39ee90f")
 	)
 	(label "ENC_leaf2"
-		(at 100.33 88.9 0)
+		(at 74.93 92.71 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1143,7 +1143,7 @@
 		(uuid "4a14a2db-a648-4755-9c1d-abf9295f5785")
 	)
 	(label "+3V3"
-		(at 100.33 161.29 0)
+		(at 74.93 165.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1153,7 +1153,7 @@
 		(uuid "555e8ae1-eda1-4fdc-b8d1-10be3a500f48")
 	)
 	(label "VSENS"
-		(at 130.81 52.07 0)
+		(at 105.41 55.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1163,7 +1163,7 @@
 		(uuid "5b40bbdf-a40f-46a8-91ac-b781641f4a9f")
 	)
 	(label "ENC_leaf4"
-		(at 100.33 168.91 0)
+		(at 74.93 172.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1173,7 +1173,7 @@
 		(uuid "72e55c53-1d5d-4bf7-bcdb-544ae669f383")
 	)
 	(label "+3V3"
-		(at 100.33 81.28 0)
+		(at 74.93 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1183,7 +1183,7 @@
 		(uuid "97cbf283-fc0b-47b5-a7e8-ccf7de2186e8")
 	)
 	(label "ENC_leaf1"
-		(at 100.33 48.26 0)
+		(at 74.93 52.07 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1193,7 +1193,7 @@
 		(uuid "a31d8494-9c9c-402f-9ed6-1899af7a0564")
 	)
 	(label "ENC_leaf3"
-		(at 100.33 128.27 0)
+		(at 74.93 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1213,7 +1213,7 @@
 		(uuid "e1156368-b779-4daf-ad73-33a8421c2bf4")
 	)
 	(label "+3V3"
-		(at 100.33 120.65 0)
+		(at 74.93 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1233,7 +1233,7 @@
 		(uuid "efcdbf41-e70c-4328-bd0f-003b258cc811")
 	)
 	(label "GND"
-		(at 130.81 59.69 0)
+		(at 105.41 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1244,7 +1244,7 @@
 	)
 	(global_label "VSENS"
 		(shape output)
-		(at 120.65 59.69 0)
+		(at 95.25 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1253,7 +1253,7 @@
 		)
 		(uuid "078af47b-c3fb-4694-a4ea-737aa7f54175")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.65 59.69 0)
+			(at 95.25 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1310,7 +1310,7 @@
 	)
 	(global_label "VM"
 		(shape input)
-		(at 120.65 49.53 0)
+		(at 95.25 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1319,7 +1319,7 @@
 		)
 		(uuid "8e0ac7b9-e6e7-4053-9db2-ec6c9190ee6f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.65 49.53 0)
+			(at 95.25 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1726,7 +1726,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 100.33 40.64 0)
+		(at 74.93 44.45 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1736,7 +1736,7 @@
 		(dnp no)
 		(uuid "4e41aae4-1346-4859-85fd-cc4e6525497d")
 		(property "Reference" "#PWR010"
-			(at 100.33 44.45 0)
+			(at 74.93 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1747,7 +1747,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 100.33 37.084 0)
+			(at 74.93 40.894 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1757,7 +1757,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 40.64 0)
+			(at 74.93 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1768,7 +1768,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 40.64 0)
+			(at 74.93 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1779,7 +1779,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 40.64 0)
+			(at 74.93 44.45 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1808,7 +1808,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 100.33 85.09 0)
+		(at 74.93 88.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1818,7 +1818,7 @@
 		(dnp no)
 		(uuid "5e6f7da9-dfc6-4cf9-936a-b2d822a731ad")
 		(property "Reference" "R13"
-			(at 102.362 85.09 90)
+			(at 76.962 88.9 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1828,7 +1828,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 100.33 85.09 90)
+			(at 74.93 88.9 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1838,7 +1838,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 85.09 0)
+			(at 74.93 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1849,7 +1849,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 85.09 0)
+			(at 74.93 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1860,7 +1860,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 85.09 0)
+			(at 74.93 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1870,7 +1870,7 @@
 			)
 		)
 		(property "LCSC" "C25744"
-			(at 100.33 85.09 0)
+			(at 74.93 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1881,7 +1881,7 @@
 			)
 		)
 		(property "MPN" "0402WGF1002TCE"
-			(at 100.33 85.09 0)
+			(at 74.93 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1914,7 +1914,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 100.33 165.1 0)
+		(at 74.93 168.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1924,7 +1924,7 @@
 		(dnp no)
 		(uuid "6e821cf1-d380-4290-950d-6601a14c6220")
 		(property "Reference" "R15"
-			(at 102.362 165.1 90)
+			(at 76.962 168.91 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1934,7 +1934,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 100.33 165.1 90)
+			(at 74.93 168.91 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1944,7 +1944,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 165.1 0)
+			(at 74.93 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1955,7 +1955,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 165.1 0)
+			(at 74.93 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1966,7 +1966,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 165.1 0)
+			(at 74.93 168.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1976,7 +1976,7 @@
 			)
 		)
 		(property "LCSC" "C25744"
-			(at 100.33 165.1 0)
+			(at 74.93 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1987,7 +1987,7 @@
 			)
 		)
 		(property "MPN" "0402WGF1002TCE"
-			(at 100.33 165.1 0)
+			(at 74.93 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2020,7 +2020,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 130.81 55.88 0)
+		(at 105.41 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2030,7 +2030,7 @@
 		(dnp no)
 		(uuid "845c82c1-ea45-4db7-b872-b2d2af7e2322")
 		(property "Reference" "C17"
-			(at 131.445 53.34 0)
+			(at 106.045 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2041,7 +2041,7 @@
 			)
 		)
 		(property "Value" "4.7uF"
-			(at 131.445 58.42 0)
+			(at 106.045 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2052,7 +2052,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:C_0603_1608Metric"
-			(at 130.81 55.88 0)
+			(at 105.41 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2063,7 +2063,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 130.81 55.88 0)
+			(at 105.41 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2074,7 +2074,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 130.81 55.88 0)
+			(at 105.41 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2084,7 +2084,7 @@
 			)
 		)
 		(property "Note" "VSENS bulk 4.7uF 0603"
-			(at 130.81 55.88 0)
+			(at 105.41 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2095,7 +2095,7 @@
 			)
 		)
 		(property "LCSC" "C19666"
-			(at 130.81 55.88 0)
+			(at 105.41 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2106,7 +2106,7 @@
 			)
 		)
 		(property "MPN" "CL10A475KO8NNNC"
-			(at 130.81 55.88 0)
+			(at 105.41 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2407,7 +2407,7 @@
 	)
 	(symbol
 		(lib_id "Device:FerriteBead")
-		(at 120.65 55.88 0)
+		(at 95.25 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2417,7 +2417,7 @@
 		(dnp no)
 		(uuid "8f2264eb-26b4-4aa9-aa51-ef8a683eb98c")
 		(property "Reference" "FB2"
-			(at 116.84 55.245 90)
+			(at 91.44 59.055 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2427,7 +2427,7 @@
 			)
 		)
 		(property "Value" "600R@100MHz"
-			(at 124.46 55.88 90)
+			(at 88.646 60.198 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2437,7 +2437,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:L_0603_1608Metric"
-			(at 120.65 55.88 0)
+			(at 95.25 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2448,7 +2448,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 55.88 0)
+			(at 95.25 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2459,7 +2459,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 120.65 55.88 0)
+			(at 95.25 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2469,7 +2469,7 @@
 			)
 		)
 		(property "Note" "Sensor supply filter: VM -> ferrite 600R@100MHz -> VSENS (+4.7uF) feeding all four FFC VIN pins; keeps bridge PWM ripple off the LX34311 rail (review item 4). LCSC TBD"
-			(at 120.65 55.88 0)
+			(at 95.25 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2480,7 +2480,7 @@
 			)
 		)
 		(property "LCSC" "C1002"
-			(at 120.65 55.88 0)
+			(at 95.25 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2491,7 +2491,7 @@
 			)
 		)
 		(property "MPN" "GZ1608D601TF"
-			(at 120.65 55.88 0)
+			(at 95.25 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2524,7 +2524,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 100.33 44.45 0)
+		(at 74.93 48.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2534,7 +2534,7 @@
 		(dnp no)
 		(uuid "c6ca4c1e-6137-4fd5-98bd-029bd34d6dad")
 		(property "Reference" "R12"
-			(at 102.362 44.45 90)
+			(at 76.962 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2544,7 +2544,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 100.33 44.45 90)
+			(at 74.93 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2554,7 +2554,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 44.45 0)
+			(at 74.93 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2565,7 +2565,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 44.45 0)
+			(at 74.93 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2576,7 +2576,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 44.45 0)
+			(at 74.93 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2586,7 +2586,7 @@
 			)
 		)
 		(property "Note" "Encoder SIG pull-up 10k to +3V3 - sensor output is open-drain; not optional (vault Encoder Interface)"
-			(at 100.33 44.45 0)
+			(at 74.93 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2597,7 +2597,7 @@
 			)
 		)
 		(property "LCSC" "C25744"
-			(at 100.33 44.45 0)
+			(at 74.93 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2608,7 +2608,7 @@
 			)
 		)
 		(property "MPN" "0402WGF1002TCE"
-			(at 100.33 44.45 0)
+			(at 74.93 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2641,7 +2641,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 100.33 124.46 0)
+		(at 74.93 128.27 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2651,7 +2651,7 @@
 		(dnp no)
 		(uuid "fb613026-2380-4617-b14d-9087026b587b")
 		(property "Reference" "R14"
-			(at 102.362 124.46 90)
+			(at 76.962 128.27 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2661,7 +2661,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 100.33 124.46 90)
+			(at 74.93 128.27 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2671,7 +2671,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 100.33 124.46 0)
+			(at 74.93 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2682,7 +2682,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 124.46 0)
+			(at 74.93 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2693,7 +2693,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 124.46 0)
+			(at 74.93 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2703,7 +2703,7 @@
 			)
 		)
 		(property "LCSC" "C25744"
-			(at 100.33 124.46 0)
+			(at 74.93 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2714,7 +2714,7 @@
 			)
 		)
 		(property "MPN" "0402WGF1002TCE"
-			(at 100.33 124.46 0)
+			(at 74.93 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
