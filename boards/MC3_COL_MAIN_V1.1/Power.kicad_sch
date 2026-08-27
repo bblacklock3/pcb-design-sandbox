@@ -7364,14 +7364,14 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 54.61 134.62 0)
+		(at 138.43 130.81 0)
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c0b236fd-64b0-49ab-8d64-ff1d7ede2761")
-		(property "Reference" "#PWR0127"
-			(at 54.61 132.715 0)
+		(uuid "63897874-967c-42d9-b41a-cbe38b06d4aa")
+		(property "Reference" "#PWR0128"
+			(at 138.43 128.905 0)
 			(hide yes)
 			(effects
 				(font
@@ -7380,7 +7380,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 54.61 130.81 0)
+			(at 138.43 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7388,7 +7388,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 54.61 134.62 0)
+			(at 138.43 130.81 0)
 			(hide yes)
 			(effects
 				(font
@@ -7397,7 +7397,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 134.62 0)
+			(at 138.43 130.81 0)
 			(hide yes)
 			(effects
 				(font
@@ -7408,7 +7408,7 @@
 		(instances
 			(project "Power"
 				(path "/62fa4f2c-604d-44f9-988f-2ce377285c9c"
-					(reference "#PWR0127")
+					(reference "#PWR0128")
 					(unit 1)
 				)
 			)
