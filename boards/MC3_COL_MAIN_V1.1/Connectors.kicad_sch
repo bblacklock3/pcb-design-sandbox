@@ -1226,22 +1226,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(no_connect
-		(at 54.61 134.62)
-		(uuid "630c3e7e-9abc-480d-9ca7-697267838887")
-	)
-	(no_connect
-		(at 54.61 175.26)
-		(uuid "a608eb98-a194-4583-b84e-6bdd003c7ac9")
-	)
-	(no_connect
-		(at 54.61 95.25)
-		(uuid "d670f8a7-b1ca-4b78-b0e4-50b1b2749d47")
-	)
-	(no_connect
-		(at 54.61 54.61)
-		(uuid "dacc96c2-45d1-45d5-861c-5efdeb16b70d")
-	)
 	(wire
 		(pts
 			(xy 147.32 66.04)
@@ -1417,6 +1401,34 @@
 			(type default)
 		)
 		(uuid "f792b8db-11db-4c73-9db8-38849a31b8ad")
+	)
+	(wire
+		(pts
+			(xy 54.61 54.61)
+			(xy 52.07 54.61)
+		)
+		(uuid "9df95e79-6622-4c41-b3e5-02b59a901d3f")
+	)
+	(wire
+		(pts
+			(xy 54.61 95.25)
+			(xy 52.07 95.25)
+		)
+		(uuid "d48930e9-f5c4-4152-a303-b73a6444c092")
+	)
+	(wire
+		(pts
+			(xy 54.61 134.62)
+			(xy 52.07 134.62)
+		)
+		(uuid "964c7796-9f6e-4bad-a05e-15b66e1510e7")
+	)
+	(wire
+		(pts
+			(xy 54.61 175.26)
+			(xy 52.07 175.26)
+		)
+		(uuid "2a355159-dd44-4f3a-88cd-90c41b6fe304")
 	)
 	(text "Review 2026-08-22: FFC VIN now from VSENS = VM filtered by FB61 + C63."
 		(at 30 195 0)
@@ -1606,16 +1618,6 @@
 		)
 		(uuid "ff590d82-37b5-4270-8e5d-12811cb8518d")
 	)
-	(label "GND"
-		(at 144.78 63.5 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "cc808335-3c35-47b7-b445-ab9fdee50413")
-	)
 	(global_label "VSENS"
 		(shape output)
 		(at 95.25 63.5 0)
@@ -1628,6 +1630,72 @@
 		(uuid "078af47b-c3fb-4694-a4ea-737aa7f54175")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 95.25 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 144.78 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3a6fca05-bf75-45aa-bf47-b6c92be6155a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "VIN_PAD"
+		(shape input)
+		(at 144.78 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3f267166-7a25-44d2-ad5f-4620f3c05081")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "YAW_OUT2"
+		(shape input)
+		(at 144.78 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5f5c42e1-c998-44fa-98da-9973f5c4cb9f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1682,6 +1750,28 @@
 			)
 		)
 	)
+	(global_label "YAW_OUT1"
+		(shape input)
+		(at 144.78 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "747db57b-9ece-45f8-b273-d1553fea4c33")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "VM"
 		(shape input)
 		(at 95.25 53.34 0)
@@ -1694,6 +1784,50 @@
 		(uuid "8e0ac7b9-e6e7-4053-9db2-ec6c9190ee6f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 95.25 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "CANL"
+		(shape input)
+		(at 144.78 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a011b5b4-967c-43ae-9354-90fb929a2886")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "CANH"
+		(shape input)
+		(at 144.78 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ba98ae26-7101-42f6-8166-c0513a235522")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.78 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1748,60 +1882,49 @@
 			)
 		)
 	)
-	(global_label "CANL"
+	(global_label "RC_OUT_leaf1"
 		(shape input)
-		(at 144.78 58.42 180)
+		(at 52.07 54.61 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "ba98ae26-7101-42f6-8166-c0513a235522")
+		(uuid "f8e1218e-aece-4744-b097-9c6214cb44a9")
 	)
-	(global_label "CANH"
+	(global_label "RC_OUT_leaf2"
 		(shape input)
-		(at 144.78 60.96 180)
+		(at 52.07 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "a011b5b4-967c-43ae-9354-90fb929a2886")
+		(uuid "161becc0-6a8a-4b32-825c-1def93426b56")
 	)
-	(global_label "VIN_PAD"
+	(global_label "RC_OUT_leaf3"
 		(shape input)
-		(at 144.78 66.04 180)
+		(at 52.07 134.62 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "3a6fca05-bf75-45aa-bf47-b6c92be6155a")
+		(uuid "538c1aeb-9abc-45da-8356-8d278dc5cb4c")
 	)
-	(global_label "YAW_OUT1"
+	(global_label "RC_OUT_leaf4"
 		(shape input)
-		(at 144.78 68.58 180)
+		(at 52.07 175.26 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "747db57b-9ece-45f8-b273-d1553fea4c33")
-	)
-	(global_label "YAW_OUT2"
-		(shape input)
-		(at 144.78 71.12 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "5f5c42e1-c998-44fa-98da-9973f5c4cb9f")
+		(uuid "33af2863-6495-4c44-a67d-261d5a79145c")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
@@ -1886,7 +2009,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf1: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface. Right-angle SMD, no solder tabs - the four 0.5mm joints are the only mechanical attachment; footprint mech pads are netless and should be tied to GND"
+		(property "Note" "Encoder FFC leaf1. Pin 4 (spare) wired to RC_OUT_leaf1 (2026-08-27): dual-mode fallback - with the inductive board the pin floats at the far end and the DRV8214 ripple counter owns the net (open-drain); with an AEDR-8300 optical fallback board its B channel drives the net and firmware sets DIS_EC so the DRV releases it. A on pin 3 as before. See Main-Board-01 Encoder Interface s Optical Fallback."
 			(at 59.69 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -2102,7 +2225,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf4: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface"
+		(property "Note" "Encoder FFC leaf4. Pin 4 -> RC_OUT_leaf4, dual-mode fallback - see J3."
 			(at 59.69 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -2649,7 +2772,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf2: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface"
+		(property "Note" "Encoder FFC leaf2. Pin 4 -> RC_OUT_leaf2, dual-mode fallback - see J3."
 			(at 59.69 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2783,7 +2906,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf3: 1 VIN(VM) 2 GND 3 SIG 4 spare. Vault: COL-COTS-0031, Connectors / Encoder Interface"
+		(property "Note" "Encoder FFC leaf3. Pin 4 -> RC_OUT_leaf3, dual-mode fallback - see J3."
 			(at 59.69 129.54 0)
 			(hide yes)
 			(show_name no)

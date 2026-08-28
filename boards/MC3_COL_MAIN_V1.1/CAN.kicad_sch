@@ -1759,16 +1759,6 @@
 		(uuid "1af2d744-25aa-4d46-a944-2a1b7888a533")
 	)
 	(label "CANH"
-		(at 160.02 77.47 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1b7227dd-d7ec-4fbe-aeb6-a46e0591a862")
-	)
-	(label "CANH"
 		(at 113.03 77.47 0)
 		(effects
 			(font
@@ -1909,7 +1899,7 @@
 		(uuid "b65bd9fc-e42a-4407-8b69-b20bd025b30a")
 	)
 	(label "GND"
-		(at 160.02 82.55 180)
+		(at 160.02 82.55 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1917,16 +1907,6 @@
 			(justify right bottom)
 		)
 		(uuid "c2cb8098-f5db-4915-9423-53d8593a5149")
-	)
-	(label "CANL"
-		(at 160.02 80.01 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c7bfe4ce-427a-49ec-bfd7-c89e80cb82de")
 	)
 	(label "GND"
 		(at 146.05 83.82 0)
@@ -1958,7 +1938,7 @@
 		)
 		(uuid "ed6aeb1a-ecb2-4201-9d84-649138682362")
 	)
-	(global_label "CANH"
+	(global_label "CANL"
 		(shape input)
 		(at 160.02 77.47 180)
 		(effects
@@ -2002,7 +1982,7 @@
 			)
 		)
 	)
-	(global_label "CANL"
+	(global_label "CANH"
 		(shape input)
 		(at 160.02 80.01 180)
 		(effects

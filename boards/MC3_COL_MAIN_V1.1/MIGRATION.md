@@ -727,3 +727,15 @@ labels (Power / CAN sheets). Netclasses: `YAW_OUT1/2` → MOTOR. Footprint + STE
 
 Rated 1 A/contact, 200 V, -40..85 C (DigiKey attributes 2026-08-27). Sourcing settled 2026-08-27: DigiKey stock (~10 k), TE part stands; place `J13` underside near the
 `J1`/`J12` pads with the flex exiting toward the harness anchor.
+
+### 14b. Encoder FFC pin 4 → RC_OUT (optical-fallback wiring) — 2026-08-27
+
+`J3`–`J6` pin 4 (the spare) wired to `RC_OUT_leaf1..4`. Rationale: an AEDR-8300 optical fallback
+board needs exactly VSENS/GND/A/B; A rides `SIG`, and B shares the ripple-counter net — legal
+because RC_OUT is **open-drain**: inductive fitted → pin 4 floats, ripple untouched; optical
+fitted → firmware sets `DIS_EC`, the DRV releases the node, the capture pin reads B. Zero new
+parts; supersedes the pin-4-to-GND idea. Numbers and the per-channel firmware modes:
+`Main-Board-01 Encoder Interface` § Optical Fallback (ripple = 16.2 µm/count at up to ~3 kHz,
+motor-side; optical = 35.3 µm/count, leaf-side, signed). ERC 0 errors; nets verified
+(RC_OUT_leaf1 = J3.4 + R18 + PB14 + U3 RC_OUT open-collector).
+
