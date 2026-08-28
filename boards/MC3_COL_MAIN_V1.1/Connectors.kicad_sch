@@ -1484,16 +1484,6 @@
 		)
 		(uuid "1c8bf12d-7ffc-42b3-a443-f406d39ee90f")
 	)
-	(label "ENC_leaf2"
-		(at 74.93 69.85 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "225a3e0e-4e33-4457-a574-cdc12c2afc36")
-	)
 	(label "VSENS"
 		(at 52.07 100.33 180)
 		(effects
@@ -1554,16 +1544,6 @@
 		)
 		(uuid "5b40bbdf-a40f-46a8-91ac-b781641f4a9f")
 	)
-	(label "ENC_leaf4"
-		(at 74.93 105.41 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "72e55c53-1d5d-4bf7-bcdb-544ae669f383")
-	)
 	(label "+3V3"
 		(at 74.93 62.23 0)
 		(effects
@@ -1573,26 +1553,6 @@
 			(justify left bottom)
 		)
 		(uuid "97cbf283-fc0b-47b5-a7e8-ccf7de2186e8")
-	)
-	(label "ENC_leaf1"
-		(at 74.93 52.07 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a31d8494-9c9c-402f-9ed6-1899af7a0564")
-	)
-	(label "ENC_leaf3"
-		(at 74.93 87.63 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c75c7a13-55cd-4734-85d6-d84abdfbf8db")
 	)
 	(label "GND"
 		(at 54.61 102.87 180)
@@ -1633,6 +1593,46 @@
 			(justify left bottom)
 		)
 		(uuid "ff590d82-37b5-4270-8e5d-12811cb8518d")
+	)
+	(label "ENC_leaf2"
+		(at 74.93 52.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7706b1c6-db1a-475d-9fdc-35aa1bd09353")
+	)
+	(label "ENC_leaf1"
+		(at 74.93 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d6a5ec95-60c9-4656-800f-bd965101705c")
+	)
+	(label "ENC_leaf4"
+		(at 74.93 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9c7d6187-ad52-4316-9fe6-e0c2962aa6a9")
+	)
+	(label "ENC_leaf3"
+		(at 74.93 105.41 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6b9e6ee0-7964-4152-a3fd-56f70fcc7549")
 	)
 	(global_label "VSENS"
 		(shape output)
