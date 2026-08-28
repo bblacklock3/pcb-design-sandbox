@@ -2623,7 +2623,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -2644,7 +2643,7 @@
 			)
 		)
 		(property "Sheetfile" "MotorChannel.kicad_sch"
-			(at 90.17 89.4846 0)
+			(at 84.328 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2805,7 +2804,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -2826,7 +2824,7 @@
 			)
 		)
 		(property "Sheetfile" "MotorChannel.kicad_sch"
-			(at 245.11 88.2146 0)
+			(at 239.014 96.012 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2941,7 +2939,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -2962,7 +2959,7 @@
 			)
 		)
 		(property "Sheetfile" "MotorChannel.kicad_sch"
-			(at 191.77 86.9446 0)
+			(at 184.404 95.504 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3077,7 +3074,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -3098,7 +3094,7 @@
 			)
 		)
 		(property "Sheetfile" "MotorChannel.kicad_sch"
-			(at 39.37 89.4846 0)
+			(at 34.798 97.536 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3351,7 +3347,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -3372,7 +3367,7 @@
 			)
 		)
 		(property "Sheetfile" "MotorChannel.kicad_sch"
-			(at 140.97 88.2146 0)
+			(at 135.382 95.504 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

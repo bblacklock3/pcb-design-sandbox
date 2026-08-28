@@ -739,3 +739,12 @@ parts; supersedes the pin-4-to-GND idea. Numbers and the per-channel firmware mo
 motor-side; optical = 35.3 µm/count, leaf-side, signed). ERC 0 errors; nets verified
 (RC_OUT_leaf1 = J3.4 + R18 + PB14 + U3 RC_OUT open-collector).
 
+### 14c. Encoder connector nets swapped to match placement — 2026-08-27
+
+The placed connectors were adjacent to the wrong leaf clusters (J3 beside leaf2's pads J8, J4
+beside leaf1's J7; J5 beside leaf4's J10, J6 beside leaf3's J9). Pin 3 + pin 4 nets swapped in
+pairs so each connector serves the leaf it sits beside: J3 = ENC/RC_OUT_leaf2, J4 = leaf1,
+J5 = leaf4, J6 = leaf3. The 10 k pull-ups follow their nets by name. ERC 0 errors; netlist
+verified. Board side: F8 re-nets the connector pads; the already-routed ENC traces will carry
+the old names until re-netted/re-routed (same drill as the CANH rename).
+

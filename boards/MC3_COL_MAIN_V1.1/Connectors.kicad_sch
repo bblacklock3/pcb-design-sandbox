@@ -1228,6 +1228,17 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 175.26)
+			(xy 52.07 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a355159-dd44-4f3a-88cd-90c41b6fe304")
+	)
+	(wire
+		(pts
 			(xy 147.32 66.04)
 			(xy 144.78 66.04)
 		)
@@ -1305,6 +1316,17 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 134.62)
+			(xy 52.07 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "964c7796-9f6e-4bad-a05e-15b66e1510e7")
+	)
+	(wire
+		(pts
 			(xy 54.61 87.63)
 			(xy 52.07 87.63)
 		)
@@ -1324,6 +1346,17 @@
 			(type default)
 		)
 		(uuid "98965296-6561-4bd5-94fa-7095db4f2db1")
+	)
+	(wire
+		(pts
+			(xy 54.61 54.61)
+			(xy 52.07 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9df95e79-6622-4c41-b3e5-02b59a901d3f")
 	)
 	(wire
 		(pts
@@ -1371,6 +1404,17 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 95.25)
+			(xy 52.07 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d48930e9-f5c4-4152-a303-b73a6444c092")
+	)
+	(wire
+		(pts
 			(xy 54.61 172.72)
 			(xy 52.07 172.72)
 		)
@@ -1401,34 +1445,6 @@
 			(type default)
 		)
 		(uuid "f792b8db-11db-4c73-9db8-38849a31b8ad")
-	)
-	(wire
-		(pts
-			(xy 54.61 54.61)
-			(xy 52.07 54.61)
-		)
-		(uuid "9df95e79-6622-4c41-b3e5-02b59a901d3f")
-	)
-	(wire
-		(pts
-			(xy 54.61 95.25)
-			(xy 52.07 95.25)
-		)
-		(uuid "d48930e9-f5c4-4152-a303-b73a6444c092")
-	)
-	(wire
-		(pts
-			(xy 54.61 134.62)
-			(xy 52.07 134.62)
-		)
-		(uuid "964c7796-9f6e-4bad-a05e-15b66e1510e7")
-	)
-	(wire
-		(pts
-			(xy 54.61 175.26)
-			(xy 52.07 175.26)
-		)
-		(uuid "2a355159-dd44-4f3a-88cd-90c41b6fe304")
 	)
 	(text "Review 2026-08-22: FFC VIN now from VSENS = VM filtered by FB61 + C63."
 		(at 30 195 0)
@@ -1706,50 +1722,6 @@
 			)
 		)
 	)
-	(global_label "ENC_leaf2"
-		(shape input)
-		(at 52.07 92.71 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6cf701de-a5ec-4da2-b314-c45a8681143a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.07 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "ENC_leaf1"
-		(shape input)
-		(at 52.07 52.07 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6e50b8de-fa65-43c3-a2bc-ff4f5a3884ed")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.07 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "YAW_OUT1"
 		(shape input)
 		(at 144.78 68.58 180)
@@ -1838,51 +1810,18 @@
 			)
 		)
 	)
-	(global_label "ENC_leaf3"
+	(global_label "ENC_leaf2"
 		(shape input)
-		(at 52.07 132.08 180)
+		(at 52.07 52.07 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "c750eecb-ea71-467b-adba-71eeda9e346f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.07 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
+		(uuid "e4d38313-bbf1-4b1f-b998-88bcf26eb659")
 	)
-	(global_label "ENC_leaf4"
-		(shape input)
-		(at 52.07 172.72 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d8af71c1-0e6e-480c-80ef-d743f80033a8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.07 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "RC_OUT_leaf1"
+	(global_label "RC_OUT_leaf2"
 		(shape input)
 		(at 52.07 54.61 180)
 		(effects
@@ -1891,9 +1830,20 @@
 			)
 			(justify right)
 		)
-		(uuid "f8e1218e-aece-4744-b097-9c6214cb44a9")
+		(uuid "66a2ba80-968e-4c64-8923-1e219c6cb05b")
 	)
-	(global_label "RC_OUT_leaf2"
+	(global_label "ENC_leaf1"
+		(shape input)
+		(at 52.07 92.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7187a6f2-fc1f-4157-81b7-500dca4c0853")
+	)
+	(global_label "RC_OUT_leaf1"
 		(shape input)
 		(at 52.07 95.25 180)
 		(effects
@@ -1902,9 +1852,20 @@
 			)
 			(justify right)
 		)
-		(uuid "161becc0-6a8a-4b32-825c-1def93426b56")
+		(uuid "82749e1c-98c8-4563-bc1b-b4ea47351b34")
 	)
-	(global_label "RC_OUT_leaf3"
+	(global_label "ENC_leaf4"
+		(shape input)
+		(at 52.07 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a3bfc300-972a-46e2-859c-fc21f0315684")
+	)
+	(global_label "RC_OUT_leaf4"
 		(shape input)
 		(at 52.07 134.62 180)
 		(effects
@@ -1913,9 +1874,20 @@
 			)
 			(justify right)
 		)
-		(uuid "538c1aeb-9abc-45da-8356-8d278dc5cb4c")
+		(uuid "0ca9d918-30fb-46e8-83ff-1717897cf034")
 	)
-	(global_label "RC_OUT_leaf4"
+	(global_label "ENC_leaf3"
+		(shape input)
+		(at 52.07 172.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4db6b177-8d6c-4bc5-9194-85b9057dc99e")
+	)
+	(global_label "RC_OUT_leaf3"
 		(shape input)
 		(at 52.07 175.26 180)
 		(effects
@@ -1924,7 +1896,7 @@
 			)
 			(justify right)
 		)
-		(uuid "33af2863-6495-4c44-a67d-261d5a79145c")
+		(uuid "b6c7e7f9-bb8d-4da1-9b94-b0b26a819f5f")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
@@ -2009,7 +1981,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf1. Pin 4 (spare) wired to RC_OUT_leaf1 (2026-08-27): dual-mode fallback - with the inductive board the pin floats at the far end and the DRV8214 ripple counter owns the net (open-drain); with an AEDR-8300 optical fallback board its B channel drives the net and firmware sets DIS_EC so the DRV releases it. A on pin 3 as before. See Main-Board-01 Encoder Interface s Optical Fallback."
+		(property "Note" "Encoder FFC leaf2 (net swap 2026-08-27: this connector sits beside leaf2's motor pads J8). Pin 3 ENC_leaf2, pin 4 RC_OUT_leaf2 - dual-mode optical fallback, see Main-Board-01 Encoder Interface s Optical Fallback."
 			(at 59.69 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -2225,7 +2197,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf4. Pin 4 -> RC_OUT_leaf4, dual-mode fallback - see J3."
+		(property "Note" "Encoder FFC leaf3 (net swap 2026-08-27: beside leaf3's motor pads J9). Pin 3 ENC_leaf3, pin 4 RC_OUT_leaf3 - dual-mode optical fallback, see J3."
 			(at 59.69 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -2772,7 +2744,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf2. Pin 4 -> RC_OUT_leaf2, dual-mode fallback - see J3."
+		(property "Note" "Encoder FFC leaf1 (net swap 2026-08-27: beside leaf1's motor pads J7). Pin 3 ENC_leaf1, pin 4 RC_OUT_leaf1 - dual-mode optical fallback, see J3."
 			(at 59.69 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2906,7 +2878,7 @@
 				)
 			)
 		)
-		(property "Note" "Encoder FFC leaf3. Pin 4 -> RC_OUT_leaf3, dual-mode fallback - see J3."
+		(property "Note" "Encoder FFC leaf4 (net swap 2026-08-27: beside leaf4's motor pads J10). Pin 3 ENC_leaf4, pin 4 RC_OUT_leaf4 - dual-mode optical fallback, see J3."
 			(at 59.69 129.54 0)
 			(hide yes)
 			(show_name no)
