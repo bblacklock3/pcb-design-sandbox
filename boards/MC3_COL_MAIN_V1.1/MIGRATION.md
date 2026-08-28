@@ -748,3 +748,12 @@ J5 = leaf4, J6 = leaf3. The 10 k pull-ups follow their nets by name. ERC 0 error
 verified. Board side: F8 re-nets the connector pads; the already-routed ENC traces will carry
 the old names until re-netted/re-routed (same drill as the CANH rename).
 
+### 14d. Encoder rename carried to the MCU — 2026-08-27
+
+The 14c swap is completed at the MCU end too, so it is a pure rename over existing copper — zero
+re-routing: ENC_leaf1 = J4-R13-PB10 (TIM2_CH3), ENC_leaf2 = J3-R12-PA3 (TIM5_CH4), ENC_leaf3 =
+J6-R15-PA1 (TIM5_CH2), ENC_leaf4 = J5-R14-PA0 (TIM5_CH1). Every trace keeps its geometry; only
+net names moved. Firmware consequence: the TIM2-shared leaf channel is now leaf1 (was leaf2);
+timer-channel constants swap in pairs. Pinout page and Firmware-01 hub updated; regenerate the
+CubeMX ioc labels at leisure. ERC 0 errors, netlist verified.
+
