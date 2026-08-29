@@ -1119,7 +1119,7 @@
 		(uuid "2b6e468a-e71c-4d3f-98ed-5a1488e85224")
 	)
 	(label "VM"
-		(at 90.17 54.61 0)
+		(at 88.9 54.61 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1159,7 +1159,7 @@
 		(uuid "ac247669-3672-47c6-9627-68bff2116ade")
 	)
 	(label "GND"
-		(at 90.17 62.23 0)
+		(at 88.9 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2019,7 +2019,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 90.17 58.42 0)
+		(at 88.9 58.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2029,7 +2029,7 @@
 		(dnp no)
 		(uuid "b0c2d912-a4c6-476e-8dd3-ef9ff4feba8a")
 		(property "Reference" "C31"
-			(at 90.805 55.88 0)
+			(at 89.535 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2040,7 +2040,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 82.55 58.42 0)
+			(at 81.28 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2051,7 +2051,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:C_0805_2012Metric"
-			(at 90.17 58.42 0)
+			(at 88.9 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2062,7 +2062,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 58.42 0)
+			(at 88.9 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2073,7 +2073,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 90.17 58.42 0)
+			(at 88.9 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2083,7 +2083,7 @@
 			)
 		)
 		(property "LCSC" "C15850"
-			(at 90.17 58.42 0)
+			(at 88.9 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2094,7 +2094,7 @@
 			)
 		)
 		(property "MPN" "CL21A106KAYNNNE"
-			(at 90.17 58.42 0)
+			(at 88.9 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2105,7 +2105,7 @@
 			)
 		)
 		(property "Note" "Local VM bulk, one per channel. Added 2026-08-22: TI SLVSH04 asks for 0.1uF + bulk at VM; the board bulk (C3/C4) is in the power block, so the five bridges' di/dt was being supplied through the VM trunk inductance. 25V X5R keeps most of its value at the 5V rail. PROVISIONAL - value not set by a vault CALC"
-			(at 90.17 58.42 0)
+			(at 88.9 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

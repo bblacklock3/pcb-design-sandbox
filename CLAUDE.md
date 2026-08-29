@@ -2,8 +2,8 @@
 
 KiCad 10 project repo for OXOS boards, edited through the **Konnect** MCP server. Current boards:
 **MC3_COL_MAIN_V1.1** — the MC3 collimator main control board, 24 V input (`boards/MC3_COL_MAIN_V1.1/`,
-vault rung `Main-Board-02`); **MC3_COL_MAIN_V1.0** is the same board with a 5 V input, kept intact as
-the fallback (vault rung `Main-Board-01`). `boards/MC3_ENC_V1.0/` is a read-only Altium import of the
+vault rung `Main-Board-01`); **MC3_COL_MAIN_V1.0** is the same board with a 5 V input, kept intact as
+the fallback revision (same rung — nothing was built at 1.0, so it never earned its own). `boards/MC3_ENC_V1.0/` is a read-only Altium import of the
 encoder board for inspection.
 
 History: this board was first drafted in tscircuit (commits up to `9e1e1ef`); it was rebuilt in

@@ -3,7 +3,7 @@
 **V1.1 is a fork of V1.0 made 2026-08-26** (`git`: Konnect `rename_project`, every sheet's
 `(project …)` instance rewritten). V1.0 stays untouched as the 5 V-input fallback. Sections
 0–13 below are inherited from V1.0's checklist verbatim and describe the state V1.1 started
-from; **§14 is the delta.** The vault build rung for this revision is `Main-Board-02`.
+from; **§14 is the delta.** The vault build rung is `Main-Board-01` (the 24 V content was folded back into it 2026-08-29 — V1.0 never built, so no rung bump).
 
 ---
 
@@ -652,7 +652,7 @@ p.11 pattern, 0.40×0.45 pads) added to the project library. ERC unchanged at 9 
 ## 14. 24 V input via LM61460 synchronous buck — 2026-08-26 (user decision, V1.1 only)
 
 Harness current ÷5 and the fragile "4.75–5.5 V delivered at the pads across a rotating joint"
-contract replaced by "18–28 V into a buck" (`Main-Board-02 Power`; COL-PARAM-0021). Everything
+contract replaced by "18–28 V into a buck" (`Main-Board-01 Power`; COL-PARAM-0021). Everything
 downstream of `VM = 5 V` is untouched — drivers, LDO, `VSENS`, `VCAN5`, sensing, CAN.
 
 ### What changed (Power.kicad_sch)
@@ -756,4 +756,29 @@ J6-R15-PA1 (TIM5_CH2), ENC_leaf4 = J5-R14-PA0 (TIM5_CH1). Every trace keeps its 
 net names moved. Firmware consequence: the TIM2-shared leaf channel is now leaf1 (was leaf2);
 timer-channel constants swap in pairs. Pinout page and Firmware-01 hub updated; regenerate the
 CubeMX ioc labels at leisure. ERC 0 errors, netlist verified.
+
+### 14e. J1 deleted → TP9 touch point — 2026-08-29
+
+`F1` grew from 1206 to 1812 (0.75 A/33 V part) and `J1` (2× 3.5×2.0 mm solder pads) no longer
+fits beside it. `J1` deleted from the Power sheet; **`TP9` (1.0 mm pad, `VIN_PAD`)** placed on the
+same node as the touch point / emergency pigtail spot. The machine supply enters only through
+`J13` now; `J12` (CAN pads) unchanged. ERC 0 errors; `VIN_PAD = F1.1 + J13 + TP9.1`.
+
+### 15. Pre-freeze design review — 2026-08-29
+
+Konnect review agent + geometric audit: ERC 0 errors, DRC 0 errors / 0 unconnected, chains,
+proximity and decoupling verified. Fixes applied: GND vias added at D1 (clamp return), C57 and
+near J13; C54 moved to 1.2 mm from U12 BIAS pin; C55 sense tap reconnected. Accepted as-is and
+recorded here:
+
+- **`/Power/VIN_SW` and `/Power/BUCK_SW` stay in the Default netclass** (0.15 mm clearance) —
+  the `VIN24 <- VIN_SW` / `VM <- BUCK_SW` patterns in `.kicad_pro` lack the `/Power/` prefix and
+  match nothing. Deliberate: the buck pocket is routed at 0.22-0.30 mm gaps and 24 V at 0.15 mm
+  is inside IPC-2221 for a coated board. Stale patterns (`VM <- /Power/VIN_PAD`,
+  `MOTOR <- /yaw/OUT*`, the two above) can be deleted in Board Setup at leisure.
+- **Open before fab:** U10/U11 (GP1S094HCZ0F) placed footprints differ from the project-library
+  copy by a y-flip of pins 1/2 vs 3/4 - verify the placed pinout against the datasheet and do
+  NOT blanket-update those two from the library. #tbd
+- Encoder FFCs (J3-J6) carry no TVS - accepted (intra-enclosure loom); noted in the vault.
+- Silk tidy (8 warnings) and fiducials (optional at JLC) deferred to the fab-output pass.
 

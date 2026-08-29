@@ -1729,7 +1729,7 @@
 		(uuid "d986a488-0833-41e9-837a-b715c45ae84c")
 	)
 	(label "TERM_MID"
-		(at 139.7 71.12 0)
+		(at 129.54 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1739,7 +1739,7 @@
 		(uuid "10596b38-08ce-4149-905a-5a28d6824a9a")
 	)
 	(label "GND"
-		(at 78.74 69.85 0)
+		(at 82.55 69.85 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1779,7 +1779,7 @@
 		(uuid "5042461b-f38f-4ba7-9c44-211dd8ad4ee4")
 	)
 	(label "TERM_H"
-		(at 132.08 71.12 180)
+		(at 121.92 66.04 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1819,7 +1819,7 @@
 		(uuid "6f75fed8-a5a5-4933-aa08-0aa1f6b5a299")
 	)
 	(label "VCAN5"
-		(at 78.74 62.23 0)
+		(at 82.55 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2276,7 +2276,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 71.12 106.68 0)
+		(at 62.23 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2286,7 +2286,7 @@
 		(dnp no)
 		(uuid "6ce15ea2-ea86-45d4-bada-58d0c890712c")
 		(property "Reference" "#PWR0120"
-			(at 71.12 110.49 0)
+			(at 62.23 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2297,7 +2297,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 71.12 103.124 0)
+			(at 62.23 76.454 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2307,7 +2307,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 106.68 0)
+			(at 62.23 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2318,7 +2318,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 106.68 0)
+			(at 62.23 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2329,7 +2329,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 71.12 106.68 0)
+			(at 62.23 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2379,7 +2379,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 71.755 68.58 0)
+			(at 74.168 66.294 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2586,7 +2586,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 78.74 66.04 0)
+		(at 82.55 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2596,7 +2596,7 @@
 		(dnp no)
 		(uuid "bc90007d-1ba2-444d-a911-2cdfd118c3cd")
 		(property "Reference" "C29"
-			(at 79.375 63.5 0)
+			(at 83.185 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2607,7 +2607,7 @@
 			)
 		)
 		(property "Value" "4.7uF"
-			(at 79.375 68.58 0)
+			(at 86.614 65.786 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2618,7 +2618,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:C_0603_1608Metric"
-			(at 78.74 66.04 0)
+			(at 82.55 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2629,7 +2629,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 66.04 0)
+			(at 82.55 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2640,7 +2640,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 66.04 0)
+			(at 82.55 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2650,7 +2650,7 @@
 			)
 		)
 		(property "LCSC" "C19666"
-			(at 78.74 66.04 0)
+			(at 82.55 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2661,7 +2661,7 @@
 			)
 		)
 		(property "MPN" "CL10A475KO8NNNC"
-			(at 78.74 66.04 0)
+			(at 82.55 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2694,7 +2694,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 71.12 114.3 0)
+		(at 62.23 87.63 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2704,7 +2704,7 @@
 		(dnp no)
 		(uuid "bd73b3f3-32b3-4a12-aa6d-94e0f7440731")
 		(property "Reference" "#PWR0121"
-			(at 71.12 120.65 0)
+			(at 62.23 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2715,7 +2715,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 71.12 118.11 0)
+			(at 62.23 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2725,7 +2725,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 114.3 0)
+			(at 62.23 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2736,7 +2736,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 114.3 0)
+			(at 62.23 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2747,7 +2747,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 71.12 114.3 0)
+			(at 62.23 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2776,7 +2776,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 71.12 110.49 0)
+		(at 62.23 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2786,7 +2786,7 @@
 		(dnp no)
 		(uuid "c0d83aa9-083d-46a8-925a-5e1e0bf121a4")
 		(property "Reference" "C43"
-			(at 71.755 107.95 0)
+			(at 62.865 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2797,7 +2797,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 71.755 113.03 0)
+			(at 62.865 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2808,7 +2808,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:C_0402_1005Metric"
-			(at 71.12 110.49 0)
+			(at 62.23 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2819,7 +2819,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 110.49 0)
+			(at 62.23 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2830,7 +2830,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 71.12 110.49 0)
+			(at 62.23 83.82 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2840,7 +2840,7 @@
 			)
 		)
 		(property "LCSC" "C1525"
-			(at 71.12 110.49 0)
+			(at 62.23 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2851,7 +2851,7 @@
 			)
 		)
 		(property "Note" "U8 VIO (pin 5) local decoupling - place within 4 mm of pin 5; wire pin1 to +3V3, pin2 to GND"
-			(at 71.12 110.49 0)
+			(at 62.23 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2993,7 +2993,7 @@
 			)
 		)
 		(property "Value" "600R@100MHz"
-			(at 64.77 60.96 90)
+			(at 54.356 59.69 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3090,7 +3090,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 135.89 71.12 90)
+		(at 125.73 66.04 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3100,7 +3100,7 @@
 		(dnp no)
 		(uuid "d7408f0e-3572-4e8a-ac7f-1fcb5365e06d")
 		(property "Reference" "R31"
-			(at 135.89 69.088 90)
+			(at 125.73 64.008 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3110,7 +3110,7 @@
 			)
 		)
 		(property "Value" "62R"
-			(at 135.89 71.12 90)
+			(at 125.73 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3120,7 +3120,7 @@
 			)
 		)
 		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 135.89 71.12 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3131,7 +3131,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.89 71.12 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3142,7 +3142,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 135.89 71.12 0)
+			(at 125.73 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3152,7 +3152,7 @@
 			)
 		)
 		(property "LCSC" "C4962"
-			(at 135.89 71.12 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3163,7 +3163,7 @@
 			)
 		)
 		(property "MPN" "0402WGF620JTCE"
-			(at 135.89 71.12 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3174,7 +3174,7 @@
 			)
 		)
 		(property "Note" "Split termination 62R+62R (~124R) with C72 4.7nF to GND; JP70 bridged = terminated (board is a bus end on the bench). Cut JP70 if the board sits mid-bus in the machine"
-			(at 135.89 71.12 0)
+			(at 125.73 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3228,7 +3228,7 @@
 			)
 		)
 		(property "Value" "4.7nF"
-			(at 146.685 82.55 0)
+			(at 137.668 80.264 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

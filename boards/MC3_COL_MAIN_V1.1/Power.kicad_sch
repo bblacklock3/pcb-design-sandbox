@@ -2661,7 +2661,7 @@
 	)
 	(text "Power - PROTOTYPE architecture (vault Main-Board-01: 5 V in -> P-FET reverse-polarity -> VM direct; 3.3 V via LDO). Incoming supply rail is an open entry gate in the vault. Net naming: vault VIN_RAW == KiCad VM (same copper). Sensor VIN (encoder FFCs) also runs from VM (LX34311 needs 4-6 V)."
 		(exclude_from_sim no)
-		(at 30 40 0)
+		(at 38.354 181.864 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -3632,16 +3632,6 @@
 		(uuid "b519f899-050f-47e3-b070-296c0082ac81")
 	)
 	(label "GND"
-		(at 33.02 77.47 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b679e42e-ce84-47aa-a375-feea37b3a616")
-	)
-	(label "GND"
 		(at 119.38 97.79 0)
 		(effects
 			(font
@@ -3855,6 +3845,81 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 33.02 74.93 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "01703354-8285-4c4c-8450-bc36eb08d985")
+		(property "Reference" "TP9"
+			(at 33.02 68.072 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VIN_PAD"
+			(at 33.02 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:TestPoint_Pad_1.0x1.0mm"
+			(at 33.02 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7277beba-2978-424e-b260-24744215ce12")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
+					(reference "TP9")
+					(unit 1)
 				)
 			)
 		)
@@ -4721,7 +4786,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 122.555 149.86 0)
+			(at 117.602 151.13 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5444,101 +5509,6 @@
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
 					(reference "R42")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 38.1 74.93 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5c97a957-e083-4691-87e5-0aa36b92c343")
-		(property "Reference" "J1"
-			(at 38.1 72.39 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SUPPLY_IN"
-			(at 38.1 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_3.5x2.0mm_P4.2mm"
-			(at 38.1 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 38.1 74.93 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "Machine supply: bare pads 3.5x2.0 @4.2 mm, 20-22 AWG, whole-board current - vault Connectors, Machine Interface. Pin1 = VIN_PROT (+), Pin2 = GND. Supply rail unspecified (vault entry gate); 5 V assumed for this prototype."
-			(at 38.1 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a08e19d0-1320-44df-8b39-8f50138f2691")
-		)
-		(pin "2"
-			(uuid "a0fcf40a-bb2c-4f2a-8d72-1913f23dd6cd")
-		)
-		(instances
-			(project "Power"
-				(path "/62fa4f2c-604d-44f9-988f-2ce377285c9c"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d6d9c27b-d616-4172-a586-88c2a3452975"
-					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -7677,7 +7647,7 @@
 			)
 		)
 		(property "Value" "2.2uH XAL5030-222"
-			(at 124.714 132.842 90)
+			(at 123.952 127.508 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
