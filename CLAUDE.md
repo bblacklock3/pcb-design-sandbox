@@ -8,9 +8,10 @@ encoder board for inspection.
 
 History: this board was first drafted in tscircuit (commits up to `9e1e1ef`); it was rebuilt in
 KiCad from the vault pages on 2026-08-22 and the tscircuit sources removed. Nothing here depends
-on Node/tsci any more. `boards/MC3_COL_MAIN_V1.0/MIGRATION.md` is the board's working status
-checklist (PCB steps still open) and the register of provisional decisions owed to the vault;
-it goes away once those are promoted and the board has gone to fab.
+on Node/tsci any more. The migration checklist
+(`MIGRATION.md`) served as the working log through 2026-08-29 and was then audited and retired —
+open work and provisional decisions live in the vault build rung (`Main-Board-01` § Entry Gates /
+§ Open Items); the log itself survives in git history.
 
 ## The vault is the authority
 
@@ -33,7 +34,7 @@ Specifically, for this board:
 **Two standing rules:**
 
 1. **Before placing a part, read its COTS record.** Every *engineering* part on this board has one, and it carries the JLCPCB number, the ordering link and the reason the part is in play. If such a part has no record, stop — it needs one before it goes in the schematic. **Exception (decided 2026-08-22): commodity support parts** — LDO, reverse-polarity FET, crystal, reset switch, FFC connector, bare pads, passives — are listed in the build rung's BOM with LCSC numbers and deliberately carry no COTS record, so the COTS register isn't clogged with support parts. They go in on the strength of the BOM line; the LCSC number and "no record" are noted on the symbol instance.
-2. **Before choosing a controlled value, check for a PARAM record.** Rail voltages, current limits, board outline and connector geometry are controlled values in the vault. Cite them; never invent one here. Where the schematic needs a value the vault hasn't set (a pull-up, a strap, a pin not yet assigned), choose provisionally, mark it `PROVISIONAL` in the symbol's fields / sheet notes, and list it in `boards/<NAME>/MIGRATION.md` → "Decisions owed to the vault" so it gets promoted or overturned there.
+2. **Before choosing a controlled value, check for a PARAM record.** Rail voltages, current limits, board outline and connector geometry are controlled values in the vault. Cite them; never invent one here. Where the schematic needs a value the vault hasn't set (a pull-up, a strap, a pin not yet assigned), choose provisionally, mark it `PROVISIONAL` in the symbol's fields / sheet notes, and list it in the vault build rung's Open Items so it gets promoted or overturned there.
 
 These rules are also registered as Konnect project design rules in
 `boards/MC3_COL_MAIN_V1.0/.konnect/project.json`, so `list_design_rules` surfaces them.
