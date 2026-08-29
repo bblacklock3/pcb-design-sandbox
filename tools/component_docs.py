@@ -14,6 +14,7 @@ Format spec: vault _System/Process/component-docs.md.
 Usage: python tools/component_docs.py [--check]
 """
 import io, os, re, subprocess, sys, tempfile, shutil
+from html import unescape
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KICAD_CLI = r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
@@ -45,8 +46,8 @@ def parse(xml):
     comps = {}
     for m in re.finditer(r'<comp ref="([^"]+)">([\s\S]*?)</comp>', xml):
         ref, body = m.group(1), m.group(2)
-        g = lambda pat: (re.search(pat, body).group(1) if re.search(pat, body) else "")
-        fields = dict(re.findall(r'<field name="([^"]+)">([^<]*)</field>', body))
+        g = lambda pat: (unescape(re.search(pat, body).group(1)) if re.search(pat, body) else "")
+        fields = {k: unescape(v) for k, v in re.findall(r'<field name="([^"]+)">([^<]*)</field>', body)}
         comps[ref] = {
             "value": g(r"<value>([^<]*)</value>"),
             "footprint": g(r"<footprint>([^<]*)</footprint>"),
