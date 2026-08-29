@@ -152,7 +152,7 @@ def sync(board, check=False):
             i = old.find(GEN_END)
             if i >= 0:
                 tail = old[i + len(GEN_END):].strip("\n")
-        body = f"{frontmatter(ref, c, board['name'], role)}\n# {board['name']} {ref}\n\n## Facts\n\n{gen}\n"
+        body = f"{frontmatter(ref, c, board['name'], role)}\n# {board['name']} {ref}\n\n{gen}\n"
         if tail:
             body += "\n" + tail + "\n"
         assert not CTRL.search(body), f"control char in {ref}"
