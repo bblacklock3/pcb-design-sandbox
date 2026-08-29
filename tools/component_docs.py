@@ -180,7 +180,7 @@ def gen_block(ref, c, board):
     pins = ["", "| Pin | Function | Net |", "|---|---|---|"]
     for pin, fn, net in c["pins"]:
         pins.append(f"| {pin} | {fn or ''} | `{net}` |")
-    return "\n".join([GEN_BEGIN] + rows + pins + [GEN_END])
+    return "\n".join([GEN_BEGIN, ""] + rows + pins + ["", GEN_END])
 
 
 def frontmatter(ref, c, board):
