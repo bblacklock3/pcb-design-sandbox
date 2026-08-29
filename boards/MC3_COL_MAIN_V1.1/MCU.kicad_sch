@@ -13465,7 +13465,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (Sharp: no reflow)"
+			(at 217.17 129.54 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 41.91 163.83 0)
@@ -14387,7 +14396,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (bring-up fixture)"
+			(at 88.9 129.54 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:LED")
 		(at 218.44 52.07 0)
@@ -15744,7 +15762,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (Sharp: no reflow)"
+			(at 217.17 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 85.09 68.58 0)

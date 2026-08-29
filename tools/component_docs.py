@@ -55,6 +55,7 @@ def parse(xml):
             "sheet": g(r'<sheetpath names="([^"]*)"') or "/",
             "desc": g(r"<description>([^<]*)</description>"),
             "note": fields.get("Note", ""),
+            "assembly": fields.get("Assembly", ""),
             "dnp": ('<property name="dnp"' in body),
             "lcsc": fields.get("LCSC", ""),
             "mpn": fields.get("MPN", ""),
@@ -111,6 +112,8 @@ def gen_block(ref, c):
     ]
     if c["note"]:
         rows.append(f"| Note | {c['note']} |")
+    if c["assembly"]:
+        rows.append(f"| **Assembly** | {c['assembly']} |")
     rows += [
         f"| Value | `{c['value']}` |",
         f"| Footprint | `{c['footprint']}` |",
