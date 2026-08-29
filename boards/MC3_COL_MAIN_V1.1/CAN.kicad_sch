@@ -1678,16 +1678,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "CAN - machine control link (decision 2026-08-22; vault Control Electronics open item). STM32F412 CAN1 (PA11 RX / PA12 TX) -> TJA1051T/3 -> split termination (2x62R + 4.7nF, solder-jumper JP70 bridged) + PESD1CAN -> pads CANH/CANL/GND. Classic CAN 500 kbit/s. Layout: CANH/CANL as a tight pair, transceiver and termination next to the pads, D70 nearest the pads."
-		(exclude_from_sim no)
-		(at 30 40 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "1d06bcab-86e7-4df9-8e00-47bc991c23f8")
-	)
 	(wire
 		(pts
 			(xy 87.63 82.55) (xy 85.09 82.55)
@@ -2123,7 +2113,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAN split termination, low side (62 Ω) — TERM_MID→CANL."
 			(at 135.89 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2229,7 +2219,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Machine CAN bare pads (CANH/CANL/GND), underside — kept as the fallback to J13."
 			(at 165.1 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2517,7 +2507,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAN ESD clamp PESD1CAN at the bus pads."
 			(at 125.73 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2929,7 +2919,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAN termination enable — bridged solder jumper (bridged = this node is a bus end)."
 			(at 125.73 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3141,7 +3131,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAN split termination, high side (62 Ω) — behind JP1; CANH→TERM_MID."
 			(at 125.73 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3260,7 +3250,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAN termination centre cap (common-mode drain) on TERM_MID."
 			(at 146.05 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3461,7 +3451,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAN transceiver [[COL-COTS-0030]] TJA1051T/3: 5 V VCAN5 supply, 3.3 V VIO."
 			(at 100.33 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)

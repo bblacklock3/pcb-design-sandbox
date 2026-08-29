@@ -6415,46 +6415,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "2026-08-22: yaw channel FITTED (user decision, supersedes the 'reserved only' note above): EN_yaw PA9 (TIM1_CH2), PH_yaw PB12, IPROPI_yaw PC4 (ADC1_IN14) per vault; PROVISIONAL nFAULT_yaw PC12, RC_OUT_yaw PB13 (EXTI only - no free capture channel; use I2C RC_CNT or EXTI)."
-		(exclude_from_sim no)
-		(at 29.972 200.152 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "5c501740-8283-4eaf-a304-d0eb5820cd84")
-	)
-	(text "Review 2026-08-22: HSE caps 33pF (crystal CL=20pF); NRST 100nF; SWD header 6-pin with NRST+SWO (SWO on PB3 = trace/logging channel); VDDA via ferrite; heartbeat LED on PA5, power LED; test points."
-		(exclude_from_sim no)
-		(at 38.354 194.31 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "66a6c452-9510-4225-a285-a93aaf06efc5")
-	)
-	(text "MCU - STM32F411RET6 LQFP64. Implements: COL-COTS-0024. Pin map: vault Main-Board-01 MCU Pinout (EN on TIM3, IPROPI on ADC1 E/S edges, ENC on TIM2/TIM1 capture). Layout: docs/design/parts/STM32F411.md. Yaw reserved pins PA9/PB12/PC4 left unconnected per vault. PROVISIONAL (owed to vault): I2C1 on PB8/PB9, DRV_nSLEEP on PC5, nFAULT on PC0-2/PC10, RC_OUT on PB6/PB7/PA10/PA11."
-		(exclude_from_sim no)
-		(at 99.06 212.852 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "a8d7039f-35a9-4c44-8c5c-3afa369bd0ad")
-	)
-	(text "2026-08-22: MCU is now STM32F412RET6 (pin-identical to the F411RET6; adds bxCAN x2 and 256 KB RAM). CAN1 on PA11 (RX) / PA12 (TX), AF9. RC_OUT_leaf4 moved PA11 -> PB14 (EXTI only). Vault: new COTS record for the F412 + MCU Pinout update owed."
-		(exclude_from_sim no)
-		(at 30 205 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "bb7129c0-b0d1-4969-839d-9c08b6409f32")
-	)
 	(junction
 		(at 259.08 74.93)
 		(diameter 0)
@@ -10224,7 +10184,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Addressable status pixel 1 of 2 ([[COL-COTS-0036]] XL-1010RGBC), on VM, underside; data from PB5/SPI1_MOSI."
 			(at 259.08 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11238,7 +11198,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "8 MHz HSE crystal X32258MSB4SI (CL = 20 pF, 33 pF load caps)."
 			(at 90.17 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11976,7 +11936,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "AEDR-8300 LED current set (~15 mA from VSENS)."
 			(at 134.62 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12580,7 +12540,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "VDDA feed bead (600 Ω @ 100 MHz) — analog supply isolation for the ADC."
 			(at 137.16 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12978,7 +12938,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Heartbeat LED (green, PA5), underside."
 			(at 218.44 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13297,7 +13257,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Yaw incremental encoder [[COL-COTS-0032]] AEDR-8300, underside, reading the M10899 ring; A/B to TIM2."
 			(at 148.59 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13431,7 +13391,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Yaw far-limit interrupter [[COL-COTS-0034]] GP1S094, 180° from U10, YAW_LIM EXTI."
 			(at 217.17 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14363,7 +14323,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SWD header 1×6, underside bring-up fixture (DNP-class); pin 6 carries DBG_TX."
 			(at 88.9 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14481,7 +14441,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power LED (red, on +3V3), underside."
 			(at 218.44 52.07 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14881,7 +14841,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Pixel data series resistor (470R) at the MCU end of the D5–D6 chain."
 			(at 241.3 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15710,7 +15670,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Yaw homing interrupter [[COL-COTS-0034]] GP1S094 — flag present = YAW_HOME high; hand-solder only, GND pins straddle the mounting post."
 			(at 217.17 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15839,7 +15799,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "MCU reset button, underside."
 			(at 85.09 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16242,7 +16202,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "The MCU — [[COL-COTS-0035]] STM32U595RJT6 (order the non-Q variant). Pin assignment owned by [[Main-Board-01 MCU Pinout]]."
 			(at 149.86 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16734,7 +16694,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Addressable status pixel 2 of 2 ([[COL-COTS-0036]]), chained from D5."
 			(at 259.08 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)

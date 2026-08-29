@@ -938,36 +938,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Motor channel - one per leaf, instantiated x4. Implements: COL-COTS-0028 (DRV8214, integrated current sense + ripple counting) - vault Main-Board-01 Motor Channel. Layout: docs/design/parts/DRV8214.md. PAD + GND to the GND plane via thermal vias. VREF = +3V3 (TI typical app). PROVISIONAL: R_IPROPI, pull-ups."
-		(exclude_from_sim no)
-		(at 40 30 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "6f413762-0bee-417e-b2b9-c769b865d49a")
-	)
-	(text "Review 2026-08-22: R_IPROPI 6.8k -> hardware current trip 1.99 A (was 8.45k -> 1.60 A)."
-		(exclude_from_sim no)
-		(at 94.742 120.316 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "82520f38-0d18-48f2-8c81-6e94b6eaf2df")
-	)
-	(text "A1/A0 tri-level address straps are set per instance on the root sheet (GND / +3V3)."
-		(exclude_from_sim no)
-		(at 94.742 115.316 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-		)
-		(uuid "9c6e5475-ec01-4aeb-ae1e-cd1821dd02a4")
-	)
 	(wire
 		(pts
 			(xy 87.63 82.55) (xy 85.09 82.55)
@@ -1078,16 +1048,6 @@
 		)
 		(uuid "1b32bb25-15c0-45e6-a0c9-960f696d3fc8")
 	)
-	(label "OUT2"
-		(at 113.03 74.93 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2009e128-32c1-4555-949a-47e76ffec531")
-	)
 	(label "+3V3"
 		(at 87.63 90.17 180)
 		(effects
@@ -1127,16 +1087,6 @@
 			(justify left bottom)
 		)
 		(uuid "31eabfe6-f4e7-4f7e-8f13-4b099f805418")
-	)
-	(label "OUT1"
-		(at 113.03 72.39 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4f19ea27-cc8a-415e-a5b7-8e5ee53e1d1f")
 	)
 	(label "GND"
 		(at 124.46 96.52 0)
@@ -1704,7 +1654,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "IPROPI sense resistor 6.8 k — 1.66 V/A, hardware current trip I_TRIP ≈ 1.99 A (shared across the five channels)."
 			(at 124.46 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2199,7 +2149,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "DRV8214 H-bridge [[COL-COTS-0028]] — one per axis (shared sheet: U3–U7); integrated current sense, ripple counting, I²C config. Layout: docs/design/parts/DRV8214.md."
 			(at 100.33 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
