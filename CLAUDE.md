@@ -62,6 +62,10 @@ Board-mechanical facts, i.e. anything that only means something inside a PCB:
   fab house). Committed.
 - `docs/design/parts/<part>.md` — layout constraints the router cannot infer: bypass adjacency, Kelvin sense pairs, thermal vias, keep-outs, matched pairs, startup/enable behavior that affects placement. **Constraints only** — identity and rationale are in the COTS record, which the note links.
 - `docs/design/review-checklist.md` — the placement and routing gates.
+- `tools/component_docs.py` — generates the vault's per-refdes component pages (build rung
+  `Components/`, format: vault `_System/Process/component-docs.md`) from the netlist, 1:1 with
+  the schematic. Runs from the pre-commit hook (`.githooks/`; enable once per machine with
+  `git config core.hooksPath .githooks`) whenever a `.kicad_sch` is committed.
 
 **Every part lives in the project-local library**, not the global KiCad libraries — the repo
 has to be self-contained and reproducible on another machine. Custom symbols/footprints are

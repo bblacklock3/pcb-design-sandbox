@@ -1,0 +1,7 @@
+#!/bin/sh
+# component-docs sync: keep the vault per-refdes pages 1:1 with the schematic.
+# Enabled via: git config core.hooksPath .githooks
+if git diff --cached --name-only | grep -q "\.kicad_sch$"; then
+  python tools/component_docs.py || echo "[component-docs] sync failed - commit continues, run manually"
+fi
+exit 0
