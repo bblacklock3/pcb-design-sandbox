@@ -1,29 +1,43 @@
-# Dependencies
-node_modules/
-
-# Build output
-dist/
-build/
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# IDE files
+# IDE / OS
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS files
 .DS_Store
 Thumbs.db
 
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# ---- KiCad ----
+# Per-user view state (layer visibility, zoom, selection) — not design data
+*.kicad_prl
+# Editor lock and autosave/backup artefacts
+*.lck
+_autosave-*
+*-save.kicad_*
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.bak
+*.bck
+# Footprint cache KiCad rebuilds on open
+fp-info-cache
+# KiCad 10 Local History (nested git repo under the project dir)
+.history/
+# Fabrication outputs are generated at a tagged commit, never committed
+boards/**/fab/
+boards/**/gerbers/
+boards/**/*.zip
+# Konnect call log / transaction journal (config in .konnect/project.json IS committed)
+.konnect/transactions/
+.konnect/*.log
+.konnect/*.jsonl
 
-# tscircuit cache
-.tscircuit/
+# Konnect transaction restore backups
+_restore_backup_*/
+
+# Fab outputs are attached to the vault build rung, not committed (CLAUDE.md)
+*.csv
+*.pos
+
+# generated exports - fab/mech outputs live in the vault, not the repo
+*.step
+*.wrl

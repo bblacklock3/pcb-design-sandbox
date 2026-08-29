@@ -1,0 +1,8 @@
+{
+  "design_rules": "[\"The Obsidian design vault (C:/Users/newte/Documents/Design Wiki) is the authority for design reasoning. Before placing any engineering part (ICs, drivers, MCU, sensors), read its COTS record under 'Projects/MC3 Collimator/04 Records/COTS/'. Commodity support parts (LDO, P-FET, crystal, switch, FFC, bare pads, passives) are exempt: they go in from the build rung's BOM line (Main-Board-01.md section BOM) with their LCSC number noted on the instance.\", \"Controlled values (rail voltages, current limits, board outline, connector geometry) come from PARAM records in the vault. Cite the PARAM; never invent a value in the KiCad project. Where the vault has not set a value the schematic needs, choose provisionally, mark it PROVISIONAL on the instance, and list it in MIGRATION.md 'Decisions owed to the vault'.\", \"Assembly house is JLCPCB. Every placed part carries its LCSC C-number as a field (from its COTS record or the BOM line) and uses a footprint from the project-local MC3_COL_MAIN library.\", \"Per-part layout constraints (bypass adjacency, Kelvin pairs, thermal vias, keep-outs) live in docs/design/parts/<part>.md in this repo; read them before placing or routing that part.\", \"Motor driver is the TI DRV8214 (COL-COTS-0028) only - one per leaf, four fitted, yaw reserved at the MCU. No DRV8212, no INA240, no shunt: current sense is the DRV8214's internal mirror (IPROPI) and I2C telemetry.\", \"Board origin: beam axis = KiCad (100, 100). Add that offset to every vault/legacy placement coordinate.\"]",
+  "fab_constraints": {
+    "fab_house": "JLCPCB",
+    "layer_count": "4"
+  },
+  "naming_conventions": {}
+}

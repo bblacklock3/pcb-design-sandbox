@@ -27,13 +27,19 @@ Record: COL-COTS-NNNN · Datasheet: Refs/Datasheets/<name>.md
 ## Gotchas that affect layout
 ```
 
+## Status
+
+- `DRV8214.md` — COL-COTS-0028, written 2026-08-22 from SLVSH04 §11 and the vault's
+  Layout Constraints. (DRV8212 / INA240 / shunt notes are no longer wanted: COL-COTS-0021 is
+  superseded and 0022/0023 rejected — the DRV8214 replaces all three.)
+- `STM32U595.md` — MCU (lineage F411 → F412 → U595RJT6, swap 2026-08-25; constraints unchanged
+  for CAN — pin-identical, **COL-COTS-0029**). The pin map of record is the vault's
+  *Main-Board-01 MCU Pinout*.
+- `CAN.md` — the CAN link (TJA1051T/3, termination, ESD, pads), written 2026-08-22.
+
 ## Wanted
 
-Both current parts are backed only by vendor product pages and JLC parametrics — neither
-datasheet has been read, so neither note can be written yet. This blocks an entry gate on
-the `Main-Board-01` build rung.
-
-- [ ] `DRV8212.md` — COL-COTS-0021. Needs: bypass placement, thermal pad handling, PH/EN
-      pin behavior at startup, current-loop layout
-- [ ] `INA240.md` — COL-COTS-0022. Needs: Kelvin sense geometry, input filter placement,
-      common-mode limits at this rail, reference pin handling
+- [ ] `AYF530435.md` — encoder FFC: land pattern provenance (JLC footprint vs Panasonic
+      drawing, mechanical pads), orientation on the rim, flex exit direction
+- [ ] `AMS1117.md` — output-cap ESR/stability question (vault open item) if it changes
+      the cap choice
