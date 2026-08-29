@@ -2640,7 +2640,7 @@
 				(justify left)
 			)
 		)
-		(pin "OUT1" passive
+		(pin "OUT1" input
 			(at 102.87 90.17 0)
 			(uuid "4e4a4f56-0dd7-40ae-ad0d-4b1603920a25")
 			(effects
@@ -2650,7 +2650,7 @@
 				(justify right)
 			)
 		)
-		(pin "OUT2" passive
+		(pin "OUT2" input
 			(at 102.87 92.71 0)
 			(uuid "91845b44-9b25-4b52-bb56-d2e55c621afe")
 			(effects
@@ -2821,7 +2821,7 @@
 				(justify left)
 			)
 		)
-		(pin "OUT1" passive
+		(pin "OUT1" input
 			(at 257.81 88.9 0)
 			(uuid "3636065e-5ade-41b5-910b-e8475bb9da20")
 			(effects
@@ -2831,7 +2831,7 @@
 				(justify right)
 			)
 		)
-		(pin "OUT2" passive
+		(pin "OUT2" input
 			(at 257.81 91.44 0)
 			(uuid "0c7224b2-7a23-42f1-9f73-fe5977f4d586")
 			(effects
@@ -2956,7 +2956,7 @@
 				(justify left)
 			)
 		)
-		(pin "OUT1" passive
+		(pin "OUT1" input
 			(at 204.47 87.63 0)
 			(uuid "8ebd0d09-ef21-42b7-bf91-864649a2fc42")
 			(effects
@@ -2966,7 +2966,7 @@
 				(justify right)
 			)
 		)
-		(pin "OUT2" passive
+		(pin "OUT2" input
 			(at 204.47 90.17 0)
 			(uuid "d961735d-389d-4e1a-ba12-114063c54a50")
 			(effects
@@ -3091,7 +3091,7 @@
 				(justify left)
 			)
 		)
-		(pin "OUT1" passive
+		(pin "OUT1" input
 			(at 52.07 90.17 0)
 			(uuid "15115db6-7768-477b-a7d9-7525ba3070d0")
 			(effects
@@ -3101,7 +3101,7 @@
 				(justify right)
 			)
 		)
-		(pin "OUT2" passive
+		(pin "OUT2" input
 			(at 52.07 92.71 0)
 			(uuid "c86f3161-8a18-4cdd-ba75-206d59b4c73d")
 			(effects
@@ -3364,7 +3364,7 @@
 				(justify left)
 			)
 		)
-		(pin "OUT1" passive
+		(pin "OUT1" input
 			(at 153.67 88.9 0)
 			(uuid "d810ef75-d85f-4f9e-9006-c84e2e654cfe")
 			(effects
@@ -3374,7 +3374,7 @@
 				(justify right)
 			)
 		)
-		(pin "OUT2" passive
+		(pin "OUT2" input
 			(at 153.67 91.44 0)
 			(uuid "3305dcdc-d97b-489f-b891-dbafd77a60d7")
 			(effects

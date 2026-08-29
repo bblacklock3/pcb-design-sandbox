@@ -1286,6 +1286,17 @@
 			)
 		)
 	)
+	(hierarchical_label "OUT2"
+		(shape input)
+		(at 113.03 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6d03ea1b-a558-4e3e-9633-e1e62cfc98df")
+	)
 	(hierarchical_label "RC_OUT"
 		(shape output)
 		(at 113.03 82.55 0)
@@ -1318,6 +1329,17 @@
 			(justify right)
 		)
 		(uuid "86c36e88-1115-4462-b50c-69d79f0aa05c")
+	)
+	(hierarchical_label "OUT1"
+		(shape input)
+		(at 113.03 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "99f168b0-e385-44b3-aa05-0dce6bcd2fe9")
 	)
 	(hierarchical_label "nFAULT"
 		(shape output)
