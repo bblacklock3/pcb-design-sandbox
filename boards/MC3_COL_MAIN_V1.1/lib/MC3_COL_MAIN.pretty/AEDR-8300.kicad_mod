@@ -16,4 +16,8 @@
   (fp_circle (center -2.9850 1.0300) (end -2.8350 1.0300) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.SilkS"))
   (fp_text reference "REF**" (at 0.0000 -2.5800 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
   (fp_text value "AEDR-8300" (at 0.0000 2.5800 0) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))))
+  (model "${KIPRJMOD}/lib/MC3_COL_MAIN.3dshapes/AEDR-8300.STEP"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 0)))
 )
