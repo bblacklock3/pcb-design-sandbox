@@ -13257,7 +13257,7 @@
 				)
 			)
 		)
-		(property "Description" "Yaw incremental encoder [[COL-COTS-0032]] AEDR-8300, underside, reading the M10899 ring; A/B to TIM2."
+		(property "Description" "Yaw incremental encoder [[COL-COTS-0032]] AEDR-8300, underside, reading the M10899 ring; A/B to TIM2. Package note: the chamfer marks PIN 6 (detector side), not pin 1; emitter dome (pins 3/4 end) faces the rotation centre."
 			(at 148.59 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
