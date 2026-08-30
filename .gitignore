@@ -41,3 +41,4 @@ _restore_backup_*/
 # generated exports - fab/mech outputs live in the vault, not the repo
 *.step
 *.wrl
+fab/
