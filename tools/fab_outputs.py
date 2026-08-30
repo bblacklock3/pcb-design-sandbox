@@ -17,7 +17,7 @@ KICAD_CLI = r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
 BOARD_DIR = os.path.join(REPO, "boards", "MC3_COL_MAIN_V1.1")
 SCH = os.path.join(BOARD_DIR, "MC3_COL_MAIN_V1.1.kicad_sch")
 PCB = os.path.join(BOARD_DIR, "MC3_COL_MAIN_V1.1.kicad_pcb")
-OUT = os.path.join(REPO, "fab")
+OUT = os.path.join(BOARD_DIR, "fab")
 NAME = "MC3_COL_MAIN_V1.1"
 SKIP_FP = ("SolderPads", "MountingHole", "TestPoint", "SolderJumper", "LOGO")
 
