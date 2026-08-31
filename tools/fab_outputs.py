@@ -46,7 +46,9 @@ def git(*args):
 def design_state():
     """(short-hash, dirty) for the board directory; dirty = uncommitted changes."""
     h = git("rev-parse", "--short", "HEAD") or "nogit"
-    dirty = bool(git("status", "--porcelain", "--", os.path.relpath(BOARD_DIR, REPO)))
+    status = git("status", "--porcelain", "--", os.path.relpath(BOARD_DIR, REPO))
+    # untracked files (??) are reference material, not design state
+    dirty = any(ln and not ln.startswith("??") for ln in status.split("\n"))
     return h, dirty
 
 

@@ -42,3 +42,6 @@ _restore_backup_*/
 *.step
 *.wrl
 fab/
+
+# external reference material (EVM design files etc.) - not design source
+boards/*/ref/
