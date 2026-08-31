@@ -1987,6 +1987,7 @@
 		)
 		(property "Description" "Leaf 2 encoder FFC ([[COL-COTS-0031]] AYF530435, 0.5 mm 4-way): VSENS / GND / SIG / RC_OUT share — see [[Main-Board-01 Encoder Interface]]."
 			(at 59.69 49.53 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2122,6 +2123,7 @@
 		)
 		(property "Description" ""
 			(at 44.45 49.53 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2203,6 +2205,7 @@
 		)
 		(property "Description" "Leaf 3 encoder FFC ([[COL-COTS-0031]]): VSENS / GND / SIG / RC_OUT share."
 			(at 59.69 102.87 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2338,6 +2341,7 @@
 		)
 		(property "Description" ""
 			(at 74.93 44.45 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2419,6 +2423,7 @@
 		)
 		(property "Description" ""
 			(at 74.93 66.04 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2525,6 +2530,7 @@
 		)
 		(property "Description" ""
 			(at 74.93 101.6 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2633,6 +2639,7 @@
 		)
 		(property "Description" "VSENS rail cap 4.7 µF — one cap serves all four encoder connectors (#tbd per-connector 100 nF owed)."
 			(at 105.41 59.69 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2750,6 +2757,7 @@
 		)
 		(property "Description" "Leaf 1 encoder FFC ([[COL-COTS-0031]]): VSENS / GND / SIG / RC_OUT share."
 			(at 59.69 67.31 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2884,6 +2892,7 @@
 		)
 		(property "Description" "Leaf 4 encoder FFC ([[COL-COTS-0031]]): VSENS / GND / SIG / RC_OUT share."
 			(at 59.69 85.09 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3018,6 +3027,7 @@
 		)
 		(property "Description" "VSENS feed bead from VM (600 Ω @ 100 MHz) — the encoder supply filter."
 			(at 95.25 59.69 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3135,6 +3145,7 @@
 		)
 		(property "Description" "The machine harness connector [[COL-COTS-0041]] TE 84952-6 (1.0 mm 6-way FPC, ZIF, underside): 24 V supply, CAN, and the yaw motor pair on one flat cable."
 			(at 152.4 63.5 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3258,6 +3269,7 @@
 		)
 		(property "Description" ""
 			(at 74.93 48.26 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3375,6 +3387,7 @@
 		)
 		(property "Description" ""
 			(at 74.93 83.82 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

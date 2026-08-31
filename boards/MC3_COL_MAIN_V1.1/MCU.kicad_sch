@@ -9181,6 +9181,7 @@
 		)
 		(property "Description" ""
 			(at 180.34 146.05 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9264,6 +9265,7 @@
 		)
 		(property "Description" ""
 			(at 273.05 91.44 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9364,6 +9366,7 @@
 		)
 		(property "Description" ""
 			(at 116.84 148.59 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9482,6 +9485,7 @@
 		)
 		(property "Description" ""
 			(at 127 161.29 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9565,6 +9569,7 @@
 		)
 		(property "Description" ""
 			(at 90.17 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9683,6 +9688,7 @@
 		)
 		(property "Description" ""
 			(at 137.16 41.91 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9765,6 +9771,7 @@
 		)
 		(property "Description" ""
 			(at 52.07 163.83 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9848,6 +9855,7 @@
 		)
 		(property "Description" ""
 			(at 125.73 134.62 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9967,6 +9975,7 @@
 		)
 		(property "Description" ""
 			(at 273.05 63.5 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10069,6 +10078,7 @@
 		)
 		(property "Description" ""
 			(at 59.69 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10186,6 +10196,7 @@
 		)
 		(property "Description" "Addressable status pixel 1 of 2 ([[COL-COTS-0036]] XL-1010RGBC), on VM, underside; data from PB5/SPI1_MOSI."
 			(at 259.08 63.5 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10314,6 +10325,7 @@
 		)
 		(property "Description" ""
 			(at 248.92 118.11 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10415,6 +10427,7 @@
 		)
 		(property "Description" ""
 			(at 72.39 163.83 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10496,6 +10509,7 @@
 		)
 		(property "Description" ""
 			(at 219.71 30.48 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10613,6 +10627,7 @@
 		)
 		(property "Description" ""
 			(at 241.3 118.11 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10714,6 +10729,7 @@
 		)
 		(property "Description" ""
 			(at 198.12 102.87 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10797,6 +10813,7 @@
 		)
 		(property "Description" ""
 			(at 100.33 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10915,6 +10932,7 @@
 		)
 		(property "Description" ""
 			(at 82.55 163.83 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10998,6 +11016,7 @@
 		)
 		(property "Description" ""
 			(at 41.91 160.02 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11098,6 +11117,7 @@
 		)
 		(property "Description" ""
 			(at 201.93 127 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11200,6 +11220,7 @@
 		)
 		(property "Description" "8 MHz HSE crystal X32258MSB4SI (CL = 20 pF, 33 pF load caps)."
 			(at 90.17 100.33 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11324,6 +11345,7 @@
 		)
 		(property "Description" ""
 			(at 172.72 146.05 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11406,6 +11428,7 @@
 		)
 		(property "Description" ""
 			(at 209.55 107.95 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11487,6 +11510,7 @@
 		)
 		(property "Description" ""
 			(at 100.33 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11604,6 +11628,7 @@
 		)
 		(property "Description" ""
 			(at 180.34 149.86 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11704,6 +11729,7 @@
 		)
 		(property "Description" ""
 			(at 107.95 148.59 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11821,6 +11847,7 @@
 		)
 		(property "Description" ""
 			(at 100.33 59.69 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11938,6 +11965,7 @@
 		)
 		(property "Description" "AEDR-8300 LED current set (~15 mA from VSENS)."
 			(at 134.62 176.53 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12040,6 +12068,7 @@
 		)
 		(property "Description" ""
 			(at 99.06 109.22 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12159,6 +12188,7 @@
 		)
 		(property "Description" ""
 			(at 115.57 64.77 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12277,6 +12307,7 @@
 		)
 		(property "Description" ""
 			(at 146.05 181.61 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12358,6 +12389,7 @@
 		)
 		(property "Description" ""
 			(at 33.02 185.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12450,6 +12482,7 @@
 		)
 		(property "Description" ""
 			(at 71.12 185.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12542,6 +12575,7 @@
 		)
 		(property "Description" "VDDA feed bead (600 Ω @ 100 MHz) — analog supply isolation for the ADC."
 			(at 137.16 38.1 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12659,6 +12693,7 @@
 		)
 		(property "Description" ""
 			(at 218.44 35.56 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12777,6 +12812,7 @@
 		)
 		(property "Description" ""
 			(at 224.79 132.08 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12859,6 +12895,7 @@
 		)
 		(property "Description" ""
 			(at 224.79 107.95 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12940,6 +12977,7 @@
 		)
 		(property "Description" "Heartbeat LED (green, PA5), underside."
 			(at 218.44 43.18 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13059,6 +13097,7 @@
 		)
 		(property "Description" ""
 			(at 72.39 160.02 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13159,6 +13198,7 @@
 		)
 		(property "Description" ""
 			(at 201.93 102.87 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13259,6 +13299,7 @@
 		)
 		(property "Description" "Yaw incremental encoder [[COL-COTS-0032]] AEDR-8300, underside, reading the M10899 ring; A/B to TIM2. Package note: the chamfer marks PIN 6 (detector side), not pin 1; emitter dome (pins 3/4 end) faces the rotation centre."
 			(at 148.59 173.99 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13393,6 +13434,7 @@
 		)
 		(property "Description" "Yaw far-limit interrupter [[COL-COTS-0034]] GP1S094, 180° from U10, YAW_LIM EXTI."
 			(at 217.17 129.54 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13445,6 +13487,17 @@
 				)
 			)
 		)
+		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (Sharp: no reflow)"
+			(at 217.17 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "90b8f160-2409-465b-9dea-adf9b28731a9")
 		)
@@ -13465,16 +13518,7 @@
 				)
 			)
 		)
-	
-		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (Sharp: no reflow)"
-			(at 217.17 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 41.91 163.83 0)
@@ -13531,6 +13575,7 @@
 		)
 		(property "Description" ""
 			(at 41.91 163.83 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13614,6 +13659,7 @@
 		)
 		(property "Description" ""
 			(at 110.49 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13733,6 +13779,7 @@
 		)
 		(property "Description" ""
 			(at 127 157.48 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13835,6 +13882,7 @@
 		)
 		(property "Description" ""
 			(at 80.01 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13952,6 +14000,7 @@
 		)
 		(property "Description" ""
 			(at 172.72 149.86 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14052,6 +14101,7 @@
 		)
 		(property "Description" ""
 			(at 43.18 185.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14134,6 +14184,7 @@
 		)
 		(property "Description" ""
 			(at 248.92 114.3 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14217,6 +14268,7 @@
 		)
 		(property "Description" ""
 			(at 69.85 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14334,6 +14386,7 @@
 		)
 		(property "Description" "SWD header 1×6, underside bring-up fixture (DNP-class); pin 6 carries DBG_TX."
 			(at 88.9 129.54 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14354,6 +14407,17 @@
 			)
 		)
 		(property "DNP" "yes"
+			(at 88.9 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (bring-up fixture)"
 			(at 88.9 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14396,16 +14460,7 @@
 				)
 			)
 		)
-	
-		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (bring-up fixture)"
-			(at 88.9 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:LED")
 		(at 218.44 52.07 0)
@@ -14461,6 +14516,7 @@
 		)
 		(property "Description" "Power LED (red, on +3V3), underside."
 			(at 218.44 52.07 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14579,6 +14635,7 @@
 		)
 		(property "Description" ""
 			(at 49.53 43.18 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14662,6 +14719,7 @@
 		)
 		(property "Description" ""
 			(at 74.93 110.49 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14780,6 +14838,7 @@
 		)
 		(property "Description" ""
 			(at 198.12 127 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14861,6 +14920,7 @@
 		)
 		(property "Description" "Pixel data series resistor (470R) at the MCU end of the D5–D6 chain."
 			(at 241.3 63.5 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14962,6 +15022,7 @@
 		)
 		(property "Description" ""
 			(at 259.08 74.93 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15044,6 +15105,7 @@
 		)
 		(property "Description" ""
 			(at 259.08 102.87 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15125,6 +15187,7 @@
 		)
 		(property "Description" ""
 			(at 57.15 185.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15208,6 +15271,7 @@
 		)
 		(property "Description" ""
 			(at 49.53 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15327,6 +15391,7 @@
 		)
 		(property "Description" ""
 			(at 119.38 39.37 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15445,6 +15510,7 @@
 		)
 		(property "Description" ""
 			(at 49.53 35.56 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15527,6 +15593,7 @@
 		)
 		(property "Description" ""
 			(at 151.13 181.61 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15609,6 +15676,7 @@
 		)
 		(property "Description" ""
 			(at 62.23 163.83 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15690,6 +15758,7 @@
 		)
 		(property "Description" "Yaw homing interrupter [[COL-COTS-0034]] GP1S094 — flag present = YAW_HOME high; hand-solder only, GND pins straddle the mounting post."
 			(at 217.17 105.41 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15742,6 +15811,17 @@
 				)
 			)
 		)
+		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (Sharp: no reflow)"
+			(at 217.17 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "4b96e174-303c-4776-87f0-cfad5ca0c01d")
 		)
@@ -15762,16 +15842,7 @@
 				)
 			)
 		)
-	
-		(property "Assembly" "hand-solder by us — exclude from turnkey assembly and PnP (Sharp: no reflow)"
-			(at 217.17 105.41 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 85.09 68.58 0)
@@ -15828,6 +15899,7 @@
 		)
 		(property "Description" "MCU reset button, underside."
 			(at 85.09 68.58 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15947,6 +16019,7 @@
 		)
 		(property "Description" ""
 			(at 52.07 160.02 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16049,6 +16122,7 @@
 		)
 		(property "Description" ""
 			(at 62.23 160.02 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16150,6 +16224,7 @@
 		)
 		(property "Description" ""
 			(at 209.55 132.08 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16231,6 +16306,7 @@
 		)
 		(property "Description" "The MCU — [[COL-COTS-0035]] STM32U595RJT6 (order the non-Q variant). Pin assignment owned by [[Main-Board-01 MCU Pinout]]."
 			(at 149.86 100.33 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16541,6 +16617,7 @@
 		)
 		(property "Description" ""
 			(at 82.55 160.02 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16642,6 +16719,7 @@
 		)
 		(property "Description" ""
 			(at 127 153.67 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16723,6 +16801,7 @@
 		)
 		(property "Description" "Addressable status pixel 2 of 2 ([[COL-COTS-0036]]), chained from D5."
 			(at 259.08 91.44 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16852,6 +16931,7 @@
 		)
 		(property "Description" ""
 			(at 241.3 114.3 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16933,6 +17013,7 @@
 		)
 		(property "Description" ""
 			(at 201.93 97.79 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17008,6 +17089,7 @@
 		)
 		(property "Description" ""
 			(at 86.36 185.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

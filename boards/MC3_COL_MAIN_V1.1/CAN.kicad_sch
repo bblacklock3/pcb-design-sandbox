@@ -2115,6 +2115,7 @@
 		)
 		(property "Description" "CAN split termination, low side (62 Ω) — TERM_MID→CANL."
 			(at 135.89 88.9 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2221,6 +2222,7 @@
 		)
 		(property "Description" "Machine CAN bare pads (CANH/CANL/GND), underside — kept as the fallback to J13."
 			(at 165.1 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2320,6 +2322,7 @@
 		)
 		(property "Description" ""
 			(at 62.23 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2403,6 +2406,7 @@
 		)
 		(property "Description" ""
 			(at 71.12 66.04 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2509,6 +2513,7 @@
 		)
 		(property "Description" "CAN ESD clamp PESD1CAN at the bus pads."
 			(at 125.73 100.33 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2631,6 +2636,7 @@
 		)
 		(property "Description" ""
 			(at 82.55 66.04 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2738,6 +2744,7 @@
 		)
 		(property "Description" ""
 			(at 62.23 87.63 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2821,6 +2828,7 @@
 		)
 		(property "Description" ""
 			(at 62.23 83.82 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2921,6 +2929,7 @@
 		)
 		(property "Description" "CAN termination enable — bridged solder jumper (bridged = this node is a bus end)."
 			(at 125.73 71.12 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3016,6 +3025,7 @@
 		)
 		(property "Description" ""
 			(at 60.96 60.96 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3133,6 +3143,7 @@
 		)
 		(property "Description" "CAN split termination, high side (62 Ω) — behind JP1; CANH→TERM_MID."
 			(at 125.73 66.04 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3252,6 +3263,7 @@
 		)
 		(property "Description" "CAN termination centre cap (common-mode drain) on TERM_MID."
 			(at 146.05 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3370,6 +3382,7 @@
 		)
 		(property "Description" ""
 			(at 100.33 90.17 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3453,6 +3466,7 @@
 		)
 		(property "Description" "CAN transceiver [[COL-COTS-0030]] TJA1051T/3: 5 V VCAN5 supply, 3.3 V VIO."
 			(at 100.33 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3600,6 +3614,7 @@
 		)
 		(property "Description" ""
 			(at 60.96 64.77 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

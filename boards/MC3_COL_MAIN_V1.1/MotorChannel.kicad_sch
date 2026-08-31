@@ -1390,6 +1390,7 @@
 		)
 		(property "Description" ""
 			(at 134.62 64.77 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1523,6 +1524,7 @@
 		)
 		(property "Description" ""
 			(at 144.78 64.77 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1656,6 +1658,7 @@
 		)
 		(property "Description" "IPROPI sense resistor 6.8 k — 1.66 V/A, hardware current trip I_TRIP ≈ 1.99 A (shared across the five channels)."
 			(at 124.46 91.44 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1790,6 +1793,7 @@
 		)
 		(property "Description" ""
 			(at 97.79 95.25 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1889,6 +1893,7 @@
 		)
 		(property "Description" ""
 			(at 74.93 58.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2024,6 +2029,7 @@
 		)
 		(property "Description" ""
 			(at 88.9 58.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2151,6 +2157,7 @@
 		)
 		(property "Description" "DRV8214 H-bridge [[COL-COTS-0028]] — one per axis (shared sheet: U3–U7); integrated current sense, ripple counting, I²C config. Layout: docs/design/parts/DRV8214.md."
 			(at 100.33 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2330,6 +2337,7 @@
 		)
 		(property "Description" ""
 			(at 102.87 64.77 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2429,6 +2437,7 @@
 		)
 		(property "Description" ""
 			(at 119.38 58.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

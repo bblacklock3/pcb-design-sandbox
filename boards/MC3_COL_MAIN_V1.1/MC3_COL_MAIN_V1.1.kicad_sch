@@ -1782,6 +1782,7 @@
 		)
 		(property "Description" ""
 			(at 66.04 110.49 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1864,7 +1865,8 @@
 			)
 		)
 		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 182.88 77.47 0)
+			(at 200.406 58.674 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1975,7 +1977,8 @@
 			)
 		)
 		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 132.08 76.2 0)
+			(at 166.37 101.854 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2086,7 +2089,8 @@
 			)
 		)
 		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 182.88 74.93 0)
+			(at 199.136 62.23 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2197,7 +2201,8 @@
 			)
 		)
 		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 81.28 80.01 0)
+			(at 87.122 63.5 90)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2309,6 +2314,7 @@
 		)
 		(property "Description" ""
 			(at 76.2 110.49 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2392,6 +2398,7 @@
 		)
 		(property "Description" ""
 			(at 53.34 110.49 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2475,6 +2482,7 @@
 		)
 		(property "Description" ""
 			(at 40.64 110.49 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

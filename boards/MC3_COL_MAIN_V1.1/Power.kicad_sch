@@ -4068,6 +4068,7 @@
 		)
 		(property "Description" ""
 			(at 33.02 72.39 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4143,6 +4144,7 @@
 		)
 		(property "Description" "Input polyfuse, 0.75 A hold / 33 V, 1812. Sizing vs all-stall + 70 °C derating is an open item — [[Main-Board-01 Power]] § Current Budget."
 			(at 41.91 72.39 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4262,6 +4264,7 @@
 		)
 		(property "Description" "SYNC coupling 1 nF — BUCK_SYNC (PB4/LPTIM1, 1.00 MHz) AC-coupled into EN/SYNC."
 			(at 86.36 133.35 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4271,6 +4274,17 @@
 			)
 		)
 		(property "Note" "SYNC AC-coupling cap, 1 nF: couples the 3.3 V LPTIM1 clock edge (>=2.4 V edge required, rise <30 ns) into EN/SYNC while R42/R43 hold the DC enable level. Datasheet pin 7."
+			(at 86.36 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1523"
 			(at 86.36 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -4295,16 +4309,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C1523"
-			(at 86.36 133.35 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Regulator_Linear:AMS1117-3.3")
 		(at 147.32 80.01 0)
@@ -4361,6 +4366,7 @@
 		)
 		(property "Description" "The 3.3 V LDO (AMS1117-3.3) off VM through FB4 — its tab is the output and the heatsink; see [[Main-Board-01 Power]] § Derived Rails."
 			(at 147.32 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4481,6 +4487,7 @@
 		)
 		(property "Description" ""
 			(at 193.04 100.33 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4573,6 +4580,7 @@
 		)
 		(property "Description" "Buck FB divider, bottom (24.9 k) — V_out = 5.02 V."
 			(at 207.01 144.78 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4582,6 +4590,17 @@
 			)
 		)
 		(property "Note" "RFBB 24.9k 1% - see R45. Keep the FB node short, away from SW/L1."
+			(at 207.01 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2492TCE"
 			(at 207.01 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -4606,16 +4625,7 @@
 				)
 			)
 		)
-	
-		(property "MPN" "0402WGF2492TCE"
-			(at 207.01 144.78 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 187.96 104.14 0)
@@ -4673,6 +4683,7 @@
 		)
 		(property "Description" ""
 			(at 187.96 104.14 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4792,6 +4803,7 @@
 		)
 		(property "Description" ""
 			(at 198.12 104.14 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4911,6 +4923,7 @@
 		)
 		(property "Description" "Buck output 22 µF (pair with C57) at the VM trunk entry — the FB sense point."
 			(at 177.8 135.89 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4920,6 +4933,28 @@
 			)
 		)
 		(property "Note" "Buck output cap, 22 uF 25 V X7R 0805 (same part as C3/C4), at L1's VM pad - COUT per Table 9-2 (2x 22 uF)."
+			(at 177.8 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 177.8 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
 			(at 177.8 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -4944,25 +4979,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C45783"
-			(at 177.8 135.89 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL21A226MAQNNNE"
-			(at 177.8 135.89 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 154.94 144.78 0)
@@ -5020,6 +5037,7 @@
 		)
 		(property "Description" "Buck VCC 1 µF at pin 2 / AGND."
 			(at 154.94 144.78 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5029,6 +5047,28 @@
 			)
 		)
 		(property "Note" "VCC LDO output cap 1 uF to AGND, adjacent to pins 2/3 (datasheet pin 2). No external load on VCC."
+			(at 154.94 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 154.94 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
 			(at 154.94 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -5053,25 +5093,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C15849"
-			(at 154.94 144.78 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL10A105KB8NNNC"
-			(at 154.94 144.78 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:+3V3")
 		(at 165.1 80.01 0)
@@ -5128,6 +5150,7 @@
 		)
 		(property "Description" ""
 			(at 165.1 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5209,6 +5232,7 @@
 		)
 		(property "Description" "Input TVS SMAJ28A on VIN_PROT (behind the fuse, so a failed-short TVS is fused). Sets the 28 V input ceiling."
 			(at 53.34 76.2 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5327,6 +5351,7 @@
 		)
 		(property "Description" ""
 			(at 240.03 154.94 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5409,6 +5434,7 @@
 		)
 		(property "Description" ""
 			(at 147.32 87.63 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5492,6 +5518,7 @@
 		)
 		(property "Description" "Buck output 22 µF (pair with C56)."
 			(at 185.42 135.89 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5501,6 +5528,28 @@
 			)
 		)
 		(property "Note" "Buck output cap - see C56."
+			(at 185.42 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 185.42 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
 			(at 185.42 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -5525,25 +5574,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C45783"
-			(at 185.42 135.89 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL21A226MAQNNNE"
-			(at 185.42 135.89 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 68.58 100.33 0)
@@ -5599,6 +5630,7 @@
 		)
 		(property "Description" "Q1 gate pull-down 100 k; sets ~120 µA through D7."
 			(at 68.58 100.33 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5716,6 +5748,7 @@
 		)
 		(property "Description" "Buck UVLO divider, top (100 k from VIN_SW)."
 			(at 106.68 125.73 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5725,6 +5758,28 @@
 			)
 		)
 		(property "Note" "EN divider top (RENT). With R43 8.66k: UVLO rising = 1.263 V x (1 + 100/8.66) ~ 15.8 V, falling ~28% lower (~11.4 V). PROVISIONAL."
+			(at 106.68 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25741"
+			(at 106.68 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1003TCE"
 			(at 106.68 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -5749,25 +5804,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25741"
-			(at 106.68 125.73 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF1003TCE"
-			(at 106.68 125.73 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 58.42 72.39 0)
@@ -5823,6 +5860,7 @@
 		)
 		(property "Description" ""
 			(at 58.42 72.39 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5917,6 +5955,7 @@
 		)
 		(property "Description" "Bootstrap cap 100 nF, CBOOT→SW through R44."
 			(at 167.64 133.35 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5926,6 +5965,28 @@
 			)
 		)
 		(property "Note" "CBOOT 100 nF between CBOOT and SW (datasheet pin 14). 16 V+ rated, X7R."
+			(at 167.64 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 167.64 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
 			(at 167.64 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -5950,25 +6011,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C1525"
-			(at 167.64 133.35 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL05B104KO5NNNC"
-			(at 167.64 133.35 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 181.61 121.92 0)
@@ -6025,6 +6068,7 @@
 		)
 		(property "Description" ""
 			(at 181.61 121.92 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6106,6 +6150,7 @@
 		)
 		(property "Description" "LDO input bead from VM (120 Ω @ 100 MHz, 2 A class — the 600 Ω bead is too small here)."
 			(at 119.38 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6218,6 +6263,7 @@
 		)
 		(property "Description" ""
 			(at 128.27 77.47 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6301,6 +6347,7 @@
 		)
 		(property "Description" "Buck input bulk 10 µF 50 V (pair with C48) on VIN_SW."
 			(at 68.58 128.27 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6310,6 +6357,17 @@
 			)
 		)
 		(property "Note" "Buck input bulk, X7R 50 V 1210 - see C48."
+			(at 68.58 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM32ER71H106KA12L"
 			(at 68.58 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -6334,16 +6392,7 @@
 				)
 			)
 		)
-	
-		(property "MPN" "GRM32ER71H106KA12L"
-			(at 68.58 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 93.98 137.16 0)
@@ -6399,6 +6448,7 @@
 		)
 		(property "Description" "Buck UVLO divider, bottom (8.66 k) — rising threshold ≈ 15.8 V."
 			(at 93.98 137.16 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6408,6 +6458,17 @@
 			)
 		)
 		(property "Note" "EN divider bottom (RENB) - see R42."
+			(at 93.98 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF8661TCE"
 			(at 93.98 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -6432,16 +6493,7 @@
 				)
 			)
 		)
-	
-		(property "MPN" "0402WGF8661TCE"
-			(at 93.98 137.16 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "MC3_COL_MAIN:LM61460")
 		(at 132.08 132.08 0)
@@ -6497,6 +6549,7 @@
 		)
 		(property "Description" "The 24 V→5.02 V synchronous buck [[COL-COTS-0039]] LM61460, SYNC-locked at 1.00 MHz (50× motor PWM). Chain and rationale: [[Main-Board-01 Power]]; layout: docs/design/parts/LM61460.md."
 			(at 132.08 132.08 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6655,6 +6708,7 @@
 		)
 		(property "Description" "Buck FB divider, top (100 k from VM at the output caps — the point of regulation)."
 			(at 207.01 128.27 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6664,6 +6718,28 @@
 			)
 		)
 		(property "Note" "RFBT 100k 1% (datasheet recommended value). Vout = 1 V x (1 + 100/24.9) = 5.02 V."
+			(at 207.01 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25741"
+			(at 207.01 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1003TCE"
 			(at 207.01 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -6688,25 +6764,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25741"
-			(at 207.01 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF1003TCE"
-			(at 207.01 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 154.94 129.54 90)
@@ -6762,6 +6820,7 @@
 		)
 		(property "Description" "RBOOT 0 R — the SW-edge slow-down knob if bench EMI asks for it."
 			(at 154.94 129.54 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6771,6 +6830,17 @@
 			)
 		)
 		(property "Note" "RBOOT 0R (datasheet pin 13: 0 Ohm to open sets SW rise time; raise to slow edges if EMI on IPROPI demands)."
+			(at 154.94 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF0000TCE"
 			(at 154.94 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -6795,16 +6865,7 @@
 				)
 			)
 		)
-	
-		(property "MPN" "0402WGF0000TCE"
-			(at 154.94 129.54 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 208.28 104.14 0)
@@ -6862,6 +6923,7 @@
 		)
 		(property "Description" ""
 			(at 208.28 104.14 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6981,6 +7043,7 @@
 		)
 		(property "Description" "LDO output 22 µF tantalum — the ESR is what stabilises the AMS1117 (#tbd window unchecked)."
 			(at 160.02 85.09 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7099,6 +7162,7 @@
 		)
 		(property "Description" ""
 			(at 87.63 72.39 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7180,6 +7244,7 @@
 		)
 		(property "Description" "Feedforward series 1 k (with C55) from VM into the FB node."
 			(at 210.82 135.89 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7189,6 +7254,28 @@
 			)
 		)
 		(property "Note" "RFF 1k in series with C55 (feedforward) - datasheet Table 9-2."
+			(at 210.82 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 210.82 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1001TCE"
 			(at 210.82 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -7213,25 +7300,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C11702"
-			(at 210.82 135.89 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF1001TCE"
-			(at 210.82 135.89 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 101.6 138.43 0)
@@ -7287,6 +7356,7 @@
 		)
 		(property "Description" "Buck RT: 13.3 k → free-running ≈ 1 MHz (#tbd confirm vs the RT equation)."
 			(at 101.6 138.43 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7296,6 +7366,17 @@
 			)
 		)
 		(property "Note" "RT: sets free-running fSW ~1.0 MHz (datasheet: 33.2k -> 400 kHz, 5.76k -> 2.2 MHz; ~13 MHz*kOhm). PROVISIONAL - confirm against the RT equation in SNVSBD5D; SYNC overrides when the MCU clock is present."
+			(at 101.6 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1332TCE"
 			(at 101.6 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -7320,16 +7401,7 @@
 				)
 			)
 		)
-	
-		(property "MPN" "0402WGF1332TCE"
-			(at 101.6 138.43 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 68.58 104.14 180)
@@ -7386,6 +7458,7 @@
 		)
 		(property "Description" ""
 			(at 68.58 104.14 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7468,6 +7541,7 @@
 		)
 		(property "Description" ""
 			(at 85.09 92.71 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7551,6 +7625,7 @@
 		)
 		(property "Description" "Buck BIAS decoupler at pin 1 (BIAS rides VM for efficiency)."
 			(at 222.25 128.27 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7560,6 +7635,28 @@
 			)
 		)
 		(property "Note" "BIAS pin bypass 100 nF at pin 1 (BIAS tied to VM = 5 V for efficiency; datasheet pin 1)."
+			(at 222.25 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 222.25 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
 			(at 222.25 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -7584,25 +7681,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C1525"
-			(at 222.25 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL05B104KO5NNNC"
-			(at 222.25 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 76.2 128.27 0)
@@ -7660,6 +7739,7 @@
 		)
 		(property "Description" "Buck input bulk 10 µF 50 V (pair with C49) on VIN_SW."
 			(at 76.2 128.27 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7669,6 +7749,17 @@
 			)
 		)
 		(property "Note" "Buck input bulk, X7R 50 V 1210 (24 V rail: >=2x rated). C48/C49 flank U12 VIN1/VIN2; hot-loop cap. No COTS record (commodity)."
+			(at 76.2 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "GRM32ER71H106KA12L"
 			(at 76.2 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -7693,16 +7784,7 @@
 				)
 			)
 		)
-	
-		(property "MPN" "GRM32ER71H106KA12L"
-			(at 76.2 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 60.96 128.27 0)
@@ -7760,6 +7842,7 @@
 		)
 		(property "Description" "Buck input 100 nF 50 V — the closest cap to a VIN/PGND pair; the hot loop starts here."
 			(at 60.96 128.27 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7769,6 +7852,28 @@
 			)
 		)
 		(property "Note" "Buck input HF bypass, 100 nF 50 V 0603, closest cap to VIN1/PGND1 (CIN_HF in the datasheet)."
+			(at 60.96 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1591"
+			(at 60.96 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL10B104KB8NNNC"
 			(at 60.96 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -7793,25 +7898,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C1591"
-			(at 60.96 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "CL10B104KB8NNNC"
-			(at 60.96 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:D_Zener")
 		(at 74.93 91.44 270)
@@ -7867,6 +7954,7 @@
 		)
 		(property "Description" "12 V zener BZT52C12 clamping Q1's gate–source (|V_GS| would be 24 V against a ±20 V rating)."
 			(at 74.93 91.44 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7876,6 +7964,17 @@
 			)
 		)
 		(property "Note" "Q1 gate clamp: 12 V zener cathode to Q1 source (VIN_SW), anode to gate. Holds |V_GS| at 12 V with R5 100k setting the zener current (~120 uA at 24 V). Mandatory once V_IN exceeds the FET's +/-20 V gate rating. No COTS record (commodity)."
+			(at 74.93 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BZT52C12"
 			(at 74.93 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -7900,16 +7999,7 @@
 				)
 			)
 		)
-	
-		(property "MPN" "BZT52C12"
-			(at 74.93 91.44 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 128.27 85.09 0)
@@ -7967,6 +8057,7 @@
 		)
 		(property "Description" "LDO input 10 µF on VM_LDO behind FB4 (LC resonance ≈115 kHz — see [[Main-Board-01 Power]] § Open)."
 			(at 128.27 85.09 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8078,6 +8169,7 @@
 		)
 		(property "Description" "Buck inductor [[COL-COTS-0040]] XAL5030-222 (2.2 µH, 3.1 mm tall — tallest part on top)."
 			(at 154.94 121.92 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8189,6 +8281,7 @@
 		)
 		(property "Description" "Reverse-polarity P-FET (AO4421, −60 V): drain to the input, source to VIN_SW; body diode bootstraps it. Gate clamped by D7."
 			(at 80.01 80.01 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8326,6 +8419,7 @@
 		)
 		(property "Description" "Feedforward 4.7 pF (with R47) across the FB top divider."
 			(at 214.63 128.27 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8335,6 +8429,17 @@
 			)
 		)
 		(property "Note" "Feedforward cap CFF 4.7 pF C0G, in series with R47 (RFF 1k) across R45 - datasheet Table 9-2, 1 MHz / 5 V row."
+			(at 214.63 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402CG4R7C500NT"
 			(at 214.63 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -8359,14 +8464,5 @@
 				)
 			)
 		)
-	
-		(property "MPN" "0402CG4R7C500NT"
-			(at 214.63 128.27 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 )
