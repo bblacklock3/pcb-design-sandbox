@@ -127,16 +127,7 @@
 		)
 		(layer "F.SilkS")
 	)
-	(fp_rect
-		(start -7.46 -3.3)
-		(end 7.46 7)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(fill no)
-		(layer "F.CrtYd")
-	)
+	(fp_rect (start -7.46 -3.3) (end 7.46 5.1) (stroke (width 0.05) (type solid)) (fill none) (layer "F.CrtYd"))
 	(fp_line
 		(start -6.96 3.71)
 		(end -5.935 3.71)
