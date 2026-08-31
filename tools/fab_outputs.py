@@ -17,7 +17,11 @@ purchasable identity (bare pads, holes, test points, jumpers, silkscreen
 logos) are excluded from both. Gerbers use the plot settings stored in the
 board (--board-plot-params); drill is Excellon, absolute origin, PTH/NPTH split.
 
-Usage: python tools/fab_outputs.py            -> full package + zip into fab/
+A STEP model is exported alongside (boards/<board>/step/, same stamp), so a fab
+zip and a STEP file with the same stamp are the same design state — the loose
+gerber intermediates are removed after zipping so only stamped artifacts remain.
+
+Usage: python tools/fab_outputs.py            -> stamped zip + STEP + BOM/CPL
        python tools/fab_outputs.py --no-zip   -> loose files only (iteration)
 """
 import csv, glob, hashlib, io, os, re, subprocess, sys, tempfile, zipfile
@@ -60,11 +64,16 @@ def plot_gerbers():
         "--drill-origin", "absolute", "-o", OUT + os.sep, PCB)
 
 
-def make_zip(stamp_files):
+def stamp():
+    """One shared '<datetime>_<hash>[-dirty]' stamp per run — fab zip and STEP
+    carrying the same stamp are guaranteed to be the same design state."""
     h, dirty = design_state()
     ts = datetime.now().strftime("%Y%m%d-%H%M")
-    tag = f"{h}-dirty" if dirty else h
-    zpath = os.path.join(OUT, f"{NAME}_fab_{ts}_{tag}.zip")
+    return f"{ts}_{h}{'-dirty' if dirty else ''}", dirty
+
+
+def make_zip(stamp_files, run_stamp, dirty):
+    zpath = os.path.join(OUT, f"{NAME}_fab_{run_stamp}.zip")
     manifest = [f"board: {NAME}", f"generated: {datetime.now().isoformat(timespec='seconds')}",
                 f"git: {git('rev-parse', 'HEAD') or 'no repository'}{' (DIRTY board tree)' if dirty else ''}",
                 ""]
@@ -79,6 +88,15 @@ def make_zip(stamp_files):
         print("[fab] WARNING: board tree has uncommitted changes — this zip is for "
               "iteration only. Commit (and tag) before uploading to a fab.")
     return zpath
+
+
+def export_step(run_stamp):
+    out_dir = os.path.join(BOARD_DIR, "step")
+    os.makedirs(out_dir, exist_ok=True)
+    spath = os.path.join(out_dir, f"{NAME}_step_{run_stamp}.step")
+    cli("pcb", "export", "step", "--subst-models", "--no-dnp", "--force",
+        "-o", spath, PCB)
+    print(f"[fab] STEP: {spath}")
 
 
 def main():
@@ -149,9 +167,13 @@ def main():
     print(f"[fab] BOM: {bom_path} ({n} lines, {sum(len(v) for v in groups.values())} components)")
     print(f"[fab] CPL: {cpl_path} ({kept} placements, {dropped} hand-solder refs stripped: {sorted(hand)})")
     if "--no-zip" not in sys.argv:
+        run_stamp, dirty = stamp()
         gerbers = [p for p in glob.glob(os.path.join(OUT, "*"))
                    if os.path.splitext(p)[1].lower() not in (".csv", ".zip")]
-        make_zip(gerbers)
+        make_zip(gerbers, run_stamp, dirty)
+        export_step(run_stamp)
+        for p in gerbers:
+            os.remove(p)  # intermediates live in the zip; loose copies only invite staleness
 
 
 if __name__ == "__main__":

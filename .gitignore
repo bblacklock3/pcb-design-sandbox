@@ -45,3 +45,4 @@ fab/
 
 # external reference material (EVM design files etc.) - not design source
 boards/*/ref/
+boards/**/step/
