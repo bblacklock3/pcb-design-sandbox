@@ -72,7 +72,7 @@ def stamp():
     return f"{ts}_{h}{'-dirty' if dirty else ''}", dirty
 
 
-def make_zip(stamp_files, run_stamp, dirty):
+def make_zip(stamp_files, run_stamp, dirty, extras=()):
     zpath = os.path.join(OUT, f"{NAME}_fab_{run_stamp}.zip")
     manifest = [f"board: {NAME}", f"generated: {datetime.now().isoformat(timespec='seconds')}",
                 f"git: {git('rev-parse', 'HEAD') or 'no repository'}{' (DIRTY board tree)' if dirty else ''}",
@@ -82,6 +82,11 @@ def make_zip(stamp_files, run_stamp, dirty):
             data = open(p, "rb").read()
             manifest.append(f"{hashlib.sha256(data).hexdigest()}  {os.path.basename(p)}")
             z.writestr(os.path.basename(p), data)
+        if extras:  # same-run files shipped alongside the zip (BOM/CPL) — hashed but not zipped
+            manifest.append("")
+            manifest.append("uploaded separately (same run):")
+            for p in extras:
+                manifest.append(f"{hashlib.sha256(open(p, 'rb').read()).hexdigest()}  {os.path.basename(p)}")
         z.writestr("MANIFEST.txt", "\n".join(manifest) + "\n")
     print(f"[fab] ZIP: {zpath}")
     if dirty:
@@ -104,6 +109,9 @@ def main():
         print("[fab] WARNING: KiCad has this project open — make sure the board is SAVED, "
               "or this package is of the last save, not what you see on screen.")
     os.makedirs(OUT, exist_ok=True)
+    run_stamp, dirty = stamp()
+    for p in glob.glob(os.path.join(OUT, "BOM_*.csv")) + glob.glob(os.path.join(OUT, "CPL_*.csv")):
+        os.remove(p)  # only the current run's BOM/CPL may exist — stale ones caused mismatched uploads
     plot_gerbers()
     net = os.path.join(tempfile.gettempdir(), "fab_net.xml")
     cli("sch", "export", "netlist", "--format", "kicadxml", "-o", net, SCH)
@@ -131,7 +139,7 @@ def main():
     for ref, c in comps.items():
         key = (c["value"], c["package"], c["mpn"], c["lcsc"], bool(c["assembly"]), c["dnp"])
         groups.setdefault(key, []).append(ref)
-    bom_path = os.path.join(OUT, f"BOM_{NAME}.csv")
+    bom_path = os.path.join(OUT, f"BOM_{NAME}_{run_stamp}.csv")
     with open(bom_path, "w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f)
         w.writerow(["Item", "Designator", "Qty", "Value", "Package/Footprint",
@@ -148,7 +156,7 @@ def main():
     cli("pcb", "export", "pos", "--format", "csv", "--units", "mm",
         "--side", "both", "-o", pos_raw, PCB)
     hand = {r for r, c in comps.items() if c["assembly"]}
-    cpl_path = os.path.join(OUT, f"CPL_{NAME}.csv")
+    cpl_path = os.path.join(OUT, f"CPL_{NAME}_{run_stamp}.csv")
     kept = dropped = 0
     with open(pos_raw, newline="", encoding="utf-8") as fin, \
          open(cpl_path, "w", newline="", encoding="utf-8-sig") as fout:
@@ -167,10 +175,9 @@ def main():
     print(f"[fab] BOM: {bom_path} ({n} lines, {sum(len(v) for v in groups.values())} components)")
     print(f"[fab] CPL: {cpl_path} ({kept} placements, {dropped} hand-solder refs stripped: {sorted(hand)})")
     if "--no-zip" not in sys.argv:
-        run_stamp, dirty = stamp()
         gerbers = [p for p in glob.glob(os.path.join(OUT, "*"))
                    if os.path.splitext(p)[1].lower() not in (".csv", ".zip")]
-        make_zip(gerbers, run_stamp, dirty)
+        make_zip(gerbers, run_stamp, dirty, extras=[bom_path, cpl_path])
         export_step(run_stamp)
         for p in gerbers:
             os.remove(p)  # intermediates live in the zip; loose copies only invite staleness
