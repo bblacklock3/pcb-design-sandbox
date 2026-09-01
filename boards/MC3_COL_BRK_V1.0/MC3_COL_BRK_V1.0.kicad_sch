@@ -1371,12 +1371,6 @@
     (uuid "c6b55824-39b1-4986-bd45-0206aaeb7648")
   )
   (label "CANH"
-    (at 114.3 40.64 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "03f56672-6862-497a-898c-0203c040fbc7")
-  )
-  (label "CANH"
     (at 130.81 137.16 180)
     (fields_autoplaced yes)
     (effects (font (size 1.27 1.27)) (justify right bottom))
@@ -1401,12 +1395,6 @@
     (uuid "16d6e6c9-41f3-426e-bb7d-0a4028bda5ac")
   )
   (label "CANL"
-    (at 127 40.64 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "e5e19bbf-0674-426f-82d8-b72249e411ec")
-  )
-  (label "CANL"
     (at 157.48000000000002 137.16 0)
     (fields_autoplaced yes)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -1429,12 +1417,6 @@
     (fields_autoplaced yes)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid "09b5c5a3-0738-45b0-9dcb-521fd6de3e4d")
-  )
-  (label "VIN"
-    (at 88.9 40.64 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "5ee4eb75-d3f2-485b-bbb9-c2c0dcdab26a")
   )
   (label "VIN"
     (at 96.52 154.94 0)
@@ -1473,12 +1455,6 @@
     (uuid "b8390645-b574-403f-ae9c-3469fb79ed7c")
   )
   (label "GND"
-    (at 101.6 40.64 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "ea0b504e-78a2-449e-969a-0915a67e1559")
-  )
-  (label "GND"
     (at 96.52 175.26 0)
     (fields_autoplaced yes)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -1496,12 +1472,6 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid "47b563ce-3599-4ec1-a350-b32a30680a34")
   )
-  (label "YAW_OUT1"
-    (at 139.7 40.64 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "3d64c4fe-2a39-4350-a66f-edbd5f419847")
-  )
   (label "YAW_OUT2"
     (at 58.42 109.22 180)
     (fields_autoplaced yes)
@@ -1513,12 +1483,6 @@
     (fields_autoplaced yes)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid "1b98b60f-0373-481d-bbec-7da4bb1368b1")
-  )
-  (label "YAW_OUT2"
-    (at 152.4 40.64 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "ddf382c1-9dae-4555-b4a1-615df9b810b7")
   )
 (wire
 		(pts
@@ -2199,312 +2163,6 @@
 				)
 			)
 		))
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 88.9 40.64 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c1945a27-739e-4d23-a1b5-0a1798c1f0ef")
-		(property "Reference" "TP1"
-			(at 88.9 33.782 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VIN"
-			(at 88.9 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_BRK:TestPoint_Pad_1.0x1.0mm"
-			(at 88.9 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 101.6 40.64 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "853ca466-767a-4319-809d-6afcc41808a6")
-		(property "Reference" "TP2"
-			(at 101.6 33.782 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 101.6 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_BRK:TestPoint_Pad_1.0x1.0mm"
-			(at 101.6 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "TP2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 114.3 40.64 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8b19621d-c55d-4f74-b04b-a84039741c60")
-		(property "Reference" "TP3"
-			(at 114.3 33.782 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CANH"
-			(at 114.3 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_BRK:TestPoint_Pad_1.0x1.0mm"
-			(at 114.3 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 114.3 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "TP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 127 40.64 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "65bcd3e7-0177-4656-a731-d65e58ff958c")
-		(property "Reference" "TP4"
-			(at 127 33.782 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CANL"
-			(at 127 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_BRK:TestPoint_Pad_1.0x1.0mm"
-			(at 127 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 127 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "TP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 139.7 40.64 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5ce34907-a670-45d3-bf43-c6d85601cf45")
-		(property "Reference" "TP5"
-			(at 139.7 33.782 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "YAW_OUT1"
-			(at 139.7 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_BRK:TestPoint_Pad_1.0x1.0mm"
-			(at 139.7 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 139.7 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 152.4 40.64 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e4bd5f66-2c0b-4bf8-925a-3779c52325c4")
-		(property "Reference" "TP6"
-			(at 152.4 33.782 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "YAW_OUT2"
-			(at 152.4 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_BRK:TestPoint_Pad_1.0x1.0mm"
-			(at 152.4 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 40.64 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "TP6")
-					(unit 1)
-				)
-			)
-		)
-	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 63.5 170.18 0)
