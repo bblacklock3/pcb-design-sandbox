@@ -332,7 +332,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/lib/MC3_COL_MAIN.3dshapes/TE_84952-6_1x06-1MP_P1.0mm_Horizontal.step"
+	(model "${KIPRJMOD}/lib/MC3_COL_BRK.3dshapes/TE_84952-6_1x06-1MP_P1.0mm_Horizontal.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0)))
