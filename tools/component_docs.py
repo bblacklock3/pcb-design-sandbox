@@ -24,6 +24,11 @@ BOARDS = [
         "sch": os.path.join(REPO, "boards", "MC3_COL_MAIN_V1.1", "MC3_COL_MAIN_V1.1.kicad_sch"),
         "vault_dir": r"C:\Users\newte\Documents\Design Wiki\Projects\MC3 Collimator\05 Builds\Main-Board-01\Components",
     },
+    {
+        "name": "Breakout-Board-01",
+        "sch": os.path.join(REPO, "boards", "MC3_COL_BRK_V1.0", "MC3_COL_BRK_V1.0.kicad_sch"),
+        "vault_dir": r"C:\Users\newte\Documents\Design Wiki\Projects\MC3 Collimator\05 Builds\Breakout-Board-01\Components",
+    },
 ]
 GEN_BEGIN = "<!-- component-docs:begin — machine-owned, rewritten by tools/component_docs.py -->"
 GEN_END = "<!-- component-docs:end -->"

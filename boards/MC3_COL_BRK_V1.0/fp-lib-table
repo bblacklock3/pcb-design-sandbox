@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+
+  (lib (name "MC3_COL_BRK") (type "KiCad") (uri "${KIPRJMOD}/lib/MC3_COL_BRK.pretty") (options "") (descr "")))
