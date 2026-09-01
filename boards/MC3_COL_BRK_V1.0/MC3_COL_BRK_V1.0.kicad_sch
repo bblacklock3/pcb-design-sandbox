@@ -1352,141 +1352,10 @@
 			(embedded_fonts no)
 		)
 	)
-  (label "CANH"
-    (at 58.42 96.52 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "55e4eed6-2812-4259-8a1b-36fb9ebd34c1")
-  )
-  (label "CANH"
-    (at 208.28 109.22000000000001 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "ef3a84ef-ce6b-44da-a9f7-4803dc2caf69")
-  )
-  (label "CANH"
-    (at 208.28 129.54 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "c6b55824-39b1-4986-bd45-0206aaeb7648")
-  )
-  (label "CANH"
-    (at 130.81 137.16 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "78da4d9e-789f-4328-b7b2-2f28485b3b2d")
-  )
-  (label "CANL"
-    (at 58.42 99.05999999999999 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "6ae78c5a-2aa4-4dcb-b113-782cba0e0834")
-  )
-  (label "CANL"
-    (at 208.28 106.68 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "afe4e5cf-ec85-4239-bf37-07493da64aef")
-  )
-  (label "CANL"
-    (at 208.28 127 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "16d6e6c9-41f3-426e-bb7d-0a4028bda5ac")
-  )
-  (label "CANL"
-    (at 157.48000000000002 137.16 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "3ad8932a-7f57-4cc7-b0ea-b2abe59d335d")
-  )
-  (label "VIN"
-    (at 58.42 101.6 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "8ffb8def-daea-4bd2-b136-fb21f4796f88")
-  )
-  (label "VIN"
-    (at 208.28 63.5 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "96958542-3199-44aa-a913-49011bb6e7db")
-  )
-  (label "VIN"
-    (at 208.28 83.82 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "09b5c5a3-0738-45b0-9dcb-521fd6de3e4d")
-  )
-  (label "VIN"
-    (at 96.52 154.94 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "bb5fc01a-3511-4d94-ae16-7f946edb086f")
-  )
-  (label "GND"
-    (at 58.42 104.14 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "64f63be2-e38f-4ae7-b0a5-9b6bd91d113b")
-  )
-  (label "GND"
-    (at 208.28 60.96 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "54f373ac-1ae1-4df0-8c8c-32b67cfbd351")
-  )
-  (label "GND"
-    (at 208.28 81.27999999999999 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "0b71622a-eee3-401b-97a9-7c8e728c22d1")
-  )
-  (label "GND"
-    (at 208.28 104.14 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "eb41ab2b-d4f4-44ad-903a-e6cec28bf251")
-  )
-  (label "GND"
-    (at 208.28 124.46 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "b8390645-b574-403f-ae9c-3469fb79ed7c")
-  )
-  (label "GND"
-    (at 96.52 175.26 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "39e90187-8480-4025-8c16-7d2874d8eb86")
-  )
-  (label "YAW_OUT1"
-    (at 58.42 106.67999999999999 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "1fec8299-1e93-47be-a67f-e7e6e2e6ffc8")
-  )
-  (label "YAW_OUT1"
-    (at 208.28 149.86 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "47b563ce-3599-4ec1-a350-b32a30680a34")
-  )
-  (label "YAW_OUT2"
-    (at 58.42 109.22 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "e596fd35-6fbb-4158-bf9a-5e91b5bbe6fa")
-  )
-  (label "YAW_OUT2"
-    (at 208.28 147.32000000000002 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "1b98b60f-0373-481d-bbec-7da4bb1368b1")
-  )
-(wire
+	(wire
 		(pts
-			(xy 138.43 137.16) (xy 147.32 137.16)
+			(xy 138.43 137.16)
+			(xy 147.32 137.16)
 		)
 		(stroke
 			(width 0)
@@ -1494,9 +1363,10 @@
 		)
 		(uuid "c61924b4-36d2-42af-ab6f-5f8ace42e1b8")
 	)
-(wire
+	(wire
 		(pts
-			(xy 96.52 162.56) (xy 96.52 167.64)
+			(xy 96.52 162.56)
+			(xy 96.52 167.64)
 		)
 		(stroke
 			(width 0)
@@ -1504,11 +1374,235 @@
 		)
 		(uuid "1032bb27-6daf-4cba-ac18-1920ae95761b")
 	)
-  (text "J1 pin map PROVISIONAL: mirrors Main-Board J13 (1=CANH ... 6=YAW_OUT2).\nDerive from the chosen flex contact orientation before fab - Breakout-Board-01 entry gate.\nImplements: Breakout-Board-01 rung / COL-COTS-0038 harness. CAN TERM ON = last node only."
-    (at 40.64 124.46 0)
-    (effects (font (size 1.27 1.27)))
-    (uuid "2391f413-6872-483f-93d7-6270dd5b742f")
-  )
+	(text "J1 pin map PROVISIONAL: mirrors Main-Board J13 (1=CANH ... 6=YAW_OUT2).\nDerive from the chosen flex contact orientation before fab - Breakout-Board-01 entry gate.\nImplements: Breakout-Board-01 rung / COL-COTS-0038 harness. CAN TERM ON = last node only."
+		(at 40.64 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2391f413-6872-483f-93d7-6270dd5b742f")
+	)
+	(label "CANH"
+		(at 58.42 96.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "55e4eed6-2812-4259-8a1b-36fb9ebd34c1")
+	)
+	(label "CANH"
+		(at 208.28 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ef3a84ef-ce6b-44da-a9f7-4803dc2caf69")
+	)
+	(label "CANH"
+		(at 208.28 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c6b55824-39b1-4986-bd45-0206aaeb7648")
+	)
+	(label "CANH"
+		(at 130.81 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "78da4d9e-789f-4328-b7b2-2f28485b3b2d")
+	)
+	(label "CANL"
+		(at 58.42 99.06 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6ae78c5a-2aa4-4dcb-b113-782cba0e0834")
+	)
+	(label "CANL"
+		(at 208.28 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "afe4e5cf-ec85-4239-bf37-07493da64aef")
+	)
+	(label "CANL"
+		(at 208.28 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "16d6e6c9-41f3-426e-bb7d-0a4028bda5ac")
+	)
+	(label "CANL"
+		(at 157.48 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3ad8932a-7f57-4cc7-b0ea-b2abe59d335d")
+	)
+	(label "VIN"
+		(at 58.42 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8ffb8def-daea-4bd2-b136-fb21f4796f88")
+	)
+	(label "VIN"
+		(at 208.28 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "96958542-3199-44aa-a913-49011bb6e7db")
+	)
+	(label "VIN"
+		(at 208.28 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "09b5c5a3-0738-45b0-9dcb-521fd6de3e4d")
+	)
+	(label "VIN"
+		(at 96.52 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bb5fc01a-3511-4d94-ae16-7f946edb086f")
+	)
+	(label "GND"
+		(at 58.42 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "64f63be2-e38f-4ae7-b0a5-9b6bd91d113b")
+	)
+	(label "GND"
+		(at 208.28 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "54f373ac-1ae1-4df0-8c8c-32b67cfbd351")
+	)
+	(label "GND"
+		(at 208.28 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0b71622a-eee3-401b-97a9-7c8e728c22d1")
+	)
+	(label "GND"
+		(at 208.28 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eb41ab2b-d4f4-44ad-903a-e6cec28bf251")
+	)
+	(label "GND"
+		(at 208.28 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b8390645-b574-403f-ae9c-3469fb79ed7c")
+	)
+	(label "GND"
+		(at 96.52 175.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "39e90187-8480-4025-8c16-7d2874d8eb86")
+	)
+	(label "YAW_OUT1"
+		(at 58.42 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1fec8299-1e93-47be-a67f-e7e6e2e6ffc8")
+	)
+	(label "YAW_OUT1"
+		(at 208.28 149.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "47b563ce-3599-4ec1-a350-b32a30680a34")
+	)
+	(label "YAW_OUT2"
+		(at 58.42 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e596fd35-6fbb-4158-bf9a-5e91b5bbe6fa")
+	)
+	(label "YAW_OUT2"
+		(at 208.28 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b98b60f-0373-481d-bbec-7da4bb1368b1")
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 63.5 101.6 0)
@@ -1551,15 +1645,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "Clock-spring harness FFC (COL-COTS-0041, same part as Main-Board J13). Pin map mirrors J13 (1=CANH ... 6=YAW_OUT2) - PROVISIONAL until derived from the chosen flex type per the rung entry gate."
 			(at 63.5 101.6 0)
 			(hide yes)
@@ -1577,7 +1662,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 203.2 63.5 180)
@@ -1620,15 +1714,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "24 V power in - JST-XH 2-pos, paralleled with J3 for daisy-chaining. Pin 1 = VIN, pin 2 = GND."
 			(at 203.2 63.5 0)
 			(hide yes)
@@ -1646,7 +1731,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 203.2 83.82 180)
@@ -1689,15 +1783,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "24 V power chain out - bussed 1:1 with J2. Chain budget: at most 4 boards per XH contact rating."
 			(at 203.2 83.82 0)
 			(hide yes)
@@ -1715,7 +1800,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 203.2 106.68 180)
@@ -1758,15 +1852,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "CAN in - JST-XH 3-pos: 1=CANH, 2=CANL, 3=GND. Paralleled with J5."
 			(at 203.2 106.68 0)
 			(hide yes)
@@ -1784,7 +1869,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 203.2 127 180)
@@ -1827,15 +1921,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "CAN chain out - bussed 1:1 with J4."
 			(at 203.2 127 0)
 			(hide yes)
@@ -1853,7 +1938,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 203.2 149.86 180)
@@ -1896,15 +1990,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "Yaw motor pigtail - JST-XH 2-pos: 1=YAW_OUT1, 2=YAW_OUT2. Carries 0.93 A stall (COL-COTS-0001)."
 			(at 203.2 149.86 0)
 			(hide yes)
@@ -1922,7 +2007,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
 		(at 152.4 137.16 0)
@@ -1965,15 +2059,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "CAN termination enable - ON only when this board is the last node on the bus. Generic 1-pos DIP slide; exact part PROVISIONAL (rung open item)."
 			(at 152.4 137.16 0)
 			(hide yes)
@@ -1982,7 +2067,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 134.62 137.16 90)
@@ -2025,15 +2119,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "120 ohm CAN termination, switched by SW1."
 			(at 134.62 137.16 0)
 			(hide yes)
@@ -2042,7 +2127,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 96.52 158.75 0)
@@ -2085,15 +2179,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "Power LED series resistor - 10k from 24 V gives ~2 mA, faint always-on indicator."
 			(at 96.52 158.75 0)
 			(hide yes)
@@ -2102,7 +2187,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:LED")
 		(at 96.52 171.45 90)
@@ -2145,15 +2239,6 @@
 				)
 			)
 		)
-		(instances
-			(project "MC3_COL_BRK_V1.0"
-				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Description" "VIN presence indicator LED."
 			(at 96.52 171.45 0)
 			(hide yes)
@@ -2162,7 +2247,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 63.5 170.18 0)
@@ -2260,6 +2354,57 @@
 			(project "MC3_COL_BRK_V1.0"
 				(path "f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
 					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 83.82 170.18 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5b601cac-d186-4b03-8b5a-6133dd2176c4")
+		(property "Reference" "H3"
+			(at 83.82 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 83.82 167.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_BRK:MountingHole_2.2mm_M2"
+			(at 83.82 170.18 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 170.18 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MC3_COL_BRK_V1.0"
+				(path "/f71da8f0-58dc-44b1-8c1b-fee5f3f9a60d"
+					(reference "H3")
 					(unit 1)
 				)
 			)
