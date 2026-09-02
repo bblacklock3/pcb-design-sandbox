@@ -1662,7 +1662,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0bdbf9d7-d67b-42f4-a91b-49f306693935")
-		(property "Reference" "#PWR206"
+		(property "Reference" "#PWR?"
 			(at 107.95 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -1721,29 +1721,29 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR206")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR206")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR206")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR206")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR206")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
 			(project "MotorChannel"
 				(path "/d4aaa694-2c98-4a3a-bc8f-3a2af1030686"
-					(reference "#PWR206")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
@@ -1760,7 +1760,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1aae536c-134b-4c01-ae46-658342ca6e03")
-		(property "Reference" "#PWR203"
+		(property "Reference" "#PWR?"
 			(at 127 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -1819,29 +1819,29 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR203")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR203")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR203")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR203")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR203")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
 			(project "MotorChannel"
 				(path "/d4aaa694-2c98-4a3a-bc8f-3a2af1030686"
-					(reference "#PWR203")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
@@ -2126,7 +2126,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "58da47ab-5867-454a-85f1-012db2e01f48")
-		(property "Reference" "#PWR205"
+		(property "Reference" "#PWR?"
 			(at 76.2 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -2185,29 +2185,29 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR205")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR205")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR205")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR205")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR205")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
 			(project "MotorChannel"
 				(path "/d4aaa694-2c98-4a3a-bc8f-3a2af1030686"
-					(reference "#PWR205")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
@@ -2490,7 +2490,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b3ca4229-e4ca-4ead-924d-45f721b3fc2c")
-		(property "Reference" "#PWR204"
+		(property "Reference" "#PWR?"
 			(at 100.33 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -2549,29 +2549,29 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR204")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR204")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR204")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR204")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR204")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
 			(project "MotorChannel"
 				(path "/d4aaa694-2c98-4a3a-bc8f-3a2af1030686"
-					(reference "#PWR204")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
@@ -2767,7 +2767,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d2171e03-368e-48d9-a9fa-d640ecc099d3")
-		(property "Reference" "#PWR201"
+		(property "Reference" "#PWR?"
 			(at 81.28 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2826,29 +2826,29 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR201")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR201")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR201")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR201")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR201")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
 			(project "MotorChannel"
 				(path "/d4aaa694-2c98-4a3a-bc8f-3a2af1030686"
-					(reference "#PWR201")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
@@ -2865,7 +2865,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e6d0fb4c-06ea-412e-b044-e6b3134d7cf1")
-		(property "Reference" "#PWR202"
+		(property "Reference" "#PWR?"
 			(at 115.57 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2924,29 +2924,29 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR202")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR202")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR202")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR202")
+					(reference "#PWR?")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR202")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
 			(project "MotorChannel"
 				(path "/d4aaa694-2c98-4a3a-bc8f-3a2af1030686"
-					(reference "#PWR202")
+					(reference "#PWR?")
 					(unit 1)
 				)
 			)
