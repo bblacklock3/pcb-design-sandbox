@@ -326,7 +326,8 @@
 			(symbol "+3V3_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -338,7 +339,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -350,7 +352,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -465,7 +468,12 @@
 			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -488,6 +496,164 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -537,7 +703,8 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 74.93) (xy 176.53 74.93)
+			(xy 179.07 74.93)
+			(xy 176.53 74.93)
 		)
 		(stroke
 			(width 0)
@@ -547,7 +714,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 86.36) (xy 135.89 86.36)
+			(xy 140.97 86.36)
+			(xy 135.89 86.36)
 		)
 		(stroke
 			(width 0)
@@ -557,7 +725,8 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 91.44) (xy 260.35 91.44)
+			(xy 257.81 91.44)
+			(xy 260.35 91.44)
 		)
 		(stroke
 			(width 0)
@@ -567,7 +736,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 71.12) (xy 135.89 71.12)
+			(xy 140.97 71.12)
+			(xy 135.89 71.12)
 		)
 		(stroke
 			(width 0)
@@ -577,7 +747,8 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 81.28) (xy 240.03 81.28)
+			(xy 245.11 81.28)
+			(xy 240.03 81.28)
 		)
 		(stroke
 			(width 0)
@@ -587,7 +758,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 85.09) (xy 186.69 85.09)
+			(xy 191.77 85.09)
+			(xy 186.69 85.09)
 		)
 		(stroke
 			(width 0)
@@ -597,7 +769,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 81.28) (xy 135.89 81.28)
+			(xy 140.97 81.28)
+			(xy 135.89 81.28)
 		)
 		(stroke
 			(width 0)
@@ -607,7 +780,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 82.55) (xy 34.29 82.55)
+			(xy 39.37 82.55)
+			(xy 34.29 82.55)
 		)
 		(stroke
 			(width 0)
@@ -617,7 +791,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 69.85) (xy 186.69 69.85)
+			(xy 191.77 69.85)
+			(xy 186.69 69.85)
 		)
 		(stroke
 			(width 0)
@@ -627,7 +802,8 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 88.9) (xy 260.35 88.9)
+			(xy 257.81 88.9)
+			(xy 260.35 88.9)
 		)
 		(stroke
 			(width 0)
@@ -637,7 +813,8 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 71.12) (xy 240.03 71.12)
+			(xy 245.11 71.12)
+			(xy 240.03 71.12)
 		)
 		(stroke
 			(width 0)
@@ -647,7 +824,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 74.93) (xy 85.09 74.93)
+			(xy 90.17 74.93)
+			(xy 85.09 74.93)
 		)
 		(stroke
 			(width 0)
@@ -657,7 +835,8 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 76.2) (xy 125.73 76.2)
+			(xy 128.27 76.2)
+			(xy 125.73 76.2)
 		)
 		(stroke
 			(width 0)
@@ -667,7 +846,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 82.55) (xy 186.69 82.55)
+			(xy 191.77 82.55)
+			(xy 186.69 82.55)
 		)
 		(stroke
 			(width 0)
@@ -677,7 +857,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 82.55) (xy 85.09 82.55)
+			(xy 90.17 82.55)
+			(xy 85.09 82.55)
 		)
 		(stroke
 			(width 0)
@@ -687,7 +868,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 74.93) (xy 186.69 74.93)
+			(xy 191.77 74.93)
+			(xy 186.69 74.93)
 		)
 		(stroke
 			(width 0)
@@ -697,7 +879,8 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 77.47) (xy 176.53 77.47)
+			(xy 179.07 77.47)
+			(xy 176.53 77.47)
 		)
 		(stroke
 			(width 0)
@@ -707,7 +890,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 74.93) (xy 34.29 74.93)
+			(xy 39.37 74.93)
+			(xy 34.29 74.93)
 		)
 		(stroke
 			(width 0)
@@ -717,7 +901,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 77.47) (xy 186.69 77.47)
+			(xy 191.77 77.47)
+			(xy 186.69 77.47)
 		)
 		(stroke
 			(width 0)
@@ -727,7 +912,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 72.39) (xy 34.29 72.39)
+			(xy 39.37 72.39)
+			(xy 34.29 72.39)
 		)
 		(stroke
 			(width 0)
@@ -737,7 +923,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 72.39) (xy 85.09 72.39)
+			(xy 90.17 72.39)
+			(xy 85.09 72.39)
 		)
 		(stroke
 			(width 0)
@@ -747,7 +934,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 80.01) (xy 34.29 80.01)
+			(xy 39.37 80.01)
+			(xy 34.29 80.01)
 		)
 		(stroke
 			(width 0)
@@ -757,7 +945,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 87.63) (xy 85.09 87.63)
+			(xy 90.17 87.63)
+			(xy 85.09 87.63)
 		)
 		(stroke
 			(width 0)
@@ -767,7 +956,8 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 80.01) (xy 74.93 80.01)
+			(xy 77.47 80.01)
+			(xy 74.93 80.01)
 		)
 		(stroke
 			(width 0)
@@ -777,7 +967,8 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 78.74) (xy 240.03 78.74)
+			(xy 245.11 78.74)
+			(xy 240.03 78.74)
 		)
 		(stroke
 			(width 0)
@@ -787,7 +978,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 85.09) (xy 85.09 85.09)
+			(xy 90.17 85.09)
+			(xy 85.09 85.09)
 		)
 		(stroke
 			(width 0)
@@ -797,7 +989,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 83.82) (xy 135.89 83.82)
+			(xy 140.97 83.82)
+			(xy 135.89 83.82)
 		)
 		(stroke
 			(width 0)
@@ -807,7 +1000,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 85.09) (xy 34.29 85.09)
+			(xy 39.37 85.09)
+			(xy 34.29 85.09)
 		)
 		(stroke
 			(width 0)
@@ -817,7 +1011,8 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 83.82) (xy 240.03 83.82)
+			(xy 245.11 83.82)
+			(xy 240.03 83.82)
 		)
 		(stroke
 			(width 0)
@@ -827,7 +1022,8 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 73.66) (xy 240.03 73.66)
+			(xy 245.11 73.66)
+			(xy 240.03 73.66)
 		)
 		(stroke
 			(width 0)
@@ -837,7 +1033,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 77.47) (xy 34.29 77.47)
+			(xy 39.37 77.47)
+			(xy 34.29 77.47)
 		)
 		(stroke
 			(width 0)
@@ -847,7 +1044,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 76.2) (xy 135.89 76.2)
+			(xy 140.97 76.2)
+			(xy 135.89 76.2)
 		)
 		(stroke
 			(width 0)
@@ -857,7 +1055,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 72.39) (xy 186.69 72.39)
+			(xy 191.77 72.39)
+			(xy 186.69 72.39)
 		)
 		(stroke
 			(width 0)
@@ -867,7 +1066,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 73.66) (xy 135.89 73.66)
+			(xy 140.97 73.66)
+			(xy 135.89 73.66)
 		)
 		(stroke
 			(width 0)
@@ -877,7 +1077,8 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 87.63) (xy 34.29 87.63)
+			(xy 39.37 87.63)
+			(xy 34.29 87.63)
 		)
 		(stroke
 			(width 0)
@@ -887,7 +1088,8 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 78.74) (xy 135.89 78.74)
+			(xy 140.97 78.74)
+			(xy 135.89 78.74)
 		)
 		(stroke
 			(width 0)
@@ -897,7 +1099,8 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 80.01) (xy 186.69 80.01)
+			(xy 191.77 80.01)
+			(xy 186.69 80.01)
 		)
 		(stroke
 			(width 0)
@@ -907,7 +1110,8 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 86.36) (xy 240.03 86.36)
+			(xy 245.11 86.36)
+			(xy 240.03 86.36)
 		)
 		(stroke
 			(width 0)
@@ -917,7 +1121,8 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 80.01) (xy 85.09 80.01)
+			(xy 90.17 80.01)
+			(xy 85.09 80.01)
 		)
 		(stroke
 			(width 0)
@@ -927,13 +1132,70 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 77.47) (xy 85.09 77.47)
+			(xy 90.17 77.47)
+			(xy 85.09 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ef8a1ffc-c40a-4958-8d65-748210da9f43")
+	)
+	(wire
+		(pts
+			(xy 52.07 90.17)
+			(xy 57.15 90.17)
+		)
+		(uuid "f66ecd07-ea71-45eb-a504-3d03f52ef899")
+	)
+	(wire
+		(pts
+			(xy 52.07 92.71)
+			(xy 57.15 92.71)
+		)
+		(uuid "24d8a2ea-d9f1-49a7-b372-3993242cc20b")
+	)
+	(wire
+		(pts
+			(xy 102.87 90.17)
+			(xy 107.95 90.17)
+		)
+		(uuid "2bb57f58-d07f-4737-86f6-738ffe070308")
+	)
+	(wire
+		(pts
+			(xy 102.87 92.71)
+			(xy 107.95 92.71)
+		)
+		(uuid "b8520f29-4328-4d3b-8af4-36d0047ceeae")
+	)
+	(wire
+		(pts
+			(xy 153.67 88.9)
+			(xy 158.75 88.9)
+		)
+		(uuid "77f41cea-e06c-4678-a19d-4c72ed4e5984")
+	)
+	(wire
+		(pts
+			(xy 153.67 91.44)
+			(xy 158.75 91.44)
+		)
+		(uuid "be6c79b8-935d-4835-8b2c-079a1bac8649")
+	)
+	(wire
+		(pts
+			(xy 204.47 87.63)
+			(xy 209.55 87.63)
+		)
+		(uuid "6c41c00c-ce6a-4f6b-be0f-b768ef611f5c")
+	)
+	(wire
+		(pts
+			(xy 204.47 90.17)
+			(xy 209.55 90.17)
+		)
+		(uuid "feac61b0-e33a-49ed-b5f5-2b3dc98e8c17")
 	)
 	(global_label "EN_leaf4"
 		(shape input)
@@ -1727,790 +1989,6 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 66.04 110.49 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2de0fd23-8a2f-4e84-85bc-82b1fc08f08e")
-		(property "Reference" "H3"
-			(at 66.04 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2"
-			(at 66.04 107.315 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
-			(at 66.04 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 66.04 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
-			(at 66.04 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "H3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 182.88 77.47 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "337fe538-5059-4a79-ae0a-e7322407105e")
-		(property "Reference" "R4"
-			(at 187.452 76.708 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 182.88 77.47 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 182.88 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 182.88 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 200.406 58.674 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "I2C address strap pull-up 2.2k for leaf4 A0 = 1 (SLVSH04 Table 8-28 note)"
-			(at 182.88 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C25879"
-			(at 182.88 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 182.88 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "77fd8a84-133f-4a53-977e-c72e9a53cd8a")
-		)
-		(pin "2"
-			(uuid "0e41322f-6e91-4f0f-9227-41dae1f82b15")
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 132.08 76.2 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "50dbc9a6-a590-46f6-ab94-829dd92f9586")
-		(property "Reference" "R2"
-			(at 127.254 77.47 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 132.08 76.2 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 132.08 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 132.08 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 166.37 101.854 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "I2C address strap pull-up 2.2k for leaf3 A1 = 1 (SLVSH04 Table 8-28 note)"
-			(at 132.08 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C25879"
-			(at 132.08 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 132.08 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "566372b7-5e93-4f7f-a87a-5f69fb1f88b5")
-		)
-		(pin "1"
-			(uuid "b7fee103-e37f-49a8-aa08-1b0a1179fda5")
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 182.88 74.93 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "590fbab7-8c42-4529-ab83-a65f2f3dd752")
-		(property "Reference" "R3"
-			(at 187.452 74.168 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 182.88 74.93 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 182.88 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 182.88 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 199.136 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "I2C address strap pull-up 2.2k for leaf4 A1 = 1 (SLVSH04 Table 8-28 note)"
-			(at 182.88 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C25879"
-			(at 182.88 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 182.88 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "7bed4d59-c940-404d-aa28-cfa0abc008dc")
-		)
-		(pin "1"
-			(uuid "d61ba98a-e3d3-40ab-9b87-ceea14b93e02")
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 81.28 80.01 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8c925ebf-9f85-4acd-a490-4f290d2e8b36")
-		(property "Reference" "R1"
-			(at 76.708 79.248 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 81.28 80.01 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
-			(at 81.28 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
-			(at 87.122 63.5 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "I2C address strap pull-up 2.2k for leaf2 A0 = 1 (SLVSH04 Table 8-28 note recommends 2.2k to VCC for a high strap)"
-			(at 81.28 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C25879"
-			(at 81.28 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "0402WGF2201TCE"
-			(at 81.28 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "fc3c5a95-edbb-458b-9499-a44e67e5d65c")
-		)
-		(pin "1"
-			(uuid "d90cc052-0ef1-493b-8645-47e42737d9f2")
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 76.2 110.49 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a7023527-a7b2-4501-b1df-4d2ab999bb05")
-		(property "Reference" "H4"
-			(at 76.2 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2"
-			(at 76.2 107.315 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
-			(at 76.2 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 76.2 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
-			(at 76.2 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "H4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 53.34 110.49 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b2ffb3e8-c0c7-41c8-997f-ebc3642d9643")
-		(property "Reference" "H2"
-			(at 53.34 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2"
-			(at 53.34 107.315 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
-			(at 53.34 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.34 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 53.34 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
-			(at 53.34 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 40.64 110.49 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bc30cbc6-e11f-4de3-8db4-55937c1803bc")
-		(property "Reference" "H1"
-			(at 40.64 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M2"
-			(at 40.64 107.315 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
-			(at 40.64 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 40.64 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
-			(at 40.64 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "MC3_COL_MAIN_V1.1"
-				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
-					(reference "H1")
-					(unit 1)
-				)
-			)
-		)
-	)
 	(sheet
 		(at 90.17 69.85)
 		(size 12.7 25.4)
@@ -2550,93 +2028,93 @@
 		)
 		(pin "EN" input
 			(at 90.17 72.39 180)
-			(uuid "cd081926-8099-4b10-8616-a82eb201798b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "cd081926-8099-4b10-8616-a82eb201798b")
 		)
 		(pin "PH" input
 			(at 90.17 74.93 180)
-			(uuid "9eb5b633-51a6-4cb1-bb41-0ac4195a4dee")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "9eb5b633-51a6-4cb1-bb41-0ac4195a4dee")
 		)
 		(pin "A1" input
 			(at 90.17 77.47 180)
-			(uuid "79cf83fc-ab11-4d5f-9e99-3469c348e48d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "79cf83fc-ab11-4d5f-9e99-3469c348e48d")
 		)
 		(pin "A0" input
 			(at 90.17 80.01 180)
-			(uuid "3dbe1956-8aec-497a-af0f-32aba6093fc7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "3dbe1956-8aec-497a-af0f-32aba6093fc7")
 		)
 		(pin "IPROPI" output
 			(at 90.17 82.55 180)
-			(uuid "ae2d7e92-9343-4dc2-91d6-c1887ba04062")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "ae2d7e92-9343-4dc2-91d6-c1887ba04062")
 		)
 		(pin "RC_OUT" output
 			(at 90.17 85.09 180)
-			(uuid "ccdb0423-649e-483a-8462-a4985c1f7241")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "ccdb0423-649e-483a-8462-a4985c1f7241")
 		)
 		(pin "nFAULT" output
 			(at 90.17 87.63 180)
-			(uuid "4a544493-23fc-4710-b6d9-673a6d19fc6d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "4a544493-23fc-4710-b6d9-673a6d19fc6d")
 		)
 		(pin "OUT1" input
 			(at 102.87 90.17 0)
-			(uuid "4e4a4f56-0dd7-40ae-ad0d-4b1603920a25")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "4e4a4f56-0dd7-40ae-ad0d-4b1603920a25")
 		)
 		(pin "OUT2" input
 			(at 102.87 92.71 0)
-			(uuid "91845b44-9b25-4b52-bb56-d2e55c621afe")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "91845b44-9b25-4b52-bb56-d2e55c621afe")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
@@ -2730,93 +2208,93 @@
 		)
 		(pin "RC_OUT" output
 			(at 245.11 83.82 180)
-			(uuid "c624d529-81d5-451e-82ee-8eb6e8aab9c9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "c624d529-81d5-451e-82ee-8eb6e8aab9c9")
 		)
 		(pin "A1" input
 			(at 245.11 76.2 180)
-			(uuid "78e2cb97-3b80-47e4-b2b9-06b0211eeef3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "78e2cb97-3b80-47e4-b2b9-06b0211eeef3")
 		)
 		(pin "A0" input
 			(at 245.11 78.74 180)
-			(uuid "091230e9-d4ce-49a4-b6b0-05c775b18345")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "091230e9-d4ce-49a4-b6b0-05c775b18345")
 		)
 		(pin "nFAULT" output
 			(at 245.11 86.36 180)
-			(uuid "016e22e9-83db-480e-8e1b-e416ca78e2e7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "016e22e9-83db-480e-8e1b-e416ca78e2e7")
 		)
 		(pin "PH" input
 			(at 245.11 73.66 180)
-			(uuid "16281dc9-a953-4311-8839-988a499b909d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "16281dc9-a953-4311-8839-988a499b909d")
 		)
 		(pin "IPROPI" output
 			(at 245.11 81.28 180)
-			(uuid "2eb6d51c-9ea5-4fae-a567-28acd1c91f6b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "2eb6d51c-9ea5-4fae-a567-28acd1c91f6b")
 		)
 		(pin "EN" input
 			(at 245.11 71.12 180)
-			(uuid "812b91e6-075b-4804-938b-876853a68dd1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "812b91e6-075b-4804-938b-876853a68dd1")
 		)
 		(pin "OUT1" input
 			(at 257.81 88.9 0)
-			(uuid "3636065e-5ade-41b5-910b-e8475bb9da20")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "3636065e-5ade-41b5-910b-e8475bb9da20")
 		)
 		(pin "OUT2" input
 			(at 257.81 91.44 0)
-			(uuid "0c7224b2-7a23-42f1-9f73-fe5977f4d586")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "0c7224b2-7a23-42f1-9f73-fe5977f4d586")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
@@ -2865,93 +2343,93 @@
 		)
 		(pin "EN" input
 			(at 191.77 69.85 180)
-			(uuid "a5095b35-eb04-481a-84e9-b339047fe2e3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "a5095b35-eb04-481a-84e9-b339047fe2e3")
 		)
 		(pin "PH" input
 			(at 191.77 72.39 180)
-			(uuid "0cd3bd4b-ddd9-4a31-a233-1fff8d82f561")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "0cd3bd4b-ddd9-4a31-a233-1fff8d82f561")
 		)
 		(pin "A1" input
 			(at 191.77 74.93 180)
-			(uuid "7a544d35-7a14-47a8-b28b-cf62975c03a8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7a544d35-7a14-47a8-b28b-cf62975c03a8")
 		)
 		(pin "A0" input
 			(at 191.77 77.47 180)
-			(uuid "53f9408f-d264-4ae5-bab7-8bd82667ad58")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "53f9408f-d264-4ae5-bab7-8bd82667ad58")
 		)
 		(pin "IPROPI" output
 			(at 191.77 80.01 180)
-			(uuid "6fab0d0e-6005-4d03-9b1e-9b2e41139c8b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "6fab0d0e-6005-4d03-9b1e-9b2e41139c8b")
 		)
 		(pin "RC_OUT" output
 			(at 191.77 82.55 180)
-			(uuid "7e83c6e0-8213-42b1-b032-e0fa07bacfa7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7e83c6e0-8213-42b1-b032-e0fa07bacfa7")
 		)
 		(pin "nFAULT" output
 			(at 191.77 85.09 180)
-			(uuid "7cf4c1e6-2adf-4389-9539-1afbcef291d2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7cf4c1e6-2adf-4389-9539-1afbcef291d2")
 		)
 		(pin "OUT1" input
 			(at 204.47 87.63 0)
-			(uuid "8ebd0d09-ef21-42b7-bf91-864649a2fc42")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "8ebd0d09-ef21-42b7-bf91-864649a2fc42")
 		)
 		(pin "OUT2" input
 			(at 204.47 90.17 0)
-			(uuid "d961735d-389d-4e1a-ba12-114063c54a50")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "d961735d-389d-4e1a-ba12-114063c54a50")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
@@ -3000,93 +2478,93 @@
 		)
 		(pin "EN" input
 			(at 39.37 72.39 180)
-			(uuid "6dc10778-af08-49d1-8dd6-fe06a65f16d2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "6dc10778-af08-49d1-8dd6-fe06a65f16d2")
 		)
 		(pin "PH" input
 			(at 39.37 74.93 180)
-			(uuid "f53b26d7-7c13-40cb-bbdd-ba4af4319ea0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "f53b26d7-7c13-40cb-bbdd-ba4af4319ea0")
 		)
 		(pin "A1" input
 			(at 39.37 77.47 180)
-			(uuid "8f5deb76-1e1f-4632-b9c0-aa16bf8430fe")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "8f5deb76-1e1f-4632-b9c0-aa16bf8430fe")
 		)
 		(pin "A0" input
 			(at 39.37 80.01 180)
-			(uuid "2c163ba3-0524-4bf7-b0fd-86357b895d32")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "2c163ba3-0524-4bf7-b0fd-86357b895d32")
 		)
 		(pin "IPROPI" output
 			(at 39.37 82.55 180)
-			(uuid "24c85480-f88d-42f5-b267-fce2364e1206")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "24c85480-f88d-42f5-b267-fce2364e1206")
 		)
 		(pin "RC_OUT" output
 			(at 39.37 85.09 180)
-			(uuid "e1bb3ebb-58f0-457e-8c44-6b6dab4016f2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "e1bb3ebb-58f0-457e-8c44-6b6dab4016f2")
 		)
 		(pin "nFAULT" output
 			(at 39.37 87.63 180)
-			(uuid "3846b45a-2414-4104-9587-72edfe280a16")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "3846b45a-2414-4104-9587-72edfe280a16")
 		)
 		(pin "OUT1" input
 			(at 52.07 90.17 0)
-			(uuid "15115db6-7768-477b-a7d9-7525ba3070d0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "15115db6-7768-477b-a7d9-7525ba3070d0")
 		)
 		(pin "OUT2" input
 			(at 52.07 92.71 0)
-			(uuid "c86f3161-8a18-4cdd-ba75-206d59b4c73d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "c86f3161-8a18-4cdd-ba75-206d59b4c73d")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
@@ -3144,11 +2622,11 @@
 	(sheet
 		(at 223.52 19.05)
 		(size 45.72 25.4)
+		(fields_autoplaced)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -3271,93 +2749,93 @@
 		)
 		(pin "EN" input
 			(at 140.97 71.12 180)
-			(uuid "f2a07c28-2ea4-48e3-a445-19a0e1db8e13")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "f2a07c28-2ea4-48e3-a445-19a0e1db8e13")
 		)
 		(pin "PH" input
 			(at 140.97 73.66 180)
-			(uuid "5ac8cfbf-63ad-4e7f-a300-76c037f3483f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "5ac8cfbf-63ad-4e7f-a300-76c037f3483f")
 		)
 		(pin "A1" input
 			(at 140.97 76.2 180)
-			(uuid "08119630-4016-4fed-b63c-b5fb2dc9c940")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "08119630-4016-4fed-b63c-b5fb2dc9c940")
 		)
 		(pin "A0" input
 			(at 140.97 78.74 180)
-			(uuid "938547ee-e987-49ed-9f14-a27e062a5284")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "938547ee-e987-49ed-9f14-a27e062a5284")
 		)
 		(pin "IPROPI" output
 			(at 140.97 81.28 180)
-			(uuid "7a5219aa-0b13-497a-9fc7-2a4d6cc3c4c3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "7a5219aa-0b13-497a-9fc7-2a4d6cc3c4c3")
 		)
 		(pin "RC_OUT" output
 			(at 140.97 83.82 180)
-			(uuid "0bec23fd-3d8d-4670-8676-a9a35080967c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "0bec23fd-3d8d-4670-8676-a9a35080967c")
 		)
 		(pin "nFAULT" output
 			(at 140.97 86.36 180)
-			(uuid "a7397fa2-28bc-4643-a9c1-0840ba61e35a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
+			(uuid "a7397fa2-28bc-4643-a9c1-0840ba61e35a")
 		)
 		(pin "OUT1" input
 			(at 153.67 88.9 0)
-			(uuid "d810ef75-d85f-4f9e-9006-c84e2e654cfe")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "d810ef75-d85f-4f9e-9006-c84e2e654cfe")
 		)
 		(pin "OUT2" input
 			(at 153.67 91.44 0)
-			(uuid "3305dcdc-d97b-489f-b891-dbafd77a60d7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
+			(uuid "3305dcdc-d97b-489f-b891-dbafd77a60d7")
 		)
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
@@ -3367,10 +2845,1034 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 66.04 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2de0fd23-8a2f-4e84-85bc-82b1fc08f08e")
+		(property "Reference" "H3"
+			(at 66.04 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 66.04 107.315 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
+			(at 66.04 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
+			(at 66.04 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 182.88 77.47 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "337fe538-5059-4a79-ae0a-e7322407105e")
+		(property "Reference" "R4"
+			(at 187.452 76.708 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2k"
+			(at 182.88 77.47 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
+			(at 200.406 58.674 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "I2C address strap pull-up 2.2k for leaf4 A0 = 1 (SLVSH04 Table 8-28 note)"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25879"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 182.88 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(pin "1"
+			(uuid "77fd8a84-133f-4a53-977e-c72e9a53cd8a")
+		)
+		(pin "2"
+			(uuid "0e41322f-6e91-4f0f-9227-41dae1f82b15")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 132.08 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "50dbc9a6-a590-46f6-ab94-829dd92f9586")
+		(property "Reference" "R2"
+			(at 127.254 77.47 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2k"
+			(at 132.08 76.2 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
+			(at 166.37 101.854 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "I2C address strap pull-up 2.2k for leaf3 A1 = 1 (SLVSH04 Table 8-28 note)"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25879"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 132.08 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(pin "2"
+			(uuid "566372b7-5e93-4f7f-a87a-5f69fb1f88b5")
+		)
+		(pin "1"
+			(uuid "b7fee103-e37f-49a8-aa08-1b0a1179fda5")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 182.88 74.93 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "590fbab7-8c42-4529-ab83-a65f2f3dd752")
+		(property "Reference" "R3"
+			(at 187.452 74.168 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2k"
+			(at 182.88 74.93 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
+			(at 199.136 62.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "I2C address strap pull-up 2.2k for leaf4 A1 = 1 (SLVSH04 Table 8-28 note)"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25879"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 182.88 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(pin "2"
+			(uuid "7bed4d59-c940-404d-aa28-cfa0abc008dc")
+		)
+		(pin "1"
+			(uuid "d61ba98a-e3d3-40ab-9b87-ceea14b93e02")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 81.28 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8c925ebf-9f85-4acd-a490-4f290d2e8b36")
+		(property "Reference" "R1"
+			(at 76.708 79.248 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2k"
+			(at 81.28 80.01 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "I²C address strap (A1/A0 tri-level) — sets this channel's DRV8214 address; map in [[Firmware-01]]."
+			(at 87.122 63.5 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "I2C address strap pull-up 2.2k for leaf2 A0 = 1 (SLVSH04 Table 8-28 note recommends 2.2k to VCC for a high strap)"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25879"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "0402WGF2201TCE"
+			(at 81.28 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(pin "2"
+			(uuid "fc3c5a95-edbb-458b-9499-a44e67e5d65c")
+		)
+		(pin "1"
+			(uuid "d90cc052-0ef1-493b-8645-47e42737d9f2")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 76.2 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7023527-a7b2-4501-b1df-4d2ab999bb05")
+		(property "Reference" "H4"
+			(at 76.2 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 76.2 107.315 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
+			(at 76.2 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
+			(at 76.2 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 53.34 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b2ffb3e8-c0c7-41c8-997f-ebc3642d9643")
+		(property "Reference" "H2"
+			(at 53.34 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 53.34 107.315 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
+			(at 53.34 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
+			(at 53.34 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 40.64 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bc30cbc6-e11f-4de3-8db4-55937c1803bc")
+		(property "Reference" "H1"
+			(at 40.64 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2"
+			(at 40.64 107.315 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:MountingHole_2.2mm_M2"
+			(at 40.64 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 40.64 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "NPTH 2.2 mm clearance for M2, electrically isolated; 3x ~120 deg apart, positions set in layout (board-to-frame spacing = the encoder gap, PARAM owed)"
+			(at 40.64 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(body_style 1)
+		(in_pos_files yes)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 62.23 90.17 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5a0d7afa-917c-4861-b65b-7fbe0a25cb25")
+		(property "Reference" "J7"
+			(at 62.23 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 62.23 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 62.23 90.17 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 90.17 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 62.23 90.17 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 113.03 90.17 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c07d8967-2fbb-4256-bb4e-3bc447499e6a")
+		(property "Reference" "J8"
+			(at 113.03 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 113.03 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 113.03 90.17 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 90.17 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 113.03 90.17 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 163.83 88.9 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "87f611ed-0854-4243-b073-4bc2c3df1e8f")
+		(property "Reference" "J9"
+			(at 163.83 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 163.83 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 163.83 88.9 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 88.9 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 163.83 88.9 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 214.63 87.63 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5fe2e7e5-6fd6-44c1-ab89-9fa5803f559b")
+		(property "Reference" "J10"
+			(at 214.63 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 214.63 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 214.63 87.63 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 87.63 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 214.63 87.63 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(embedded_fonts no)
 	(sheet_instances
 		(path "/"
 			(page "1")
 		)
 	)
-	(embedded_fonts no)
 )
