@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "konnect": {
-      "command": "${USERPROFILE}\\Documents\\KiCad\\10.0\\3rdparty\\plugins\\com_github_mixelpixx_konnect\\bin\\konnect.exe"
+      "command": "${USERPROFILE}\\OneDrive\\Documents\\KiCad\\10.0\\3rdparty\\plugins\\com_github_mixelpixx_konnect\\bin\\konnect.exe"
     }
   }
 }
