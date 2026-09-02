@@ -969,12 +969,6 @@
 		(uuid "86e99330-796d-408e-9d38-7d10b65f359f")
 	)
 	(junction
-		(at 113.03 72.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "99c9749f-be86-4ba4-9e60-e0224a92e299")
-	)
-	(junction
 		(at 74.93 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1003,12 +997,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f3c2eabe-bbc9-457c-88ca-d393d82b458f")
-	)
-	(junction
-		(at 113.03 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f8ccff1b-0b00-474a-ba85-15a9660f69b0")
 	)
 	(wire
 		(pts
@@ -1662,7 +1650,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0bdbf9d7-d67b-42f4-a91b-49f306693935")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR049"
 			(at 107.95 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -1721,23 +1709,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR?")
+					(reference "#PWR055")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR?")
+					(reference "#PWR073")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR?")
+					(reference "#PWR067")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR?")
+					(reference "#PWR049")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR?")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -1760,7 +1748,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1aae536c-134b-4c01-ae46-658342ca6e03")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR051"
 			(at 127 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -1819,23 +1807,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR?")
+					(reference "#PWR057")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR?")
+					(reference "#PWR075")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR?")
+					(reference "#PWR069")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR?")
+					(reference "#PWR051")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR?")
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -2126,7 +2114,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "58da47ab-5867-454a-85f1-012db2e01f48")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR046"
 			(at 76.2 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -2185,23 +2173,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR?")
+					(reference "#PWR052")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR?")
+					(reference "#PWR070")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR?")
+					(reference "#PWR064")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR?")
+					(reference "#PWR046")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR?")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -2490,7 +2478,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b3ca4229-e4ca-4ead-924d-45f721b3fc2c")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR048"
 			(at 100.33 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -2549,23 +2537,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR?")
+					(reference "#PWR054")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR?")
+					(reference "#PWR072")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR?")
+					(reference "#PWR066")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR?")
+					(reference "#PWR048")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR?")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -2767,7 +2755,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d2171e03-368e-48d9-a9fa-d640ecc099d3")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR047"
 			(at 81.28 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2826,23 +2814,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR?")
+					(reference "#PWR053")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR?")
+					(reference "#PWR071")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR?")
+					(reference "#PWR065")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR?")
+					(reference "#PWR047")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR?")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -2865,7 +2853,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e6d0fb4c-06ea-412e-b044-e6b3134d7cf1")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR050"
 			(at 115.57 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2924,23 +2912,23 @@
 		(instances
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/5db6fbb9-0012-419b-b34a-9d86ac1f5217"
-					(reference "#PWR?")
+					(reference "#PWR056")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/8cfd3b4a-99dc-4b05-a7ad-f8199ec40931"
-					(reference "#PWR?")
+					(reference "#PWR074")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/9d20a086-3ce1-4783-a1c3-78685ff35655"
-					(reference "#PWR?")
+					(reference "#PWR068")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/a93ffbcb-09b2-46f4-87ff-b0a1b53638e4"
-					(reference "#PWR?")
+					(reference "#PWR050")
 					(unit 1)
 				)
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/f0c3363d-cc6b-4f74-be1d-ed0c2c093cdf"
-					(reference "#PWR?")
+					(reference "#PWR062")
 					(unit 1)
 				)
 			)
