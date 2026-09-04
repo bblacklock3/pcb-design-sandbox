@@ -87,6 +87,8 @@ def bfield(segs: Segments, pts, chunk: int = 2048) -> np.ndarray:
         return out
     L = segs.dl()  # (N, 3)
     w = segs.w
+    # keep the (N, m, 3) temporaries near 50 MB: memory bandwidth, not flops, bounds this
+    chunk = max(1, min(chunk, 2_000_000 // max(len(segs), 1)))
     for s in range(0, pts.shape[0], chunk):
         P = pts[s : s + chunk]  # (m, 3)
         r1 = P[None, :, :] - segs.p0[:, None, :]  # (N, m, 3)

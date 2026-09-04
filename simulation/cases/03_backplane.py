@@ -26,6 +26,7 @@ N_PERIODS = 2
 TX_TURNS, TX_PITCH = 3, 0.3048
 RX_AMP = 4.8
 TRACE = 0.1524
+TX_NTHETA, RX_NTHETA = 180, 360   # curve sampling; 720/360 changes flux by 0.2 %, costs 2.5x
 LAYERS = (0.0, -1.0)         # two-layer 1.0 mm ring board; back face at z = -1.0
 BOARD_BACK = -1.0
 SECTOR_DEG, N_SECTORS = 60.0, 2
@@ -40,8 +41,8 @@ FINITE_HEIGHTS = (1.0, 2.0, 3.0, 5.0, 8.0) if not FAST else (2.0, 5.0)
 
 
 def build():
-    rx_sin, rx_cos = g.ring_rx_pair(R_IN, R_OUT, N_PERIODS, LAYERS, amp_mm=RX_AMP, trace_mm=TRACE)
-    tx = g.ring_tx(R_IN, R_OUT, TX_TURNS, TX_PITCH, LAYERS, trace_mm=TRACE)
+    rx_sin, rx_cos = g.ring_rx_pair(R_IN, R_OUT, N_PERIODS, LAYERS, amp_mm=RX_AMP, n_theta=RX_NTHETA, trace_mm=TRACE)
+    tx = g.ring_tx(R_IN, R_OUT, TX_TURNS, TX_PITCH, LAYERS, n_theta=TX_NTHETA, trace_mm=TRACE)
     target = g.sector_sheet(TARGET_R1, TARGET_R2, SECTOR_DEG, N_SECTORS, CELL, GAP)
     return tx, rx_sin, rx_cos, target
 
@@ -110,8 +111,6 @@ def main():
               f"offset {off*1e9:.3g} nWb/A  amp {res['amplitude'].mean()*1e9:.3g}  raw {raw:.3f}  cal {cal:.4f} deg")
 
     H, HF = np.array(HEIGHTS), np.array(FINITE_HEIGHTS)
-    def two(key, scale=1.0):
-        return {"Infinite Plane": np.array(A[key]) * scale, "70 mm Disc With 30 mm Hole": np.array(B[key]) * scale}
 
     def plot_pair(key, title, ylabel, fname, scale=1.0, ref_val=None):
         fig, ax = plot.figure()
@@ -142,6 +141,8 @@ def main():
         "Case 03 back-plane -- summary",
         f"  ring as case 02; plane heights {HEIGHTS} mm behind the board back face (z = {BOARD_BACK} mm)",
         f"  no plane: L {free['L']*1e6:.2f} uH, Q {free['Q']:.0f}, f0 {free['f0']/1e6:.2f} MHz, cal error {ref_cal:.4f} deg",
+        f"  Microchip rule of thumb: ground plane >= 3 x airgap = {3*GAP:.0f} mm from the sense coils "
+        f"(coil design course); compare the offset/amp and error columns either side of {3*GAP:.0f} mm",
         "  infinite plane (image method):",
     ] + [f"    h {h:4.1f} mm: L {l*1e6:.2f} uH  Q {q:.0f}  f0 {f/1e6:.2f} MHz  offset/amp {o/a:.3f}  raw {r:.3f}  cal {c:.4f} deg"
          for h, l, q, f, o, a, r, c in zip(H, A["L"], A["Q"], A["f0"], A["offset"], A["amp"], A["raw"], A["cal"])] + [

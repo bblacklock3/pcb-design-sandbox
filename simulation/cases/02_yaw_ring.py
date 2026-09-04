@@ -26,6 +26,7 @@ N_PERIODS = 2                # 2 -> 180 deg absolute range; 3 and 4 also run
 TX_TURNS, TX_PITCH = 3, 0.3048   # per edge per layer: 3 at r_out stepping in, 3 at r_in stepping out
 RX_AMP = 4.8                 # receive lobe amplitude A; band r_m +/- A inside the TX turns
 TRACE = 0.1524
+TX_NTHETA, RX_NTHETA = 180, 360   # curve sampling; 720/360 changes flux by 0.2 %, costs 2.5x
 # two-layer 1.0 mm ring board; z = 0 is the copper face nearest the target
 LAYERS = (0.0, -1.0)
 SECTOR_DEG, N_SECTORS = 60.0, 2
@@ -42,8 +43,8 @@ ECC_SWEEP = (0.0, 0.1, 0.2, 0.3)
 
 
 def build_coils(n_periods=N_PERIODS):
-    rx_sin, rx_cos = g.ring_rx_pair(R_IN, R_OUT, n_periods, LAYERS, amp_mm=RX_AMP, trace_mm=TRACE)
-    tx = g.ring_tx(R_IN, R_OUT, TX_TURNS, TX_PITCH, LAYERS, trace_mm=TRACE)
+    rx_sin, rx_cos = g.ring_rx_pair(R_IN, R_OUT, n_periods, LAYERS, amp_mm=RX_AMP, n_theta=RX_NTHETA, trace_mm=TRACE)
+    tx = g.ring_tx(R_IN, R_OUT, TX_TURNS, TX_PITCH, LAYERS, n_theta=TX_NTHETA, trace_mm=TRACE)
     return tx, rx_sin, rx_cos
 
 
@@ -59,7 +60,7 @@ def sweep(tx, rx_sin, rx_cos, target, step, n_periods=N_PERIODS, ecc_mm=0.0, log
     res = sensor.run_sweep(tx, rx_sin, rx_cos, place, thetas, log=log)
     lin = sensor.linearity(thetas, res["angle"])
     ideal = lin["slope"] * thetas + lin["intercept"]
-    err_raw = np.degrees(lin["residual"] / lin["slope"]) if False else lin["residual"] / lin["slope"]  # mech deg
+    err_raw = lin["residual"] / lin["slope"]  # electrical residual -> mechanical degrees
     cal = sensor.piecewise_correct(res["angle"], ideal, n_seg=10)
     err_cal = (cal - ideal) / lin["slope"]
     res.update(theta=thetas, err_raw_deg=err_raw, err_cal_deg=err_cal, slope=lin["slope"], ideal=ideal,

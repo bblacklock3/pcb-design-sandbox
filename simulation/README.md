@@ -50,6 +50,16 @@ not why they were chosen.
 - The layer stack of the imported encoder board is not in its `.kicad_pcb`; case 01 assumes
   a JLC-style 1.6 mm four-layer stack and marks it PROVISIONAL.
 
+### Vendor rule of thumb the model can check
+
+Microchip's inductive-sensor coil design course (video series, viewed 2026-09-03) states that
+a ground plane must be at least **three times the airgap** away from the sense coils to keep
+static influence on the target reading small, alongside the tank requirements (L >= 3 uH,
+Q >= 10, OSC1/OSC2 in antiphase, primary length = sensor length plus a margin for magnetic
+end effects). Case 03 sweeps a back-plane through and beyond that distance so the rule can be
+checked against the model for the ring geometry; the vault yaw design page carries the rule
+and its consequence for the ring-board standoff.
+
 ## Running
 
 ```
