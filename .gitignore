@@ -49,3 +49,8 @@ boards/**/step/
 
 # Inductive sensor simulation outputs (figures, CSVs) are attached to vault STUDY records, not committed
 simulation/out/
+
+# Python bytecode
+__pycache__/
+*.pyc
+.pytest_cache/
