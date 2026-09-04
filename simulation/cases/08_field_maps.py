@@ -111,7 +111,7 @@ def main():
     cell_src = Segments(cells.p0, cells.p1, np.repeat(psi, 4))
     all_src = Segments.concat([tx_eff, cell_src, biot.mirror(cell_src, plane.z)])
     r = np.arange(9.0, 31.0 + XSEC_MM / 2, XSEC_MM)
-    z = np.arange(-4.0, 4.0 + XSEC_MM / 2, XSEC_MM)
+    z = np.arange(-3.0, 4.0 + XSEC_MM / 2, XSEC_MM)
     R, Z = np.meshgrid(r, z, indexing="ij")
     for th_deg, tag, fname in ((90.0, "Through The Metal", "04_xsec_metal.png"), (0.0, "Through A Pocket", "05_xsec_pocket.png")):
         th = np.deg2rad(th_deg)
@@ -121,14 +121,17 @@ def main():
         Bz = B[:, 2].reshape(R.shape)
         mag = np.hypot(Br, Bz) * 1e6
         fig, ax = plt.subplots(figsize=(7.2, 3.6))
-        floor = np.percentile(mag, 2)
-        im = ax.pcolormesh(R, Z, np.log10(np.maximum(mag, floor)), cmap=SEQUENTIAL, shading="auto")
+        # colour range from the bulk of the field, not the points that land on a filament
+        lo, hi = np.percentile(np.log10(mag), [3, 99])
+        im = ax.pcolormesh(R, Z, np.clip(np.log10(mag), lo, hi), cmap=SEQUENTIAL, shading="auto", vmin=lo, vmax=hi)
         cb = fig.colorbar(im, ax=ax, shrink=0.9)
         cb.set_label("log10 |B| Per Ampere Of TX (uT/A)")
         ax.streamplot(r, z, Br.T, Bz.T, color="0.2", linewidth=0.6, density=1.4, arrowsize=0.7)
         # hardware: ring board, target sheet, main board pour, TX/RX copper radii
         ax.fill_between([c07.R_IN - 2, c07.R_OUT + 2], c07.BOARD_BACK, 0.0, color="#7f7f7f", alpha=0.35, lw=0)
-        ax.axhline(plane.z / MM, color="#d55e00", lw=2)
+        # below the main-board pour is the image construction, not a physical region
+        ax.fill_between([r.min(), r.max()], z.min(), plane.z / MM, color="#c8c8c8", alpha=0.85, lw=0, zorder=3)
+        ax.axhline(plane.z / MM, color="#d55e00", lw=2, zorder=4)
         in_metal = th_deg == 90.0
         ax.plot([c07.TARGET_R1, c07.TARGET_R2], [c07.GAP, c07.GAP], color="0.05", lw=2.5 if in_metal else 0.0)
         if not in_metal:
