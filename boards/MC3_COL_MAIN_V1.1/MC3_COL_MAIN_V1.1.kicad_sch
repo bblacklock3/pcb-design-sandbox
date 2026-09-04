@@ -2438,7 +2438,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Leaf 1 motor solder pads - OUT1/OUT2 pigtails from the leaf1 DRV8214 bridge."
 			(at 62.23 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2527,7 +2527,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Leaf 4 motor solder pads - OUT1/OUT2 pigtails from the leaf4 DRV8214 bridge."
 			(at 214.63 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2616,7 +2616,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Leaf 3 motor solder pads - OUT1/OUT2 pigtails from the leaf3 DRV8214 bridge."
 			(at 163.83 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3069,7 +3069,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Leaf 2 motor solder pads - OUT1/OUT2 pigtails from the leaf2 DRV8214 bridge."
 			(at 113.03 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
