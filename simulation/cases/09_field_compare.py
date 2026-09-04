@@ -93,7 +93,7 @@ def pair_figure(title, label, panels, fname, cmap, symmetric=True):
     cb = fig.colorbar(im, ax=axes, shrink=0.85, pad=0.02)
     cb.set_label(label)
     plot.check_ascii(title, label, *[p[0] for p in panels])
-    fig.suptitle(title)
+    fig.suptitle(title, y=0.96)
     fig.savefig(OUT / fname, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
@@ -108,7 +108,7 @@ def main():
     # ---------------- 1, 2: top views on each target plane
     tx_panels, rx_panels = [], []
     psi = {}
-    for name, sub in (("leaf", "Leaf Coil, Flag At 1 mm, No Board Behind"), ("ring", "Yaw Ring r 17-23, Face At 1 mm, Main Board 1 mm Behind")):
+    for name, sub in (("leaf", "Leaf Coil\nFlag At 1 mm, No Board Behind"), ("ring", "Yaw Ring r 17-23\nFace At 1 mm, Main Board 1 mm Behind")):
         tx, rs, rc, tg, plane = setups[name]
         pts = np.column_stack([X.ravel(), Y.ravel(), np.full(X.size, tg.z / MM)]) * MM
         tx_panels.append((sub, biot.bz(with_image(tx.segments(), plane), pts).reshape(X.shape) * 1e6, (tx, rs, rc), tg))
@@ -141,9 +141,11 @@ def main():
         ax.grid(alpha=0.3)
     cb = fig.colorbar(cf, ax=axes, shrink=0.85, pad=0.02)
     cb.set_label("Stream Function Per Ampere Of TX (mA/A)")
-    fig.suptitle("Eddy Current Streamlines On The Target")
+    fig.suptitle("Eddy Current Streamlines On The Target", y=0.96)
     fig.savefig(OUT / "03_target_eddy_streamlines.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
+    for n in ("leaf", "ring"):
+        print(f"  peak stream function {n}: {np.abs(psi[n]).max()*1e3:.0f} mA per A of TX")
     print(f"eddy currents {time.time()-t0:.0f} s")
 
     # ---------------- 4, 5: cross-sections perpendicular to the sensing direction
@@ -211,7 +213,7 @@ def main():
             ax.grid(alpha=0.3)
         cb = fig.colorbar(im, ax=axes, shrink=0.9, pad=0.02)
         cb.set_label("log10 |B| Per Ampere Of TX (uT/A)")
-        fig.suptitle(title)
+        fig.suptitle(title, y=0.90)
         fig.savefig(OUT / fname, dpi=150, bbox_inches="tight")
         plt.close(fig)
         print(f"cross section {key} {time.time()-t0:.0f} s")
