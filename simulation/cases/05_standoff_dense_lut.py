@@ -12,7 +12,7 @@ Grid: gap 1.0 mm; standoff none, 0.5, 1.0, 1.5, 2.0, 3.0 mm; targets: two 60 deg
 target section. Perturbations: plane 0.25 mm closer, airgap 0.25 mm larger, target
 eccentric by 0.2 mm. All sweep curves are written to CSV.
 
-Run:  python cases/05_standoff_dense_lut.py [--smoke]
+Run:  python cases/05_standoff_dense_lut.py [--smoke] [--workers N]
 Read: out/05_standoff_dense_lut/REPORT.md
 """
 import importlib.util
@@ -25,6 +25,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from indsim import geometry as g, plot, sensor  # noqa: E402
+from indsim.parallel import pmap  # noqa: E402
 
 spec = importlib.util.spec_from_file_location("c04", HERE / "04_yaw_stack_study.py")
 c04 = importlib.util.module_from_spec(spec)
@@ -32,6 +33,7 @@ spec.loader.exec_module(c04)
 
 OUT = HERE.parent / "out" / "05_standoff_dense_lut"
 SMOKE = "--smoke" in sys.argv
+WORKERS = int(sys.argv[sys.argv.index("--workers") + 1]) if "--workers" in sys.argv else None
 GAP = 1.0
 STANDOFFS = (None, 0.5, 1.0, 1.5, 2.0, 3.0) if not SMOKE else (None, 1.0)
 STEP = 5.0 if not SMOKE else 30.0
@@ -67,38 +69,49 @@ def dense_delta(err_nom, th_nom, err_pert, th_pert):
     return float(np.abs(d).max())
 
 
+def _condition(args):
+    tname, h = args
+    tx, rs, rc = c04.build_coils()
+    tg = dict(targets())[tname]
+    t0 = time.time()
+    plane = None if h is None else g.ImagePlane(c04.BOARD_BACK - h)
+    res, th = c04.ring_sweep(tx, rs, rc, tg, plane=plane, step=STEP)
+    a = c04.analyse(res, th)
+    err_nom = a["err_raw"]
+    tag = f"{tname} | standoff {h}"
+    curves = {f"{tag} | nominal": (th, err_nom)}
+    out = {"amp": a["amp"] * 1e9, "raw": a["raw_max"], "cal10": a["cal_max"]}
+    perts = {}
+    if h is not None:
+        r_p, t_p = c04.ring_sweep(tx, rs, rc, tg, plane=g.ImagePlane(c04.BOARD_BACK - h + DELTA), step=STEP)
+        perts["plane_closer"] = raw_error_curve(r_p, t_p, a), t_p
+    r_g, t_g = c04.ring_sweep(tx, rs, rc, tg.translated_mm((0, 0, DELTA)), plane=plane, step=STEP)
+    perts["gap_larger"] = raw_error_curve(r_g, t_g, a), t_g
+    r_e, t_e = c04.ring_sweep(tx, rs, rc, tg, plane=plane, step=STEP, ecc=ECC)
+    perts["eccentric"] = raw_error_curve(r_e, t_e, a), t_e
+    for k, (e, t) in perts.items():
+        out[k] = dense_delta(err_nom, th, e, t)
+        curves[f"{tag} | {k}"] = (t, e)
+    tank = sensor.tank(tx, c04.C_TANK, plane=plane, cu_thickness=c04.CU_T)
+    row = (tname, -1 if h is None else h, tank["L"] * 1e6, tank["Q"], out["amp"], out["raw"], out["cal10"],
+           out.get("plane_closer", 0.0), out["gap_larger"], out["eccentric"])
+    line = (f"{tag}: amp {out['amp']:.1f} nWb/A raw {out['raw']:.3f} cal10 {out['cal10']:.3f} | dense LUT: plane-0.25 "
+            f"{out.get('plane_closer', 0):.4f} gap+0.25 {out['gap_larger']:.4f} ecc0.2 {out['eccentric']:.4f} deg ({time.time()-t0:.0f} s)")
+    return row, curves, line
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    tx, rs, rc = c04.build_coils()
+    t_start = time.time()
+    log(f"start; workers {WORKERS or 'auto'}")
+    conditions = [(tname, h) for tname, _ in targets() for h in STANDOFFS]
+    results = pmap(_condition, conditions, WORKERS)
     rows, curves = [], {}
-    for tname, tg in targets():
-        for h in STANDOFFS:
-            t0 = time.time()
-            plane = None if h is None else g.ImagePlane(c04.BOARD_BACK - h)
-            res, th = c04.ring_sweep(tx, rs, rc, tg, plane=plane, step=STEP)
-            a = c04.analyse(res, th)
-            err_nom = a["err_raw"]
-            tag = f"{tname} | standoff {h}"
-            curves[f"{tag} | nominal"] = (th, err_nom)
-            out = {"amp": a["amp"] * 1e9, "raw": a["raw_max"], "cal10": a["cal_max"]}
-            # perturbations, each read through a dense LUT fitted at nominal
-            perts = {}
-            if h is not None:
-                r_p, t_p = c04.ring_sweep(tx, rs, rc, tg, plane=g.ImagePlane(c04.BOARD_BACK - h + DELTA), step=STEP)
-                perts["plane_closer"] = raw_error_curve(r_p, t_p, a), t_p
-            r_g, t_g = c04.ring_sweep(tx, rs, rc, tg.translated_mm((0, 0, DELTA)), plane=plane, step=STEP)
-            perts["gap_larger"] = raw_error_curve(r_g, t_g, a), t_g
-            r_e, t_e = c04.ring_sweep(tx, rs, rc, tg, plane=plane, step=STEP, ecc=ECC)
-            perts["eccentric"] = raw_error_curve(r_e, t_e, a), t_e
-            for k, (e, t) in perts.items():
-                out[k] = dense_delta(err_nom, th, e, t)
-                curves[f"{tag} | {k}"] = (t, e)
-            tank = sensor.tank(tx, c04.C_TANK, plane=plane, cu_thickness=c04.CU_T)
-            rows.append((tname, -1 if h is None else h, tank["L"] * 1e6, tank["Q"], out["amp"], out["raw"], out["cal10"],
-                         out.get("plane_closer", 0.0), out["gap_larger"], out["eccentric"]))
-            log(f"{tag}: amp {out['amp']:.1f} nWb/A raw {out['raw']:.3f} cal10 {out['cal10']:.3f} | dense LUT: plane-0.25 "
-                f"{out.get('plane_closer', 0):.4f} gap+0.25 {out['gap_larger']:.4f} ecc0.2 {out['eccentric']:.4f} deg ({time.time()-t0:.0f} s)")
-            write_report(rows)
+    for row, cv, line in results:
+        rows.append(row)
+        curves.update(cv)
+        log(line)
+    write_report(rows)
     # curves CSV (long format)
     with open(OUT / "curves.csv", "w") as f:
         f.write("case,theta_deg,raw_error_mech_deg\n")
@@ -119,7 +132,7 @@ def main():
         sel = [r for r in rows if r[0] == tname and r[1] >= 0]
         ax.plot([r[1] for r in sel], [r[4] for r in sel], marker="o", label=tname.title())
     plot.finish(fig, ax, "Signal Vs Standoff", "Standoff Behind Board (mm)", "Flux Amplitude (nWb/A)", OUT / "amp_vs_standoff.png", legend=True)
-    log("done")
+    log(f"done in {(time.time()-t_start)/60:.1f} min")
 
 
 HEADER = ("target", "standoff_mm", "L_uH", "Q", "amp_nWb_per_A", "raw_deg", "cal10seg_deg", "dense_plane_minus025_deg",
