@@ -46,3 +46,6 @@ fab/
 # external reference material (EVM design files etc.) - not design source
 boards/*/ref/
 boards/**/step/
+
+# Inductive sensor simulation outputs (figures, CSVs) are attached to vault STUDY records, not committed
+simulation/out/
