@@ -20,7 +20,7 @@ def big_sheet():
 
 @pytest.fixture(scope="module")
 def big_solver(big_sheet):
-    return sheet.SheetSolver(big_sheet)
+    return sheet.SheetSolver(big_sheet, keep_k=True)
 
 
 def test_k_matrix_is_symmetric_with_positive_diagonal(big_solver):
@@ -68,7 +68,7 @@ def test_distant_sheet_changes_nothing():
 def test_solver_reuses_factorisation_after_move(big_solver):
     moved_sheet = big_solver.sheet.translated_mm((3.0, -2.0, 0.0)).rotated(0.3)
     moved = big_solver.moved(moved_sheet)
-    assert moved.K is big_solver.K
+    assert moved.K is big_solver.K and moved.lu is big_solver.lu
     src = circle_segs(6.0, 3.0)
     # translating the sheet by d and the source by d must give the same psi
     psi_a = big_solver.respond(src)
@@ -89,8 +89,8 @@ def test_reciprocity_of_cell_to_coil_coupling(big_sheet):
 
 def test_plane_term_added_to_k_when_image_plane_present():
     sh = g.rect_sheet(lx_mm=10.0, ly_mm=10.0, a_mm=1.0, z_mm=2.0)
-    free = sheet.SheetSolver(sh)
-    backed = sheet.SheetSolver(sh, plane=g.ImagePlane(z_mm=-1.0))
+    free = sheet.SheetSolver(sh, keep_k=True)
+    backed = sheet.SheetSolver(sh, plane=g.ImagePlane(z_mm=-1.0), keep_k=True)
     assert not np.allclose(free.K, backed.K)
     # the image of a cell loop is 6 mm below it with reversed sense: the diagonal drops
     assert np.all(np.diag(backed.K) < np.diag(free.K))

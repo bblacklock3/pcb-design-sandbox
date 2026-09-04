@@ -125,14 +125,19 @@ def build_k(sh: Sheet, plane: ImagePlane | None = None) -> np.ndarray:
 
 
 class SheetSolver:
-    """Holds a sheet, its K matrix and LU factors. `moved` re-targets the same factors
-    to a rigidly translated/rotated copy of the sheet (same z when a plane is present)."""
+    """Holds a sheet and the LU factors of its K matrix. `moved` re-targets the same
+    factors to a rigidly translated/rotated copy of the sheet (same z when a plane is
+    present). K itself is dropped after factorisation unless `keep_k` is set: the factors
+    are all a solve needs, and keeping both doubles the memory per worker."""
 
-    def __init__(self, sheet: Sheet, plane: ImagePlane | None = None, K=None, lu=None):
+    def __init__(self, sheet: Sheet, plane: ImagePlane | None = None, K=None, lu=None, keep_k: bool = False):
         self.sheet = sheet
         self.plane = plane
-        self.K = K if K is not None else build_k(sheet, plane)
-        self.lu = lu if lu is not None else lu_factor(self.K)
+        if lu is None:
+            K = build_k(sheet, plane) if K is None else K
+            lu = lu_factor(K, overwrite_a=not keep_k)
+        self.K = K if keep_k else None
+        self.lu = lu
 
     def solve(self, bz_source: np.ndarray) -> np.ndarray:
         """psi such that K @ psi = -bz_source (amperes of circulating cell current)."""
@@ -149,7 +154,7 @@ class SheetSolver:
             bz = bz + biot.bz(biot.mirror(source, self.plane.z), self.sheet.centers)
         return bz
 
-    def respond(self, source: Segments) -> np.ndarray:
+    def respond(self, source) -> np.ndarray:
         """Cell currents psi induced by unit current in `source` (plus its image)."""
         return self.solve(self.source_bz(source))
 
@@ -158,7 +163,7 @@ class SheetSolver:
             raise ValueError("moved() needs the same mesh; rebuild the solver instead")
         if self.plane is not None and not np.isclose(new_sheet.z, self.sheet.z):
             raise ValueError("with an image plane the sheet height is baked into K; rebuild")
-        return SheetSolver(new_sheet, self.plane, self.K, self.lu)
+        return SheetSolver(new_sheet, self.plane, self.K, self.lu, keep_k=self.K is not None)
 
 
 def rx_flux(sh: Sheet, psi: np.ndarray, rx, plane: ImagePlane | None = None) -> float:

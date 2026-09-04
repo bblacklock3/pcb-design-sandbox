@@ -50,7 +50,11 @@ not why they were chosen.
   n-gons use their exact 360/n period; receive traces use the electrical period, with the
   via hops (which break it) evaluated directly. 0.1 mm radial spacing holds 1e-3.
 - **Process pool** (`parallel.pmap`) for independent study conditions; the case scripts
-  take `--workers N`.
+  take `--workers N` as a request. Memory, not cores, bounds it: every worker holds a
+  factorised K (650 MB at 9000 cells) plus tables, about 2 GB. `pmap` caps the total across
+  all running studies at half the machine's RAM through a registry file in the temp dir
+  (`python indsim/parallel.py` prints the budget), and `run_detached.ps1` refuses to start
+  a second study without `-Force`. Run one study at a time.
 - The z-only Biot-Savart kernel `biot.bz` forms fewer arrays than `bfield`.
 
 ### Limits, stated plainly
