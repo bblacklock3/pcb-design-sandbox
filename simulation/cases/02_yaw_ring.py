@@ -48,11 +48,11 @@ def build_coils(n_periods=N_PERIODS):
     return tx, rx_sin, rx_cos
 
 
-def sweep(tx, rx_sin, rx_cos, target, step, n_periods=N_PERIODS, ecc_mm=0.0, log=None):
-    """Rotate the target through one electrical period. Returns the run_sweep dict plus
-    mechanical-degree linearity, raw and after 10-segment correction."""
+def sweep(tx, rx_sin, rx_cos, target, step, n_periods=N_PERIODS, ecc_mm=0.0, periods=1, log=None):
+    """Rotate the target through `periods` electrical periods. Returns the run_sweep dict
+    plus mechanical-degree linearity, raw and after 10-segment correction."""
     period = 360.0 / n_periods
-    thetas = np.arange(0.0, period + step / 2, step)
+    thetas = np.arange(0.0, periods * period + step / 2, step)
 
     def place(th):
         return target.rotated_deg(th).translated_mm((ecc_mm, 0.0, 0.0))
@@ -121,11 +121,12 @@ def main():
     plot.line_plot(GAP_SWEEP, {"Raw": raw_g, "After 10 Segment Correction": cal_g}, "Angle Error Vs Airgap",
                    "Airgap (mm)", "Peak Angle Error (mech deg)", OUT / "linearity_vs_gap.png", marker="o")
 
-    # -------- D. eccentricity
+    # -------- D. eccentricity: a once-per-turn term needs a full mechanical turn, so
+    # sweep all N electrical periods and decompose the error against mechanical angle
     print("D. eccentricity sweep")
     h1, raw_e, cal_e = [], [], []
     for e in ECC_SWEEP:
-        r = sweep(tx, rx_sin, rx_cos, target, SUB_STEP, ecc_mm=e)
+        r = sweep(tx, rx_sin, rx_cos, target, SUB_STEP, ecc_mm=e, periods=N_PERIODS)
         hh = sensor.harmonics(np.radians(r["theta"]), r["err_raw_deg"], n_max=4)  # vs mechanical angle
         h1.append(hh[1]); raw_e.append(r["raw_max"]); cal_e.append(r["cal_max"])
         print(f"  ecc {e:.2f} mm: once-per-turn error {h1[-1]:.4f} deg, raw {raw_e[-1]:.3f} deg, cal {cal_e[-1]:.4f} deg")

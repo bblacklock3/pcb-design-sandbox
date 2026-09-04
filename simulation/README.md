@@ -13,9 +13,11 @@ not why they were chosen.
 
 - **Coils** are closed polylines of straight filaments, one `z` per layer, with a sense and
   a turn count. Fields use the analytic finite-segment Biot–Savart expression (`biot.py`).
-  A receive coil is a single figure-8 loop: forward along `+A f(x)` on one layer, back along
-  `-A f(x)` on the other, so lobe senses alternate automatically and even lobe counts have
-  zero net area. Trace crossovers and vias are ignored.
+  A receive coil is a single figure-8 loop: forward along `+A f(x)`, back along `-A f(x)`, so
+  lobe senses alternate automatically and even lobe counts have zero net area. Both traces
+  change layer at every lobe extremum (Microchip's routing rule, confirmed by the via columns
+  on the encoder board), so each layer carries half of every lobe; the via hops are modelled
+  as short vertical filaments. `layer_swap=False` gives the one-trace-per-layer variant.
 - **Targets and finite planes** are perfectly conducting thin sheets meshed into square
   cells (`sheet.py`). Cell `j` carries a stream-function value `psi_j`, exactly a unit square
   current loop scaled by `psi_j`. The no-normal-flux condition collocated at cell centres

@@ -20,7 +20,7 @@ def test_loop_signed_area_ccw_square_positive():
 
 
 def test_linear_rx_pair_has_zero_net_area_and_lobes_alternate():
-    sin_c, cos_c = g.linear_rx_pair(lam_mm=15.0, lobe_width_mm=7.6, n_lobes=2, layers_z_mm=(0.0, -0.2))
+    sin_c, cos_c = g.linear_rx_pair(lam_mm=15.0, lobe_width_mm=7.6, n_lobes=2, layers_z_mm=(0.0, -0.2), layer_swap=False)
     lobe_area = 2 * 3.8 * MM * 15.0 * MM / np.pi  # area of one |sin| lobe: 2A * lambda/pi ... per half period
     for c in (sin_c, cos_c):
         assert abs(c.net_signed_area()) < 1e-3 * lobe_area
@@ -60,7 +60,7 @@ def test_rect_tx_turn_count_sense_and_layers():
 
 
 def test_ring_rx_pair_zero_net_area_and_periodicity():
-    sin_c, cos_c = g.ring_rx_pair(r_in_mm=17.0, r_out_mm=29.0, n_periods=2, layers_z_mm=(0.0, -0.2))
+    sin_c, cos_c = g.ring_rx_pair(r_in_mm=17.0, r_out_mm=29.0, n_periods=2, layers_z_mm=(0.0, -0.2), layer_swap=False)
     for c in (sin_c, cos_c):
         assert abs(c.net_signed_area()) < 1e-6 * np.pi * (29e-3) ** 2
         r = np.hypot(c.segments().p0[:, 0], c.segments().p0[:, 1])
@@ -173,3 +173,66 @@ def test_coil_rotation_is_rigid():
     assert np.hypot(*p1[:2]) == pytest.approx(np.hypot(*p0[:2]))
     assert np.degrees(np.arctan2(p1[1], p1[0]) - np.arctan2(p0[1], p0[0])) == pytest.approx(37.0)
     assert p1[2] == pytest.approx(p0[2])
+
+
+def _layer_lengths(coil):
+    segs = coil.segments()
+    dl = segs.dl()
+    horiz = np.abs(dl[:, 2]) < 1e-12
+    z = segs.p0[:, 2]
+    lengths = {}
+    for zz in np.unique(np.round(z[horiz], 9)):
+        m = horiz & (np.round(z, 9) == zz)
+        lengths[float(zz)] = float(np.linalg.norm(dl[m], axis=1).sum())
+    return lengths, int((~horiz).sum())
+
+
+def test_layer_swap_splits_copper_evenly_and_places_vias_at_peaks():
+    sin_c, cos_c = g.linear_rx_pair(lam_mm=15.0, lobe_width_mm=7.6, n_lobes=2, layers_z_mm=(0.0, -0.2))
+    for c, n_vias in ((sin_c, 6), (cos_c, 4)):
+        lengths, vias = _layer_lengths(c)
+        a, b = lengths.values()
+        assert a == pytest.approx(b, rel=1e-6)
+        assert vias == n_vias  # sine: 2 peaks x 2 traces + 2 end hops; cosine: 1 interior peak x 2 + 2
+    # sine coil vias sit at x = +/- lambda/4 (the lobe peaks), on both traces (y = +/- A)
+    segs = sin_c.segments()
+    via = np.abs(segs.dl()[:, 2]) > 1e-12
+    xs = np.round(segs.p0[via, 0] / MM, 6)
+    assert set(xs.tolist()) <= {-7.5, -3.75, 3.75, 7.5}
+    assert {-3.75, 3.75} <= set(xs.tolist())
+    ys = np.round(np.abs(segs.p0[via, 1]) / MM, 6)
+    assert set(ys[np.abs(segs.p0[via, 0]) < 7 * MM].tolist()) == {3.8}
+    # the sine coil's lobe antisymmetry survives the swaps
+    from indsim import biot
+
+    pts = np.array([[-3.75, 0, 1.0], [3.75, 0, 1.0]]) * MM
+    bs = biot.bz(sin_c.segments(), pts)
+    assert bs[0] == pytest.approx(-bs[1], rel=1e-6)
+
+
+def test_direct_coupling_into_cosine_coil_is_geometric_not_layer_assignment():
+    """The cosine coil's half-lobe ends sit under the TX turns where Bz is strongest, so it
+    couples to the TX directly even with zero net area. Swapping layers barely moves it."""
+    from indsim import biot
+
+    tx = g.rect_tx(len_mm=18.0, wid_mm=9.6, n_turns=4, pitch_mm=0.3048, layers_z_mm=(-1.4, -1.6), corner_r_mm=1.0)
+    _, cos_plain = g.linear_rx_pair(15.0, 7.6, 2, (0.0, -0.2), layer_swap=False)
+    sin_swap, cos_swap = g.linear_rx_pair(15.0, 7.6, 2, (0.0, -0.2), layer_swap=True)
+    m_plain = biot.mutual_inductance(tx.segments(), cos_plain.segments())
+    m_swap = biot.mutual_inductance(tx.segments(), cos_swap.segments())
+    assert abs(m_swap) > 0.1 * abs(m_plain)
+    assert m_swap == pytest.approx(m_plain, rel=0.05)
+    # the sine coil, whose lobes are whole and symmetric, has none
+    assert abs(biot.mutual_inductance(tx.segments(), sin_swap.segments())) < 1e-3 * abs(m_plain)
+
+
+def test_ring_layer_swap_even_copper_and_closure():
+    sin_c, cos_c = g.ring_rx_pair(r_in_mm=17.0, r_out_mm=29.0, n_periods=2, layers_z_mm=(0.0, -1.0))
+    for c, n_vias in ((sin_c, 2 * 4 + 2), (cos_c, 2 * 4)):
+        lengths, vias = _layer_lengths(c)
+        a, b = lengths.values()
+        assert a == pytest.approx(b, rel=1e-6)
+        # sine: 2N extrema per trace plus the two closing hops; cosine: one extremum per
+        # trace falls on theta = 0 where the closing hop already is
+        assert vias == n_vias
+    assert abs(sin_c.net_signed_area()) < 1e-6 * np.pi * (29e-3) ** 2

@@ -126,25 +126,41 @@ class Coil:
         return ax
 
 
-def _sample_curve(x, y, z):
-    return np.column_stack([x, y, np.full_like(x, z)])
+def _swap_layers(xy: np.ndarray, seg: np.ndarray, z_a: float, z_b: float) -> np.ndarray:
+    """Points (n, 2) -> (m, 3): z alternates between z_a and z_b with the parity of `seg`,
+    and the vertex at every change is duplicated on both layers (the via)."""
+    z = np.where(seg % 2 == 0, z_a, z_b)
+    pts = np.column_stack([xy, z])
+    change = np.flatnonzero(z[1:] != z[:-1]) + 1
+    if change.size:
+        extra = pts[change].copy()
+        extra[:, 2] = z[change - 1]
+        pts = np.insert(pts, change, extra, axis=0)
+    return pts
 
 
-def _figure8(x, y_fwd, y_back, z1, z2) -> Loop:
-    """Single closed loop: forward along (x, y_fwd) at z1, back along (x, y_back) at z2."""
-    fwd = _sample_curve(x, y_fwd, z1)
-    back = _sample_curve(x[::-1], y_back[::-1], z2)
-    return Loop(np.vstack([fwd, back]), sense=1)
+def _peak_segments(u: np.ndarray, first_peak: float, half_period: float, layer_swap: bool) -> np.ndarray:
+    """Index of the interval between successive extrema of f(u); 0 before the first peak."""
+    if not layer_swap:
+        return np.zeros(u.shape, dtype=int)
+    seg = np.maximum(np.floor((u - first_peak + 1e-9 * half_period) / half_period).astype(int) + 1, 0)
+    seg[-1] = seg[-2]  # an extremum on the last sample needs no via: the trace hops there anyway
+    return seg
 
 
-def _linear_rx(lam, amp, n_lobes, z1, z2, func, pts_per_lobe) -> Loop:
+def _linear_rx(lam, amp, n_lobes, z1, z2, func, pts_per_lobe, layer_swap) -> Loop:
     length = n_lobes * lam / 2
     n = n_lobes * pts_per_lobe
     xp = np.linspace(0.0, length, n + 1)  # 0 .. L, sampled so lam/4 multiples land on samples
     y = amp * func(2 * np.pi * xp / lam)
     y = np.where(np.abs(y) < 1e-15 * amp, 0.0, y)
     x = xp - length / 2
-    return _figure8(x, y, -y, z1, z2)
+    # layers swap at the lobe extrema (Microchip: lambda/4 and 3 lambda/4 on the sine coil,
+    # lambda/2 on the cosine coil); the two traces cross at the zeros on opposite layers
+    seg = _peak_segments(xp, lam / 4 if func is np.sin else 0.0, lam / 2, layer_swap)
+    fwd = _swap_layers(np.column_stack([x, y]), seg, z1, z2)
+    back = _swap_layers(np.column_stack([x, -y]), seg, z2, z1)[::-1]
+    return Loop(np.vstack([fwd, back]), sense=1)
 
 
 def linear_rx_pair(
@@ -154,14 +170,18 @@ def linear_rx_pair(
     layers_z_mm: Sequence[float],
     pts_per_lobe: int = 60,
     trace_mm: float = 0.1524,
+    layer_swap: bool = True,
 ) -> tuple[Coil, Coil]:
     """Sine and cosine receive coils for a linear track along x, centred on the origin.
 
-    Each coil is one figure-8 loop: forward along +A*f(2*pi*x/lambda) on the first
-    layer, back along -A*f on the second. `lobe_width_mm` is the peak-to-peak lobe
-    height (2A). The sine coil has `n_lobes` full lobes (use an even count for zero
-    net area); the cosine coil is the same span shifted a quarter period, so it ends
-    in half lobes. Trace crossovers are ignored.
+    Each coil is one figure-8 loop: forward along +A*f(2*pi*x/lambda), back along -A*f.
+    With `layer_swap` (the default, and how Microchip routes them) both traces change
+    layer at every lobe extremum, so each layer carries half of every lobe and the two
+    traces cross at the zeros on opposite layers. `layer_swap=False` keeps the forward
+    trace on the first layer and the return on the second. `lobe_width_mm` is the
+    peak-to-peak lobe height (2A). The sine coil has `n_lobes` full lobes (use an even
+    count for zero net area); the cosine coil is the same span shifted a quarter period,
+    so it ends in half lobes.
     """
     if len(layers_z_mm) != 2:
         raise ValueError("receive coils need exactly two layer z values")
@@ -169,8 +189,8 @@ def linear_rx_pair(
     z1, z2 = mm(layers_z_mm[0]), mm(layers_z_mm[1])
     if pts_per_lobe % 2:
         pts_per_lobe += 1
-    sin_loop = _linear_rx(lam, amp, n_lobes, z1, z2, np.sin, pts_per_lobe)
-    cos_loop = _linear_rx(lam, amp, n_lobes, z1, z2, np.cos, pts_per_lobe)
+    sin_loop = _linear_rx(lam, amp, n_lobes, z1, z2, np.sin, pts_per_lobe, layer_swap)
+    cos_loop = _linear_rx(lam, amp, n_lobes, z1, z2, np.cos, pts_per_lobe, layer_swap)
     tw = mm(trace_mm)
     return Coil("RX_sin", (sin_loop,), tw), Coil("RX_cos", (cos_loop,), tw)
 
@@ -212,13 +232,14 @@ def rect_tx(
     return Coil("TX", tuple(loops), mm(trace_mm))
 
 
-def _ring_rx(r_m, amp, n_periods, z1, z2, func, n_theta) -> Loop:
+def _ring_rx(r_m, amp, n_periods, z1, z2, func, n_theta, layer_swap) -> Loop:
     th = np.linspace(0.0, 2 * np.pi, n_theta + 1)  # closed curve: last angle == first
     r1 = r_m + amp * func(n_periods * th)
     r2 = r_m - amp * func(n_periods * th)
-    fwd = np.column_stack([r1 * np.cos(th), r1 * np.sin(th), np.full_like(th, z1)])
-    back = np.column_stack([r2 * np.cos(th), r2 * np.sin(th), np.full_like(th, z2)])[::-1]
-    # forward round the first layer, via down, back round the second, via up (closes)
+    seg = _peak_segments(n_periods * th, np.pi / 2 if func is np.sin else 0.0, np.pi, layer_swap)
+    fwd = _swap_layers(np.column_stack([r1 * np.cos(th), r1 * np.sin(th)]), seg, z1, z2)
+    back = _swap_layers(np.column_stack([r2 * np.cos(th), r2 * np.sin(th)]), seg, z2, z1)[::-1]
+    # forward round the ring, via down, back round the other trace, via up (closes)
     return Loop(np.vstack([fwd, back]), sense=1)
 
 
@@ -230,10 +251,11 @@ def ring_rx_pair(
     amp_mm: float | None = None,
     n_theta: int = 720,
     trace_mm: float = 0.1524,
+    layer_swap: bool = True,
 ) -> tuple[Coil, Coil]:
-    """Sine and cosine ring receive coils: r = r_m +/- A f(N theta), forward on the
-    first layer and back on the second. Electrical period is 360/N degrees; the cosine
-    coil is the sine pattern advanced by a quarter period."""
+    """Sine and cosine ring receive coils: r = r_m +/- A f(N theta). Electrical period
+    is 360/N degrees; the cosine coil is the sine pattern advanced by a quarter period.
+    `layer_swap` (default) changes layer at every lobe extremum as on the linear coil."""
     if len(layers_z_mm) != 2:
         raise ValueError("receive coils need exactly two layer z values")
     r_in, r_out = mm(r_in_mm), mm(r_out_mm)
@@ -242,8 +264,8 @@ def ring_rx_pair(
     z1, z2 = mm(layers_z_mm[0]), mm(layers_z_mm[1])
     tw = mm(trace_mm)
     return (
-        Coil("RX_sin", (_ring_rx(r_m, amp, n_periods, z1, z2, np.sin, n_theta),), tw),
-        Coil("RX_cos", (_ring_rx(r_m, amp, n_periods, z1, z2, np.cos, n_theta),), tw),
+        Coil("RX_sin", (_ring_rx(r_m, amp, n_periods, z1, z2, np.sin, n_theta, layer_swap),), tw),
+        Coil("RX_cos", (_ring_rx(r_m, amp, n_periods, z1, z2, np.cos, n_theta, layer_swap),), tw),
     )
 
 
