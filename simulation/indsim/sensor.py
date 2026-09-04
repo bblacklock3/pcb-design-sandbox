@@ -73,31 +73,47 @@ def run_sweep(
     tx: Coil,
     rx_sin: Coil,
     rx_cos: Coil,
-    place: Callable[[float], Sheet],
+    place: Callable[[float], Sheet] | Sheet,
     poses: Sequence[float],
     plane: ImagePlane | None = None,
+    coil_pose: Callable[[float, Coil], Coil] | None = None,
     solver: SheetSolver | None = None,
     log: Callable[[str], None] | None = None,
 ) -> dict:
-    """Sweep the target through `poses`. `place(pose)` returns the target Sheet at that
-    pose as a rigid motion of `place(poses[0])` (same mesh, same z), so K is factorised
-    once. Returns fluxes per ampere of TX current, the direct TX->RX coupling, the
-    unwrapped electrical angle and raw counts."""
+    """Sweep the sensor through `poses`.
+
+    Two ways to move: either `place(pose)` returns the target Sheet as a rigid motion of
+    `place(poses[0])` (same mesh, same z) and the coils stay put, or `place` is a fixed
+    Sheet and `coil_pose(pose, coil)` returns each coil moved (rotated/translated) for
+    that pose. The second form is what a fixed target over a fixed finite back-plane
+    needs, since then K is factorised once for the union of both sheets. In both forms
+    the direct TX->RX coupling is a rigid-motion invariant and is computed once.
+
+    Returns fluxes per ampere of TX current, the direct coupling, the unwrapped
+    electrical angle and raw counts."""
     poses = np.asarray(poses, dtype=float)
-    tx_s, sin_s, cos_s = tx.segments(), rx_sin.segments(), rx_cos.segments()
+    fixed_sheet = isinstance(place, Sheet)
+    if fixed_sheet and coil_pose is None:
+        raise ValueError("a fixed sheet needs coil_pose to move the coils")
     if solver is None:
-        solver = SheetSolver(place(poses[0]), plane)
+        solver = SheetSolver(place if fixed_sheet else place(poses[0]), plane)
+    tx_s, sin_s, cos_s = tx.segments(), rx_sin.segments(), rx_cos.segments()
     tx_eff = tx_s if plane is None else biot.Segments.concat([tx_s, biot.mirror(tx_s, plane.z)])
     direct_sin = biot.mutual_inductance(tx_eff, sin_s)
     direct_cos = biot.mutual_inductance(tx_eff, cos_s)
     phi_sin = np.empty_like(poses)
     phi_cos = np.empty_like(poses)
     for i, p in enumerate(poses):
-        sh = place(p)
-        sv = solver.moved(sh)
-        psi = sv.respond(tx_s)
-        phi_sin[i] = direct_sin + rx_flux(sh, psi, sin_s, plane)
-        phi_cos[i] = direct_cos + rx_flux(sh, psi, cos_s, plane)
+        if fixed_sheet:
+            sh, sv = place, solver
+            t_s, s_s, c_s = (coil_pose(p, c).segments() for c in (tx, rx_sin, rx_cos))
+        else:
+            sh = place(p)
+            sv = solver.moved(sh)
+            t_s, s_s, c_s = tx_s, sin_s, cos_s
+        psi = sv.respond(t_s)
+        phi_sin[i] = direct_sin + rx_flux(sh, psi, s_s, plane)
+        phi_cos[i] = direct_cos + rx_flux(sh, psi, c_s, plane)
         if log and (i % max(len(poses) // 10, 1) == 0):
             log(f"  pose {i + 1}/{len(poses)}")
     ang = electrical_angle(phi_sin, phi_cos)

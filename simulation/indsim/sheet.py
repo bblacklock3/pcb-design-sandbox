@@ -10,7 +10,7 @@ the sheet) collocated at cell centres is
 K depends only on the cell layout, so it is built and LU-factorised once per sheet
 (and per back-plane height, when an image plane is present) and reused for every
 pose in a sweep. Receive flux uses reciprocity: the flux a coil sees from cell j is
-psi_j * Bz_coil(centre_j) * a^2.
+psi_j * Bz_coil(centre_j) * a_j^2.
 """
 from __future__ import annotations
 
@@ -87,7 +87,7 @@ class SheetSolver:
         return self.solve(self.source_bz(source))
 
     def moved(self, new_sheet: Sheet) -> "SheetSolver":
-        if new_sheet.n != self.sheet.n or not np.isclose(new_sheet.a, self.sheet.a):
+        if new_sheet.n != self.sheet.n or not np.allclose(new_sheet.side, self.sheet.side):
             raise ValueError("moved() needs the same mesh; rebuild the solver instead")
         if self.plane is not None and not np.isclose(new_sheet.z, self.sheet.z):
             raise ValueError("with an image plane the sheet height is baked into K; rebuild")
@@ -101,4 +101,4 @@ def rx_flux(sh: Sheet, psi: np.ndarray, rx: Segments, plane: ImagePlane | None =
     bz = biot.bz(rx, sh.centers)
     if plane is not None:
         bz = bz + biot.bz(biot.mirror(rx, plane.z), sh.centers)
-    return float(np.sum(psi * bz) * sh.a**2)
+    return float(np.sum(psi * bz * sh.cell_area()))

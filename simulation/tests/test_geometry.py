@@ -150,3 +150,26 @@ def test_coil_translate_and_mirror():
     assert m.loops[0].sense == -1
     t = tx.translated_mm((1.0, 2.0, 0.0))
     assert t.loops[0].pts[:, 0].mean() == pytest.approx(1.0 * MM, abs=1e-9)
+
+
+def test_sheet_union_keeps_cell_sizes_and_areas():
+    a = g.rect_sheet(lx_mm=4.0, ly_mm=4.0, a_mm=0.5, z_mm=1.0)
+    b = g.disc_sheet(r_out_mm=10.0, a_mm=1.0, z_mm=-3.0, r_hole_mm=5.0)
+    u = a.union(b)
+    assert u.n == a.n + b.n
+    assert u.area() == pytest.approx(a.area() + b.area())
+    assert len(u.cell_loops()) == 4 * u.n
+    with pytest.raises(ValueError):
+        _ = u.a
+    assert g.union([a, b]).n == u.n
+
+
+def test_coil_rotation_is_rigid():
+    sin_c, _ = g.ring_rx_pair(r_in_mm=17.0, r_out_mm=29.0, n_periods=2, layers_z_mm=(0.0, -1.0))
+    r = sin_c.rotated_deg(37.0)
+    assert r.length() == pytest.approx(sin_c.length())
+    p0 = sin_c.loops[0].pts[0]
+    p1 = r.loops[0].pts[0]
+    assert np.hypot(*p1[:2]) == pytest.approx(np.hypot(*p0[:2]))
+    assert np.degrees(np.arctan2(p1[1], p1[0]) - np.arctan2(p0[1], p0[0])) == pytest.approx(37.0)
+    assert p1[2] == pytest.approx(p0[2])

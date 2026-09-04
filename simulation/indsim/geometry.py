@@ -33,6 +33,11 @@ def to_mm(x):
 # --------------------------------------------------------------------------- coils
 
 
+def _rot_z(angle: float) -> np.ndarray:
+    c, s_ = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s_, 0.0], [s_, c, 0.0], [0.0, 0.0, 1.0]])
+
+
 @dataclass(frozen=True)
 class Loop:
     """A closed filament polyline (metres). `sense` +1/-1 is the current direction
@@ -63,6 +68,9 @@ class Loop:
         p = self.pts.copy()
         p[:, 2] = 2 * plane_z - p[:, 2]
         return Loop(p, -self.sense, self.turns)
+
+    def rotated(self, angle: float) -> "Loop":
+        return Loop(self.pts @ _rot_z(angle).T, self.sense, self.turns)
 
 
 @dataclass(frozen=True)
@@ -95,6 +103,13 @@ class Coil:
 
     def mirrored(self, plane_z: float) -> "Coil":
         return Coil(self.name + "_image", tuple(l.mirrored(plane_z) for l in self.loops), self.trace_width)
+
+    def rotated(self, angle: float) -> "Coil":
+        """Rotate about the z axis through the origin by `angle` (rad)."""
+        return Coil(self.name, tuple(l.rotated(angle) for l in self.loops), self.trace_width)
+
+    def rotated_deg(self, angle_deg: float) -> "Coil":
+        return self.rotated(np.deg2rad(angle_deg))
 
     def z_levels(self) -> np.ndarray:
         return np.unique(np.round(np.concatenate([l.pts[:, 2] for l in self.loops]), 9))
@@ -261,24 +276,31 @@ def ring_tx(
 
 @dataclass(frozen=True)
 class Sheet:
-    """A thin perfectly conducting sheet meshed into square cells of side `a` (m).
+    """A thin perfectly conducting sheet meshed into square cells.
 
-    `corners` are the four CCW vertex offsets of every cell from its centre, so the
-    cells rotate rigidly with the sheet and the cell-to-cell geometry (hence the K
-    matrix) is invariant under `translated` and `rotated`.
+    `side` is the cell side per cell (m) and `corners` the four CCW vertex offsets of
+    every cell from its centre, shape (n, 4, 3). Cells rotate rigidly with the sheet,
+    so the cell-to-cell geometry (hence the K matrix) is invariant under `translated`
+    and `rotated`. Sheets with different cell sizes can be joined with `union` for a
+    single solve (a target over a finite back-plane, say).
     """
 
     centers: np.ndarray  # (n, 3)
-    a: float
-    corners: np.ndarray = field(default=None)  # (4, 3)
+    side: np.ndarray  # (n,) or scalar
+    corners: np.ndarray = field(default=None)  # (n, 4, 3)
     outline: tuple = ()  # tuple of (k, 2) polygons in metres, for plotting
 
     def __post_init__(self):
         c = np.asarray(self.centers, dtype=float).reshape(-1, 3)
         object.__setattr__(self, "centers", c)
+        side = np.broadcast_to(np.asarray(self.side, dtype=float), (c.shape[0],)).copy()
+        object.__setattr__(self, "side", side)
         if self.corners is None:
-            h = self.a / 2
-            object.__setattr__(self, "corners", np.array([[-h, -h, 0], [h, -h, 0], [h, h, 0], [-h, h, 0]]))
+            h = side[:, None] / 2
+            unit = np.array([[-1, -1, 0], [1, -1, 0], [1, 1, 0], [-1, 1, 0]], dtype=float)
+            object.__setattr__(self, "corners", unit[None, :, :] * h[:, :, None])
+        else:
+            object.__setattr__(self, "corners", np.asarray(self.corners, dtype=float).reshape(-1, 4, 3))
         object.__setattr__(self, "outline", tuple(np.asarray(o, dtype=float) for o in self.outline))
 
     @property
@@ -286,38 +308,56 @@ class Sheet:
         return self.centers.shape[0]
 
     @property
+    def a(self) -> float:
+        """Cell side (m) when uniform; raises for a union of different meshes."""
+        if self.n and not np.allclose(self.side, self.side[0]):
+            raise ValueError("non-uniform cell size; use cell_area()")
+        return float(self.side[0]) if self.n else float("nan")
+
+    @property
     def z(self) -> float:
         return float(self.centers[0, 2]) if self.n else float("nan")
 
+    def cell_area(self) -> np.ndarray:
+        return self.side**2
+
     def area(self) -> float:
-        return self.n * self.a**2
+        return float(np.sum(self.cell_area()))
 
     def cell_loops(self) -> Segments:
         """All cell boundaries as unit-current CCW loops, cell-major (4 segments each)."""
-        v = self.centers[:, None, :] + self.corners[None, :, :]  # (n, 4, 3)
+        v = self.centers[:, None, :] + self.corners  # (n, 4, 3)
         p0 = v.reshape(-1, 3)
         p1 = np.roll(v, -1, axis=1).reshape(-1, 3)
         return Segments(p0, p1, np.ones(p0.shape[0]))
 
     def translated(self, d) -> "Sheet":
         d = np.asarray(d, dtype=float).reshape(3)
-        return Sheet(self.centers + d, self.a, self.corners, tuple(o + d[:2] for o in self.outline))
+        return Sheet(self.centers + d, self.side, self.corners, tuple(o + d[:2] for o in self.outline))
 
     def translated_mm(self, d_mm) -> "Sheet":
         return self.translated(mm(np.asarray(d_mm, dtype=float)))
 
     def rotated(self, angle: float, about=(0.0, 0.0)) -> "Sheet":
         """Rotate about the z axis through `about` (m) by `angle` (rad)."""
-        c, s = np.cos(angle), np.sin(angle)
-        R = np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+        R = _rot_z(angle)
         ab = np.array([about[0], about[1], 0.0])
         centers = (self.centers - ab) @ R.T + ab
         corners = self.corners @ R.T
         outline = tuple((o - ab[:2]) @ R[:2, :2].T + ab[:2] for o in self.outline)
-        return Sheet(centers, self.a, corners, outline)
+        return Sheet(centers, self.side, corners, outline)
 
     def rotated_deg(self, angle_deg: float, about_mm=(0.0, 0.0)) -> "Sheet":
         return self.rotated(np.deg2rad(angle_deg), about=(mm(about_mm[0]), mm(about_mm[1])))
+
+    def union(self, other: "Sheet") -> "Sheet":
+        """Join two sheets into one solve domain (cells keep their own size)."""
+        return Sheet(
+            np.vstack([self.centers, other.centers]),
+            np.concatenate([self.side, other.side]),
+            np.vstack([self.corners, other.corners]),
+            self.outline + other.outline,
+        )
 
     def plot(self, ax, color="0.3", cells=False, label=None):
         first = True
@@ -329,6 +369,13 @@ class Sheet:
             ax.scatter(to_mm(self.centers[:, 0]), to_mm(self.centers[:, 1]), s=2, color=color, alpha=0.4)
         ax.set_aspect("equal")
         return ax
+
+
+def union(sheets: Sequence[Sheet]) -> Sheet:
+    out = sheets[0]
+    for s in sheets[1:]:
+        out = out.union(s)
+    return out
 
 
 def mesh_sheet(inside: Callable[[np.ndarray, np.ndarray], np.ndarray], bbox_mm, a_mm: float, z_mm: float, outline_mm=()) -> Sheet:

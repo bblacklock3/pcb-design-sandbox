@@ -72,3 +72,22 @@ def test_tank_estimate_for_a_plain_loop():
     assert t["Q"] > 1
     backed = sensor.tank(tx, c_tank=600e-12, plane=g.ImagePlane(z_mm=-2.0))
     assert backed["L"] < t["L"]
+
+
+def test_moving_target_equals_moving_coils_the_other_way():
+    from indsim import geometry as g
+
+    sin_c, cos_c = g.linear_rx_pair(lam_mm=15.0, lobe_width_mm=7.6, n_lobes=2, layers_z_mm=(0.0, -0.2), pts_per_lobe=20)
+    tx = g.rect_tx(len_mm=18.0, wid_mm=9.6, n_turns=1, pitch_mm=0.3, layers_z_mm=(-1.4,), corner_r_mm=1.0)
+    target = g.rect_sheet(lx_mm=5.0, ly_mm=10.0, a_mm=1.0, z_mm=1.0)
+    xs = np.array([-3.0, 0.0, 2.5])
+    a = sensor.run_sweep(tx, sin_c, cos_c, lambda x: target.translated_mm((x, 0, 0)), xs)
+    b = sensor.run_sweep(
+        tx, sin_c, cos_c, target, xs, coil_pose=lambda x, c: c.translated_mm((-x, 0, 0))
+    )
+    scale = a["amplitude"].max()
+    np.testing.assert_allclose(a["phi_sin"], b["phi_sin"], rtol=1e-9, atol=1e-9 * scale)
+    np.testing.assert_allclose(a["phi_cos"], b["phi_cos"], rtol=1e-9, atol=1e-9 * scale)
+    assert a["direct_sin"] == pytest.approx(b["direct_sin"])
+    # a 5 mm flag over a 15 mm period gives a usable quadrature signal
+    assert a["amplitude"].min() > 0
