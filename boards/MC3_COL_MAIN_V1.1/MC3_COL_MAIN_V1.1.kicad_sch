@@ -5,6 +5,164 @@
 	(uuid "7d5f4202-d55e-4c7b-a2df-dd599db38e48")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -647,6 +805,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 92.71) (xy 57.15 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24d8a2ea-d9f1-49a7-b372-3993242cc20b")
+	)
+	(wire
+		(pts
 			(xy 90.17 74.93) (xy 85.09 74.93)
 		)
 		(stroke
@@ -654,6 +822,16 @@
 			(type default)
 		)
 		(uuid "25b837c1-2f44-4686-ab97-eccbf95928b4")
+	)
+	(wire
+		(pts
+			(xy 102.87 90.17) (xy 107.95 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bb57f58-d07f-4737-86f6-738ffe070308")
 	)
 	(wire
 		(pts
@@ -747,6 +925,16 @@
 	)
 	(wire
 		(pts
+			(xy 204.47 87.63) (xy 209.55 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c41c00c-ce6a-4f6b-be0f-b768ef611f5c")
+	)
+	(wire
+		(pts
 			(xy 39.37 80.01) (xy 34.29 80.01)
 		)
 		(stroke
@@ -754,6 +942,16 @@
 			(type default)
 		)
 		(uuid "70c71aa3-3056-4e08-b614-208d8d483ad9")
+	)
+	(wire
+		(pts
+			(xy 153.67 88.9) (xy 158.75 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77f41cea-e06c-4678-a19d-4c72ed4e5984")
 	)
 	(wire
 		(pts
@@ -847,6 +1045,16 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 92.71) (xy 107.95 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8520f29-4328-4d3b-8af4-36d0047ceeae")
+	)
+	(wire
+		(pts
 			(xy 140.97 76.2) (xy 135.89 76.2)
 		)
 		(stroke
@@ -854,6 +1062,16 @@
 			(type default)
 		)
 		(uuid "be6721d4-c68d-4e9f-b2e8-27fdad624047")
+	)
+	(wire
+		(pts
+			(xy 153.67 91.44) (xy 158.75 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be6c79b8-935d-4835-8b2c-079a1bac8649")
 	)
 	(wire
 		(pts
@@ -934,6 +1152,26 @@
 			(type default)
 		)
 		(uuid "ef8a1ffc-c40a-4958-8d65-748210da9f43")
+	)
+	(wire
+		(pts
+			(xy 52.07 90.17) (xy 57.15 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f66ecd07-ea71-45eb-a504-3d03f52ef899")
+	)
+	(wire
+		(pts
+			(xy 204.47 90.17) (xy 209.55 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "feac61b0-e33a-49ed-b5f5-2b3dc98e8c17")
 	)
 	(global_label "EN_leaf4"
 		(shape input)
@@ -2148,6 +2386,273 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 62.23 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5a0d7afa-917c-4861-b65b-7fbe0a25cb25")
+		(property "Reference" "J7"
+			(at 62.23 87.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 62.23 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 62.23 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Leaf 1 motor solder pads - OUT1/OUT2 pigtails from the leaf1 DRV8214 bridge."
+			(at 62.23 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 62.23 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "23eeb358-0056-4f2c-8ffd-ba4ecc0677e6")
+		)
+		(pin "2"
+			(uuid "53c4db60-d84c-4031-99e3-3c8249b05676")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 214.63 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5fe2e7e5-6fd6-44c1-ab89-9fa5803f559b")
+		(property "Reference" "J10"
+			(at 214.63 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 214.63 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 214.63 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Leaf 4 motor solder pads - OUT1/OUT2 pigtails from the leaf4 DRV8214 bridge."
+			(at 214.63 87.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 214.63 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a3ff18a7-f0f0-4250-b034-502f254e0592")
+		)
+		(pin "2"
+			(uuid "14ec4527-c6a2-4abd-9222-601fc1e22143")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 163.83 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "87f611ed-0854-4243-b073-4bc2c3df1e8f")
+		(property "Reference" "J9"
+			(at 163.83 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 163.83 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 163.83 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Leaf 3 motor solder pads - OUT1/OUT2 pigtails from the leaf3 DRV8214 bridge."
+			(at 163.83 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 163.83 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b121e7ff-13f6-4241-aa32-90794412a03c")
+		)
+		(pin "1"
+			(uuid "15b33061-ec6e-4c3d-a4c8-dd87f3198ec9")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 81.28 80.01 90)
 		(unit 1)
@@ -2506,6 +3011,95 @@
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
 					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 113.03 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c07d8967-2fbb-4256-bb4e-3bc447499e6a")
+		(property "Reference" "J8"
+			(at 113.03 87.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MOTOR"
+			(at 113.03 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:SolderPads_2x_2.2x1.4mm_P2.6mm"
+			(at 113.03 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Leaf 2 motor solder pads - OUT1/OUT2 pigtails from the leaf2 DRV8214 bridge."
+			(at 113.03 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Note" "Bare solder pads 2.2x1.4 @2.6 mm, no part - vault Main-Board-01 Connectors, Motor Terminations"
+			(at 113.03 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d9bcc495-8b0a-46d8-85c0-1aa9950147f1")
+		)
+		(pin "1"
+			(uuid "923ba795-0152-4aa9-bdaf-b7bb68fcc299")
+		)
+		(instances
+			(project "MC3_COL_MAIN_V1.1"
+				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48"
+					(reference "J8")
 					(unit 1)
 				)
 			)
