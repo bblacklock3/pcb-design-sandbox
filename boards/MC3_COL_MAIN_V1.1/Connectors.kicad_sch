@@ -1256,6 +1256,16 @@
 		(color 0 0 0 0)
 		(uuid "b1e76497-e34d-48be-83b1-fbcc18f6f8b5")
 	)
+	(junction
+		(at 43.18 148.59)
+		(diameter 0)
+		(uuid "725b924a-a5b5-4cdb-ad44-bf55bd17ef2b")
+	)
+	(junction
+		(at 43.18 148.59)
+		(diameter 0)
+		(uuid "4aef3089-87c3-405d-878f-d046658f0619")
+	)
 	(wire
 		(pts
 			(xy 54.61 54.61)
@@ -1596,6 +1606,41 @@
 			(type default)
 		)
 		(uuid "f792b8db-11db-4c73-9db8-38849a31b8ad")
+	)
+	(wire
+		(pts
+			(xy 54.61 143.51)
+			(xy 52.07 143.51)
+		)
+		(uuid "42665d39-a42e-4ac0-99eb-8a032ee71dd3")
+	)
+	(wire
+		(pts
+			(xy 54.61 148.59)
+			(xy 41.91 148.59)
+		)
+		(uuid "806c4933-49b8-448c-9a5f-f9605396d614")
+	)
+	(wire
+		(pts
+			(xy 54.61 151.13)
+			(xy 52.07 151.13)
+		)
+		(uuid "a0ecb5e8-c504-49b6-b0ad-014d848a2ac8")
+	)
+	(wire
+		(pts
+			(xy 54.61 146.05)
+			(xy 52.07 146.05)
+		)
+		(uuid "7be313f6-7704-4b0a-b7d5-9701ab9817a5")
+	)
+	(wire
+		(pts
+			(xy 43.18 138.43)
+			(xy 43.18 140.97)
+		)
+		(uuid "052be2e0-cf4a-4ed4-82b4-fb369456b3af")
 	)
 	(global_label "RC_OUT_leaf2"
 		(shape input)
@@ -1992,6 +2037,39 @@
 			(justify right)
 		)
 		(uuid "90e7a087-8fdd-4f9a-80f2-830e6e09d58e")
+	)
+	(global_label "VSENS"
+		(shape input)
+		(at 52.07 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d5eeadde-5883-487e-aaaa-081251230bbf")
+	)
+	(global_label "YAW_ABS"
+		(shape input)
+		(at 41.91 148.59 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4aec265d-e9c6-47cd-8f8c-d6b4528d46be")
+	)
+	(global_label "RC_OUT_yaw"
+		(shape input)
+		(at 52.07 151.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cf6d6f18-1f38-422e-9e04-54abed644720")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -4067,6 +4145,230 @@
 			(project "MC3_COL_MAIN_V1.1"
 				(path "/7d5f4202-d55e-4c7b-a2df-dd599db38e48/d4085ee5-bdee-4718-a003-bbbd9ab9f320"
 					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 59.69 146.05 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "16e3f663-ed37-483c-a5a0-4e6b93e5355f")
+		(property "Reference" "J14"
+			(at 59.69 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ENC_yaw_abs"
+			(at 59.69 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:Panasonic_AYF530435_FFC-4P_P0.5mm"
+			(at 59.69 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Provision for the future absolute inductive yaw encoder (LX34311-class, COL-COTS-0016 family) - identical 4-pin interface to the leaf encoder connectors (VSENS / GND / SIG / RC_OUT_yaw), SIG = YAW_ABS on PA10 (FT, 5 V-tolerant, PP-safe). Fitted from day one so the absolute encoder can run alongside the AEDR incremental chain for cross-validation."
+			(at 59.69 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Connectors"
+				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 43.18 144.78 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a279c0de-4994-47d1-9ec7-284c80146d96")
+		(property "Reference" "R48"
+			(at 45.212 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 43.18 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MC3_COL_MAIN:R_0402_1005Metric"
+			(at 43.18 144.78 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 144.78 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "10k pull-up on YAW_ABS to +3V3 - matches R12-R15 on the leaf encoder signals; sets the OD-mode high level."
+			(at 43.18 144.78 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Connectors"
+				(path "63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "R48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 52.07 146.05 270)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77905eb7-395b-4944-b217-f7eb70df01fd")
+		(property "Reference" "#PWR410"
+			(at 45.72 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 48.26 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 52.07 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 52.07 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "#PWR410")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 43.18 138.43 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "856b23f3-b2e1-4c29-bea6-05a02c86ea2e")
+		(property "Reference" "#PWR411"
+			(at 43.18 142.24 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 43.18 134.874 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 138.43 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 138.43 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "Connectors"
+				(path "/63a5bb10-bd29-49c4-9ad5-0d26692d2afc"
+					(reference "#PWR411")
 					(unit 1)
 				)
 			)
