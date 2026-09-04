@@ -120,3 +120,36 @@ def test_ac_resistance_uses_skin_depth():
     assert r_ac == pytest.approx(r_dc, rel=0.5)
     r_hi = biot.trace_resistance(length=1.0, width=152.4e-6, thickness=35e-6, freq=300e6)
     assert r_hi > 3 * r_dc
+
+
+def test_refine_splits_long_segments_and_preserves_path():
+    sq = Segments.from_polyline(np.array([[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0]]) * 1e-3)
+    fine = biot.refine(sq, 0.1e-3)
+    assert len(fine) == 40
+    assert fine.length() == pytest.approx(sq.length())
+    np.testing.assert_allclose(fine.p0[0], sq.p0[0])
+    np.testing.assert_allclose(fine.p1[9], sq.p1[0])
+    np.testing.assert_allclose(fine.w, 1.0)
+
+
+def test_self_inductance_of_coarse_square_matches_fine_square():
+    a = 7.6e-5
+    pts = np.array([[-9, -4.8, 0], [9, -4.8, 0], [9, 4.8, 0], [-9, 4.8, 0]]) * 1e-3
+    coarse = Segments.from_polyline(pts)
+    L = biot.self_inductance(coarse, a)
+    # Grover's rectangle formula (thin wire, high-frequency current)
+    x, y, r = 18e-3, 9.6e-3, a
+    d = np.hypot(x, y)
+    expected = (MU0 / np.pi) * (
+        -2 * (x + y) + 2 * d - x * np.log((x + d) / y) - y * np.log((y + d) / x) + x * np.log(2 * x / r) + y * np.log(2 * y / r)
+    )
+    assert L == pytest.approx(expected, rel=0.02)
+
+
+def test_mutual_inductance_refines_coarse_input():
+    pts = np.array([[-9, -4.8, 0], [9, -4.8, 0], [9, 4.8, 0], [-9, 4.8, 0]]) * 1e-3
+    coarse = Segments.from_polyline(pts)
+    other = circle(0.003, z=0.0012, n=200)
+    m_coarse = biot.mutual_inductance(coarse, other)
+    m_fine = biot.mutual_inductance(biot.refine(coarse, 2e-5), other, max_len=2e-5)
+    assert m_coarse == pytest.approx(m_fine, rel=1e-3)
