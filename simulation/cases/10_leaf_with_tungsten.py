@@ -1,7 +1,7 @@
 """Case 10 -- the leaf coil with the tungsten leaf behind its flag.
 
-The leaf encoder's 5 x 10 mm aluminium flag rides on the leaf carrier about 1 mm above
-the tungsten leaf (t_leaf = 2 mm, COL-PARAM). The flag is smaller than the coil's transmit
+The leaf encoder's 5 x 10 x 0.8 mm aluminium flag rides on the sliding carrier 1.7 mm
+above the tungsten leaf (t_leaf = 2 mm, COL-PARAM; spacing from CAD, 2026-09-04). The flag is smaller than the coil's transmit
 loop, so the field that leaks round it reaches the leaf, which is a good conductor at
 these frequencies (skin depth ~50 um) and moves with the flag. This case adds the leaf
 as a second sheet at the flag's far face plus the clearance and asks: how much does it
@@ -33,12 +33,12 @@ c04 = importlib.util.module_from_spec(spec4)
 spec4.loader.exec_module(c04)
 
 OUT = HERE.parent / "out" / "10_leaf_with_tungsten"
-FLAG_T = 1.0                 # mm, flag thickness (case 01: 5 x 10 x 1 mm)
-CLEAR = 1.0                  # mm, flag far face to leaf near face
+FLAG_T = 0.8                 # mm, flag thickness (CAD 2026-09-04: 0.8 mm aluminium)
+CLEAR = 1.7                  # mm, flag far face to tungsten near face (CAD 2026-09-04; both on the sliding carrier)
 LEAF_Z = c01.GAP + FLAG_T + CLEAR
 LEAF_SIZES = {"leaf 12 x 30 mm": (30.0, 12.0), "leaf 20 x 40 mm": (40.0, 20.0)}   # (along travel, across travel)
 LEAF_CELL = 0.5
-CLEARANCES = (0.5, 1.0, 1.5)
+CLEARANCES = (1.2, 1.7, 2.2)
 STEP = 0.25
 XS = np.arange(-c01.SWEEP_HALF, c01.SWEEP_HALF + STEP / 2, STEP)
 
@@ -109,7 +109,7 @@ def main():
               f"{met['um_per_count']:.2f} um/count, raw {met['raw_um']:.0f} um, mono {met['mono']}, dL {dL*1e6:.3f} uH ({time.time()-t1:.0f} s)")
 
     # clearance sensitivity: calibrate with the leaf at 1.0 mm, read with it at 0.5 and 1.5 mm
-    ref_name = "flag + leaf 12 x 30 mm"
+    ref_name = "flag + leaf 12 x 30 mm"  # calibrated at the nominal clearance
     ref = results[ref_name][1]
     clear_rows = []
     for cl in CLEARANCES:
@@ -117,7 +117,18 @@ def main():
         res = run(tx, rs, rc, tg)
         met = stroke_metrics(res, XS)
         clear_rows.append((cl, res["amplitude"].max() * 1e9, met["swept_deg"], met["raw_um"], dense_um(ref, res, XS)))
-        print(f"clearance {cl} mm: swept {met['swept_deg']:.1f} deg, raw {met['raw_um']:.0f} um, dense-LUT change vs 1.0 mm {clear_rows[-1][4]:.1f} um")
+        print(f"clearance {cl} mm: swept {met['swept_deg']:.1f} deg, raw {met['raw_um']:.0f} um, dense-LUT change vs {CLEAR} mm {clear_rows[-1][4]:.1f} um")
+
+    # what the chip's SSIN/SCOS offset registers could take back: trim the leaf's mean channel offsets
+    r_flag, r_both, r_leaf = results["flag only (case 01)"][0], results[ref_name][0], results["leaf 12 x 30 mm alone, no flag"][0]
+    off_c = float(np.mean(r_leaf["phi_cos"] - r_flag["direct_cos"]))
+    off_s = float(np.mean(r_leaf["phi_sin"]))
+    trimmed = dict(r_both, angle=np.unwrap(np.arctan2(r_both["phi_sin"] - off_s, r_both["phi_cos"] - off_c)))
+    met_tr = stroke_metrics(trimmed, XS)
+    offset_lines = [f"The leaf's own contribution is a near-constant cosine offset of {off_c*1e9:+.2f} nWb/A (spread {np.ptp(r_leaf['phi_cos'])*1e9:.2f}) "
+                    f"and a position-dependent sine term of {np.ptp(r_leaf['phi_sin'])*1e9:.2f} nWb/A spread, against flag swings of {np.ptp(r_flag['phi_cos'])*1e9:.1f} / {np.ptp(r_flag['phi_sin'])*1e9:.1f} nWb/A.",
+                    f"Trimming the constant offsets (LX34311 SSIN/SCOS registers) restores the swept angle to {met_tr['swept_deg']:.1f} deg, {met_tr['um_per_count']:.2f} um/count; the rest is the position-dependent part and stays for the linearizer."]
+    print("\n".join(offset_lines))
 
     # tank
     free = sensor.tank(tx, c01.C_TANK)
@@ -143,10 +154,11 @@ def main():
              "Bench reference (COL-TEST-0005): ~202 deg swept, ~4.6 um/count.", "",
              c04.md_table(header, rows), "",
              "## Flag-to-leaf clearance (assembly tolerance)", "",
-             "Calibrated with the leaf 1.0 mm behind the flag; the last column is what a dense LUT leaves if the clearance is actually the value in the first column.", "",
+             f"Calibrated with the leaf {CLEAR} mm behind the flag; the last column is what a dense LUT leaves if the clearance is actually the value in the first column.", "",
              c04.md_table(("clearance_mm", "amp_max_nWb_per_A", "swept_deg", "raw_um", "dense_LUT_change_um"), clear_rows), "",
              "## Tank at 2 x 1200 pF", "",
              c04.md_table(("condition", "L_uH", "f0_MHz"), tank_rows), "",
+             "## Offset decomposition", "", *offset_lines, "",
              "![[flux_sin.png]] ![[flux_cos.png]] ![[angle.png]] ![[linearity.png]]", "",
              "Limits: perfect conductors; the leaf is its near face only; leaf in-plane size assumed (two sizes bracket it); no board behind the coil.", ""]
     (OUT / "REPORT.md").write_text("\n".join(lines))
