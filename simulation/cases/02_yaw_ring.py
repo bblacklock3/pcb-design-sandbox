@@ -61,7 +61,8 @@ def sweep(tx, rx_sin, rx_cos, target, step, n_periods=N_PERIODS, ecc_mm=0.0, per
     lin = sensor.linearity(thetas, res["angle"])
     ideal = lin["slope"] * thetas + lin["intercept"]
     err_raw = lin["residual"] / lin["slope"]  # electrical residual -> mechanical degrees
-    cal = sensor.piecewise_correct(res["angle"], ideal, n_seg=10)
+    # the on-chip linearizer has 10 segments per electrical period (its output range)
+    cal = sensor.piecewise_correct(res["angle"], ideal, n_seg=10 * periods)
     err_cal = (cal - ideal) / lin["slope"]
     res.update(theta=thetas, err_raw_deg=err_raw, err_cal_deg=err_cal, slope=lin["slope"], ideal=ideal,
                raw_max=float(np.abs(err_raw).max()), cal_max=float(np.abs(err_cal).max()))

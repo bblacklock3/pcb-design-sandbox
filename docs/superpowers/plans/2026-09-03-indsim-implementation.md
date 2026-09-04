@@ -34,6 +34,6 @@ Branch: `feature/indsim`. Tests first, one module at a time, commit after each m
 - [x] 4. `test_sheet.py` → `sheet.py`: `build_k`, `SheetSolver` (LU), `solve_psi`, `rx_flux_from_sheet`. Tests: K symmetric, distant sheet changes nothing, big sheet reproduces image method within 5 %.
 - [x] 5. `test_sensor.py` → `sensor.py`: `electrical_angle`, `counts`, `linearity`, `piecewise_correct`, `harmonics`, `run_sweep`. Tests: ideal sin/cos → zero error; 10-segment fit removes known piecewise error; counts scale.
 - [x] 6. `plot.py`: vault conventions (ASCII check, Title Case helper, grid alpha 0.3, one plot per figure, tight_layout, PNG).
-- [ ] 7. Cases `01_leaf_baseline.py`, `02_yaw_ring.py`, `03_backplane.py`; run each; check outputs land in `out/`.
-- [ ] 8. `simulation/README.md`: model, limits, run instructions, STUDY handoff.
-- [ ] 9. Full test run, commit, report validation numbers.
+- [x] 7. Cases `01_leaf_baseline.py`, `02_yaw_ring.py`, `03_backplane.py`; run each; check outputs land in `out/`.
+- [x] 8. `simulation/README.md`: model, limits, run instructions, STUDY handoff.
+- [x] 9. Full test run, commit, report validation numbers.
