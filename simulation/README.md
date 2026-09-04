@@ -37,6 +37,22 @@ not why they were chosen.
   10-segment continuous piecewise-linear correction mimicking the on-chip linearizer,
   harmonic content of the residual (only meaningful over a full period).
 
+### Fast paths (all verified against the direct ones in `tests/test_fast.py`)
+
+- **Toeplitz K build.** Cells sit on a regular lattice, so `K[i, j]` depends only on the
+  index difference; one table of a few thousand field values fills the matrix by lookup
+  (`sheet.build_k`, ~1 s for 7000 cells against ~30 s direct). Unions of different meshes
+  use the lookup inside each mesh and direct evaluation between meshes. `build_k_direct`
+  remains as the reference.
+- **Polar field tables** (`tables.py`). For a ring sensor with the target moving in its own
+  plane, each coil's Bz at the target height is tabulated once on an (r, theta) grid and
+  interpolated at the moving cells: 0.07 s per pose against several seconds. Transmit
+  n-gons use their exact 360/n period; receive traces use the electrical period, with the
+  via hops (which break it) evaluated directly. 0.1 mm radial spacing holds 1e-3.
+- **Process pool** (`parallel.pmap`) for independent study conditions; the case scripts
+  take `--workers N`.
+- The z-only Biot-Savart kernel `biot.bz` forms fewer arrays than `bfield`.
+
 ### Limits, stated plainly
 
 - Perfect-conductor sheets: no eddy-loss phase term, no target thickness or resistivity.

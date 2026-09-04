@@ -311,6 +311,8 @@ class Sheet:
     side: np.ndarray  # (n,) or scalar
     corners: np.ndarray = field(default=None)  # (n, 4, 3)
     outline: tuple = ()  # tuple of (k, 2) polygons in metres, for plotting
+    lattice: np.ndarray = field(default=None)  # (n, 2) integer grid indices, for the Toeplitz K build
+    block: np.ndarray = field(default=None)  # (n,) which uniform mesh a cell belongs to (unions)
 
     def __post_init__(self):
         c = np.asarray(self.centers, dtype=float).reshape(-1, 3)
@@ -324,6 +326,10 @@ class Sheet:
         else:
             object.__setattr__(self, "corners", np.asarray(self.corners, dtype=float).reshape(-1, 4, 3))
         object.__setattr__(self, "outline", tuple(np.asarray(o, dtype=float) for o in self.outline))
+        if self.lattice is not None:
+            object.__setattr__(self, "lattice", np.asarray(self.lattice, dtype=np.int64).reshape(-1, 2))
+        block = np.zeros(c.shape[0], dtype=np.int64) if self.block is None else np.asarray(self.block, dtype=np.int64)
+        object.__setattr__(self, "block", block)
 
     @property
     def n(self) -> int:
@@ -355,7 +361,7 @@ class Sheet:
 
     def translated(self, d) -> "Sheet":
         d = np.asarray(d, dtype=float).reshape(3)
-        return Sheet(self.centers + d, self.side, self.corners, tuple(o + d[:2] for o in self.outline))
+        return Sheet(self.centers + d, self.side, self.corners, tuple(o + d[:2] for o in self.outline), self.lattice, self.block)
 
     def translated_mm(self, d_mm) -> "Sheet":
         return self.translated(mm(np.asarray(d_mm, dtype=float)))
@@ -367,18 +373,23 @@ class Sheet:
         centers = (self.centers - ab) @ R.T + ab
         corners = self.corners @ R.T
         outline = tuple((o - ab[:2]) @ R[:2, :2].T + ab[:2] for o in self.outline)
-        return Sheet(centers, self.side, corners, outline)
+        return Sheet(centers, self.side, corners, outline, self.lattice, self.block)
 
     def rotated_deg(self, angle_deg: float, about_mm=(0.0, 0.0)) -> "Sheet":
         return self.rotated(np.deg2rad(angle_deg), about=(mm(about_mm[0]), mm(about_mm[1])))
 
     def union(self, other: "Sheet") -> "Sheet":
         """Join two sheets into one solve domain (cells keep their own size)."""
+        lattice = None
+        if self.lattice is not None and other.lattice is not None:
+            lattice = np.vstack([self.lattice, other.lattice])
         return Sheet(
             np.vstack([self.centers, other.centers]),
             np.concatenate([self.side, other.side]),
             np.vstack([self.corners, other.corners]),
             self.outline + other.outline,
+            lattice,
+            np.concatenate([self.block, other.block + self.block.max() + 1]),
         )
 
     def plot(self, ax, color="0.3", cells=False, label=None):
@@ -414,7 +425,9 @@ def mesh_sheet(inside: Callable[[np.ndarray, np.ndarray], np.ndarray], bbox_mm, 
     X, Y = np.meshgrid(xs, ys, indexing="ij")
     keep = inside(X.ravel(), Y.ravel())
     centers = np.column_stack([X.ravel()[keep], Y.ravel()[keep], np.full(int(keep.sum()), z_mm)])
-    return Sheet(mm(centers), mm(a_mm), None, tuple(mm(np.asarray(o, dtype=float)) for o in outline_mm))
+    I, J = np.meshgrid(np.arange(nx), np.arange(ny), indexing="ij")
+    lattice = np.column_stack([I.ravel()[keep], J.ravel()[keep]])
+    return Sheet(mm(centers), mm(a_mm), None, tuple(mm(np.asarray(o, dtype=float)) for o in outline_mm), lattice)
 
 
 def rect_sheet(lx_mm: float, ly_mm: float, a_mm: float, z_mm: float, hole_r_mm: float = 0.0) -> Sheet:

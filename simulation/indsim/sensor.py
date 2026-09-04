@@ -78,6 +78,7 @@ def run_sweep(
     plane: ImagePlane | None = None,
     coil_pose: Callable[[float, Coil], Coil] | None = None,
     solver: SheetSolver | None = None,
+    tables=None,
     log: Callable[[str], None] | None = None,
 ) -> dict:
     """Sweep the sensor through `poses`.
@@ -88,6 +89,8 @@ def run_sweep(
     that pose. The second form is what a fixed target over a fixed finite back-plane
     needs, since then K is factorised once for the union of both sheets. In both forms
     the direct TX->RX coupling is a rigid-motion invariant and is computed once.
+    `tables` = (tx_table, sin_table, cos_table) replaces the per-pose field evaluation
+    at the cells with interpolation (see `tables.ring_tables`); target-moving form only.
 
     Returns fluxes per ampere of TX current, the direct coupling, the unwrapped
     electrical angle and raw counts."""
@@ -98,6 +101,8 @@ def run_sweep(
     if solver is None:
         solver = SheetSolver(place if fixed_sheet else place(poses[0]), plane)
     tx_s, sin_s, cos_s = tx.segments(), rx_sin.segments(), rx_cos.segments()
+    if tables is not None and (fixed_sheet or coil_pose is not None):
+        raise ValueError("field tables apply to the target-moving form only")
     tx_eff = tx_s if plane is None else biot.Segments.concat([tx_s, biot.mirror(tx_s, plane.z)])
     direct_sin = biot.mutual_inductance(tx_eff, sin_s)
     direct_cos = biot.mutual_inductance(tx_eff, cos_s)
@@ -110,7 +115,7 @@ def run_sweep(
         else:
             sh = place(p)
             sv = solver.moved(sh)
-            t_s, s_s, c_s = tx_s, sin_s, cos_s
+            t_s, s_s, c_s = tables if tables is not None else (tx_s, sin_s, cos_s)
         psi = sv.respond(t_s)
         phi_sin[i] = direct_sin + rx_flux(sh, psi, s_s, plane)
         phi_cos[i] = direct_cos + rx_flux(sh, psi, c_s, plane)

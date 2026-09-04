@@ -52,13 +52,75 @@ def _loop_bz_matrix(loops: Segments, pts: np.ndarray, group: int = 4, chunk_loop
     return out
 
 
-def build_k(sh: Sheet, plane: ImagePlane | None = None) -> np.ndarray:
-    """Collocation matrix K[i, j] (T per ampere of cell current), including the image
-    of every cell loop when an infinite perfectly conducting plane is present."""
+def build_k_direct(sh: Sheet, plane: ImagePlane | None = None) -> np.ndarray:
+    """Collocation matrix K[i, j] (T per ampere of cell current) by evaluating every
+    cell loop at every cell centre, including the image of every loop when an infinite
+    perfectly conducting plane is present. O(n^2) field evaluations; the reference path."""
     loops = sh.cell_loops()
     K = _loop_bz_matrix(loops, sh.centers)
     if plane is not None:
         K += _loop_bz_matrix(biot.mirror(loops, plane.z), sh.centers)
+    return K
+
+
+def _unit_square_segments(a: float, z: float = 0.0, sense: float = 1.0) -> Segments:
+    h = a / 2
+    pts = np.array([[-h, -h, z], [h, -h, z], [h, h, z], [-h, h, z]])
+    return Segments.from_polyline(pts, weight=sense)
+
+
+def _toeplitz_block(sh: Sheet, idx: np.ndarray, plane: ImagePlane | None, chunk: int = 1024) -> np.ndarray:
+    """K restricted to the cells `idx` of one uniform lattice. The field at cell p from
+    the unit loop round cell q depends only on the index difference, so a table over
+    all differences is evaluated once (in the lattice's own frame; Bz is rotation
+    invariant) and the block is filled by lookup."""
+    a = float(sh.side[idx[0]])
+    lat = sh.lattice[idx]
+    di_max = int(lat[:, 0].max() - lat[:, 0].min())
+    dj_max = int(lat[:, 1].max() - lat[:, 1].min())
+    di = np.arange(-di_max, di_max + 1)
+    dj = np.arange(-dj_max, dj_max + 1)
+    DI, DJ = np.meshgrid(di, dj, indexing="ij")
+    pts = np.column_stack([DI.ravel() * a, DJ.ravel() * a, np.zeros(DI.size)])
+    table = biot.bz(_unit_square_segments(a), pts)
+    if plane is not None:
+        # image loop: reversed sense, 2*(z - z_plane) below the sheet's own plane
+        img = _unit_square_segments(a, z=2 * (plane.z - sh.centers[idx[0], 2]), sense=-1.0)
+        table = table + biot.bz(img, pts)
+    table = table.reshape(DI.shape)
+    ii = lat[:, 0] - lat[:, 0].min()
+    jj = lat[:, 1] - lat[:, 1].min()
+    n = len(idx)
+    K = np.empty((n, n))
+    for s0 in range(0, n, chunk):
+        sl = slice(s0, s0 + chunk)
+        K[sl] = table[(ii[sl, None] - ii[None, :]) + di_max, (jj[sl, None] - jj[None, :]) + dj_max]
+    return K
+
+
+def build_k(sh: Sheet, plane: ImagePlane | None = None) -> np.ndarray:
+    """Collocation matrix K. Uniform lattices (every sheet from `mesh_sheet`, and each
+    member of a union) use the Toeplitz lookup; couplings between different lattices in
+    a union are evaluated directly. Falls back to `build_k_direct` without lattice data."""
+    if sh.lattice is None:
+        return build_k_direct(sh, plane)
+    n = sh.n
+    K = np.empty((n, n))
+    blocks = np.unique(sh.block)
+    loops = sh.cell_loops() if len(blocks) > 1 else None
+    for b in blocks:
+        idx = np.flatnonzero(sh.block == b)
+        K[np.ix_(idx, idx)] = _toeplitz_block(sh, idx, plane)
+        for b2 in blocks:
+            if b2 == b:
+                continue
+            idx2 = np.flatnonzero(sh.block == b2)
+            seg_sl = (4 * idx2[:, None] + np.arange(4)[None, :]).ravel()
+            src = Segments(loops.p0[seg_sl], loops.p1[seg_sl], loops.w[seg_sl])
+            cross = _loop_bz_matrix(src, sh.centers[idx])
+            if plane is not None:
+                cross = cross + _loop_bz_matrix(biot.mirror(src, plane.z), sh.centers[idx])
+            K[np.ix_(idx, idx2)] = cross
     return K
 
 
@@ -76,7 +138,12 @@ class SheetSolver:
         """psi such that K @ psi = -bz_source (amperes of circulating cell current)."""
         return lu_solve(self.lu, -np.asarray(bz_source, dtype=float))
 
-    def source_bz(self, source: Segments) -> np.ndarray:
+    def source_bz(self, source) -> np.ndarray:
+        """Normal field at the cells from `source`: a Segments set (plus its image when a
+        plane is present) or any object with a `bz(points)` method that already includes
+        the image (a field table)."""
+        if not isinstance(source, Segments):
+            return source.bz(self.sheet.centers)
         bz = biot.bz(source, self.sheet.centers)
         if self.plane is not None:
             bz = bz + biot.bz(biot.mirror(source, self.plane.z), self.sheet.centers)
@@ -94,11 +161,14 @@ class SheetSolver:
         return SheetSolver(new_sheet, self.plane, self.K, self.lu)
 
 
-def rx_flux(sh: Sheet, psi: np.ndarray, rx: Segments, plane: ImagePlane | None = None) -> float:
+def rx_flux(sh: Sheet, psi: np.ndarray, rx, plane: ImagePlane | None = None) -> float:
     """Flux (Wb per ampere of source) linking `rx` from the sheet currents, by
     reciprocity: sum_j psi_j * Bz_rx(centre_j) * a^2. With a plane, Bz_rx includes
-    the image of `rx`."""
-    bz = biot.bz(rx, sh.centers)
-    if plane is not None:
-        bz = bz + biot.bz(biot.mirror(rx, plane.z), sh.centers)
+    the image of `rx`. `rx` may be a Segments set or a field table with `bz(points)`."""
+    if not isinstance(rx, Segments):
+        bz = rx.bz(sh.centers)
+    else:
+        bz = biot.bz(rx, sh.centers)
+        if plane is not None:
+            bz = bz + biot.bz(biot.mirror(rx, plane.z), sh.centers)
     return float(np.sum(psi * bz * sh.cell_area()))

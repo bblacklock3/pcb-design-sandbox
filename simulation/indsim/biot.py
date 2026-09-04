@@ -108,8 +108,33 @@ def bfield(segs: Segments, pts, chunk: int = 2048) -> np.ndarray:
 
 
 def bz(segs: Segments, pts, chunk: int = 2048) -> np.ndarray:
-    """Normal (z) component of `bfield`, shape (M,)."""
-    return bfield(segs, pts, chunk=chunk)[:, 2]
+    """Normal (z) component of the field at `pts`, shape (M,). Same kernel as `bfield`
+    but forms only the arrays the z component needs (|L x r1|^2 = |L|^2 |r1|^2 - (L.r1)^2),
+    which is what the sheet solver and the field tables call millions of times."""
+    pts = np.asarray(pts, dtype=float).reshape(-1, 3)
+    out = np.zeros(pts.shape[0])
+    if len(segs) == 0 or pts.shape[0] == 0:
+        return out
+    L = segs.dl()
+    L2 = np.einsum("ij,ij->i", L, L)
+    w = segs.w
+    chunk = max(1, min(chunk, 3_000_000 // max(len(segs), 1)))
+    for s in range(0, pts.shape[0], chunk):
+        P = pts[s : s + chunk]
+        r1 = P[None, :, :] - segs.p0[:, None, :]  # (N, m, 3)
+        n1sq = np.einsum("ijk,ijk->ij", r1, r1)
+        Ldotr1 = np.einsum("ik,ijk->ij", L, r1)
+        cross_z = L[:, None, 0] * r1[:, :, 1] - L[:, None, 1] * r1[:, :, 0]
+        r2 = P[None, :, :] - segs.p1[:, None, :]
+        n2 = np.sqrt(np.einsum("ijk,ijk->ij", r2, r2))
+        Ldotr2 = np.einsum("ik,ijk->ij", L, r2)
+        denom = L2[:, None] * n1sq - Ldotr1**2
+        with np.errstate(divide="ignore", invalid="ignore"):
+            term = Ldotr1 / np.sqrt(n1sq) - Ldotr2 / n2
+            coef = np.where(denom > 1e-300 * L2[:, None].clip(1e-300), term / denom, 0.0)
+            coef = np.nan_to_num(coef, nan=0.0, posinf=0.0, neginf=0.0)
+        out[s : s + chunk] = (MU0 / (4 * np.pi)) * np.einsum("i,ij,ij->j", w, coef, cross_z)
+    return out
 
 
 def refine(segs: Segments, max_len: float) -> Segments:
