@@ -119,6 +119,25 @@ consistent with the oscillator-undervoltage diagnostic seen on the bench.
 3. A materially different analysis is a new script or a parameter change committed under a
    new record ID, never a silent edit of a script a sealed record points at.
 
+## Cases
+
+Each writes to `out/<case>/` and states its parameters at the top. Results and their reasoning
+belong in the vault; this list only says what each script measures.
+
+| Case | Measures |
+|---|---|
+| 01 leaf baseline | the built leaf coil against COL-TEST-0005 |
+| 02 yaw ring | ring coil sweeps: angle, sector angle, gap, eccentricity |
+| 03 back-plane | conducting plane behind the ring, image method and finite disc |
+| 04 yaw stack study | gap × standoff grid, tank options, target shapes, misalignment; 10-segment and dense-LUT views |
+| 05 standoff, dense LUT | standoff ladder read through a dense LUT, sectors vs pocketed face |
+| 06 ring radius | band placement: hole-anchored vs envelope-anchored, area and inertia |
+| 07 yaw ring final | the r 17–23 configuration end to end, with finite main board |
+| 08 / 09 field maps | field, receive pattern, eddy currents and cross-sections; 09 is leaf vs ring side by side |
+| 10 leaf with tungsten | the tungsten leaf behind the flag |
+| 11 leaf coil variants | coil changes against gap drift, clearance and the leaf; offset trimming |
+| 12 leaf gap sensitivity | airgap sensitivity vs nominal gap, period and compensation |
+
 ## Layout
 
 ```

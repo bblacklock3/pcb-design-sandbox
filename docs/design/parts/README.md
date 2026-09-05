@@ -36,6 +36,11 @@ Record: COL-COTS-NNNN · Datasheet: Refs/Datasheets/<name>.md
   for CAN — pin-identical, **COL-COTS-0029**). The pin map of record is the vault's
   *Main-Board-01 MCU Pinout*.
 - `CAN.md` — the CAN link (TJA1051T/3, termination, ESD, pads), written 2026-08-22.
+- `LX34311-leaf-coil.md` — the leaf encoder coil for the next coupon (six transmit turns, cosine
+  end compensation, airgap stability), written 2026-09-04 from the coil model; PROVISIONAL until a
+  STUDY record and coupon measurement.
+- `yaw-ring-coil.md` — the yaw ring board (r 17–23, pocketed face, 1 mm standoff), written
+  2026-09-04 from the coil model; PROVISIONAL likewise.
 
 ## Wanted
 
