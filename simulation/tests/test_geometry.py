@@ -236,3 +236,16 @@ def test_ring_layer_swap_even_copper_and_closure():
         # trace falls on theta = 0 where the closing hop already is
         assert vias == n_vias
     assert abs(sin_c.net_signed_area()) < 1e-6 * np.pi * (29e-3) ** 2
+
+
+def test_cosine_end_compensation_scales_only_the_end_half_lobes():
+    _, cos_plain = g.linear_rx_pair(15.0, 7.6, 2, (0.0, -0.2), pts_per_lobe=20)
+    _, cos_comp = g.linear_rx_pair(15.0, 7.6, 2, (0.0, -0.2), pts_per_lobe=20, cos_end_scale=0.8)
+    p0, p1 = cos_plain.loops[0].pts, cos_comp.loops[0].pts
+    assert p0.shape == p1.shape
+    ends = np.abs(p0[:, 0]) > 3.75 * MM + 1e-9
+    np.testing.assert_allclose(p1[~ends], p0[~ends])
+    np.testing.assert_allclose(p1[ends, 1], 0.8 * p0[ends, 1])
+    # the compensated coil is no longer area-balanced: that is the point
+    assert cos_comp.net_signed_area() > 0
+    assert abs(cos_plain.net_signed_area()) < 1e-12

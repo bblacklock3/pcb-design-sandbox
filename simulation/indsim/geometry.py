@@ -148,11 +148,16 @@ def _peak_segments(u: np.ndarray, first_peak: float, half_period: float, layer_s
     return seg
 
 
-def _linear_rx(lam, amp, n_lobes, z1, z2, func, pts_per_lobe, layer_swap) -> Loop:
+def _linear_rx(lam, amp, n_lobes, z1, z2, func, pts_per_lobe, layer_swap, end_scale=1.0) -> Loop:
     length = n_lobes * lam / 2
     n = n_lobes * pts_per_lobe
     xp = np.linspace(0.0, length, n + 1)  # 0 .. L, sampled so lam/4 multiples land on samples
     y = amp * func(2 * np.pi * xp / lam)
+    if end_scale != 1.0:
+        # end compensation: the outermost quarter-period at each end (a half lobe on the
+        # cosine coil) gets a different amplitude; it still joins at a zero crossing
+        ends = (xp < lam / 4 - 1e-12) | (xp > length - lam / 4 + 1e-12)
+        y = np.where(ends, y * end_scale, y)
     y = np.where(np.abs(y) < 1e-15 * amp, 0.0, y)
     x = xp - length / 2
     # layers swap at the lobe extrema (Microchip: lambda/4 and 3 lambda/4 on the sine coil,
@@ -171,8 +176,11 @@ def linear_rx_pair(
     pts_per_lobe: int = 60,
     trace_mm: float = 0.1524,
     layer_swap: bool = True,
+    cos_end_scale: float = 1.0,
 ) -> tuple[Coil, Coil]:
     """Sine and cosine receive coils for a linear track along x, centred on the origin.
+    `cos_end_scale` scales the cosine coil's end half-lobes (end compensation, to null
+    its direct coupling to a transmit loop whose field is strongest near the ends).
 
     Each coil is one figure-8 loop: forward along +A*f(2*pi*x/lambda), back along -A*f.
     With `layer_swap` (the default, and how Microchip routes them) both traces change
@@ -190,7 +198,7 @@ def linear_rx_pair(
     if pts_per_lobe % 2:
         pts_per_lobe += 1
     sin_loop = _linear_rx(lam, amp, n_lobes, z1, z2, np.sin, pts_per_lobe, layer_swap)
-    cos_loop = _linear_rx(lam, amp, n_lobes, z1, z2, np.cos, pts_per_lobe, layer_swap)
+    cos_loop = _linear_rx(lam, amp, n_lobes, z1, z2, np.cos, pts_per_lobe, layer_swap, cos_end_scale)
     tw = mm(trace_mm)
     return Coil("RX_sin", (sin_loop,), tw), Coil("RX_cos", (cos_loop,), tw)
 
